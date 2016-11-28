@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SbsSW.SwiPlCs;
+using MetroFramework.Forms;
 
 namespace Fixtures
 {
-    public partial class Form1 : Form
+    public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         public Form1()
         {
@@ -33,13 +34,13 @@ namespace Fixtures
             
             //DONE
 
-            using (var q = new PlQuery("playing(fra,R,G), atomic_list_concat(['France plays in round ', R, ' game ', G], L)"))
-            {
-                foreach (PlQueryVariables v in q.SolutionVariables)
-                {
-                    richTextBox1.AppendText(v["L"].ToString());
-                    richTextBox1.AppendText("\n");
-                }
+            //using (var q = new PlQuery("playing(fra,R,G), atomic_list_concat(['France plays in round ', R, ' game ', G], L)"))
+            //{
+                //foreach (PlQueryVariables v in q.SolutionVariables)
+                //{
+                    //richTextBox1.AppendText(v["L"].ToString());
+                   // richTextBox1.AppendText("\n");
+                //}
 
                 /*richTextBox1.AppendText("\n\nall children from uwe:");
                 q.Variables["P"].Unify("uwe");
@@ -48,16 +49,16 @@ namespace Fixtures
                     richTextBox1.AppendText("\n");
                     richTextBox1.AppendText(v["C"].ToString());
                 }*/
-            }
+            //}
 
-            using (var q = new PlQuery("plays(ger,fra,R,G), atomic_list_concat(['Germany could play France in round ', R, ' game ', G], L)"))
-            {
-                foreach (PlQueryVariables v in q.SolutionVariables)
-                {
-                    richTextBox1.AppendText(v["L"].ToString());
-                    richTextBox1.AppendText("\n");
-                }
-            }
+            //using (var q = new PlQuery("plays(ger,fra,R,G), atomic_list_concat(['Germany could play France in round ', R, ' game ', G], L)"))
+            //{
+                //foreach (PlQueryVariables v in q.SolutionVariables)
+                //{
+                    //richTextBox1.AppendText(v["L"].ToString());
+                    //richTextBox1.AppendText("\n");
+                //}
+            //}
 
             PlEngine.PlCleanup();
         }

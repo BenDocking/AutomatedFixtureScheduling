@@ -28,24 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.metBtnAddTeam = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // metBtnAddTeam
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(273, 256);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.metBtnAddTeam.Location = new System.Drawing.Point(23, 63);
+            this.metBtnAddTeam.Name = "metBtnAddTeam";
+            this.metBtnAddTeam.Size = new System.Drawing.Size(75, 23);
+            this.metBtnAddTeam.TabIndex = 0;
+            this.metBtnAddTeam.Text = "Add team +";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1185, 635);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.metBtnAddTeam);
             this.Name = "Form1";
             this.Text = "Fixtures";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -56,7 +55,9 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private MetroFramework.Controls.MetroButton metBtnAddTeam;
+
+
     }
 }
 
