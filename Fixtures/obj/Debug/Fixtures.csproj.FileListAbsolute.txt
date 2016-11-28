@@ -1,0 +1,11 @@
+C:\Users\Ben\Desktop\My Documents\University\Uni Computer science\Year 3\Project\Fixtures\Fixtures\bin\Debug\Fixtures.exe.config
+C:\Users\Ben\Desktop\My Documents\University\Uni Computer science\Year 3\Project\Fixtures\Fixtures\bin\Debug\Fixtures.exe
+C:\Users\Ben\Desktop\My Documents\University\Uni Computer science\Year 3\Project\Fixtures\Fixtures\bin\Debug\Fixtures.pdb
+C:\Users\Ben\Desktop\My Documents\University\Uni Computer science\Year 3\Project\Fixtures\Fixtures\bin\Debug\SwiPlCs.dll
+C:\Users\Ben\Desktop\My Documents\University\Uni Computer science\Year 3\Project\Fixtures\Fixtures\bin\Debug\SwiPlCs.xml
+C:\Users\Ben\Desktop\My Documents\University\Uni Computer science\Year 3\Project\Fixtures\Fixtures\obj\Debug\Fixtures.csprojResolveAssemblyReference.cache
+C:\Users\Ben\Desktop\My Documents\University\Uni Computer science\Year 3\Project\Fixtures\Fixtures\obj\Debug\Fixtures.Form1.resources
+C:\Users\Ben\Desktop\My Documents\University\Uni Computer science\Year 3\Project\Fixtures\Fixtures\obj\Debug\Fixtures.Properties.Resources.resources
+C:\Users\Ben\Desktop\My Documents\University\Uni Computer science\Year 3\Project\Fixtures\Fixtures\obj\Debug\Fixtures.csproj.GenerateResource.Cache
+C:\Users\Ben\Desktop\My Documents\University\Uni Computer science\Year 3\Project\Fixtures\Fixtures\obj\Debug\Fixtures.exe
+C:\Users\Ben\Desktop\My Documents\University\Uni Computer science\Year 3\Project\Fixtures\Fixtures\obj\Debug\Fixtures.pdb
