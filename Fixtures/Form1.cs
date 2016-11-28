@@ -14,6 +14,8 @@ namespace Fixtures
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
+        private int newTabIndex = 1;
+
         public Form1()
         {
             InitializeComponent();
@@ -21,12 +23,16 @@ namespace Fixtures
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Initialize Prolog
             Environment.SetEnvironmentVariable("SWI_HOME_DIR", @"C:\\Program Files (x86)\\swipl");
             Environment.SetEnvironmentVariable("Path", @"C:\\PROGRAM FILES (x86)\\swipl");
             Environment.SetEnvironmentVariable("Path", @"C:\\PROGRAM FILES (x86)\\swipl\bin");
 
             String[] param = { "-q", "-f", @"calculate.pl" };
             PlEngine.Initialize(param);
+            //Initialize tab control
+            metTabControl.SelectedIndex = 0;
+            
 
             //CODE
 
@@ -61,6 +67,20 @@ namespace Fixtures
             //}
 
             PlEngine.PlCleanup();
+        }
+
+        private void metTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var index = this.metTabControl.TabCount;
+            //New tab clicked, create new division
+            if (metTabControl.SelectedIndex == newTabIndex)
+            {
+                metTabControl.SelectedTab.Text = "Division " + (newTabIndex + 1) ;
+                this.metTabControl.TabPages.Insert(index, "Add Division +");
+                this.metTabControl.SelectedIndex = index - 1;
+                this.metTabControl.SelectedTab.BackColor = Color.White;
+                newTabIndex++;
+            }
         }
     }
 }
