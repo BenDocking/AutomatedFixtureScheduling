@@ -15,7 +15,7 @@ namespace Fixtures
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         private int newTabIndex = 1;
-        private int addTeamBtnY = 82;
+        private int addTeamBtnY = 90;
 
         public Form1()
         {
@@ -34,7 +34,25 @@ namespace Fixtures
             //Initialize
             metTabControl.SelectedIndex = 0;
             metBtnAddTeam.Location = new Point(5, 5);
-            
+            txtName.Text = "Enter team name";
+            txtShared.Text = "Enter team name";
+            txtName.ForeColor = Color.Gray;
+            txtShared.ForeColor = Color.Gray;
+            txtHome.ForeColor = Color.Gray;
+            txtNoPlay.ForeColor = Color.Gray;
+            lblName.Hide();
+            lblTeam.Hide();
+            txtName.Hide();
+            lblShared.Hide();
+            btnShared.Hide();
+            txtShared.Hide();
+            lblHome.Hide();
+            txtHome.Hide();
+            btnHome.Hide();
+            lblNoPlay.Hide();
+            txtNoPlay.Hide();
+            btnNoPlay.Hide();
+
 
             //CODE
 
@@ -87,15 +105,69 @@ namespace Fixtures
 
         private void metBtnAddTeam_Click(object sender, EventArgs e)
         {
-            if (addTeamBtnY != 902) //10 teams max
+            if (addTeamBtnY != 902 && metBtnAddTeam.Text == "Add team +") //10 teams max
             {
                 //Add a team
+                lblName.Show();
+                lblTeam.Show();
+                txtName.Show();
+                lblShared.Show();
+                btnShared.Show();
+                txtShared.Show();
+                lblHome.Show();
+                txtHome.Show();
+                btnHome.Show();
+                lblNoPlay.Show();
+                txtNoPlay.Show();
+                btnNoPlay.Show();
+                metBtnAddTeam.Text = "Submit";
                 metBtnAddTeam.Location = new Point(5, addTeamBtnY);
-                addTeamBtnY += 82;
+                addTeamBtnY += 90;
+            }
+            else if (addTeamBtnY != 902 && metBtnAddTeam.Text == "Submit")
+            {
+                //Reset button back to add team
+                metBtnAddTeam.Text = "Add team +";
             }
             else
             {
                 //Max teams added
+            }
+        }
+
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            //Remove text so user can type and set colour to black
+            if (txtName.Text == "Enter team name")
+            {
+                txtName.Text = "";
+                txtName.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtShared_Click(object sender, EventArgs e)
+        {
+            //Remove text so user can type and set colour to black
+            if (txtShared.Text == "Enter team name")
+            {
+                txtShared.Text = "";
+                txtShared.ForeColor = Color.Black;
+            }
+        }
+
+        private void btnShared_Click(object sender, EventArgs e)
+        {
+            string input = txtShared.Text;
+            input = input.Trim();
+
+            //User wants to add another team to be sharing grounds with
+            if (txtShared.Text != "Enter team name" && input != "")
+            {
+                //Save current text
+                //CODE HERE
+                //Reset text to type new team name
+                txtShared.Text = "";
+                txtShared.Select();
             }
         }
     }
