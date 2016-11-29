@@ -15,6 +15,7 @@ namespace Fixtures
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         private int newTabIndex = 1;
+        private int addTeamBtnY = 90;
 
         public Form1()
         {
@@ -30,8 +31,9 @@ namespace Fixtures
 
             String[] param = { "-q", "-f", @"calculate.pl" };
             PlEngine.Initialize(param);
-            //Initialize tab control
+            //Initialize
             metTabControl.SelectedIndex = 0;
+            metBtnAddTeam.Location = new Point(5, 5);
             
 
             //CODE
@@ -80,6 +82,20 @@ namespace Fixtures
                 this.metTabControl.SelectedIndex = index - 1;
                 this.metTabControl.SelectedTab.BackColor = Color.White;
                 newTabIndex++;
+            }
+        }
+
+        private void metBtnAddTeam_Click(object sender, EventArgs e)
+        {
+            if (addTeamBtnY != 940) //10 teams max
+            {
+                //Add a team
+                metBtnAddTeam.Location = new Point(5, addTeamBtnY);
+                addTeamBtnY += 85;
+            }
+            else
+            {
+                //Max teams added
             }
         }
     }

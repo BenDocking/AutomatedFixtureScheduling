@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.metTabControl = new MetroFramework.Controls.MetroTabControl();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metBtnAddTeam = new MetroFramework.Controls.MetroButton();
             this.metroAddTab = new MetroFramework.Controls.MetroTabPage();
+            this.metBtnAddTeam = new MetroFramework.Controls.MetroButton();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metTabControl.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -50,25 +50,6 @@
             this.metTabControl.TabIndex = 1;
             this.metTabControl.SelectedIndexChanged += new System.EventHandler(this.metTabControl_SelectedIndexChanged);
             // 
-            // metroTabPage1
-            // 
-            this.metroTabPage1.Controls.Add(this.metBtnAddTeam);
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(1130, 509);
-            this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "Division 1";
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            // 
-            // metBtnAddTeam
-            // 
-            this.metBtnAddTeam.Location = new System.Drawing.Point(3, 3);
-            this.metBtnAddTeam.Name = "metBtnAddTeam";
-            this.metBtnAddTeam.Size = new System.Drawing.Size(75, 23);
-            this.metBtnAddTeam.TabIndex = 2;
-            this.metBtnAddTeam.Text = "Add team +";
-            // 
             // metroAddTab
             // 
             this.metroAddTab.BackColor = System.Drawing.SystemColors.Control;
@@ -81,6 +62,31 @@
             this.metroAddTab.TabIndex = 1;
             this.metroAddTab.Text = "Add Division +";
             this.metroAddTab.VerticalScrollbarBarColor = true;
+            // 
+            // metBtnAddTeam
+            // 
+            this.metBtnAddTeam.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.metBtnAddTeam.Location = new System.Drawing.Point(3, 3);
+            this.metBtnAddTeam.Name = "metBtnAddTeam";
+            this.metBtnAddTeam.Size = new System.Drawing.Size(1124, 43);
+            this.metBtnAddTeam.TabIndex = 2;
+            this.metBtnAddTeam.Text = "Add team +";
+            this.metBtnAddTeam.Click += new System.EventHandler(this.metBtnAddTeam_Click);
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.AutoScroll = true;
+            this.metroTabPage1.Controls.Add(this.metBtnAddTeam);
+            this.metroTabPage1.HorizontalScrollbar = true;
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(1130, 509);
+            this.metroTabPage1.TabIndex = 0;
+            this.metroTabPage1.Text = "Division 1";
+            this.metroTabPage1.VerticalScrollbar = true;
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
             // 
             // Form1
             // 
@@ -101,9 +107,9 @@
         #endregion
 
         private MetroFramework.Controls.MetroTabControl metTabControl;
+        private MetroFramework.Controls.MetroTabPage metroAddTab;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroButton metBtnAddTeam;
-        private MetroFramework.Controls.MetroTabPage metroAddTab;
 
 
     }
