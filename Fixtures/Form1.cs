@@ -15,7 +15,7 @@ namespace Fixtures
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         private int newTabIndex = 1;
-        private int addTeamBtnY = 90;
+        private int addTeamBtnY = 82;
 
         public Form1()
         {
@@ -87,11 +87,11 @@ namespace Fixtures
 
         private void metBtnAddTeam_Click(object sender, EventArgs e)
         {
-            if (addTeamBtnY != 940) //10 teams max
+            if (addTeamBtnY != 902) //10 teams max
             {
                 //Add a team
                 metBtnAddTeam.Location = new Point(5, addTeamBtnY);
-                addTeamBtnY += 85;
+                addTeamBtnY += 82;
             }
             else
             {
