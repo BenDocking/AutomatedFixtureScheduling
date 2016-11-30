@@ -23,6 +23,13 @@ namespace Fixtures
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
+        //Global input variables
+        private string[,] name = new string[20, 20]; //Division, Team
+        private string[, ,] shared = new string[20,20,4]; //Max 20 divisions, 20 teams, 5 teams for single grounds
+        //
+        private int division = 0;
+        private int team = 0;
+        private int sharedCount = 0;
         private int newTabIndex = 1;
         private int addTeamBtnY = 90;
 
@@ -47,8 +54,6 @@ namespace Fixtures
             txtShared.Text = "Enter team name";
             txtName.ForeColor = Color.Gray;
             txtShared.ForeColor = Color.Gray;
-            txtHome.ForeColor = Color.Gray;
-            txtNoPlay.ForeColor = Color.Gray;
             lblName.Hide();
             lblTeam.Hide();
             txtName.Hide();
@@ -56,10 +61,10 @@ namespace Fixtures
             btnShared.Hide();
             txtShared.Hide();
             lblHome.Hide();
-            txtHome.Hide();
+            datePickerHome.Hide();
             btnHome.Hide();
             lblNoPlay.Hide();
-            txtNoPlay.Hide();
+            datePickerNoPlay.Hide();
             btnNoPlay.Hide();
 
 
@@ -124,7 +129,7 @@ namespace Fixtures
 
         private void metBtnAddTeam_Click(object sender, EventArgs e)
         {
-            if (addTeamBtnY != 902 && metBtnAddTeam.Text == "Add team +") //10 teams max
+            if (addTeamBtnY != 902 && metBtnAddTeam.Text == "Add team +") //20 teams max
             {
                 //Add a team
                 lblName.Show();
@@ -134,10 +139,10 @@ namespace Fixtures
                 btnShared.Show();
                 txtShared.Show();
                 lblHome.Show();
-                txtHome.Show();
+                datePickerHome.Show();
                 btnHome.Show();
                 lblNoPlay.Show();
-                txtNoPlay.Show();
+                datePickerNoPlay.Show();
                 btnNoPlay.Show();
                 metBtnAddTeam.Text = "Submit";
                 metBtnAddTeam.Location = new Point(5, addTeamBtnY);
@@ -145,8 +150,47 @@ namespace Fixtures
             }
             else if (addTeamBtnY != 902 && metBtnAddTeam.Text == "Submit")
             {
-                //Reset button back to add team
+                //Add team
+                name[0, team] = txtName.Text;
+                //Display team
+                List<MetroLabel> labels = new List<MetroLabel>();
+                MetroLabel lblTeamName = new MetroLabel();
+                labels.Add(lblTeamName);
+                metTabControl.SelectedTab.Controls.Add(lblTeamName);
+                lblTeamName.Location = new Point(5, 5);
+                //Increment
+                team++;
+                //Reset
+                txtName.Text = "Enter team name";
+                txtShared.Text = "Enter team name";
+                txtName.ForeColor = Color.Gray;
+                txtShared.ForeColor = Color.Gray;
+                lblName.Hide();
+                lblTeam.Hide();
+                txtName.Hide();
+                lblShared.Hide();
+                btnShared.Hide();
+                txtShared.Hide();
+                lblHome.Hide();
+                datePickerHome.Hide();
+                btnHome.Hide();
+                lblNoPlay.Hide();
+                datePickerNoPlay.Hide();
+                btnNoPlay.Hide();
+                lblName.Location = new Point(17, addTeamBtnY-40);
+                lblTeam.Location = new Point(5, addTeamBtnY-70);
+                txtName.Location = new Point(71, addTeamBtnY);
+                lblShared.Location = new Point(221, addTeamBtnY);
+                btnShared.Location = new Point(391, addTeamBtnY);
+                txtShared.Location = new Point(332, addTeamBtnY);
+                lblHome.Location = new Point(472, addTeamBtnY);
+                datePickerHome.Location = new Point(556, addTeamBtnY);
+                btnHome.Location = new Point(681, addTeamBtnY);
+                lblNoPlay.Location = new Point(762, addTeamBtnY);
+                datePickerNoPlay.Location = new Point(865, addTeamBtnY);
+                btnNoPlay.Location = new Point(990, addTeamBtnY);
                 metBtnAddTeam.Text = "Add team +";
+                sharedCount = 0;
             }
             else
             {
@@ -179,14 +223,20 @@ namespace Fixtures
             string input = txtShared.Text;
             input = input.Trim();
 
-            //User wants to add another team to be sharing grounds with
-            if (txtShared.Text != "Enter team name" && input != "")
+            if (sharedCount == 3)
             {
+                //Max shared teams added
+                MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
+            }
+            else if (txtShared.Text != "Enter team name" && input != "")
+            {
+                //User wants to add another team to be sharing grounds with
                 //Save current text
-                //CODE HERE
+                shared[division, team, sharedCount] = txtShared.Text;
+                sharedCount++;
                 //Reset text to type new team name
                 txtShared.Text = "";
-                txtShared.Select();
+                txtShared.Focus();
             }
         }
     }

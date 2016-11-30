@@ -30,6 +30,14 @@
         {
             this.metTabControl = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.btnNoPlay = new MetroFramework.Controls.MetroButton();
+            this.btnHome = new MetroFramework.Controls.MetroButton();
+            this.lblNoPlay = new MetroFramework.Controls.MetroLabel();
+            this.lblHome = new MetroFramework.Controls.MetroLabel();
+            this.btnShared = new MetroFramework.Controls.MetroButton();
+            this.lblShared = new MetroFramework.Controls.MetroLabel();
+            this.lblName = new MetroFramework.Controls.MetroLabel();
+            this.lblTeam = new MetroFramework.Controls.MetroLabel();
             this.metBtnAddTeam = new MetroFramework.Controls.MetroButton();
             this.metroAddTab = new MetroFramework.Controls.MetroTabPage();
             this.btnCalc = new MetroFramework.Controls.MetroButton();
@@ -37,18 +45,10 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.txtName = new MetroFramework.Controls.MetroTextBox();
-            this.lblTeam = new MetroFramework.Controls.MetroLabel();
-            this.lblName = new MetroFramework.Controls.MetroLabel();
-            this.lblShared = new MetroFramework.Controls.MetroLabel();
-            this.txtShared = new MetroFramework.Controls.MetroTextBox();
-            this.btnShared = new MetroFramework.Controls.MetroButton();
-            this.lblHome = new MetroFramework.Controls.MetroLabel();
-            this.txtHome = new MetroFramework.Controls.MetroTextBox();
-            this.lblNoPlay = new MetroFramework.Controls.MetroLabel();
-            this.txtNoPlay = new MetroFramework.Controls.MetroTextBox();
-            this.btnHome = new MetroFramework.Controls.MetroButton();
-            this.btnNoPlay = new MetroFramework.Controls.MetroButton();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtShared = new System.Windows.Forms.TextBox();
+            this.datePickerHome = new System.Windows.Forms.DateTimePicker();
+            this.datePickerNoPlay = new System.Windows.Forms.DateTimePicker();
             this.metTabControl.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -70,18 +70,18 @@
             // metroTabPage1
             // 
             this.metroTabPage1.AutoScroll = true;
+            this.metroTabPage1.Controls.Add(this.datePickerNoPlay);
+            this.metroTabPage1.Controls.Add(this.datePickerHome);
+            this.metroTabPage1.Controls.Add(this.txtShared);
+            this.metroTabPage1.Controls.Add(this.txtName);
             this.metroTabPage1.Controls.Add(this.btnNoPlay);
             this.metroTabPage1.Controls.Add(this.btnHome);
-            this.metroTabPage1.Controls.Add(this.txtNoPlay);
             this.metroTabPage1.Controls.Add(this.lblNoPlay);
-            this.metroTabPage1.Controls.Add(this.txtHome);
             this.metroTabPage1.Controls.Add(this.lblHome);
             this.metroTabPage1.Controls.Add(this.btnShared);
-            this.metroTabPage1.Controls.Add(this.txtShared);
             this.metroTabPage1.Controls.Add(this.lblShared);
             this.metroTabPage1.Controls.Add(this.lblName);
             this.metroTabPage1.Controls.Add(this.lblTeam);
-            this.metroTabPage1.Controls.Add(this.txtName);
             this.metroTabPage1.Controls.Add(this.metBtnAddTeam);
             this.metroTabPage1.HorizontalScrollbar = true;
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
@@ -92,6 +92,77 @@
             this.metroTabPage1.Text = "Division 1";
             this.metroTabPage1.VerticalScrollbar = true;
             this.metroTabPage1.VerticalScrollbarBarColor = true;
+            // 
+            // btnNoPlay
+            // 
+            this.btnNoPlay.Location = new System.Drawing.Point(990, 58);
+            this.btnNoPlay.Name = "btnNoPlay";
+            this.btnNoPlay.Size = new System.Drawing.Size(75, 23);
+            this.btnNoPlay.TabIndex = 15;
+            this.btnNoPlay.Text = "Add another";
+            // 
+            // btnHome
+            // 
+            this.btnHome.Location = new System.Drawing.Point(681, 58);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(75, 23);
+            this.btnHome.TabIndex = 14;
+            this.btnHome.Text = "Add another";
+            // 
+            // lblNoPlay
+            // 
+            this.lblNoPlay.AutoSize = true;
+            this.lblNoPlay.Location = new System.Drawing.Point(762, 32);
+            this.lblNoPlay.Name = "lblNoPlay";
+            this.lblNoPlay.Size = new System.Drawing.Size(97, 19);
+            this.lblNoPlay.TabIndex = 12;
+            this.lblNoPlay.Text = "Date can\'t play:";
+            // 
+            // lblHome
+            // 
+            this.lblHome.AutoSize = true;
+            this.lblHome.Location = new System.Drawing.Point(472, 32);
+            this.lblHome.Name = "lblHome";
+            this.lblHome.Size = new System.Drawing.Size(78, 19);
+            this.lblHome.TabIndex = 10;
+            this.lblHome.Text = "Home date:";
+            // 
+            // btnShared
+            // 
+            this.btnShared.Location = new System.Drawing.Point(391, 58);
+            this.btnShared.Name = "btnShared";
+            this.btnShared.Size = new System.Drawing.Size(75, 23);
+            this.btnShared.TabIndex = 9;
+            this.btnShared.Text = "Add another";
+            this.btnShared.Click += new System.EventHandler(this.btnShared_Click);
+            // 
+            // lblShared
+            // 
+            this.lblShared.AutoSize = true;
+            this.lblShared.Location = new System.Drawing.Point(221, 32);
+            this.lblShared.Name = "lblShared";
+            this.lblShared.Size = new System.Drawing.Size(105, 19);
+            this.lblShared.TabIndex = 7;
+            this.lblShared.Text = "Shared grounds:";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(17, 32);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(48, 19);
+            this.lblName.TabIndex = 5;
+            this.lblName.Text = "Name:";
+            // 
+            // lblTeam
+            // 
+            this.lblTeam.AutoSize = true;
+            this.lblTeam.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblTeam.Location = new System.Drawing.Point(5, 5);
+            this.lblTeam.Name = "lblTeam";
+            this.lblTeam.Size = new System.Drawing.Size(68, 25);
+            this.lblTeam.TabIndex = 4;
+            this.lblTeam.Text = "Team 1";
             // 
             // metBtnAddTeam
             // 
@@ -112,7 +183,7 @@
             this.metroAddTab.HorizontalScrollbarBarColor = true;
             this.metroAddTab.Location = new System.Drawing.Point(4, 35);
             this.metroAddTab.Name = "metroAddTab";
-            this.metroAddTab.Size = new System.Drawing.Size(1130, 482);
+            this.metroAddTab.Size = new System.Drawing.Size(1181, 482);
             this.metroAddTab.TabIndex = 1;
             this.metroAddTab.Text = "Add Division +";
             this.metroAddTab.VerticalScrollbarBarColor = true;
@@ -164,118 +235,35 @@
             // 
             // txtName
             // 
-            this.txtName.CustomForeColor = true;
+            this.txtName.BackColor = System.Drawing.SystemColors.Window;
             this.txtName.Location = new System.Drawing.Point(71, 32);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(144, 23);
-            this.txtName.TabIndex = 3;
-            this.txtName.Text = "metroTextBox1";
+            this.txtName.Size = new System.Drawing.Size(144, 20);
+            this.txtName.TabIndex = 16;
             this.txtName.Click += new System.EventHandler(this.txtName_Click);
-            // 
-            // lblTeam
-            // 
-            this.lblTeam.AutoSize = true;
-            this.lblTeam.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblTeam.Location = new System.Drawing.Point(3, 3);
-            this.lblTeam.Name = "lblTeam";
-            this.lblTeam.Size = new System.Drawing.Size(62, 25);
-            this.lblTeam.TabIndex = 4;
-            this.lblTeam.Text = "Team 1";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(17, 32);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(48, 19);
-            this.lblName.TabIndex = 5;
-            this.lblName.Text = "Name:";
-            // 
-            // lblShared
-            // 
-            this.lblShared.AutoSize = true;
-            this.lblShared.Location = new System.Drawing.Point(221, 32);
-            this.lblShared.Name = "lblShared";
-            this.lblShared.Size = new System.Drawing.Size(105, 19);
-            this.lblShared.TabIndex = 7;
-            this.lblShared.Text = "Shared grounds:";
             // 
             // txtShared
             // 
-            this.txtShared.BackColor = System.Drawing.SystemColors.Control;
-            this.txtShared.CustomForeColor = true;
-            this.txtShared.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtShared.BackColor = System.Drawing.SystemColors.Window;
             this.txtShared.Location = new System.Drawing.Point(332, 32);
             this.txtShared.Name = "txtShared";
-            this.txtShared.Size = new System.Drawing.Size(134, 23);
-            this.txtShared.TabIndex = 8;
-            this.txtShared.Text = "metroTextBox1";
+            this.txtShared.Size = new System.Drawing.Size(134, 20);
+            this.txtShared.TabIndex = 17;
             this.txtShared.Click += new System.EventHandler(this.txtShared_Click);
             // 
-            // btnShared
+            // datePickerHome
             // 
-            this.btnShared.Location = new System.Drawing.Point(391, 61);
-            this.btnShared.Name = "btnShared";
-            this.btnShared.Size = new System.Drawing.Size(75, 23);
-            this.btnShared.TabIndex = 9;
-            this.btnShared.Text = "Add another";
-            this.btnShared.Click += new System.EventHandler(this.btnShared_Click);
+            this.datePickerHome.Location = new System.Drawing.Point(556, 32);
+            this.datePickerHome.Name = "datePickerHome";
+            this.datePickerHome.Size = new System.Drawing.Size(200, 20);
+            this.datePickerHome.TabIndex = 18;
             // 
-            // lblHome
+            // datePickerNoPlay
             // 
-            this.lblHome.AutoSize = true;
-            this.lblHome.Location = new System.Drawing.Point(472, 32);
-            this.lblHome.Name = "lblHome";
-            this.lblHome.Size = new System.Drawing.Size(78, 19);
-            this.lblHome.TabIndex = 10;
-            this.lblHome.Text = "Home date:";
-            // 
-            // txtHome
-            // 
-            this.txtHome.BackColor = System.Drawing.SystemColors.Control;
-            this.txtHome.CustomForeColor = true;
-            this.txtHome.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtHome.Location = new System.Drawing.Point(556, 32);
-            this.txtHome.Name = "txtHome";
-            this.txtHome.Size = new System.Drawing.Size(134, 23);
-            this.txtHome.TabIndex = 11;
-            this.txtHome.Text = "metroTextBox1";
-            // 
-            // lblNoPlay
-            // 
-            this.lblNoPlay.AutoSize = true;
-            this.lblNoPlay.Location = new System.Drawing.Point(696, 32);
-            this.lblNoPlay.Name = "lblNoPlay";
-            this.lblNoPlay.Size = new System.Drawing.Size(97, 19);
-            this.lblNoPlay.TabIndex = 12;
-            this.lblNoPlay.Text = "Date can\'t play:";
-            // 
-            // txtNoPlay
-            // 
-            this.txtNoPlay.BackColor = System.Drawing.SystemColors.Control;
-            this.txtNoPlay.CustomForeColor = true;
-            this.txtNoPlay.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtNoPlay.Location = new System.Drawing.Point(799, 32);
-            this.txtNoPlay.Name = "txtNoPlay";
-            this.txtNoPlay.Size = new System.Drawing.Size(134, 23);
-            this.txtNoPlay.TabIndex = 13;
-            this.txtNoPlay.Text = "metroTextBox1";
-            // 
-            // btnHome
-            // 
-            this.btnHome.Location = new System.Drawing.Point(615, 61);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(75, 23);
-            this.btnHome.TabIndex = 14;
-            this.btnHome.Text = "Add another";
-            // 
-            // btnNoPlay
-            // 
-            this.btnNoPlay.Location = new System.Drawing.Point(858, 61);
-            this.btnNoPlay.Name = "btnNoPlay";
-            this.btnNoPlay.Size = new System.Drawing.Size(75, 23);
-            this.btnNoPlay.TabIndex = 15;
-            this.btnNoPlay.Text = "Add another";
+            this.datePickerNoPlay.Location = new System.Drawing.Point(865, 32);
+            this.datePickerNoPlay.Name = "datePickerNoPlay";
+            this.datePickerNoPlay.Size = new System.Drawing.Size(200, 20);
+            this.datePickerNoPlay.TabIndex = 19;
             // 
             // Form1
             // 
@@ -312,16 +300,16 @@
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroLabel lblName;
         private MetroFramework.Controls.MetroLabel lblTeam;
-        private MetroFramework.Controls.MetroTextBox txtName;
         private MetroFramework.Controls.MetroLabel lblShared;
         private MetroFramework.Controls.MetroButton btnShared;
-        private MetroFramework.Controls.MetroTextBox txtShared;
         private MetroFramework.Controls.MetroButton btnNoPlay;
         private MetroFramework.Controls.MetroButton btnHome;
-        private MetroFramework.Controls.MetroTextBox txtNoPlay;
         private MetroFramework.Controls.MetroLabel lblNoPlay;
-        private MetroFramework.Controls.MetroTextBox txtHome;
         private MetroFramework.Controls.MetroLabel lblHome;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtShared;
+        private System.Windows.Forms.DateTimePicker datePickerNoPlay;
+        private System.Windows.Forms.DateTimePicker datePickerHome;
 
 
     }
