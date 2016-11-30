@@ -9,6 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SbsSW.SwiPlCs;
 using MetroFramework.Forms;
+using MetroFramework.Controls;
+using MetroFramework.Animation;
+using MetroFramework.Components;
+using MetroFramework.Drawing;
+using MetroFramework.Fonts;
+using MetroFramework.Interfaces;
+using MetroFramework.Localization;
+using MetroFramework.Native;
+using MetroFramework.Properties;
 
 namespace Fixtures
 {
@@ -95,11 +104,21 @@ namespace Fixtures
             //New tab clicked, create new division
             if (metTabControl.SelectedIndex == newTabIndex)
             {
+                //Create new tab
                 metTabControl.SelectedTab.Text = "Division " + (newTabIndex + 1) ;
                 this.metTabControl.TabPages.Insert(index, "Add Division +");
                 this.metTabControl.SelectedIndex = index - 1;
                 this.metTabControl.SelectedTab.BackColor = Color.White;
                 newTabIndex++;
+                //Populate new tab with objects
+                List<MetroButton> buttons = new List<MetroButton>();
+                MetroButton btnAddTeam1 = new MetroButton();
+                buttons.Add(btnAddTeam1);
+                metTabControl.SelectedTab.Controls.Add(btnAddTeam1);
+                btnAddTeam1.Location = new Point(5, 5);
+                btnAddTeam1.Size = new Size(1175, 43);
+                btnAddTeam1.Text = "Add team +";
+                btnAddTeam1.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left);
             }
         }
 

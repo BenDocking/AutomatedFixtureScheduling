@@ -21,3 +21,15 @@ C:\Users\Ben\Desktop\My Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj
 C:\Users\Ben\Desktop\My Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Debug\Fixtures.csproj.GenerateResource.Cache
 C:\Users\Ben\Desktop\My Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Debug\MetroFramework.dll
 C:\Users\Ben\Desktop\My Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Debug\Fixtures.exe.config
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Debug\Fixtures.exe
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Debug\Fixtures.pdb
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Debug\Fixtures.exe
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Debug\Fixtures.pdb
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Debug\MetroFramework.dll
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Debug\SwiPlCs.xml
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Debug\Fixtures.csprojResolveAssemblyReference.cache
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Debug\Fixtures.Form1.resources
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Debug\Fixtures.Properties.Resources.resources
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Debug\Fixtures.csproj.GenerateResource.Cache
