@@ -30,8 +30,7 @@
         {
             this.metTabControl = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.datePickerNoPlay = new System.Windows.Forms.DateTimePicker();
-            this.datePickerHome = new System.Windows.Forms.DateTimePicker();
+            this.lblTeam = new System.Windows.Forms.Label();
             this.txtShared = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.btnNoPlay = new MetroFramework.Controls.MetroButton();
@@ -48,7 +47,8 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.lblTeam = new System.Windows.Forms.Label();
+            this.cmbBoxHome = new System.Windows.Forms.ComboBox();
+            this.cmbBoxNoPlay = new System.Windows.Forms.ComboBox();
             this.metTabControl.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -70,9 +70,9 @@
             // metroTabPage1
             // 
             this.metroTabPage1.AutoScroll = true;
+            this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay);
+            this.metroTabPage1.Controls.Add(this.cmbBoxHome);
             this.metroTabPage1.Controls.Add(this.lblTeam);
-            this.metroTabPage1.Controls.Add(this.datePickerNoPlay);
-            this.metroTabPage1.Controls.Add(this.datePickerHome);
             this.metroTabPage1.Controls.Add(this.txtShared);
             this.metroTabPage1.Controls.Add(this.txtName);
             this.metroTabPage1.Controls.Add(this.btnNoPlay);
@@ -93,19 +93,16 @@
             this.metroTabPage1.VerticalScrollbar = true;
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             // 
-            // datePickerNoPlay
+            // lblTeam
             // 
-            this.datePickerNoPlay.Location = new System.Drawing.Point(865, 32);
-            this.datePickerNoPlay.Name = "datePickerNoPlay";
-            this.datePickerNoPlay.Size = new System.Drawing.Size(200, 20);
-            this.datePickerNoPlay.TabIndex = 19;
-            // 
-            // datePickerHome
-            // 
-            this.datePickerHome.Location = new System.Drawing.Point(556, 32);
-            this.datePickerHome.Name = "datePickerHome";
-            this.datePickerHome.Size = new System.Drawing.Size(200, 20);
-            this.datePickerHome.TabIndex = 18;
+            this.lblTeam.AutoSize = true;
+            this.lblTeam.BackColor = System.Drawing.SystemColors.Window;
+            this.lblTeam.Font = new System.Drawing.Font("Nirmala UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTeam.Location = new System.Drawing.Point(12, 3);
+            this.lblTeam.Name = "lblTeam";
+            this.lblTeam.Size = new System.Drawing.Size(68, 25);
+            this.lblTeam.TabIndex = 20;
+            this.lblTeam.Text = "Team 1";
             // 
             // txtShared
             // 
@@ -127,7 +124,7 @@
             // 
             // btnNoPlay
             // 
-            this.btnNoPlay.Location = new System.Drawing.Point(990, 58);
+            this.btnNoPlay.Location = new System.Drawing.Point(870, 58);
             this.btnNoPlay.Name = "btnNoPlay";
             this.btnNoPlay.Size = new System.Drawing.Size(75, 23);
             this.btnNoPlay.TabIndex = 15;
@@ -135,7 +132,7 @@
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(681, 58);
+            this.btnHome.Location = new System.Drawing.Point(621, 58);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(75, 23);
             this.btnHome.TabIndex = 14;
@@ -144,7 +141,7 @@
             // lblNoPlay
             // 
             this.lblNoPlay.AutoSize = true;
-            this.lblNoPlay.Location = new System.Drawing.Point(762, 32);
+            this.lblNoPlay.Location = new System.Drawing.Point(702, 32);
             this.lblNoPlay.Name = "lblNoPlay";
             this.lblNoPlay.Size = new System.Drawing.Size(97, 19);
             this.lblNoPlay.TabIndex = 12;
@@ -255,16 +252,75 @@
             this.metroButton3.TabIndex = 6;
             this.metroButton3.Text = "Edit Team";
             // 
-            // lblTeam
+            // cmbBoxHome
             // 
-            this.lblTeam.AutoSize = true;
-            this.lblTeam.BackColor = System.Drawing.SystemColors.Window;
-            this.lblTeam.Font = new System.Drawing.Font("Nirmala UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTeam.Location = new System.Drawing.Point(12, 3);
-            this.lblTeam.Name = "lblTeam";
-            this.lblTeam.Size = new System.Drawing.Size(68, 25);
-            this.lblTeam.TabIndex = 20;
-            this.lblTeam.Text = "Team 1";
+            this.cmbBoxHome.FormattingEnabled = true;
+            this.cmbBoxHome.Items.AddRange(new object[] {
+            "17th April",
+            "24th April",
+            "1st May",
+            "8th May",
+            "15th May",
+            "22nd May",
+            "29th May",
+            "5th June",
+            "12th June",
+            "19th June",
+            "26th June",
+            "3rd July",
+            "10th July",
+            "17th July",
+            "24th July",
+            "31st July",
+            "7th August",
+            "14th August",
+            "21st August",
+            "28th August",
+            "4th September",
+            "11th September",
+            "18th September",
+            "2nd May (Holiday)",
+            "30th May (Holiday)",
+            "29th August (Holiday)"});
+            this.cmbBoxHome.Location = new System.Drawing.Point(556, 32);
+            this.cmbBoxHome.Name = "cmbBoxHome";
+            this.cmbBoxHome.Size = new System.Drawing.Size(140, 21);
+            this.cmbBoxHome.TabIndex = 21;
+            // 
+            // cmbBoxNoPlay
+            // 
+            this.cmbBoxNoPlay.FormattingEnabled = true;
+            this.cmbBoxNoPlay.Items.AddRange(new object[] {
+            "17th April",
+            "24th April",
+            "1st May",
+            "8th May",
+            "15th May",
+            "22nd May",
+            "29th May",
+            "5th June",
+            "12th June",
+            "19th June",
+            "26th June",
+            "3rd July",
+            "10th July",
+            "17th July",
+            "24th July",
+            "31st July",
+            "7th August",
+            "14th August",
+            "21st August",
+            "28th August",
+            "4th September",
+            "11th September",
+            "18th September",
+            "2nd May (Holiday)",
+            "30th May (Holiday)",
+            "29th August (Holiday)"});
+            this.cmbBoxNoPlay.Location = new System.Drawing.Point(805, 32);
+            this.cmbBoxNoPlay.Name = "cmbBoxNoPlay";
+            this.cmbBoxNoPlay.Size = new System.Drawing.Size(140, 21);
+            this.cmbBoxNoPlay.TabIndex = 22;
             // 
             // Form1
             // 
@@ -308,9 +364,9 @@
         private MetroFramework.Controls.MetroLabel lblHome;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtShared;
-        private System.Windows.Forms.DateTimePicker datePickerNoPlay;
-        private System.Windows.Forms.DateTimePicker datePickerHome;
         private System.Windows.Forms.Label lblTeam;
+        private System.Windows.Forms.ComboBox cmbBoxNoPlay;
+        private System.Windows.Forms.ComboBox cmbBoxHome;
 
 
     }

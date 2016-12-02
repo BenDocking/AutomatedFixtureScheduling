@@ -26,6 +26,15 @@ namespace Fixtures
         //Global input variables
         private string[,] name = new string[20, 20]; //Division, Team
         private string[, ,] shared = new string[20,20,4]; //Max 20 divisions, 20 teams, 5 teams for single grounds
+        //Create objects
+        List<Label> labels = new List<Label>();
+        List<MetroComboBox> comboBoxes = new List<MetroComboBox>();
+        List<MetroButton> buttons = new List<MetroButton>();
+        Label lblLine = new Label();
+        Label lblTeamName = new Label();
+        Label lblNameDisp = new Label();
+        Label lblSharedDisp = new Label();
+        Label lblSharedAll = new Label();
         //
         private int division = 0;
         private int team = 0;
@@ -61,10 +70,10 @@ namespace Fixtures
             btnShared.Hide();
             txtShared.Hide();
             lblHome.Hide();
-            datePickerHome.Hide();
+            cmbBoxHome.Hide();
             btnHome.Hide();
             lblNoPlay.Hide();
-            datePickerNoPlay.Hide();
+            cmbBoxNoPlay.Hide();
             btnNoPlay.Hide();
 
 
@@ -116,15 +125,15 @@ namespace Fixtures
                 this.metTabControl.SelectedTab.BackColor = Color.White;
                 newTabIndex++;
                 //Populate new tab with objects
-                List<MetroButton> buttons = new List<MetroButton>();
-                MetroButton btnAddTeam1 = new MetroButton();
-                buttons.Add(btnAddTeam1);
-                metTabControl.SelectedTab.Controls.Add(btnAddTeam1);
-                btnAddTeam1.Location = new Point(5, 5);
-                btnAddTeam1.Size = new Size(1175, 43);
-                btnAddTeam1.Text = "Add team +";
-                btnAddTeam1.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left);
+                //buttons.Add(btnAddTeam);
+                //metTabControl.SelectedTab.Controls.Add(btnAddTeam);
+                //btnAddTeam.Location = new Point(5, 5);
+                //btnAddTeam.Size = new Size(1175, 43);
+                //btnAddTeam.Text = "Add team +";
+                //btnAddTeam.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left);
             }
+            //Move objects between tabs
+            metTabControl.SelectedTab.Controls.Add(metBtnAddTeam);
         }
 
         private void metBtnAddTeam_Click(object sender, EventArgs e)
@@ -139,10 +148,10 @@ namespace Fixtures
                 btnShared.Show();
                 txtShared.Show();
                 lblHome.Show();
-                datePickerHome.Show();
+                cmbBoxHome.Show();
                 btnHome.Show();
                 lblNoPlay.Show();
-                datePickerNoPlay.Show();
+                cmbBoxNoPlay.Show();
                 btnNoPlay.Show();
                 metBtnAddTeam.Text = "Submit";
                 metBtnAddTeam.Location = new Point(5, addTeamBtnY);
@@ -161,36 +170,28 @@ namespace Fixtures
                 }
 
                 //Display team
-                List<Label> labels = new List<Label>();
-                List<MetroComboBox> comboBoxes = new List<MetroComboBox>();
-                Label lblLine = new Label();
-                Label lblTeamName = new Label();
-                Label lblNameDisp = new Label();
-                Label lblSharedDisp = new Label();
-                Label lblSharedAll = new Label();
-                labels.Add(lblSharedAll);
                 labels.Add(lblLine);
                 labels.Add(lblTeamName);
                 labels.Add(lblNameDisp);
                 labels.Add(lblSharedDisp);
+                lblSharedDisp.MouseEnter += new EventHandler(lblSharedDisp_MouseEnter);
+                lblSharedDisp.MouseLeave += new EventHandler(lblSharedDisp_MouseLeave);
                 metTabControl.SelectedTab.Controls.Add(lblTeamName);
                 metTabControl.SelectedTab.Controls.Add(lblNameDisp);
                 metTabControl.SelectedTab.Controls.Add(lblLine);
                 metTabControl.SelectedTab.Controls.Add(lblSharedDisp);
-                metTabControl.SelectedTab.Controls.Add(lblSharedAll);
                 lblLine.Location = new Point(5, 85);
                 lblTeamName.Location = new Point(12, 3);
                 lblNameDisp.Location = new Point(65, 32);
-                lblSharedDisp.Location = new Point(400, 32);
-                lblSharedAll.Location = new Point(400, 38);
+                lblSharedDisp.Location = new Point(365, 32);
                 lblLine.Text = "";
-                lblLine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-                lblSharedAll.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                lblLine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                lblNameDisp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                lblSharedDisp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
                 lblLine.AutoSize = false;
                 lblLine.Height = 2;
                 lblLine.Width = 1175;
                 lblTeamName.Text = "Team 1";
-                lblSharedAll.Hide();
 
                 if (shared[division, team, 1] == null)
                 {
@@ -199,19 +200,28 @@ namespace Fixtures
                 else
                 {
                     //More than one shared teams
+                    labels.Add(lblSharedAll);
+                    metTabControl.SelectedTab.Controls.Add(lblSharedAll);
+                    lblSharedAll.Location = new Point(500, 50);
+                    lblSharedAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                    lblSharedAll.Hide();
+                    lblSharedAll.Font = new Font("Nirmala UI Semilight", 12);
                     lblSharedDisp.Text = shared[division, team, 0] + "...";                   
 
                     if (shared[division, team, 2] == null)
                     {
-                        lblSharedAll.Text = shared[division, team, 1];
+                        lblSharedAll.Text = "..." + shared[division, team, 1];
+                        lblSharedAll.Size = new Size(100, 25);
                     }
                     else if (shared[division, team, 3] == null)
                     {
-                        lblSharedAll.Text = shared[division, team, 1] + shared[division, team, 2];
+                        lblSharedAll.Text = "..." + shared[division, team, 1] + "\n" + shared[division, team, 2];
+                        lblSharedAll.Size = new Size(100, 50);
                     }
                     else
                     {
-                        lblSharedAll.Text = shared[division, team, 1] + shared[division, team, 2] + shared[division, team, 3];
+                        lblSharedAll.Text = "..." + shared[division, team, 1] + "\n" + shared[division, team, 2] + "\n" + shared[division, team, 3];
+                        lblSharedAll.Size = new Size(100, 75);
                     }
                 }
                 lblNameDisp.Text = name[0, 0];
@@ -221,8 +231,8 @@ namespace Fixtures
                 lblTeamName.BackColor = Color.White;
                 lblNameDisp.BackColor = Color.White;
                 lblSharedDisp.BackColor = Color.White;
-                lblNameDisp.Size = new Size(300, 50);
-                lblSharedDisp.Size = new Size(300, 50);
+                lblNameDisp.Size = new Size(300, 40);
+                lblSharedDisp.Size = new Size(300, 40);
                 //Increment
                 team++;
                 sharedCount = 0;
@@ -238,10 +248,10 @@ namespace Fixtures
                 btnShared.Hide();
                 txtShared.Hide();
                 lblHome.Hide();
-                datePickerHome.Hide();
+                cmbBoxHome.Hide();
                 btnHome.Hide();
                 lblNoPlay.Hide();
-                datePickerNoPlay.Hide();
+                cmbBoxNoPlay.Hide();
                 btnNoPlay.Hide();
                 //Move down
                 lblName.Location = new Point(17, addTeamBtnY-90 + 32);
@@ -251,10 +261,10 @@ namespace Fixtures
                 btnShared.Location = new Point(391, addTeamBtnY-90 + 58);
                 txtShared.Location = new Point(332, addTeamBtnY-90 + 32);
                 lblHome.Location = new Point(472, addTeamBtnY-90 + 32);
-                datePickerHome.Location = new Point(556, addTeamBtnY-90 + 32);
+                cmbBoxHome.Location = new Point(556, addTeamBtnY-90 + 32);
                 btnHome.Location = new Point(681, addTeamBtnY-90 + 58);
                 lblNoPlay.Location = new Point(762, addTeamBtnY-90 + 32);
-                datePickerNoPlay.Location = new Point(865, addTeamBtnY-90 + 32);
+                cmbBoxNoPlay.Location = new Point(865, addTeamBtnY-90 + 32);
                 btnNoPlay.Location = new Point(990, addTeamBtnY-90 + 58);
                 metBtnAddTeam.Text = "Add team +";
                 sharedCount = 0;
@@ -309,7 +319,13 @@ namespace Fixtures
 
         private void lblSharedDisp_MouseEnter(object sender, EventArgs e)
         {
-            //lblSharedAll.Show();
+            lblSharedAll.BringToFront();
+            lblSharedAll.Show();
+        }
+
+        private void lblSharedDisp_MouseLeave(object sender, EventArgs e)
+        {
+            lblSharedAll.Hide();
         }
     }
 }
