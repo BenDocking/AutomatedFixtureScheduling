@@ -150,16 +150,82 @@ namespace Fixtures
             }
             else if (addTeamBtnY != 902 && metBtnAddTeam.Text == "Submit")
             {
+                string input = txtShared.Text;
+                input = input.Trim();
                 //Add team
                 name[0, team] = txtName.Text;
+
+                if (txtShared.Text != "Enter team name" && input != "")
+                {
+                    shared[division, team, sharedCount] = txtShared.Text;
+                }
+
                 //Display team
-                List<MetroLabel> labels = new List<MetroLabel>();
-                MetroLabel lblTeamName = new MetroLabel();
+                List<Label> labels = new List<Label>();
+                List<MetroComboBox> comboBoxes = new List<MetroComboBox>();
+                Label lblLine = new Label();
+                Label lblTeamName = new Label();
+                Label lblNameDisp = new Label();
+                Label lblSharedDisp = new Label();
+                Label lblSharedAll = new Label();
+                labels.Add(lblSharedAll);
+                labels.Add(lblLine);
                 labels.Add(lblTeamName);
+                labels.Add(lblNameDisp);
+                labels.Add(lblSharedDisp);
                 metTabControl.SelectedTab.Controls.Add(lblTeamName);
-                lblTeamName.Location = new Point(5, 5);
+                metTabControl.SelectedTab.Controls.Add(lblNameDisp);
+                metTabControl.SelectedTab.Controls.Add(lblLine);
+                metTabControl.SelectedTab.Controls.Add(lblSharedDisp);
+                metTabControl.SelectedTab.Controls.Add(lblSharedAll);
+                lblLine.Location = new Point(5, 85);
+                lblTeamName.Location = new Point(12, 3);
+                lblNameDisp.Location = new Point(65, 32);
+                lblSharedDisp.Location = new Point(400, 32);
+                lblSharedAll.Location = new Point(400, 38);
+                lblLine.Text = "";
+                lblLine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                lblSharedAll.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                lblLine.AutoSize = false;
+                lblLine.Height = 2;
+                lblLine.Width = 1175;
+                lblTeamName.Text = "Team 1";
+                lblSharedAll.Hide();
+
+                if (shared[division, team, 1] == null)
+                {
+                    lblSharedDisp.Text = shared[0, 0, 0];
+                }
+                else
+                {
+                    //More than one shared teams
+                    lblSharedDisp.Text = shared[division, team, 0] + "...";                   
+
+                    if (shared[division, team, 2] == null)
+                    {
+                        lblSharedAll.Text = shared[division, team, 1];
+                    }
+                    else if (shared[division, team, 3] == null)
+                    {
+                        lblSharedAll.Text = shared[division, team, 1] + shared[division, team, 2];
+                    }
+                    else
+                    {
+                        lblSharedAll.Text = shared[division, team, 1] + shared[division, team, 2] + shared[division, team, 3];
+                    }
+                }
+                lblNameDisp.Text = name[0, 0];
+                lblTeamName.Font = new Font("Nirmala UI Semilight", 14);
+                lblNameDisp.Font = new Font("Nirmala UI Semilight", 18);
+                lblSharedDisp.Font = new Font("Nirmala UI Semilight", 18);
+                lblTeamName.BackColor = Color.White;
+                lblNameDisp.BackColor = Color.White;
+                lblSharedDisp.BackColor = Color.White;
+                lblNameDisp.Size = new Size(300, 50);
+                lblSharedDisp.Size = new Size(300, 50);
                 //Increment
                 team++;
+                sharedCount = 0;
                 //Reset
                 txtName.Text = "Enter team name";
                 txtShared.Text = "Enter team name";
@@ -177,18 +243,19 @@ namespace Fixtures
                 lblNoPlay.Hide();
                 datePickerNoPlay.Hide();
                 btnNoPlay.Hide();
-                lblName.Location = new Point(17, addTeamBtnY-40);
-                lblTeam.Location = new Point(5, addTeamBtnY-70);
-                txtName.Location = new Point(71, addTeamBtnY);
-                lblShared.Location = new Point(221, addTeamBtnY);
-                btnShared.Location = new Point(391, addTeamBtnY);
-                txtShared.Location = new Point(332, addTeamBtnY);
-                lblHome.Location = new Point(472, addTeamBtnY);
-                datePickerHome.Location = new Point(556, addTeamBtnY);
-                btnHome.Location = new Point(681, addTeamBtnY);
-                lblNoPlay.Location = new Point(762, addTeamBtnY);
-                datePickerNoPlay.Location = new Point(865, addTeamBtnY);
-                btnNoPlay.Location = new Point(990, addTeamBtnY);
+                //Move down
+                lblName.Location = new Point(17, addTeamBtnY-90 + 32);
+                lblTeam.Location = new Point(12, addTeamBtnY-90);
+                txtName.Location = new Point(71, addTeamBtnY-90 + 32);
+                lblShared.Location = new Point(221, addTeamBtnY-90 + 32);
+                btnShared.Location = new Point(391, addTeamBtnY-90 + 58);
+                txtShared.Location = new Point(332, addTeamBtnY-90 + 32);
+                lblHome.Location = new Point(472, addTeamBtnY-90 + 32);
+                datePickerHome.Location = new Point(556, addTeamBtnY-90 + 32);
+                btnHome.Location = new Point(681, addTeamBtnY-90 + 58);
+                lblNoPlay.Location = new Point(762, addTeamBtnY-90 + 32);
+                datePickerNoPlay.Location = new Point(865, addTeamBtnY-90 + 32);
+                btnNoPlay.Location = new Point(990, addTeamBtnY-90 + 58);
                 metBtnAddTeam.Text = "Add team +";
                 sharedCount = 0;
             }
@@ -238,6 +305,11 @@ namespace Fixtures
                 txtShared.Text = "";
                 txtShared.Focus();
             }
+        }
+
+        private void lblSharedDisp_MouseEnter(object sender, EventArgs e)
+        {
+            //lblSharedAll.Show();
         }
     }
 }
