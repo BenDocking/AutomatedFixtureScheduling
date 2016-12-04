@@ -24,8 +24,10 @@ namespace Fixtures
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         //Global input variables
-        private string[,] name = new string[20, 20]; //Division, Team
-        private string[, ,] shared = new string[20,20,4]; //Max 20 divisions, 20 teams, 5 teams for single grounds
+        private string[,] name = new string[15, 12]; //Division, Team
+        private string[, ,] shared = new string[15,12,4]; //Max 15 divisions, 12 teams, 4 teams for single grounds
+        private string[, ,] datesHome = new string[15, 12, 26]; //Division, Team, Dates
+        private string[, ,] datesNoPlay = new string[15, 12, 26]; //Division, Team, Dates
         //Create objects
         List<Label> labels = new List<Label>();
         List<MetroComboBox> comboBoxes = new List<MetroComboBox>();
@@ -35,12 +37,23 @@ namespace Fixtures
         Label lblNameDisp = new Label();
         Label lblSharedDisp = new Label();
         Label lblSharedAll = new Label();
+        Label lblDatesHome = new Label();
+        Label lblDatesNoPlay = new Label();
+        Label lblDatesHomeAll = new Label();
+        Label lblDatesNoPlayAll = new Label();
+        Label lblSharedLabelDisp = new Label();
+        Label lblPlayHomeDisp = new Label();
+        Label lblNoPlayDisp = new Label();
+        MetroButton del = new MetroButton();
         //
         private int division = 0;
         private int team = 0;
         private int sharedCount = 0;
+        private int homeCount = 0;
+        private int noPlayCount = 0;
         private int newTabIndex = 1;
         private int addTeamBtnY = 90;
+        private int[] teamCount = new int[15];
 
         public Form1()
         {
@@ -61,6 +74,10 @@ namespace Fixtures
             metBtnAddTeam.Location = new Point(5, 5);
             txtName.Text = "Enter team name";
             txtShared.Text = "Enter team name";
+            cmbBoxHome.Text = "Select a date";
+            cmbBoxNoPlay.Text = "Select a date";
+            cmbBoxHome.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay.DropDownStyle = ComboBoxStyle.DropDownList;
             txtName.ForeColor = Color.Gray;
             txtShared.ForeColor = Color.Gray;
             lblName.Hide();
@@ -138,7 +155,7 @@ namespace Fixtures
 
         private void metBtnAddTeam_Click(object sender, EventArgs e)
         {
-            if (addTeamBtnY != 902 && metBtnAddTeam.Text == "Add team +") //20 teams max
+            if (teamCount[division] != 12 && metBtnAddTeam.Text == "Add team +") //15 teams max
             {
                 //Add a team
                 lblName.Show();
@@ -155,119 +172,241 @@ namespace Fixtures
                 btnNoPlay.Show();
                 metBtnAddTeam.Text = "Submit";
                 metBtnAddTeam.Location = new Point(5, addTeamBtnY);
-                addTeamBtnY += 90;
+                addTeamBtnY += 35;
             }
             else if (addTeamBtnY != 902 && metBtnAddTeam.Text == "Submit")
             {
-                string input = txtShared.Text;
-                input = input.Trim();
-                //Add team
-                name[0, team] = txtName.Text;
+                string input = txtName.Text;
+                input.Trim();
 
-                if (txtShared.Text != "Enter team name" && input != "")
+                if (input != "" && txtName.Text != "Enter team name")
                 {
-                    shared[division, team, sharedCount] = txtShared.Text;
-                }
+                    input = txtShared.Text;
+                    input = input.Trim();
+                    //Add team
+                    name[0, team] = txtName.Text;
 
-                //Display team
-                labels.Add(lblLine);
-                labels.Add(lblTeamName);
-                labels.Add(lblNameDisp);
-                labels.Add(lblSharedDisp);
-                lblSharedDisp.MouseEnter += new EventHandler(lblSharedDisp_MouseEnter);
-                lblSharedDisp.MouseLeave += new EventHandler(lblSharedDisp_MouseLeave);
-                metTabControl.SelectedTab.Controls.Add(lblTeamName);
-                metTabControl.SelectedTab.Controls.Add(lblNameDisp);
-                metTabControl.SelectedTab.Controls.Add(lblLine);
-                metTabControl.SelectedTab.Controls.Add(lblSharedDisp);
-                lblLine.Location = new Point(5, 85);
-                lblTeamName.Location = new Point(12, 3);
-                lblNameDisp.Location = new Point(65, 32);
-                lblSharedDisp.Location = new Point(365, 32);
-                lblLine.Text = "";
-                lblLine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                lblNameDisp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                lblSharedDisp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                lblLine.AutoSize = false;
-                lblLine.Height = 2;
-                lblLine.Width = 1175;
-                lblTeamName.Text = "Team 1";
-
-                if (shared[division, team, 1] == null)
-                {
-                    lblSharedDisp.Text = shared[0, 0, 0];
-                }
-                else
-                {
-                    //More than one shared teams
-                    labels.Add(lblSharedAll);
-                    metTabControl.SelectedTab.Controls.Add(lblSharedAll);
-                    lblSharedAll.Location = new Point(500, 50);
-                    lblSharedAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                    lblSharedAll.Hide();
-                    lblSharedAll.Font = new Font("Nirmala UI Semilight", 12);
-                    lblSharedDisp.Text = shared[division, team, 0] + "...";                   
-
-                    if (shared[division, team, 2] == null)
+                    if (txtShared.Text != "Enter team name" && input != "")
                     {
-                        lblSharedAll.Text = "..." + shared[division, team, 1];
-                        lblSharedAll.Size = new Size(100, 25);
+                        shared[division, team, sharedCount] = txtShared.Text;
                     }
-                    else if (shared[division, team, 3] == null)
+
+                    bool invalid = false;
+                    //Check if date already exists
+                    for (int i = 0; i < homeCount; i++)
                     {
-                        lblSharedAll.Text = "..." + shared[division, team, 1] + "\n" + shared[division, team, 2];
-                        lblSharedAll.Size = new Size(100, 50);
+                        if (cmbBoxHome.Text == datesHome[division, team, i])
+                        {
+                            invalid = true;
+                        }
+                    }
+
+                    if (invalid == false && cmbBoxHome.Text != "")
+                    {
+                        //Add date to array
+                        datesHome[division, team, homeCount] = cmbBoxHome.Text;
+                    }
+
+                    invalid = false;
+
+                    for (int i = 0; i < noPlayCount; i++)
+                    {
+                        if (cmbBoxNoPlay.Text == datesNoPlay[division, team, i])
+                        {
+                            invalid = true;
+                        }
+                    }
+
+                    if (invalid == false && cmbBoxNoPlay.Text != "")
+                    {
+                        //Add date to array
+                        datesNoPlay[division, team, noPlayCount] = cmbBoxNoPlay.Text;
+                    }
+
+                    //Display team
+                    labels.Add(lblLine);
+                    labels.Add(lblTeamName);
+                    labels.Add(lblNameDisp);
+                    labels.Add(lblSharedDisp);
+                    labels.Add(lblDatesHome);
+                    labels.Add(lblDatesNoPlay);
+                    labels.Add(lblSharedLabelDisp);
+                    labels.Add(lblPlayHomeDisp);
+                    labels.Add(lblNoPlayDisp);
+                    buttons.Add(del);
+                    lblSharedDisp.MouseEnter += new EventHandler(lblSharedDisp_MouseEnter);
+                    lblSharedDisp.MouseLeave += new EventHandler(lblSharedDisp_MouseLeave);
+                    lblDatesHome.MouseEnter += new EventHandler(lblDatesHome_MouseEnter);
+                    lblDatesHome.MouseLeave += new EventHandler(lblDatesHome_MouseLeave);
+                    lblDatesNoPlay.MouseEnter += new EventHandler(lblDatesNoPlay_MouseEnter);
+                    lblDatesNoPlay.MouseLeave += new EventHandler(lblDatesNoPlay_MouseLeave);
+                    del.Click += new EventHandler(del_Click);
+                    metTabControl.SelectedTab.Controls.Add(lblTeamName);
+                    metTabControl.SelectedTab.Controls.Add(lblNameDisp);
+                    metTabControl.SelectedTab.Controls.Add(lblLine);
+                    metTabControl.SelectedTab.Controls.Add(lblSharedDisp);
+                    metTabControl.SelectedTab.Controls.Add(lblDatesHome);
+                    metTabControl.SelectedTab.Controls.Add(lblDatesNoPlay);
+                    metTabControl.SelectedTab.Controls.Add(lblSharedLabelDisp);
+                    metTabControl.SelectedTab.Controls.Add(lblPlayHomeDisp);
+                    metTabControl.SelectedTab.Controls.Add(lblNoPlayDisp);
+                    metTabControl.SelectedTab.Controls.Add(del);
+                    lblLine.Location = new Point(5, 32);
+                    lblTeamName.Location = new Point(8, 3);
+                    lblNameDisp.Location = new Point(65, 3);
+                    lblSharedDisp.Location = new Point(340, 3);
+                    lblDatesHome.Location = new Point(610, 3);
+                    lblDatesNoPlay.Location = new Point(900, 3);
+                    lblSharedLabelDisp.Location = new Point(280, 3);
+                    lblPlayHomeDisp.Location = new Point(555, 3);
+                    lblNoPlayDisp.Location = new Point(830, 3);
+                    del.Location = new Point(1110, 3);
+                    lblLine.Text = "";
+                    del.Text = "Remove";
+                    lblLine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                    lblNameDisp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                    lblSharedDisp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                    lblDatesHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                    lblDatesNoPlay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                    lblLine.AutoSize = false;
+                    lblLine.Height = 2;
+                    lblLine.Width = 1175;
+                    lblTeamName.Text = "Team 1";
+                    lblSharedLabelDisp.Text = "Shared:";
+                    lblPlayHomeDisp.Text = "Home:";
+                    lblNoPlayDisp.Text = "No Play:";
+
+                    //Label to display all shared grounds teams
+                    if (shared[division, team, 1] == null)
+                    {
+                        lblSharedDisp.Text = shared[division, team, 0];
                     }
                     else
                     {
-                        lblSharedAll.Text = "..." + shared[division, team, 1] + "\n" + shared[division, team, 2] + "\n" + shared[division, team, 3];
-                        lblSharedAll.Size = new Size(100, 75);
+                        //More than one shared teams
+                        labels.Add(lblSharedAll);
+                        metTabControl.SelectedTab.Controls.Add(lblSharedAll);
+                        lblSharedAll.Location = new Point(500, 29);
+                        lblSharedAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                        lblSharedAll.Hide();
+                        lblSharedAll.Font = new Font("Nirmala UI Semilight", 12);
+                        lblSharedDisp.Text = shared[division, team, 0] + "...";
+
+                        if (shared[division, team, 2] == null)
+                        {
+                            lblSharedAll.Text = "..." + shared[division, team, 1];
+                            lblSharedAll.Size = new Size(300, 25);
+                        }
+                        else if (shared[division, team, 3] == null)
+                        {
+                            lblSharedAll.Text = "..." + shared[division, team, 1] + "\n" + shared[division, team, 2];
+                            lblSharedAll.Size = new Size(300, 50);
+                        }
+                        else
+                        {
+                            lblSharedAll.Text = "..." + shared[division, team, 1] + "\n" + shared[division, team, 2] + "\n" + shared[division, team, 3];
+                            lblSharedAll.Size = new Size(300, 75);
+                        }
+                    }
+                    //Label to display all home dates
+                    if (datesHome[division, team, 1] == null)
+                    {
+                        lblDatesHome.Text = datesHome[division, team, 0];
+                    }
+                    else
+                    {
+                        //More than one home dates
+                        labels.Add(lblDatesHomeAll);
+                        metTabControl.SelectedTab.Controls.Add(lblDatesHomeAll);
+                        lblDatesHomeAll.Location = new Point(800, 29);
+                        lblDatesHomeAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                        lblDatesHomeAll.Hide();
+                        lblDatesHomeAll.Font = new Font("Nirmala UI Semilight", 12);
+                        lblDatesHome.Text = datesHome[division, team, 0] + "...";
+                        lblDatesHomeAll.Text = "...";
+
+                        for (int i = 0; i < homeCount; i++)
+                        {
+                            lblDatesHomeAll.Text += datesHome[division, team, i] + "\n";
+                        }
+
+                        lblDatesHomeAll.Size = new Size(300, 25 * homeCount);
+                    }
+
+                    lblNameDisp.Text = name[0, 0];
+                    lblTeamName.Font = new Font("Nirmala UI Semilight", 12);
+                    lblNameDisp.Font = new Font("Nirmala UI Semilight", 12);
+                    lblSharedDisp.Font = new Font("Nirmala UI Semilight", 12);
+                    lblDatesHome.Font = new Font("Nirmala UI Semilight", 12);
+                    lblDatesNoPlay.Font = new Font("Nirmala UI Semilight", 12);
+                    lblSharedLabelDisp.Font = new Font("Nirmala UI Semilight", 12);
+                    lblPlayHomeDisp.Font = new Font("Nirmala UI Semilight", 12);
+                    lblNoPlayDisp.Font = new Font("Nirmala UI Semilight", 12);
+                    lblTeamName.BackColor = Color.White;
+                    lblNameDisp.BackColor = Color.White;
+                    lblSharedDisp.BackColor = Color.White;
+                    lblDatesHome.BackColor = Color.White;
+                    lblDatesNoPlay.BackColor = Color.White;
+                    lblSharedLabelDisp.BackColor = Color.White;
+                    lblPlayHomeDisp.BackColor = Color.White;
+                    lblNoPlayDisp.BackColor = Color.White;
+                    lblTeamName.Size = new Size(55, 25);
+                    lblNameDisp.Size = new Size(200, 25);
+                    lblSharedDisp.Size = new Size(200, 25);
+                    lblDatesHome.Size = new Size(200, 25);
+                    lblDatesNoPlay.Size = new Size(200, 25);
+                    del.Size = new Size(60, 25);
+                    //Increment
+                    team++;
+                    sharedCount = 0;
+                    homeCount = 0;
+                    noPlayCount = 0;
+                    teamCount[division]++;
+                    //Reset
+                    txtName.Text = "Enter team name";
+                    txtShared.Text = "Enter team name";
+                    txtName.ForeColor = Color.Gray;
+                    txtShared.ForeColor = Color.Gray;
+                    lblName.Hide();
+                    lblTeam.Hide();
+                    txtName.Hide();
+                    lblShared.Hide();
+                    btnShared.Hide();
+                    txtShared.Hide();
+                    lblHome.Hide();
+                    cmbBoxHome.Hide();
+                    btnHome.Hide();
+                    lblNoPlay.Hide();
+                    cmbBoxNoPlay.Hide();
+                    btnNoPlay.Hide();
+                    //Move down
+                    if (teamCount[division] == 12)
+                    {
+                        metBtnAddTeam.Hide();
+                    }
+                    else
+                    {
+                        lblName.Location = new Point(17, addTeamBtnY - 90 + 32);
+                        lblTeam.Location = new Point(12, addTeamBtnY - 90);
+                        txtName.Location = new Point(71, addTeamBtnY - 90 + 32);
+                        lblShared.Location = new Point(221, addTeamBtnY - 90 + 32);
+                        btnShared.Location = new Point(391, addTeamBtnY - 90 + 58);
+                        txtShared.Location = new Point(332, addTeamBtnY - 90 + 32);
+                        lblHome.Location = new Point(472, addTeamBtnY - 90 + 32);
+                        cmbBoxHome.Location = new Point(556, addTeamBtnY - 90 + 32);
+                        btnHome.Location = new Point(681, addTeamBtnY - 90 + 58);
+                        lblNoPlay.Location = new Point(762, addTeamBtnY - 90 + 32);
+                        cmbBoxNoPlay.Location = new Point(865, addTeamBtnY - 90 + 32);
+                        btnNoPlay.Location = new Point(990, addTeamBtnY - 90 + 58);
+                        metBtnAddTeam.Text = "Add team +";
+                        metBtnAddTeam.Location = new Point(5, addTeamBtnY - 88);
+                        sharedCount = 0;
                     }
                 }
-                lblNameDisp.Text = name[0, 0];
-                lblTeamName.Font = new Font("Nirmala UI Semilight", 14);
-                lblNameDisp.Font = new Font("Nirmala UI Semilight", 18);
-                lblSharedDisp.Font = new Font("Nirmala UI Semilight", 18);
-                lblTeamName.BackColor = Color.White;
-                lblNameDisp.BackColor = Color.White;
-                lblSharedDisp.BackColor = Color.White;
-                lblNameDisp.Size = new Size(300, 40);
-                lblSharedDisp.Size = new Size(300, 40);
-                //Increment
-                team++;
-                sharedCount = 0;
-                //Reset
-                txtName.Text = "Enter team name";
-                txtShared.Text = "Enter team name";
-                txtName.ForeColor = Color.Gray;
-                txtShared.ForeColor = Color.Gray;
-                lblName.Hide();
-                lblTeam.Hide();
-                txtName.Hide();
-                lblShared.Hide();
-                btnShared.Hide();
-                txtShared.Hide();
-                lblHome.Hide();
-                cmbBoxHome.Hide();
-                btnHome.Hide();
-                lblNoPlay.Hide();
-                cmbBoxNoPlay.Hide();
-                btnNoPlay.Hide();
-                //Move down
-                lblName.Location = new Point(17, addTeamBtnY-90 + 32);
-                lblTeam.Location = new Point(12, addTeamBtnY-90);
-                txtName.Location = new Point(71, addTeamBtnY-90 + 32);
-                lblShared.Location = new Point(221, addTeamBtnY-90 + 32);
-                btnShared.Location = new Point(391, addTeamBtnY-90 + 58);
-                txtShared.Location = new Point(332, addTeamBtnY-90 + 32);
-                lblHome.Location = new Point(472, addTeamBtnY-90 + 32);
-                cmbBoxHome.Location = new Point(556, addTeamBtnY-90 + 32);
-                btnHome.Location = new Point(681, addTeamBtnY-90 + 58);
-                lblNoPlay.Location = new Point(762, addTeamBtnY-90 + 32);
-                cmbBoxNoPlay.Location = new Point(865, addTeamBtnY-90 + 32);
-                btnNoPlay.Location = new Point(990, addTeamBtnY-90 + 58);
-                metBtnAddTeam.Text = "Add team +";
-                sharedCount = 0;
+                else
+                {
+                    MessageBox.Show("Please enter a team name", "No name entered", MessageBoxButtons.OK);
+                }
             }
             else
             {
@@ -281,7 +420,6 @@ namespace Fixtures
             if (txtName.Text == "Enter team name")
             {
                 txtName.Text = "";
-                txtName.ForeColor = Color.Black;
             }
         }
 
@@ -291,7 +429,6 @@ namespace Fixtures
             if (txtShared.Text == "Enter team name")
             {
                 txtShared.Text = "";
-                txtShared.ForeColor = Color.Black;
             }
         }
 
@@ -317,6 +454,48 @@ namespace Fixtures
             }
         }
 
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            bool invalid = false;
+            //Check if date already exists
+            for (int i = 0; i < homeCount; i++)
+            {
+                if (cmbBoxHome.Text == datesHome[division, team, i])
+                {
+                    invalid = true;
+                }
+            }
+
+            if (invalid == false && cmbBoxHome.Text != "")
+            {
+                //Add date to array
+                datesHome[division, team, homeCount] = cmbBoxHome.Text;
+                cmbBoxHome.SelectedIndex = -1;
+                homeCount++;
+            }
+        }
+
+        private void btnNoPlay_Click(object sender, EventArgs e)
+        {
+            bool invalid = false;
+
+            for (int i = 0; i < noPlayCount; i++)
+            {
+                if (cmbBoxNoPlay.Text == datesNoPlay[division, team, i])
+                {
+                    invalid = true;
+                }
+            }
+
+            if (invalid == false && cmbBoxNoPlay.Text != "")
+            {
+                //Add date to array
+                datesNoPlay[division, team, noPlayCount] = cmbBoxNoPlay.Text;
+                cmbBoxNoPlay.SelectedIndex = -1;
+                noPlayCount++;
+            }
+        }
+
         private void lblSharedDisp_MouseEnter(object sender, EventArgs e)
         {
             lblSharedAll.BringToFront();
@@ -326,6 +505,42 @@ namespace Fixtures
         private void lblSharedDisp_MouseLeave(object sender, EventArgs e)
         {
             lblSharedAll.Hide();
+        }
+
+        private void lblDatesHome_MouseEnter(object sender, EventArgs e)
+        {
+            lblDatesHomeAll.BringToFront();
+            lblDatesHomeAll.Show();
+        }
+
+        private void lblDatesHome_MouseLeave(object sender, EventArgs e)
+        {
+            lblDatesHomeAll.Hide();
+        }
+
+        private void lblDatesNoPlay_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDatesNoPlay_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtShared_TextChanged(object sender, EventArgs e)
+        {
+            txtShared.ForeColor = Color.Black;
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            txtName.ForeColor = Color.Black;
+        }
+
+        private void del_Click(object sender, EventArgs e)
+        {
+            //Remove team
         }
     }
 }
