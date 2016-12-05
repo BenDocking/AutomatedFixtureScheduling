@@ -174,7 +174,7 @@ namespace Fixtures
                 metBtnAddTeam.Location = new Point(5, addTeamBtnY);
                 addTeamBtnY += 35;
             }
-            else if (addTeamBtnY != 902 && metBtnAddTeam.Text == "Submit")
+            else if (teamCount[division] != 12 && metBtnAddTeam.Text == "Submit")
             {
                 string input = txtName.Text;
                 input.Trim();
@@ -189,6 +189,7 @@ namespace Fixtures
                     if (txtShared.Text != "Enter team name" && input != "")
                     {
                         shared[division, team, sharedCount] = txtShared.Text;
+                        sharedCount++;
                     }
 
                     bool invalid = false;
@@ -205,6 +206,7 @@ namespace Fixtures
                     {
                         //Add date to array
                         datesHome[division, team, homeCount] = cmbBoxHome.Text;
+                        homeCount++;
                     }
 
                     invalid = false;
@@ -221,6 +223,7 @@ namespace Fixtures
                     {
                         //Add date to array
                         datesNoPlay[division, team, noPlayCount] = cmbBoxNoPlay.Text;
+                        noPlayCount++;
                     }
 
                     //Display team
@@ -295,17 +298,17 @@ namespace Fixtures
                         if (shared[division, team, 2] == null)
                         {
                             lblSharedAll.Text = "..." + shared[division, team, 1];
-                            lblSharedAll.Size = new Size(300, 25);
+                            lblSharedAll.Size = new Size(200, 25);
                         }
                         else if (shared[division, team, 3] == null)
                         {
                             lblSharedAll.Text = "..." + shared[division, team, 1] + "\n" + shared[division, team, 2];
-                            lblSharedAll.Size = new Size(300, 50);
+                            lblSharedAll.Size = new Size(200, 50);
                         }
                         else
                         {
                             lblSharedAll.Text = "..." + shared[division, team, 1] + "\n" + shared[division, team, 2] + "\n" + shared[division, team, 3];
-                            lblSharedAll.Size = new Size(300, 75);
+                            lblSharedAll.Size = new Size(200, 75);
                         }
                     }
                     //Label to display all home dates
@@ -325,12 +328,36 @@ namespace Fixtures
                         lblDatesHome.Text = datesHome[division, team, 0] + "...";
                         lblDatesHomeAll.Text = "...";
 
-                        for (int i = 0; i < homeCount; i++)
+                        for (int i = 1; i < homeCount; i++)
                         {
                             lblDatesHomeAll.Text += datesHome[division, team, i] + "\n";
                         }
 
-                        lblDatesHomeAll.Size = new Size(300, 25 * homeCount);
+                        lblDatesHomeAll.Size = new Size(200, 25 * homeCount);
+                    }
+                    //Label to display all dates not playing
+                    if (datesNoPlay[division, team, 1] == null)
+                    {
+                        lblDatesNoPlay.Text = datesNoPlay[division, team, 0];
+                    }
+                    else
+                    {
+                        //More than one no play dates
+                        labels.Add(lblDatesNoPlayAll);
+                        metTabControl.SelectedTab.Controls.Add(lblDatesNoPlayAll);
+                        lblDatesNoPlayAll.Location = new Point(800, 29);
+                        lblDatesNoPlayAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+                        lblDatesNoPlayAll.Hide();
+                        lblDatesNoPlayAll.Font = new Font("Nirmala UI Semilight", 12);
+                        lblDatesNoPlay.Text = datesNoPlay[division, team, 0] + "...";
+                        lblDatesNoPlayAll.Text = "...";
+
+                        for (int i = 1; i < noPlayCount; i++)
+                        {
+                            lblDatesNoPlayAll.Text += datesNoPlay[division, team, i] + "\n";
+                        }
+
+                        lblDatesNoPlayAll.Size = new Size(200, 25 * homeCount);
                     }
 
                     lblNameDisp.Text = name[0, 0];
@@ -520,12 +547,13 @@ namespace Fixtures
 
         private void lblDatesNoPlay_MouseEnter(object sender, EventArgs e)
         {
-
+            lblDatesNoPlayAll.BringToFront();
+            lblDatesNoPlayAll.Show();
         }
 
         private void lblDatesNoPlay_MouseLeave(object sender, EventArgs e)
         {
-
+            lblDatesNoPlayAll.Hide();
         }
 
         private void txtShared_TextChanged(object sender, EventArgs e)
