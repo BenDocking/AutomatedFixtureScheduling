@@ -53,14 +53,97 @@ namespace Fixtures
             String[] param = { "-q", "-f", @"calculate.pl" };
             PlEngine.Initialize(param);
             //Initialize
+            txtName.Text = "Enter a team";
+            txtName1.Text = "Enter a team";
+            txtName2.Text = "Enter a team";
+            txtName3.Text = "Enter a team";
+            txtName4.Text = "Enter a team";
+            txtName5.Text = "Enter a team";
+            txtName6.Text = "Enter a team";
+            txtName7.Text = "Enter a team";
+            txtName8.Text = "Enter a team";
+            txtName9.Text = "Enter a team";
+            txtName10.Text = "Enter a team";
+            txtName11.Text = "Enter a team";
+            txtName12.Text = "Enter a team";
+            txtName13.Text = "Enter a team";
+            txtName14.Text = "Enter a team";
+            txtShared.Text = "Enter a team";
+            txtShared1.Text = "Enter a team";
+            txtShared2.Text = "Enter a team";
+            txtShared3.Text = "Enter a team";
+            txtShared4.Text = "Enter a team";
+            txtShared5.Text = "Enter a team";
+            txtShared6.Text = "Enter a team";
+            txtShared7.Text = "Enter a team";
+            txtShared8.Text = "Enter a team";
+            txtShared9.Text = "Enter a team";
+            txtShared10.Text = "Enter a team";
+            txtShared11.Text = "Enter a team";
+            txtShared12.Text = "Enter a team";
+            txtShared13.Text = "Enter a team";
+            txtShared14.Text = "Enter a team";
             metTabControl.SelectedIndex = 0;
-            cmbBoxHome.Text = "Select a date";
-            cmbBoxNoPlay.Text = "Select a date";
             cmbBoxHome.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome1.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome2.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome3.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome4.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome5.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome6.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome7.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome8.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome9.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome10.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome11.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome12.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome13.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxHome14.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbBoxNoPlay.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay1.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay2.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay3.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay4.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay5.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay6.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay7.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay8.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay9.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay10.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay11.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay12.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay13.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbBoxNoPlay14.DropDownStyle = ComboBoxStyle.DropDownList;
             txtName.ForeColor = Color.Gray;
+            txtName1.ForeColor = Color.Gray;
+            txtName2.ForeColor = Color.Gray;
+            txtName3.ForeColor = Color.Gray;
+            txtName4.ForeColor = Color.Gray;
+            txtName5.ForeColor = Color.Gray;
+            txtName6.ForeColor = Color.Gray;
+            txtName7.ForeColor = Color.Gray;
+            txtName8.ForeColor = Color.Gray;
+            txtName9.ForeColor = Color.Gray;
+            txtName10.ForeColor = Color.Gray;
+            txtName11.ForeColor = Color.Gray;
+            txtName12.ForeColor = Color.Gray;
+            txtName13.ForeColor = Color.Gray;
+            txtName14.ForeColor = Color.Gray;
             txtShared.ForeColor = Color.Gray;
-
+            txtShared1.ForeColor = Color.Gray;
+            txtShared2.ForeColor = Color.Gray;
+            txtShared3.ForeColor = Color.Gray;
+            txtShared4.ForeColor = Color.Gray;
+            txtShared5.ForeColor = Color.Gray;
+            txtShared6.ForeColor = Color.Gray;
+            txtShared7.ForeColor = Color.Gray;
+            txtShared8.ForeColor = Color.Gray;
+            txtShared9.ForeColor = Color.Gray;
+            txtShared10.ForeColor = Color.Gray;
+            txtShared11.ForeColor = Color.Gray;
+            txtShared12.ForeColor = Color.Gray;
+            txtShared13.ForeColor = Color.Gray;
+            txtShared14.ForeColor = Color.Gray;
 
             //CODE
 
@@ -119,24 +202,6 @@ namespace Fixtures
             }
             //Move objects between tabs
 
-        }
-
-        private void txtName_Click(object sender, EventArgs e)
-        {
-            //Remove text so user can type and set colour to black
-            if (txtName.Text == "Enter team name")
-            {
-                txtName.Text = "";
-            }
-        }
-
-        private void txtShared_Click(object sender, EventArgs e)
-        {
-            //Remove text so user can type and set colour to black
-            if (txtShared.Text == "Enter team name")
-            {
-                txtShared.Text = "";
-            }
         }
 
         private void btnShared_Click(object sender, EventArgs e)
@@ -236,19 +301,21 @@ namespace Fixtures
             //lblDatesNoPlayAll.Hide();
         }
 
-        private void txtShared_TextChanged(object sender, EventArgs e)
+        private void txt_TextChanged(object sender, EventArgs e)
         {
-            //txtShared.ForeColor = Color.Black;
+            //Set colour to black
+            TextBox txtBox = (TextBox)sender;
+            txtBox.ForeColor = Color.Black;
         }
 
-        private void txtName_TextChanged(object sender, EventArgs e)
+        private void txt_Click(object sender, EventArgs e)
         {
-            //txtName.ForeColor = Color.Black;
-        }
-
-        private void del_Click(object sender, EventArgs e)
-        {
-            //Remove team
+            //Remove text so user can type
+            TextBox txtBox = (TextBox)sender;
+            if (txtBox.Text == "Enter a team")
+            {
+                txtBox.Text = "";
+            }
         }
 
         private void btnCalc_Click(object sender, EventArgs e)
