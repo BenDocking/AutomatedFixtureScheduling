@@ -33,145 +33,145 @@
             this.btnRemove14 = new MetroFramework.Controls.MetroButton();
             this.txtShared14 = new System.Windows.Forms.TextBox();
             this.txtName14 = new System.Windows.Forms.TextBox();
-            this.metroLabel36 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam14 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay14 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome14 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay14 = new MetroFramework.Controls.MetroButton();
             this.btnHome14 = new MetroFramework.Controls.MetroButton();
             this.btnShared14 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel33 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack14 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove13 = new MetroFramework.Controls.MetroButton();
             this.txtShared13 = new System.Windows.Forms.TextBox();
             this.txtName13 = new System.Windows.Forms.TextBox();
-            this.metroLabel34 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam13 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay13 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome13 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay13 = new MetroFramework.Controls.MetroButton();
             this.btnHome13 = new MetroFramework.Controls.MetroButton();
             this.btnShared13 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel31 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack13 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove12 = new MetroFramework.Controls.MetroButton();
             this.txtShared12 = new System.Windows.Forms.TextBox();
             this.txtName12 = new System.Windows.Forms.TextBox();
-            this.metroLabel32 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam12 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay12 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome12 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay12 = new MetroFramework.Controls.MetroButton();
             this.btnHome12 = new MetroFramework.Controls.MetroButton();
             this.btnShared12 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel29 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack12 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove11 = new MetroFramework.Controls.MetroButton();
             this.txtShared11 = new System.Windows.Forms.TextBox();
             this.txtName11 = new System.Windows.Forms.TextBox();
-            this.metroLabel30 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam11 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay11 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome11 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay11 = new MetroFramework.Controls.MetroButton();
             this.btnHome11 = new MetroFramework.Controls.MetroButton();
             this.btnShared11 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel27 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack11 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove10 = new MetroFramework.Controls.MetroButton();
             this.txtShared10 = new System.Windows.Forms.TextBox();
             this.txtName10 = new System.Windows.Forms.TextBox();
-            this.metroLabel28 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam10 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay10 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome10 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay10 = new MetroFramework.Controls.MetroButton();
             this.btnHome10 = new MetroFramework.Controls.MetroButton();
             this.btnShared10 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack10 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove9 = new MetroFramework.Controls.MetroButton();
             this.txtShared9 = new System.Windows.Forms.TextBox();
             this.txtName9 = new System.Windows.Forms.TextBox();
-            this.metroLabel26 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam9 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay9 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome9 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay9 = new MetroFramework.Controls.MetroButton();
             this.btnHome9 = new MetroFramework.Controls.MetroButton();
             this.btnShared9 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack9 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove8 = new MetroFramework.Controls.MetroButton();
             this.txtShared8 = new System.Windows.Forms.TextBox();
             this.txtName8 = new System.Windows.Forms.TextBox();
-            this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam8 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay8 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome8 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay8 = new MetroFramework.Controls.MetroButton();
             this.btnHome8 = new MetroFramework.Controls.MetroButton();
             this.btnShared8 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove7 = new MetroFramework.Controls.MetroButton();
             this.txtShared7 = new System.Windows.Forms.TextBox();
             this.txtName7 = new System.Windows.Forms.TextBox();
-            this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam7 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay7 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome7 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay7 = new MetroFramework.Controls.MetroButton();
             this.btnHome7 = new MetroFramework.Controls.MetroButton();
             this.btnShared7 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove6 = new MetroFramework.Controls.MetroButton();
             this.txtShared6 = new System.Windows.Forms.TextBox();
             this.txtName6 = new System.Windows.Forms.TextBox();
-            this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam6 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay6 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome6 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay6 = new MetroFramework.Controls.MetroButton();
             this.btnHome6 = new MetroFramework.Controls.MetroButton();
             this.btnShared6 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack6 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove5 = new MetroFramework.Controls.MetroButton();
             this.txtShared5 = new System.Windows.Forms.TextBox();
             this.txtName5 = new System.Windows.Forms.TextBox();
-            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam5 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay5 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome5 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay5 = new MetroFramework.Controls.MetroButton();
             this.btnHome5 = new MetroFramework.Controls.MetroButton();
             this.btnShared5 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack5 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove4 = new MetroFramework.Controls.MetroButton();
             this.txtShared4 = new System.Windows.Forms.TextBox();
             this.txtName4 = new System.Windows.Forms.TextBox();
-            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam4 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay4 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome4 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay4 = new MetroFramework.Controls.MetroButton();
             this.btnHome4 = new MetroFramework.Controls.MetroButton();
             this.btnShared4 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack4 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove3 = new MetroFramework.Controls.MetroButton();
             this.txtShared3 = new System.Windows.Forms.TextBox();
             this.txtName3 = new System.Windows.Forms.TextBox();
-            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam3 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay3 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome3 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay3 = new MetroFramework.Controls.MetroButton();
             this.btnHome3 = new MetroFramework.Controls.MetroButton();
             this.btnShared3 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack3 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove2 = new MetroFramework.Controls.MetroButton();
             this.txtShared2 = new System.Windows.Forms.TextBox();
             this.txtName2 = new System.Windows.Forms.TextBox();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam2 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay2 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome2 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay2 = new MetroFramework.Controls.MetroButton();
             this.btnHome2 = new MetroFramework.Controls.MetroButton();
             this.btnShared2 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack2 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove1 = new MetroFramework.Controls.MetroButton();
             this.txtShared1 = new System.Windows.Forms.TextBox();
             this.txtName1 = new System.Windows.Forms.TextBox();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam1 = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay1 = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome1 = new System.Windows.Forms.ComboBox();
             this.btnNoPlay1 = new MetroFramework.Controls.MetroButton();
             this.btnHome1 = new MetroFramework.Controls.MetroButton();
             this.btnShared1 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack1 = new MetroFramework.Controls.MetroLabel();
             this.btnRemove = new MetroFramework.Controls.MetroButton();
             this.txtShared = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -179,13 +179,13 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.txtTeam = new MetroFramework.Controls.MetroLabel();
             this.cmbBoxNoPlay = new System.Windows.Forms.ComboBox();
             this.cmbBoxHome = new System.Windows.Forms.ComboBox();
             this.btnNoPlay = new MetroFramework.Controls.MetroButton();
             this.btnHome = new MetroFramework.Controls.MetroButton();
             this.btnShared = new MetroFramework.Controls.MetroButton();
-            this.metroLabel35 = new MetroFramework.Controls.MetroLabel();
+            this.lblBack = new MetroFramework.Controls.MetroLabel();
             this.metroAddTab = new MetroFramework.Controls.MetroTabPage();
             this.btnCalc = new MetroFramework.Controls.MetroButton();
             this.metBtnQuit = new MetroFramework.Controls.MetroButton();
@@ -214,145 +214,145 @@
             this.metroTabPage1.Controls.Add(this.btnRemove14);
             this.metroTabPage1.Controls.Add(this.txtShared14);
             this.metroTabPage1.Controls.Add(this.txtName14);
-            this.metroTabPage1.Controls.Add(this.metroLabel36);
+            this.metroTabPage1.Controls.Add(this.txtTeam14);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay14);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome14);
             this.metroTabPage1.Controls.Add(this.btnNoPlay14);
             this.metroTabPage1.Controls.Add(this.btnHome14);
             this.metroTabPage1.Controls.Add(this.btnShared14);
-            this.metroTabPage1.Controls.Add(this.metroLabel33);
+            this.metroTabPage1.Controls.Add(this.lblBack14);
             this.metroTabPage1.Controls.Add(this.btnRemove13);
             this.metroTabPage1.Controls.Add(this.txtShared13);
             this.metroTabPage1.Controls.Add(this.txtName13);
-            this.metroTabPage1.Controls.Add(this.metroLabel34);
+            this.metroTabPage1.Controls.Add(this.txtTeam13);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay13);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome13);
             this.metroTabPage1.Controls.Add(this.btnNoPlay13);
             this.metroTabPage1.Controls.Add(this.btnHome13);
             this.metroTabPage1.Controls.Add(this.btnShared13);
-            this.metroTabPage1.Controls.Add(this.metroLabel31);
+            this.metroTabPage1.Controls.Add(this.lblBack13);
             this.metroTabPage1.Controls.Add(this.btnRemove12);
             this.metroTabPage1.Controls.Add(this.txtShared12);
             this.metroTabPage1.Controls.Add(this.txtName12);
-            this.metroTabPage1.Controls.Add(this.metroLabel32);
+            this.metroTabPage1.Controls.Add(this.txtTeam12);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay12);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome12);
             this.metroTabPage1.Controls.Add(this.btnNoPlay12);
             this.metroTabPage1.Controls.Add(this.btnHome12);
             this.metroTabPage1.Controls.Add(this.btnShared12);
-            this.metroTabPage1.Controls.Add(this.metroLabel29);
+            this.metroTabPage1.Controls.Add(this.lblBack12);
             this.metroTabPage1.Controls.Add(this.btnRemove11);
             this.metroTabPage1.Controls.Add(this.txtShared11);
             this.metroTabPage1.Controls.Add(this.txtName11);
-            this.metroTabPage1.Controls.Add(this.metroLabel30);
+            this.metroTabPage1.Controls.Add(this.txtTeam11);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay11);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome11);
             this.metroTabPage1.Controls.Add(this.btnNoPlay11);
             this.metroTabPage1.Controls.Add(this.btnHome11);
             this.metroTabPage1.Controls.Add(this.btnShared11);
-            this.metroTabPage1.Controls.Add(this.metroLabel27);
+            this.metroTabPage1.Controls.Add(this.lblBack11);
             this.metroTabPage1.Controls.Add(this.btnRemove10);
             this.metroTabPage1.Controls.Add(this.txtShared10);
             this.metroTabPage1.Controls.Add(this.txtName10);
-            this.metroTabPage1.Controls.Add(this.metroLabel28);
+            this.metroTabPage1.Controls.Add(this.txtTeam10);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay10);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome10);
             this.metroTabPage1.Controls.Add(this.btnNoPlay10);
             this.metroTabPage1.Controls.Add(this.btnHome10);
             this.metroTabPage1.Controls.Add(this.btnShared10);
-            this.metroTabPage1.Controls.Add(this.metroLabel25);
+            this.metroTabPage1.Controls.Add(this.lblBack10);
             this.metroTabPage1.Controls.Add(this.btnRemove9);
             this.metroTabPage1.Controls.Add(this.txtShared9);
             this.metroTabPage1.Controls.Add(this.txtName9);
-            this.metroTabPage1.Controls.Add(this.metroLabel26);
+            this.metroTabPage1.Controls.Add(this.txtTeam9);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay9);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome9);
             this.metroTabPage1.Controls.Add(this.btnNoPlay9);
             this.metroTabPage1.Controls.Add(this.btnHome9);
             this.metroTabPage1.Controls.Add(this.btnShared9);
-            this.metroTabPage1.Controls.Add(this.metroLabel22);
+            this.metroTabPage1.Controls.Add(this.lblBack9);
             this.metroTabPage1.Controls.Add(this.btnRemove8);
             this.metroTabPage1.Controls.Add(this.txtShared8);
             this.metroTabPage1.Controls.Add(this.txtName8);
-            this.metroTabPage1.Controls.Add(this.metroLabel23);
+            this.metroTabPage1.Controls.Add(this.txtTeam8);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay8);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome8);
             this.metroTabPage1.Controls.Add(this.btnNoPlay8);
             this.metroTabPage1.Controls.Add(this.btnHome8);
             this.metroTabPage1.Controls.Add(this.btnShared8);
-            this.metroTabPage1.Controls.Add(this.metroLabel24);
+            this.metroTabPage1.Controls.Add(this.lblBack8);
             this.metroTabPage1.Controls.Add(this.metroLabel19);
             this.metroTabPage1.Controls.Add(this.btnRemove7);
             this.metroTabPage1.Controls.Add(this.txtShared7);
             this.metroTabPage1.Controls.Add(this.txtName7);
-            this.metroTabPage1.Controls.Add(this.metroLabel20);
+            this.metroTabPage1.Controls.Add(this.txtTeam7);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay7);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome7);
             this.metroTabPage1.Controls.Add(this.btnNoPlay7);
             this.metroTabPage1.Controls.Add(this.btnHome7);
             this.metroTabPage1.Controls.Add(this.btnShared7);
-            this.metroTabPage1.Controls.Add(this.metroLabel21);
+            this.metroTabPage1.Controls.Add(this.lblBack7);
             this.metroTabPage1.Controls.Add(this.metroLabel17);
             this.metroTabPage1.Controls.Add(this.btnRemove6);
             this.metroTabPage1.Controls.Add(this.txtShared6);
             this.metroTabPage1.Controls.Add(this.txtName6);
-            this.metroTabPage1.Controls.Add(this.metroLabel18);
+            this.metroTabPage1.Controls.Add(this.txtTeam6);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay6);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome6);
             this.metroTabPage1.Controls.Add(this.btnNoPlay6);
             this.metroTabPage1.Controls.Add(this.btnHome6);
             this.metroTabPage1.Controls.Add(this.btnShared6);
-            this.metroTabPage1.Controls.Add(this.metroLabel15);
+            this.metroTabPage1.Controls.Add(this.lblBack6);
             this.metroTabPage1.Controls.Add(this.btnRemove5);
             this.metroTabPage1.Controls.Add(this.txtShared5);
             this.metroTabPage1.Controls.Add(this.txtName5);
-            this.metroTabPage1.Controls.Add(this.metroLabel16);
+            this.metroTabPage1.Controls.Add(this.txtTeam5);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay5);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome5);
             this.metroTabPage1.Controls.Add(this.btnNoPlay5);
             this.metroTabPage1.Controls.Add(this.btnHome5);
             this.metroTabPage1.Controls.Add(this.btnShared5);
-            this.metroTabPage1.Controls.Add(this.metroLabel13);
+            this.metroTabPage1.Controls.Add(this.lblBack5);
             this.metroTabPage1.Controls.Add(this.btnRemove4);
             this.metroTabPage1.Controls.Add(this.txtShared4);
             this.metroTabPage1.Controls.Add(this.txtName4);
-            this.metroTabPage1.Controls.Add(this.metroLabel14);
+            this.metroTabPage1.Controls.Add(this.txtTeam4);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay4);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome4);
             this.metroTabPage1.Controls.Add(this.btnNoPlay4);
             this.metroTabPage1.Controls.Add(this.btnHome4);
             this.metroTabPage1.Controls.Add(this.btnShared4);
-            this.metroTabPage1.Controls.Add(this.metroLabel11);
+            this.metroTabPage1.Controls.Add(this.lblBack4);
             this.metroTabPage1.Controls.Add(this.btnRemove3);
             this.metroTabPage1.Controls.Add(this.txtShared3);
             this.metroTabPage1.Controls.Add(this.txtName3);
-            this.metroTabPage1.Controls.Add(this.metroLabel12);
+            this.metroTabPage1.Controls.Add(this.txtTeam3);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay3);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome3);
             this.metroTabPage1.Controls.Add(this.btnNoPlay3);
             this.metroTabPage1.Controls.Add(this.btnHome3);
             this.metroTabPage1.Controls.Add(this.btnShared3);
-            this.metroTabPage1.Controls.Add(this.metroLabel9);
+            this.metroTabPage1.Controls.Add(this.lblBack3);
             this.metroTabPage1.Controls.Add(this.btnRemove2);
             this.metroTabPage1.Controls.Add(this.txtShared2);
             this.metroTabPage1.Controls.Add(this.txtName2);
-            this.metroTabPage1.Controls.Add(this.metroLabel10);
+            this.metroTabPage1.Controls.Add(this.txtTeam2);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay2);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome2);
             this.metroTabPage1.Controls.Add(this.btnNoPlay2);
             this.metroTabPage1.Controls.Add(this.btnHome2);
             this.metroTabPage1.Controls.Add(this.btnShared2);
-            this.metroTabPage1.Controls.Add(this.metroLabel7);
+            this.metroTabPage1.Controls.Add(this.lblBack2);
             this.metroTabPage1.Controls.Add(this.btnRemove1);
             this.metroTabPage1.Controls.Add(this.txtShared1);
             this.metroTabPage1.Controls.Add(this.txtName1);
-            this.metroTabPage1.Controls.Add(this.metroLabel8);
+            this.metroTabPage1.Controls.Add(this.txtTeam1);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay1);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome1);
             this.metroTabPage1.Controls.Add(this.btnNoPlay1);
             this.metroTabPage1.Controls.Add(this.btnHome1);
             this.metroTabPage1.Controls.Add(this.btnShared1);
-            this.metroTabPage1.Controls.Add(this.metroLabel6);
+            this.metroTabPage1.Controls.Add(this.lblBack1);
             this.metroTabPage1.Controls.Add(this.btnRemove);
             this.metroTabPage1.Controls.Add(this.txtShared);
             this.metroTabPage1.Controls.Add(this.txtName);
@@ -360,13 +360,13 @@
             this.metroTabPage1.Controls.Add(this.metroLabel4);
             this.metroTabPage1.Controls.Add(this.metroLabel3);
             this.metroTabPage1.Controls.Add(this.metroLabel2);
-            this.metroTabPage1.Controls.Add(this.metroLabel1);
+            this.metroTabPage1.Controls.Add(this.txtTeam);
             this.metroTabPage1.Controls.Add(this.cmbBoxNoPlay);
             this.metroTabPage1.Controls.Add(this.cmbBoxHome);
             this.metroTabPage1.Controls.Add(this.btnNoPlay);
             this.metroTabPage1.Controls.Add(this.btnHome);
             this.metroTabPage1.Controls.Add(this.btnShared);
-            this.metroTabPage1.Controls.Add(this.metroLabel35);
+            this.metroTabPage1.Controls.Add(this.lblBack);
             this.metroTabPage1.HorizontalScrollbar = true;
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 35);
@@ -405,15 +405,15 @@
             this.txtName14.Click += new System.EventHandler(this.txt_Click);
             this.txtName14.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel36
+            // txtTeam14
             // 
-            this.metroLabel36.AutoSize = true;
-            this.metroLabel36.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel36.Location = new System.Drawing.Point(12, 389);
-            this.metroLabel36.Name = "metroLabel36";
-            this.metroLabel36.Size = new System.Drawing.Size(61, 19);
-            this.metroLabel36.TabIndex = 176;
-            this.metroLabel36.Text = "Team 15";
+            this.txtTeam14.AutoSize = true;
+            this.txtTeam14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam14.Location = new System.Drawing.Point(12, 389);
+            this.txtTeam14.Name = "txtTeam14";
+            this.txtTeam14.Size = new System.Drawing.Size(61, 19);
+            this.txtTeam14.TabIndex = 176;
+            this.txtTeam14.Text = "Team 15";
             // 
             // cmbBoxNoPlay14
             // 
@@ -509,14 +509,14 @@
             this.btnShared14.TabIndex = 171;
             this.btnShared14.Text = "Add another";
             // 
-            // metroLabel33
+            // lblBack14
             // 
-            this.metroLabel33.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel33.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel33.Location = new System.Drawing.Point(5, 386);
-            this.metroLabel33.Name = "metroLabel33";
-            this.metroLabel33.Size = new System.Drawing.Size(982, 28);
-            this.metroLabel33.TabIndex = 170;
+            this.lblBack14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack14.Location = new System.Drawing.Point(5, 386);
+            this.lblBack14.Name = "lblBack14";
+            this.lblBack14.Size = new System.Drawing.Size(982, 28);
+            this.lblBack14.TabIndex = 170;
             // 
             // btnRemove13
             // 
@@ -546,15 +546,15 @@
             this.txtName13.Click += new System.EventHandler(this.txt_Click);
             this.txtName13.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel34
+            // txtTeam13
             // 
-            this.metroLabel34.AutoSize = true;
-            this.metroLabel34.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel34.Location = new System.Drawing.Point(12, 363);
-            this.metroLabel34.Name = "metroLabel34";
-            this.metroLabel34.Size = new System.Drawing.Size(61, 19);
-            this.metroLabel34.TabIndex = 166;
-            this.metroLabel34.Text = "Team 14";
+            this.txtTeam13.AutoSize = true;
+            this.txtTeam13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam13.Location = new System.Drawing.Point(12, 363);
+            this.txtTeam13.Name = "txtTeam13";
+            this.txtTeam13.Size = new System.Drawing.Size(61, 19);
+            this.txtTeam13.TabIndex = 166;
+            this.txtTeam13.Text = "Team 14";
             // 
             // cmbBoxNoPlay13
             // 
@@ -650,14 +650,14 @@
             this.btnShared13.TabIndex = 161;
             this.btnShared13.Text = "Add another";
             // 
-            // metroLabel31
+            // lblBack13
             // 
-            this.metroLabel31.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel31.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel31.Location = new System.Drawing.Point(5, 360);
-            this.metroLabel31.Name = "metroLabel31";
-            this.metroLabel31.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel31.TabIndex = 160;
+            this.lblBack13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack13.Location = new System.Drawing.Point(5, 360);
+            this.lblBack13.Name = "lblBack13";
+            this.lblBack13.Size = new System.Drawing.Size(982, 39);
+            this.lblBack13.TabIndex = 160;
             // 
             // btnRemove12
             // 
@@ -687,15 +687,15 @@
             this.txtName12.Click += new System.EventHandler(this.txt_Click);
             this.txtName12.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel32
+            // txtTeam12
             // 
-            this.metroLabel32.AutoSize = true;
-            this.metroLabel32.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel32.Location = new System.Drawing.Point(12, 337);
-            this.metroLabel32.Name = "metroLabel32";
-            this.metroLabel32.Size = new System.Drawing.Size(61, 19);
-            this.metroLabel32.TabIndex = 156;
-            this.metroLabel32.Text = "Team 13";
+            this.txtTeam12.AutoSize = true;
+            this.txtTeam12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam12.Location = new System.Drawing.Point(12, 337);
+            this.txtTeam12.Name = "txtTeam12";
+            this.txtTeam12.Size = new System.Drawing.Size(61, 19);
+            this.txtTeam12.TabIndex = 156;
+            this.txtTeam12.Text = "Team 13";
             // 
             // cmbBoxNoPlay12
             // 
@@ -791,14 +791,14 @@
             this.btnShared12.TabIndex = 151;
             this.btnShared12.Text = "Add another";
             // 
-            // metroLabel29
+            // lblBack12
             // 
-            this.metroLabel29.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel29.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel29.Location = new System.Drawing.Point(5, 334);
-            this.metroLabel29.Name = "metroLabel29";
-            this.metroLabel29.Size = new System.Drawing.Size(982, 28);
-            this.metroLabel29.TabIndex = 150;
+            this.lblBack12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack12.Location = new System.Drawing.Point(5, 334);
+            this.lblBack12.Name = "lblBack12";
+            this.lblBack12.Size = new System.Drawing.Size(982, 34);
+            this.lblBack12.TabIndex = 150;
             // 
             // btnRemove11
             // 
@@ -828,15 +828,15 @@
             this.txtName11.Click += new System.EventHandler(this.txt_Click);
             this.txtName11.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel30
+            // txtTeam11
             // 
-            this.metroLabel30.AutoSize = true;
-            this.metroLabel30.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel30.Location = new System.Drawing.Point(12, 311);
-            this.metroLabel30.Name = "metroLabel30";
-            this.metroLabel30.Size = new System.Drawing.Size(61, 19);
-            this.metroLabel30.TabIndex = 146;
-            this.metroLabel30.Text = "Team 12";
+            this.txtTeam11.AutoSize = true;
+            this.txtTeam11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam11.Location = new System.Drawing.Point(12, 311);
+            this.txtTeam11.Name = "txtTeam11";
+            this.txtTeam11.Size = new System.Drawing.Size(61, 19);
+            this.txtTeam11.TabIndex = 146;
+            this.txtTeam11.Text = "Team 12";
             // 
             // cmbBoxNoPlay11
             // 
@@ -932,14 +932,14 @@
             this.btnShared11.TabIndex = 141;
             this.btnShared11.Text = "Add another";
             // 
-            // metroLabel27
+            // lblBack11
             // 
-            this.metroLabel27.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel27.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel27.Location = new System.Drawing.Point(5, 308);
-            this.metroLabel27.Name = "metroLabel27";
-            this.metroLabel27.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel27.TabIndex = 140;
+            this.lblBack11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack11.Location = new System.Drawing.Point(5, 308);
+            this.lblBack11.Name = "lblBack11";
+            this.lblBack11.Size = new System.Drawing.Size(982, 37);
+            this.lblBack11.TabIndex = 140;
             // 
             // btnRemove10
             // 
@@ -969,15 +969,15 @@
             this.txtName10.Click += new System.EventHandler(this.txt_Click);
             this.txtName10.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel28
+            // txtTeam10
             // 
-            this.metroLabel28.AutoSize = true;
-            this.metroLabel28.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel28.Location = new System.Drawing.Point(12, 285);
-            this.metroLabel28.Name = "metroLabel28";
-            this.metroLabel28.Size = new System.Drawing.Size(61, 19);
-            this.metroLabel28.TabIndex = 136;
-            this.metroLabel28.Text = "Team 11";
+            this.txtTeam10.AutoSize = true;
+            this.txtTeam10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam10.Location = new System.Drawing.Point(12, 285);
+            this.txtTeam10.Name = "txtTeam10";
+            this.txtTeam10.Size = new System.Drawing.Size(61, 19);
+            this.txtTeam10.TabIndex = 136;
+            this.txtTeam10.Text = "Team 11";
             // 
             // cmbBoxNoPlay10
             // 
@@ -1073,14 +1073,14 @@
             this.btnShared10.TabIndex = 131;
             this.btnShared10.Text = "Add another";
             // 
-            // metroLabel25
+            // lblBack10
             // 
-            this.metroLabel25.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel25.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel25.Location = new System.Drawing.Point(5, 282);
-            this.metroLabel25.Name = "metroLabel25";
-            this.metroLabel25.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel25.TabIndex = 128;
+            this.lblBack10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack10.Location = new System.Drawing.Point(5, 282);
+            this.lblBack10.Name = "lblBack10";
+            this.lblBack10.Size = new System.Drawing.Size(982, 40);
+            this.lblBack10.TabIndex = 128;
             // 
             // btnRemove9
             // 
@@ -1110,15 +1110,15 @@
             this.txtName9.Click += new System.EventHandler(this.txt_Click);
             this.txtName9.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel26
+            // txtTeam9
             // 
-            this.metroLabel26.AutoSize = true;
-            this.metroLabel26.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel26.Location = new System.Drawing.Point(12, 259);
-            this.metroLabel26.Name = "metroLabel26";
-            this.metroLabel26.Size = new System.Drawing.Size(61, 19);
-            this.metroLabel26.TabIndex = 124;
-            this.metroLabel26.Text = "Team 10";
+            this.txtTeam9.AutoSize = true;
+            this.txtTeam9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam9.Location = new System.Drawing.Point(12, 259);
+            this.txtTeam9.Name = "txtTeam9";
+            this.txtTeam9.Size = new System.Drawing.Size(61, 19);
+            this.txtTeam9.TabIndex = 124;
+            this.txtTeam9.Text = "Team 10";
             // 
             // cmbBoxNoPlay9
             // 
@@ -1214,14 +1214,14 @@
             this.btnShared9.TabIndex = 119;
             this.btnShared9.Text = "Add another";
             // 
-            // metroLabel22
+            // lblBack9
             // 
-            this.metroLabel22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel22.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel22.Location = new System.Drawing.Point(5, 256);
-            this.metroLabel22.Name = "metroLabel22";
-            this.metroLabel22.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel22.TabIndex = 116;
+            this.lblBack9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack9.Location = new System.Drawing.Point(5, 256);
+            this.lblBack9.Name = "lblBack9";
+            this.lblBack9.Size = new System.Drawing.Size(982, 41);
+            this.lblBack9.TabIndex = 116;
             // 
             // btnRemove8
             // 
@@ -1251,15 +1251,15 @@
             this.txtName8.Click += new System.EventHandler(this.txt_Click);
             this.txtName8.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel23
+            // txtTeam8
             // 
-            this.metroLabel23.AutoSize = true;
-            this.metroLabel23.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel23.Location = new System.Drawing.Point(12, 233);
-            this.metroLabel23.Name = "metroLabel23";
-            this.metroLabel23.Size = new System.Drawing.Size(53, 19);
-            this.metroLabel23.TabIndex = 112;
-            this.metroLabel23.Text = "Team 9";
+            this.txtTeam8.AutoSize = true;
+            this.txtTeam8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam8.Location = new System.Drawing.Point(12, 233);
+            this.txtTeam8.Name = "txtTeam8";
+            this.txtTeam8.Size = new System.Drawing.Size(53, 19);
+            this.txtTeam8.TabIndex = 112;
+            this.txtTeam8.Text = "Team 9";
             // 
             // cmbBoxNoPlay8
             // 
@@ -1355,14 +1355,14 @@
             this.btnShared8.TabIndex = 107;
             this.btnShared8.Text = "Add another";
             // 
-            // metroLabel24
+            // lblBack8
             // 
-            this.metroLabel24.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel24.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel24.Location = new System.Drawing.Point(5, 230);
-            this.metroLabel24.Name = "metroLabel24";
-            this.metroLabel24.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel24.TabIndex = 106;
+            this.lblBack8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack8.Location = new System.Drawing.Point(5, 230);
+            this.lblBack8.Name = "lblBack8";
+            this.lblBack8.Size = new System.Drawing.Size(982, 39);
+            this.lblBack8.TabIndex = 106;
             // 
             // metroLabel19
             // 
@@ -1401,15 +1401,15 @@
             this.txtName7.Click += new System.EventHandler(this.txt_Click);
             this.txtName7.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel20
+            // txtTeam7
             // 
-            this.metroLabel20.AutoSize = true;
-            this.metroLabel20.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel20.Location = new System.Drawing.Point(12, 207);
-            this.metroLabel20.Name = "metroLabel20";
-            this.metroLabel20.Size = new System.Drawing.Size(53, 19);
-            this.metroLabel20.TabIndex = 101;
-            this.metroLabel20.Text = "Team 8";
+            this.txtTeam7.AutoSize = true;
+            this.txtTeam7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam7.Location = new System.Drawing.Point(12, 207);
+            this.txtTeam7.Name = "txtTeam7";
+            this.txtTeam7.Size = new System.Drawing.Size(53, 19);
+            this.txtTeam7.TabIndex = 101;
+            this.txtTeam7.Text = "Team 8";
             // 
             // cmbBoxNoPlay7
             // 
@@ -1505,14 +1505,14 @@
             this.btnShared7.TabIndex = 96;
             this.btnShared7.Text = "Add another";
             // 
-            // metroLabel21
+            // lblBack7
             // 
-            this.metroLabel21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel21.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel21.Location = new System.Drawing.Point(5, 204);
-            this.metroLabel21.Name = "metroLabel21";
-            this.metroLabel21.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel21.TabIndex = 95;
+            this.lblBack7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack7.Location = new System.Drawing.Point(5, 204);
+            this.lblBack7.Name = "lblBack7";
+            this.lblBack7.Size = new System.Drawing.Size(982, 37);
+            this.lblBack7.TabIndex = 95;
             // 
             // metroLabel17
             // 
@@ -1551,15 +1551,15 @@
             this.txtName6.Click += new System.EventHandler(this.txt_Click);
             this.txtName6.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel18
+            // txtTeam6
             // 
-            this.metroLabel18.AutoSize = true;
-            this.metroLabel18.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel18.Location = new System.Drawing.Point(12, 181);
-            this.metroLabel18.Name = "metroLabel18";
-            this.metroLabel18.Size = new System.Drawing.Size(53, 19);
-            this.metroLabel18.TabIndex = 90;
-            this.metroLabel18.Text = "Team 7";
+            this.txtTeam6.AutoSize = true;
+            this.txtTeam6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam6.Location = new System.Drawing.Point(12, 181);
+            this.txtTeam6.Name = "txtTeam6";
+            this.txtTeam6.Size = new System.Drawing.Size(53, 19);
+            this.txtTeam6.TabIndex = 90;
+            this.txtTeam6.Text = "Team 7";
             // 
             // cmbBoxNoPlay6
             // 
@@ -1655,14 +1655,14 @@
             this.btnShared6.TabIndex = 85;
             this.btnShared6.Text = "Add another";
             // 
-            // metroLabel15
+            // lblBack6
             // 
-            this.metroLabel15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel15.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel15.Location = new System.Drawing.Point(5, 178);
-            this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel15.TabIndex = 83;
+            this.lblBack6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack6.Location = new System.Drawing.Point(5, 178);
+            this.lblBack6.Name = "lblBack6";
+            this.lblBack6.Size = new System.Drawing.Size(982, 38);
+            this.lblBack6.TabIndex = 83;
             // 
             // btnRemove5
             // 
@@ -1692,15 +1692,15 @@
             this.txtName5.Click += new System.EventHandler(this.txt_Click);
             this.txtName5.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel16
+            // txtTeam5
             // 
-            this.metroLabel16.AutoSize = true;
-            this.metroLabel16.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel16.Location = new System.Drawing.Point(12, 155);
-            this.metroLabel16.Name = "metroLabel16";
-            this.metroLabel16.Size = new System.Drawing.Size(53, 19);
-            this.metroLabel16.TabIndex = 79;
-            this.metroLabel16.Text = "Team 6";
+            this.txtTeam5.AutoSize = true;
+            this.txtTeam5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam5.Location = new System.Drawing.Point(12, 155);
+            this.txtTeam5.Name = "txtTeam5";
+            this.txtTeam5.Size = new System.Drawing.Size(53, 19);
+            this.txtTeam5.TabIndex = 79;
+            this.txtTeam5.Text = "Team 6";
             // 
             // cmbBoxNoPlay5
             // 
@@ -1796,14 +1796,14 @@
             this.btnShared5.TabIndex = 74;
             this.btnShared5.Text = "Add another";
             // 
-            // metroLabel13
+            // lblBack5
             // 
-            this.metroLabel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel13.Location = new System.Drawing.Point(5, 152);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel13.TabIndex = 73;
+            this.lblBack5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack5.Location = new System.Drawing.Point(5, 152);
+            this.lblBack5.Name = "lblBack5";
+            this.lblBack5.Size = new System.Drawing.Size(982, 37);
+            this.lblBack5.TabIndex = 73;
             // 
             // btnRemove4
             // 
@@ -1833,15 +1833,15 @@
             this.txtName4.Click += new System.EventHandler(this.txt_Click);
             this.txtName4.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel14
+            // txtTeam4
             // 
-            this.metroLabel14.AutoSize = true;
-            this.metroLabel14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel14.Location = new System.Drawing.Point(12, 129);
-            this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(53, 19);
-            this.metroLabel14.TabIndex = 69;
-            this.metroLabel14.Text = "Team 5";
+            this.txtTeam4.AutoSize = true;
+            this.txtTeam4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam4.Location = new System.Drawing.Point(12, 129);
+            this.txtTeam4.Name = "txtTeam4";
+            this.txtTeam4.Size = new System.Drawing.Size(53, 19);
+            this.txtTeam4.TabIndex = 69;
+            this.txtTeam4.Text = "Team 5";
             // 
             // cmbBoxNoPlay4
             // 
@@ -1937,14 +1937,14 @@
             this.btnShared4.TabIndex = 64;
             this.btnShared4.Text = "Add another";
             // 
-            // metroLabel11
+            // lblBack4
             // 
-            this.metroLabel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel11.Location = new System.Drawing.Point(5, 126);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel11.TabIndex = 63;
+            this.lblBack4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack4.Location = new System.Drawing.Point(5, 126);
+            this.lblBack4.Name = "lblBack4";
+            this.lblBack4.Size = new System.Drawing.Size(982, 48);
+            this.lblBack4.TabIndex = 63;
             // 
             // btnRemove3
             // 
@@ -1974,15 +1974,15 @@
             this.txtName3.Click += new System.EventHandler(this.txt_Click);
             this.txtName3.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel12
+            // txtTeam3
             // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel12.Location = new System.Drawing.Point(12, 103);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(53, 19);
-            this.metroLabel12.TabIndex = 59;
-            this.metroLabel12.Text = "Team 4";
+            this.txtTeam3.AutoSize = true;
+            this.txtTeam3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam3.Location = new System.Drawing.Point(12, 103);
+            this.txtTeam3.Name = "txtTeam3";
+            this.txtTeam3.Size = new System.Drawing.Size(53, 19);
+            this.txtTeam3.TabIndex = 59;
+            this.txtTeam3.Text = "Team 4";
             // 
             // cmbBoxNoPlay3
             // 
@@ -2078,14 +2078,14 @@
             this.btnShared3.TabIndex = 54;
             this.btnShared3.Text = "Add another";
             // 
-            // metroLabel9
+            // lblBack3
             // 
-            this.metroLabel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel9.Location = new System.Drawing.Point(5, 100);
-            this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel9.TabIndex = 53;
+            this.lblBack3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack3.Location = new System.Drawing.Point(5, 100);
+            this.lblBack3.Name = "lblBack3";
+            this.lblBack3.Size = new System.Drawing.Size(982, 40);
+            this.lblBack3.TabIndex = 53;
             // 
             // btnRemove2
             // 
@@ -2115,15 +2115,15 @@
             this.txtName2.Click += new System.EventHandler(this.txt_Click);
             this.txtName2.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel10
+            // txtTeam2
             // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel10.Location = new System.Drawing.Point(12, 77);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(53, 19);
-            this.metroLabel10.TabIndex = 49;
-            this.metroLabel10.Text = "Team 3";
+            this.txtTeam2.AutoSize = true;
+            this.txtTeam2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam2.Location = new System.Drawing.Point(12, 77);
+            this.txtTeam2.Name = "txtTeam2";
+            this.txtTeam2.Size = new System.Drawing.Size(53, 19);
+            this.txtTeam2.TabIndex = 49;
+            this.txtTeam2.Text = "Team 3";
             // 
             // cmbBoxNoPlay2
             // 
@@ -2219,14 +2219,14 @@
             this.btnShared2.TabIndex = 44;
             this.btnShared2.Text = "Add another";
             // 
-            // metroLabel7
+            // lblBack2
             // 
-            this.metroLabel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel7.Location = new System.Drawing.Point(5, 74);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel7.TabIndex = 43;
+            this.lblBack2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack2.Location = new System.Drawing.Point(5, 74);
+            this.lblBack2.Name = "lblBack2";
+            this.lblBack2.Size = new System.Drawing.Size(982, 48);
+            this.lblBack2.TabIndex = 43;
             // 
             // btnRemove1
             // 
@@ -2256,15 +2256,15 @@
             this.txtName1.Click += new System.EventHandler(this.txt_Click);
             this.txtName1.TextChanged += new System.EventHandler(this.txt_TextChanged);
             // 
-            // metroLabel8
+            // txtTeam1
             // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel8.Location = new System.Drawing.Point(12, 51);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(53, 19);
-            this.metroLabel8.TabIndex = 39;
-            this.metroLabel8.Text = "Team 2";
+            this.txtTeam1.AutoSize = true;
+            this.txtTeam1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam1.Location = new System.Drawing.Point(12, 51);
+            this.txtTeam1.Name = "txtTeam1";
+            this.txtTeam1.Size = new System.Drawing.Size(53, 19);
+            this.txtTeam1.TabIndex = 39;
+            this.txtTeam1.Text = "Team 2";
             // 
             // cmbBoxNoPlay1
             // 
@@ -2360,14 +2360,14 @@
             this.btnShared1.TabIndex = 34;
             this.btnShared1.Text = "Add another";
             // 
-            // metroLabel6
+            // lblBack1
             // 
-            this.metroLabel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(5, 48);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel6.TabIndex = 33;
+            this.lblBack1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack1.Location = new System.Drawing.Point(5, 48);
+            this.lblBack1.Name = "lblBack1";
+            this.lblBack1.Size = new System.Drawing.Size(982, 37);
+            this.lblBack1.TabIndex = 33;
             // 
             // btnRemove
             // 
@@ -2437,15 +2437,15 @@
             this.metroLabel2.TabIndex = 24;
             this.metroLabel2.Text = "Team name";
             // 
-            // metroLabel1
+            // txtTeam
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(12, 25);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(53, 19);
-            this.metroLabel1.TabIndex = 23;
-            this.metroLabel1.Text = "Team 1";
+            this.txtTeam.AutoSize = true;
+            this.txtTeam.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.txtTeam.Location = new System.Drawing.Point(12, 25);
+            this.txtTeam.Name = "txtTeam";
+            this.txtTeam.Size = new System.Drawing.Size(53, 19);
+            this.txtTeam.TabIndex = 23;
+            this.txtTeam.Text = "Team 1";
             // 
             // cmbBoxNoPlay
             // 
@@ -2544,14 +2544,14 @@
             this.btnShared.Text = "Add another";
             this.btnShared.Click += new System.EventHandler(this.btnShared_Click);
             // 
-            // metroLabel35
+            // lblBack
             // 
-            this.metroLabel35.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel35.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel35.Location = new System.Drawing.Point(5, 22);
-            this.metroLabel35.Name = "metroLabel35";
-            this.metroLabel35.Size = new System.Drawing.Size(982, 29);
-            this.metroLabel35.TabIndex = 180;
+            this.lblBack.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblBack.Location = new System.Drawing.Point(5, 22);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(982, 390);
+            this.lblBack.TabIndex = 180;
             // 
             // metroAddTab
             // 
@@ -2636,7 +2636,7 @@
         private MetroFramework.Controls.MetroButton btnNoPlay;
         private MetroFramework.Controls.MetroButton btnHome;
         private System.Windows.Forms.ComboBox cmbBoxHome;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel txtTeam;
         private System.Windows.Forms.TextBox txtName;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel4;
@@ -2644,115 +2644,115 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroButton btnRemove;
         private System.Windows.Forms.TextBox txtShared;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel lblBack1;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay;
-        private MetroFramework.Controls.MetroLabel metroLabel29;
+        private MetroFramework.Controls.MetroLabel lblBack12;
         private MetroFramework.Controls.MetroButton btnRemove11;
         private System.Windows.Forms.TextBox txtShared11;
         private System.Windows.Forms.TextBox txtName11;
-        private MetroFramework.Controls.MetroLabel metroLabel30;
+        private MetroFramework.Controls.MetroLabel txtTeam11;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay11;
         private System.Windows.Forms.ComboBox cmbBoxHome11;
         private MetroFramework.Controls.MetroButton btnNoPlay11;
         private MetroFramework.Controls.MetroButton btnHome11;
         private MetroFramework.Controls.MetroButton btnShared11;
-        private MetroFramework.Controls.MetroLabel metroLabel27;
+        private MetroFramework.Controls.MetroLabel lblBack11;
         private MetroFramework.Controls.MetroButton btnRemove10;
         private System.Windows.Forms.TextBox txtShared10;
         private System.Windows.Forms.TextBox txtName10;
-        private MetroFramework.Controls.MetroLabel metroLabel28;
+        private MetroFramework.Controls.MetroLabel txtTeam10;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay10;
         private System.Windows.Forms.ComboBox cmbBoxHome10;
         private MetroFramework.Controls.MetroButton btnNoPlay10;
         private MetroFramework.Controls.MetroButton btnHome10;
         private MetroFramework.Controls.MetroButton btnShared10;
-        private MetroFramework.Controls.MetroLabel metroLabel25;
+        private MetroFramework.Controls.MetroLabel lblBack10;
         private MetroFramework.Controls.MetroButton btnRemove9;
         private System.Windows.Forms.TextBox txtShared9;
         private System.Windows.Forms.TextBox txtName9;
-        private MetroFramework.Controls.MetroLabel metroLabel26;
+        private MetroFramework.Controls.MetroLabel txtTeam9;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay9;
         private System.Windows.Forms.ComboBox cmbBoxHome9;
         private MetroFramework.Controls.MetroButton btnNoPlay9;
         private MetroFramework.Controls.MetroButton btnHome9;
         private MetroFramework.Controls.MetroButton btnShared9;
-        private MetroFramework.Controls.MetroLabel metroLabel22;
+        private MetroFramework.Controls.MetroLabel lblBack9;
         private MetroFramework.Controls.MetroButton btnRemove8;
         private System.Windows.Forms.TextBox txtShared8;
         private System.Windows.Forms.TextBox txtName8;
-        private MetroFramework.Controls.MetroLabel metroLabel23;
+        private MetroFramework.Controls.MetroLabel txtTeam8;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay8;
         private System.Windows.Forms.ComboBox cmbBoxHome8;
         private MetroFramework.Controls.MetroButton btnNoPlay8;
         private MetroFramework.Controls.MetroButton btnHome8;
         private MetroFramework.Controls.MetroButton btnShared8;
-        private MetroFramework.Controls.MetroLabel metroLabel24;
+        private MetroFramework.Controls.MetroLabel lblBack8;
         private MetroFramework.Controls.MetroLabel metroLabel19;
         private MetroFramework.Controls.MetroButton btnRemove7;
         private System.Windows.Forms.TextBox txtShared7;
         private System.Windows.Forms.TextBox txtName7;
-        private MetroFramework.Controls.MetroLabel metroLabel20;
+        private MetroFramework.Controls.MetroLabel txtTeam7;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay7;
         private System.Windows.Forms.ComboBox cmbBoxHome7;
         private MetroFramework.Controls.MetroButton btnNoPlay7;
         private MetroFramework.Controls.MetroButton btnHome7;
         private MetroFramework.Controls.MetroButton btnShared7;
-        private MetroFramework.Controls.MetroLabel metroLabel21;
+        private MetroFramework.Controls.MetroLabel lblBack7;
         private MetroFramework.Controls.MetroLabel metroLabel17;
         private MetroFramework.Controls.MetroButton btnRemove6;
         private System.Windows.Forms.TextBox txtShared6;
         private System.Windows.Forms.TextBox txtName6;
-        private MetroFramework.Controls.MetroLabel metroLabel18;
+        private MetroFramework.Controls.MetroLabel txtTeam6;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay6;
         private System.Windows.Forms.ComboBox cmbBoxHome6;
         private MetroFramework.Controls.MetroButton btnNoPlay6;
         private MetroFramework.Controls.MetroButton btnHome6;
         private MetroFramework.Controls.MetroButton btnShared6;
-        private MetroFramework.Controls.MetroLabel metroLabel15;
+        private MetroFramework.Controls.MetroLabel lblBack6;
         private MetroFramework.Controls.MetroButton btnRemove5;
         private System.Windows.Forms.TextBox txtShared5;
         private System.Windows.Forms.TextBox txtName5;
-        private MetroFramework.Controls.MetroLabel metroLabel16;
+        private MetroFramework.Controls.MetroLabel txtTeam5;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay5;
         private System.Windows.Forms.ComboBox cmbBoxHome5;
         private MetroFramework.Controls.MetroButton btnNoPlay5;
         private MetroFramework.Controls.MetroButton btnHome5;
         private MetroFramework.Controls.MetroButton btnShared5;
-        private MetroFramework.Controls.MetroLabel metroLabel13;
+        private MetroFramework.Controls.MetroLabel lblBack5;
         private MetroFramework.Controls.MetroButton btnRemove4;
         private System.Windows.Forms.TextBox txtShared4;
         private System.Windows.Forms.TextBox txtName4;
-        private MetroFramework.Controls.MetroLabel metroLabel14;
+        private MetroFramework.Controls.MetroLabel txtTeam4;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay4;
         private System.Windows.Forms.ComboBox cmbBoxHome4;
         private MetroFramework.Controls.MetroButton btnNoPlay4;
         private MetroFramework.Controls.MetroButton btnHome4;
         private MetroFramework.Controls.MetroButton btnShared4;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
+        private MetroFramework.Controls.MetroLabel lblBack4;
         private MetroFramework.Controls.MetroButton btnRemove3;
         private System.Windows.Forms.TextBox txtShared3;
         private System.Windows.Forms.TextBox txtName3;
-        private MetroFramework.Controls.MetroLabel metroLabel12;
+        private MetroFramework.Controls.MetroLabel txtTeam3;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay3;
         private System.Windows.Forms.ComboBox cmbBoxHome3;
         private MetroFramework.Controls.MetroButton btnNoPlay3;
         private MetroFramework.Controls.MetroButton btnHome3;
         private MetroFramework.Controls.MetroButton btnShared3;
-        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel lblBack3;
         private MetroFramework.Controls.MetroButton btnRemove2;
         private System.Windows.Forms.TextBox txtShared2;
         private System.Windows.Forms.TextBox txtName2;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroLabel txtTeam2;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay2;
         private System.Windows.Forms.ComboBox cmbBoxHome2;
         private MetroFramework.Controls.MetroButton btnNoPlay2;
         private MetroFramework.Controls.MetroButton btnHome2;
         private MetroFramework.Controls.MetroButton btnShared2;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel lblBack2;
         private MetroFramework.Controls.MetroButton btnRemove1;
         private System.Windows.Forms.TextBox txtShared1;
         private System.Windows.Forms.TextBox txtName1;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroLabel txtTeam1;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay1;
         private System.Windows.Forms.ComboBox cmbBoxHome1;
         private MetroFramework.Controls.MetroButton btnNoPlay1;
@@ -2761,33 +2761,33 @@
         private MetroFramework.Controls.MetroButton btnRemove14;
         private System.Windows.Forms.TextBox txtShared14;
         private System.Windows.Forms.TextBox txtName14;
-        private MetroFramework.Controls.MetroLabel metroLabel36;
+        private MetroFramework.Controls.MetroLabel txtTeam14;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay14;
         private System.Windows.Forms.ComboBox cmbBoxHome14;
         private MetroFramework.Controls.MetroButton btnNoPlay14;
         private MetroFramework.Controls.MetroButton btnHome14;
         private MetroFramework.Controls.MetroButton btnShared14;
-        private MetroFramework.Controls.MetroLabel metroLabel33;
+        private MetroFramework.Controls.MetroLabel lblBack14;
         private MetroFramework.Controls.MetroButton btnRemove13;
         private System.Windows.Forms.TextBox txtShared13;
         private System.Windows.Forms.TextBox txtName13;
-        private MetroFramework.Controls.MetroLabel metroLabel34;
+        private MetroFramework.Controls.MetroLabel txtTeam13;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay13;
         private System.Windows.Forms.ComboBox cmbBoxHome13;
         private MetroFramework.Controls.MetroButton btnNoPlay13;
         private MetroFramework.Controls.MetroButton btnHome13;
         private MetroFramework.Controls.MetroButton btnShared13;
-        private MetroFramework.Controls.MetroLabel metroLabel31;
+        private MetroFramework.Controls.MetroLabel lblBack13;
         private MetroFramework.Controls.MetroButton btnRemove12;
         private System.Windows.Forms.TextBox txtShared12;
         private System.Windows.Forms.TextBox txtName12;
-        private MetroFramework.Controls.MetroLabel metroLabel32;
+        private MetroFramework.Controls.MetroLabel txtTeam12;
         private System.Windows.Forms.ComboBox cmbBoxNoPlay12;
         private System.Windows.Forms.ComboBox cmbBoxHome12;
         private MetroFramework.Controls.MetroButton btnNoPlay12;
         private MetroFramework.Controls.MetroButton btnHome12;
         private MetroFramework.Controls.MetroButton btnShared12;
-        private MetroFramework.Controls.MetroLabel metroLabel35;
+        private MetroFramework.Controls.MetroLabel lblBack;
         private MetroFramework.Controls.MetroLabel metroLabel37;
 
 
