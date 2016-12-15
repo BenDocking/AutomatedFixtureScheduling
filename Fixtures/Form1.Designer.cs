@@ -508,6 +508,7 @@
             this.btnShared14.Size = new System.Drawing.Size(80, 20);
             this.btnShared14.TabIndex = 171;
             this.btnShared14.Text = "Add another";
+            this.btnShared14.Click += new System.EventHandler(this.btnShared14_Click);
             // 
             // lblBack14
             // 
@@ -649,6 +650,7 @@
             this.btnShared13.Size = new System.Drawing.Size(80, 20);
             this.btnShared13.TabIndex = 161;
             this.btnShared13.Text = "Add another";
+            this.btnShared13.Click += new System.EventHandler(this.btnShared13_Click);
             // 
             // lblBack13
             // 
@@ -790,6 +792,7 @@
             this.btnShared12.Size = new System.Drawing.Size(80, 20);
             this.btnShared12.TabIndex = 151;
             this.btnShared12.Text = "Add another";
+            this.btnShared12.Click += new System.EventHandler(this.btnShared12_Click);
             // 
             // lblBack12
             // 
@@ -931,6 +934,7 @@
             this.btnShared11.Size = new System.Drawing.Size(80, 20);
             this.btnShared11.TabIndex = 141;
             this.btnShared11.Text = "Add another";
+            this.btnShared11.Click += new System.EventHandler(this.btnShared11_Click);
             // 
             // lblBack11
             // 
@@ -1072,6 +1076,7 @@
             this.btnShared10.Size = new System.Drawing.Size(80, 20);
             this.btnShared10.TabIndex = 131;
             this.btnShared10.Text = "Add another";
+            this.btnShared10.Click += new System.EventHandler(this.btnShared10_Click);
             // 
             // lblBack10
             // 
@@ -1213,6 +1218,7 @@
             this.btnShared9.Size = new System.Drawing.Size(80, 20);
             this.btnShared9.TabIndex = 119;
             this.btnShared9.Text = "Add another";
+            this.btnShared9.Click += new System.EventHandler(this.btnShared9_Click);
             // 
             // lblBack9
             // 
@@ -1354,6 +1360,7 @@
             this.btnShared8.Size = new System.Drawing.Size(80, 20);
             this.btnShared8.TabIndex = 107;
             this.btnShared8.Text = "Add another";
+            this.btnShared8.Click += new System.EventHandler(this.btnShared8_Click);
             // 
             // lblBack8
             // 
@@ -1504,6 +1511,7 @@
             this.btnShared7.Size = new System.Drawing.Size(80, 20);
             this.btnShared7.TabIndex = 96;
             this.btnShared7.Text = "Add another";
+            this.btnShared7.Click += new System.EventHandler(this.btnShared7_Click);
             // 
             // lblBack7
             // 
@@ -1654,6 +1662,7 @@
             this.btnShared6.Size = new System.Drawing.Size(80, 20);
             this.btnShared6.TabIndex = 85;
             this.btnShared6.Text = "Add another";
+            this.btnShared6.Click += new System.EventHandler(this.btnShared6_Click);
             // 
             // lblBack6
             // 
@@ -1795,6 +1804,7 @@
             this.btnShared5.Size = new System.Drawing.Size(80, 20);
             this.btnShared5.TabIndex = 74;
             this.btnShared5.Text = "Add another";
+            this.btnShared5.Click += new System.EventHandler(this.btnShared5_Click);
             // 
             // lblBack5
             // 
@@ -1936,6 +1946,7 @@
             this.btnShared4.Size = new System.Drawing.Size(80, 20);
             this.btnShared4.TabIndex = 64;
             this.btnShared4.Text = "Add another";
+            this.btnShared4.Click += new System.EventHandler(this.btnShared4_Click);
             // 
             // lblBack4
             // 
@@ -2077,6 +2088,7 @@
             this.btnShared3.Size = new System.Drawing.Size(80, 20);
             this.btnShared3.TabIndex = 54;
             this.btnShared3.Text = "Add another";
+            this.btnShared3.Click += new System.EventHandler(this.btnShared3_Click);
             // 
             // lblBack3
             // 
@@ -2218,6 +2230,7 @@
             this.btnShared2.Size = new System.Drawing.Size(80, 20);
             this.btnShared2.TabIndex = 44;
             this.btnShared2.Text = "Add another";
+            this.btnShared2.Click += new System.EventHandler(this.btnShared2_Click);
             // 
             // lblBack2
             // 
@@ -2359,6 +2372,7 @@
             this.btnShared1.Size = new System.Drawing.Size(80, 20);
             this.btnShared1.TabIndex = 34;
             this.btnShared1.Text = "Add another";
+            this.btnShared1.Click += new System.EventHandler(this.btnShared1_Click);
             // 
             // lblBack1
             // 
