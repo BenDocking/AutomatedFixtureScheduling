@@ -1216,49 +1216,7 @@ namespace Fixtures
                 //Store value for current division
                 division = metTabControl.SelectedIndex;
             }
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-            bool invalid = false;
-            //Check if date already exists
-            for (int i = 0; i < homeCount[0]; i++)
-            {
-                if (cmbBoxHome.Text == datesHome[division, team, i])
-                {
-                    invalid = true;
-                }
-            }
-
-            if (invalid == false && cmbBoxHome.Text != "")
-            {
-                //Add date to array
-                datesHome[division, team, homeCount[0]] = cmbBoxHome.Text;
-                cmbBoxHome.SelectedIndex = -1;
-                homeCount[0]++;
-            }
-        }
-
-        private void btnNoPlay_Click(object sender, EventArgs e)
-        {
-            bool invalid = false;
-
-            for (int i = 0; i < noPlayCount[0]; i++)
-            {
-                if (cmbBoxNoPlay.Text == datesNoPlay[division, team, i])
-                {
-                    invalid = true;
-                }
-            }
-
-            if (invalid == false && cmbBoxNoPlay.Text != "")
-            {
-                //Add date to array
-                datesNoPlay[division, team, noPlayCount[0]] = cmbBoxNoPlay.Text;
-                cmbBoxNoPlay.SelectedIndex = -1;
-                noPlayCount[0]++;
-            }
-        }
+        }                
 
         private void lblSharedDisp_MouseEnter(object sender, EventArgs e)
         {
@@ -1797,6 +1755,48 @@ namespace Fixtures
                 //Reset text to type new team name
                 txtShared14.Text = "";
                 txtShared14.Focus();
+            }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            bool invalid = false;
+            //Check if date already exists
+            for (int i = 0; i < homeCount[0]; i++)
+            {
+                if (cmbBoxHome.Text == datesHome[division, team, i])
+                {
+                    invalid = true;
+                }
+            }
+
+            if (invalid == false && cmbBoxHome.Text != "")
+            {
+                //Add date to array
+                datesHome[division, team, homeCount[0]] = cmbBoxHome.Text;
+                cmbBoxHome.SelectedIndex = -1;
+                homeCount[0]++;
+            }
+        }
+
+        private void btnNoPlay_Click(object sender, EventArgs e)
+        {
+            bool invalid = false;
+
+            for (int i = 0; i < noPlayCount[0]; i++)
+            {
+                if (cmbBoxNoPlay.Text == datesNoPlay[division, team, i])
+                {
+                    invalid = true;
+                }
+            }
+
+            if (invalid == false && cmbBoxNoPlay.Text != "")
+            {
+                //Add date to array
+                datesNoPlay[division, team, noPlayCount[0]] = cmbBoxNoPlay.Text;
+                cmbBoxNoPlay.SelectedIndex = -1;
+                noPlayCount[0]++;
             }
         }
     }
