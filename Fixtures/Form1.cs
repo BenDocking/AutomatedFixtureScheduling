@@ -2627,5 +2627,470 @@ namespace Fixtures
                 cmbBoxNoPlay14.SelectedIndex = -1;
             }
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 0] = null;
+                for (int i = 0; i < sharedCount[0] + 1; i++)
+                {
+                    shared[division, 0, i] = null;
+                }
+                for (int i = 0; i < homeCount[0] + 1; i++)
+                {
+                    datesHome[division, 0, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[0] + 1; i++)
+                {
+                    datesNoPlay[division, 0, i] = null;
+                }
+                sharedCount[0] = 0;
+                homeCount[0] = 0;
+                noPlayCount[0] = 0;
+
+                txtName.Text = "Enter a team";
+                txtName.ForeColor = Color.Gray;
+                txtShared.Text = "Enter a team";
+                txtShared.ForeColor = Color.Gray;
+                cmbBoxHome.SelectedIndex = -1;
+                cmbBoxNoPlay.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove1_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 1] = null;
+                for (int i = 0; i < sharedCount[1] + 1; i++)
+                {
+                    shared[division, 1, i] = null;
+                }
+                for (int i = 0; i < homeCount[1] + 1; i++)
+                {
+                    datesHome[division, 1, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[1] + 1; i++)
+                {
+                    datesNoPlay[division, 1, i] = null;
+                }
+                sharedCount[1] = 0;
+                homeCount[1] = 0;
+                noPlayCount[1] = 0;
+
+                txtName1.Text = "Enter a team";
+                txtName1.ForeColor = Color.Gray;
+                txtShared1.Text = "Enter a team";
+                txtShared1.ForeColor = Color.Gray;
+                cmbBoxHome1.SelectedIndex = -1;
+                cmbBoxNoPlay1.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove2_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 2] = null;
+                for (int i = 0; i < sharedCount[2] + 1; i++)
+                {
+                    shared[division, 2, i] = null;
+                }
+                for (int i = 0; i < homeCount[2] + 1; i++)
+                {
+                    datesHome[division, 2, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[2] + 1; i++)
+                {
+                    datesNoPlay[division, 2, i] = null;
+                }
+                sharedCount[2] = 0;
+                homeCount[2] = 0;
+                noPlayCount[2] = 0;
+
+                txtName2.Text = "Enter a team";
+                txtName2.ForeColor = Color.Gray;
+                txtShared2.Text = "Enter a team";
+                txtShared2.ForeColor = Color.Gray;
+                cmbBoxHome2.SelectedIndex = -1;
+                cmbBoxNoPlay2.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove3_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 3] = null;
+                for (int i = 0; i < sharedCount[3] + 1; i++)
+                {
+                    shared[division, 3, i] = null;
+                }
+                for (int i = 0; i < homeCount[3] + 1; i++)
+                {
+                    datesHome[division, 3, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[3] + 1; i++)
+                {
+                    datesNoPlay[division, 3, i] = null;
+                }
+                sharedCount[3] = 0;
+                homeCount[3] = 0;
+                noPlayCount[3] = 0;
+
+                txtName3.Text = "Enter a team";
+                txtName3.ForeColor = Color.Gray;
+                txtShared3.Text = "Enter a team";
+                txtShared3.ForeColor = Color.Gray;
+                cmbBoxHome3.SelectedIndex = -1;
+                cmbBoxNoPlay3.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove4_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 4] = null;
+                for (int i = 0; i < sharedCount[4] + 1; i++)
+                {
+                    shared[division, 4, i] = null;
+                }
+                for (int i = 0; i < homeCount[4] + 1; i++)
+                {
+                    datesHome[division, 4, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[4] + 1; i++)
+                {
+                    datesNoPlay[division, 4, i] = null;
+                }
+                sharedCount[4] = 0;
+                homeCount[4] = 0;
+                noPlayCount[4] = 0;
+
+                txtName4.Text = "Enter a team";
+                txtName4.ForeColor = Color.Gray;
+                txtShared4.Text = "Enter a team";
+                txtShared4.ForeColor = Color.Gray;
+                cmbBoxHome4.SelectedIndex = -1;
+                cmbBoxNoPlay4.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove5_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 5] = null;
+                for (int i = 0; i < sharedCount[5] + 1; i++)
+                {
+                    shared[division, 5, i] = null;
+                }
+                for (int i = 0; i < homeCount[5] + 1; i++)
+                {
+                    datesHome[division, 5, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[5] + 1; i++)
+                {
+                    datesNoPlay[division, 5, i] = null;
+                }
+                sharedCount[5] = 0;
+                homeCount[5] = 0;
+                noPlayCount[5] = 0;
+
+                txtName5.Text = "Enter a team";
+                txtName5.ForeColor = Color.Gray;
+                txtShared5.Text = "Enter a team";
+                txtShared5.ForeColor = Color.Gray;
+                cmbBoxHome5.SelectedIndex = -1;
+                cmbBoxNoPlay5.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove6_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 6] = null;
+                for (int i = 0; i < sharedCount[6] + 1; i++)
+                {
+                    shared[division, 6, i] = null;
+                }
+                for (int i = 0; i < homeCount[6] + 1; i++)
+                {
+                    datesHome[division, 6, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[6] + 1; i++)
+                {
+                    datesNoPlay[division, 6, i] = null;
+                }
+                sharedCount[6] = 0;
+                homeCount[6] = 0;
+                noPlayCount[6] = 0;
+
+                txtName6.Text = "Enter a team";
+                txtName6.ForeColor = Color.Gray;
+                txtShared6.Text = "Enter a team";
+                txtShared6.ForeColor = Color.Gray;
+                cmbBoxHome6.SelectedIndex = -1;
+                cmbBoxNoPlay6.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove7_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 7] = null;
+                for (int i = 0; i < sharedCount[7] + 1; i++)
+                {
+                    shared[division, 7, i] = null;
+                }
+                for (int i = 0; i < homeCount[7] + 1; i++)
+                {
+                    datesHome[division, 7, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[7] + 1; i++)
+                {
+                    datesNoPlay[division, 7, i] = null;
+                }
+                sharedCount[7] = 0;
+                homeCount[7] = 0;
+                noPlayCount[7] = 0;
+
+                txtName7.Text = "Enter a team";
+                txtName7.ForeColor = Color.Gray;
+                txtShared7.Text = "Enter a team";
+                txtShared7.ForeColor = Color.Gray;
+                cmbBoxHome7.SelectedIndex = -1;
+                cmbBoxNoPlay7.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove8_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 8] = null;
+                for (int i = 0; i < sharedCount[8] + 1; i++)
+                {
+                    shared[division, 8, i] = null;
+                }
+                for (int i = 0; i < homeCount[8] + 1; i++)
+                {
+                    datesHome[division, 8, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[8] + 1; i++)
+                {
+                    datesNoPlay[division, 8, i] = null;
+                }
+                sharedCount[8] = 0;
+                homeCount[8] = 0;
+                noPlayCount[8] = 0;
+
+                txtName8.Text = "Enter a team";
+                txtName8.ForeColor = Color.Gray;
+                txtShared8.Text = "Enter a team";
+                txtShared8.ForeColor = Color.Gray;
+                cmbBoxHome8.SelectedIndex = -1;
+                cmbBoxNoPlay8.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove9_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 9] = null;
+                for (int i = 0; i < sharedCount[9] + 1; i++)
+                {
+                    shared[division, 9, i] = null;
+                }
+                for (int i = 0; i < homeCount[9] + 1; i++)
+                {
+                    datesHome[division, 9, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[9] + 1; i++)
+                {
+                    datesNoPlay[division, 9, i] = null;
+                }
+                sharedCount[9] = 0;
+                homeCount[9] = 0;
+                noPlayCount[9] = 0;
+
+                txtName9.Text = "Enter a team";
+                txtName9.ForeColor = Color.Gray;
+                txtShared9.Text = "Enter a team";
+                txtShared9.ForeColor = Color.Gray;
+                cmbBoxHome9.SelectedIndex = -1;
+                cmbBoxNoPlay9.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove10_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 10] = null;
+                for (int i = 0; i < sharedCount[10] + 1; i++)
+                {
+                    shared[division, 10, i] = null;
+                }
+                for (int i = 0; i < homeCount[10] + 1; i++)
+                {
+                    datesHome[division, 10, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[10] + 1; i++)
+                {
+                    datesNoPlay[division, 10, i] = null;
+                }
+                sharedCount[10] = 0;
+                homeCount[10] = 0;
+                noPlayCount[10] = 0;
+
+                txtName10.Text = "Enter a team";
+                txtName10.ForeColor = Color.Gray;
+                txtShared10.Text = "Enter a team";
+                txtShared10.ForeColor = Color.Gray;
+                cmbBoxHome10.SelectedIndex = -1;
+                cmbBoxNoPlay10.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove11_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 11] = null;
+                for (int i = 0; i < sharedCount[11] + 1; i++)
+                {
+                    shared[division, 11, i] = null;
+                }
+                for (int i = 0; i < homeCount[11] + 1; i++)
+                {
+                    datesHome[division, 11, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[11] + 1; i++)
+                {
+                    datesNoPlay[division, 11, i] = null;
+                }
+                sharedCount[11] = 0;
+                homeCount[11] = 0;
+                noPlayCount[11] = 0;
+
+                txtName11.Text = "Enter a team";
+                txtName11.ForeColor = Color.Gray;
+                txtShared11.Text = "Enter a team";
+                txtShared11.ForeColor = Color.Gray;
+                cmbBoxHome11.SelectedIndex = -1;
+                cmbBoxNoPlay11.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove12_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 12] = null;
+                for (int i = 0; i < sharedCount[12] + 1; i++)
+                {
+                    shared[division, 12, i] = null;
+                }
+                for (int i = 0; i < homeCount[12] + 1; i++)
+                {
+                    datesHome[division, 12, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[12] + 1; i++)
+                {
+                    datesNoPlay[division, 12, i] = null;
+                }
+                sharedCount[12] = 0;
+                homeCount[12] = 0;
+                noPlayCount[12] = 0;
+
+                txtName12.Text = "Enter a team";
+                txtName12.ForeColor = Color.Gray;
+                txtShared12.Text = "Enter a team";
+                txtShared12.ForeColor = Color.Gray;
+                cmbBoxHome12.SelectedIndex = -1;
+                cmbBoxNoPlay12.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove13_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 13] = null;
+                for (int i = 0; i < sharedCount[13] + 1; i++)
+                {
+                    shared[division, 13, i] = null;
+                }
+                for (int i = 0; i < homeCount[13] + 1; i++)
+                {
+                    datesHome[division, 13, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[13] + 1; i++)
+                {
+                    datesNoPlay[division, 13, i] = null;
+                }
+                sharedCount[13] = 0;
+                homeCount[13] = 0;
+                noPlayCount[13] = 0;
+
+                txtName13.Text = "Enter a team";
+                txtName13.ForeColor = Color.Gray;
+                txtShared13.Text = "Enter a team";
+                txtShared13.ForeColor = Color.Gray;
+                cmbBoxHome13.SelectedIndex = -1;
+                cmbBoxNoPlay13.SelectedIndex = -1;
+            }
+        }
+
+        private void btnRemove14_Click(object sender, EventArgs e)
+        {
+            DialogResult del = MessageBox.Show("Are you sure you want to remove this team?", "Remove team", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                name[division, 14] = null;
+                for (int i = 0; i < sharedCount[14] + 1; i++)
+                {
+                    shared[division, 14, i] = null;
+                }
+                for (int i = 0; i < homeCount[14] + 1; i++)
+                {
+                    datesHome[division, 14, i] = null;
+                }
+                for (int i = 0; i < noPlayCount[14] + 1; i++)
+                {
+                    datesNoPlay[division, 14, i] = null;
+                }
+                sharedCount[14] = 0;
+                homeCount[14] = 0;
+                noPlayCount[14] = 0;
+
+                txtName14.Text = "Enter a team";
+                txtName14.ForeColor = Color.Gray;
+                txtShared14.Text = "Enter a team";
+                txtShared14.ForeColor = Color.Gray;
+                cmbBoxHome14.SelectedIndex = -1;
+                cmbBoxNoPlay14.SelectedIndex = -1;
+            }
+        }
     }
 }

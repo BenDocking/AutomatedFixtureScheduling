@@ -384,6 +384,7 @@
             this.btnRemove14.Size = new System.Drawing.Size(65, 21);
             this.btnRemove14.TabIndex = 179;
             this.btnRemove14.Text = "Remove";
+            this.btnRemove14.Click += new System.EventHandler(this.btnRemove14_Click);
             // 
             // txtShared14
             // 
@@ -528,6 +529,7 @@
             this.btnRemove13.Size = new System.Drawing.Size(65, 21);
             this.btnRemove13.TabIndex = 169;
             this.btnRemove13.Text = "Remove";
+            this.btnRemove13.Click += new System.EventHandler(this.btnRemove13_Click);
             // 
             // txtShared13
             // 
@@ -672,6 +674,7 @@
             this.btnRemove12.Size = new System.Drawing.Size(65, 21);
             this.btnRemove12.TabIndex = 159;
             this.btnRemove12.Text = "Remove";
+            this.btnRemove12.Click += new System.EventHandler(this.btnRemove12_Click);
             // 
             // txtShared12
             // 
@@ -816,6 +819,7 @@
             this.btnRemove11.Size = new System.Drawing.Size(65, 21);
             this.btnRemove11.TabIndex = 149;
             this.btnRemove11.Text = "Remove";
+            this.btnRemove11.Click += new System.EventHandler(this.btnRemove11_Click);
             // 
             // txtShared11
             // 
@@ -960,6 +964,7 @@
             this.btnRemove10.Size = new System.Drawing.Size(65, 21);
             this.btnRemove10.TabIndex = 139;
             this.btnRemove10.Text = "Remove";
+            this.btnRemove10.Click += new System.EventHandler(this.btnRemove10_Click);
             // 
             // txtShared10
             // 
@@ -1104,6 +1109,7 @@
             this.btnRemove9.Size = new System.Drawing.Size(65, 21);
             this.btnRemove9.TabIndex = 127;
             this.btnRemove9.Text = "Remove";
+            this.btnRemove9.Click += new System.EventHandler(this.btnRemove9_Click);
             // 
             // txtShared9
             // 
@@ -1248,6 +1254,7 @@
             this.btnRemove8.Size = new System.Drawing.Size(65, 21);
             this.btnRemove8.TabIndex = 115;
             this.btnRemove8.Text = "Remove";
+            this.btnRemove8.Click += new System.EventHandler(this.btnRemove8_Click);
             // 
             // txtShared8
             // 
@@ -1401,6 +1408,7 @@
             this.btnRemove7.Size = new System.Drawing.Size(65, 21);
             this.btnRemove7.TabIndex = 104;
             this.btnRemove7.Text = "Remove";
+            this.btnRemove7.Click += new System.EventHandler(this.btnRemove7_Click);
             // 
             // txtShared7
             // 
@@ -1554,6 +1562,7 @@
             this.btnRemove6.Size = new System.Drawing.Size(65, 21);
             this.btnRemove6.TabIndex = 93;
             this.btnRemove6.Text = "Remove";
+            this.btnRemove6.Click += new System.EventHandler(this.btnRemove6_Click);
             // 
             // txtShared6
             // 
@@ -1698,6 +1707,7 @@
             this.btnRemove5.Size = new System.Drawing.Size(65, 21);
             this.btnRemove5.TabIndex = 82;
             this.btnRemove5.Text = "Remove";
+            this.btnRemove5.Click += new System.EventHandler(this.btnRemove5_Click);
             // 
             // txtShared5
             // 
@@ -1842,6 +1852,7 @@
             this.btnRemove4.Size = new System.Drawing.Size(65, 21);
             this.btnRemove4.TabIndex = 72;
             this.btnRemove4.Text = "Remove";
+            this.btnRemove4.Click += new System.EventHandler(this.btnRemove4_Click);
             // 
             // txtShared4
             // 
@@ -1986,6 +1997,7 @@
             this.btnRemove3.Size = new System.Drawing.Size(65, 21);
             this.btnRemove3.TabIndex = 62;
             this.btnRemove3.Text = "Remove";
+            this.btnRemove3.Click += new System.EventHandler(this.btnRemove3_Click);
             // 
             // txtShared3
             // 
@@ -2130,6 +2142,7 @@
             this.btnRemove2.Size = new System.Drawing.Size(65, 21);
             this.btnRemove2.TabIndex = 52;
             this.btnRemove2.Text = "Remove";
+            this.btnRemove2.Click += new System.EventHandler(this.btnRemove2_Click);
             // 
             // txtShared2
             // 
@@ -2274,6 +2287,7 @@
             this.btnRemove1.Size = new System.Drawing.Size(65, 21);
             this.btnRemove1.TabIndex = 42;
             this.btnRemove1.Text = "Remove";
+            this.btnRemove1.Click += new System.EventHandler(this.btnRemove1_Click);
             // 
             // txtShared1
             // 
@@ -2418,6 +2432,7 @@
             this.btnRemove.Size = new System.Drawing.Size(65, 21);
             this.btnRemove.TabIndex = 32;
             this.btnRemove.Text = "Remove";
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // txtShared
             // 
