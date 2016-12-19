@@ -492,6 +492,7 @@
             this.btnNoPlay14.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay14.TabIndex = 173;
             this.btnNoPlay14.Text = "Add another";
+            this.btnNoPlay14.Click += new System.EventHandler(this.btnNoPlay14_Click);
             // 
             // btnHome14
             // 
@@ -500,6 +501,7 @@
             this.btnHome14.Size = new System.Drawing.Size(79, 21);
             this.btnHome14.TabIndex = 172;
             this.btnHome14.Text = "Add another";
+            this.btnHome14.Click += new System.EventHandler(this.btnHome14_Click);
             // 
             // btnShared14
             // 
@@ -634,6 +636,7 @@
             this.btnNoPlay13.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay13.TabIndex = 163;
             this.btnNoPlay13.Text = "Add another";
+            this.btnNoPlay13.Click += new System.EventHandler(this.btnNoPlay13_Click);
             // 
             // btnHome13
             // 
@@ -642,6 +645,7 @@
             this.btnHome13.Size = new System.Drawing.Size(79, 21);
             this.btnHome13.TabIndex = 162;
             this.btnHome13.Text = "Add another";
+            this.btnHome13.Click += new System.EventHandler(this.btnHome13_Click);
             // 
             // btnShared13
             // 
@@ -776,6 +780,7 @@
             this.btnNoPlay12.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay12.TabIndex = 153;
             this.btnNoPlay12.Text = "Add another";
+            this.btnNoPlay12.Click += new System.EventHandler(this.btnNoPlay12_Click);
             // 
             // btnHome12
             // 
@@ -784,6 +789,7 @@
             this.btnHome12.Size = new System.Drawing.Size(79, 21);
             this.btnHome12.TabIndex = 152;
             this.btnHome12.Text = "Add another";
+            this.btnHome12.Click += new System.EventHandler(this.btnHome12_Click);
             // 
             // btnShared12
             // 
@@ -918,6 +924,7 @@
             this.btnNoPlay11.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay11.TabIndex = 143;
             this.btnNoPlay11.Text = "Add another";
+            this.btnNoPlay11.Click += new System.EventHandler(this.btnNoPlay11_Click);
             // 
             // btnHome11
             // 
@@ -926,6 +933,7 @@
             this.btnHome11.Size = new System.Drawing.Size(79, 21);
             this.btnHome11.TabIndex = 142;
             this.btnHome11.Text = "Add another";
+            this.btnHome11.Click += new System.EventHandler(this.btnHome11_Click);
             // 
             // btnShared11
             // 
@@ -1060,6 +1068,7 @@
             this.btnNoPlay10.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay10.TabIndex = 133;
             this.btnNoPlay10.Text = "Add another";
+            this.btnNoPlay10.Click += new System.EventHandler(this.btnNoPlay10_Click);
             // 
             // btnHome10
             // 
@@ -1068,6 +1077,7 @@
             this.btnHome10.Size = new System.Drawing.Size(79, 21);
             this.btnHome10.TabIndex = 132;
             this.btnHome10.Text = "Add another";
+            this.btnHome10.Click += new System.EventHandler(this.btnHome10_Click);
             // 
             // btnShared10
             // 
@@ -1202,6 +1212,7 @@
             this.btnNoPlay9.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay9.TabIndex = 121;
             this.btnNoPlay9.Text = "Add another";
+            this.btnNoPlay9.Click += new System.EventHandler(this.btnNoPlay9_Click);
             // 
             // btnHome9
             // 
@@ -1210,6 +1221,7 @@
             this.btnHome9.Size = new System.Drawing.Size(79, 21);
             this.btnHome9.TabIndex = 120;
             this.btnHome9.Text = "Add another";
+            this.btnHome9.Click += new System.EventHandler(this.btnHome9_Click);
             // 
             // btnShared9
             // 
@@ -1344,6 +1356,7 @@
             this.btnNoPlay8.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay8.TabIndex = 109;
             this.btnNoPlay8.Text = "Add another";
+            this.btnNoPlay8.Click += new System.EventHandler(this.btnNoPlay8_Click);
             // 
             // btnHome8
             // 
@@ -1352,6 +1365,7 @@
             this.btnHome8.Size = new System.Drawing.Size(79, 21);
             this.btnHome8.TabIndex = 108;
             this.btnHome8.Text = "Add another";
+            this.btnHome8.Click += new System.EventHandler(this.btnHome8_Click);
             // 
             // btnShared8
             // 
@@ -1495,6 +1509,7 @@
             this.btnNoPlay7.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay7.TabIndex = 98;
             this.btnNoPlay7.Text = "Add another";
+            this.btnNoPlay7.Click += new System.EventHandler(this.btnNoPlay7_Click);
             // 
             // btnHome7
             // 
@@ -1503,6 +1518,7 @@
             this.btnHome7.Size = new System.Drawing.Size(79, 21);
             this.btnHome7.TabIndex = 97;
             this.btnHome7.Text = "Add another";
+            this.btnHome7.Click += new System.EventHandler(this.btnHome7_Click);
             // 
             // btnShared7
             // 
@@ -1646,6 +1662,7 @@
             this.btnNoPlay6.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay6.TabIndex = 87;
             this.btnNoPlay6.Text = "Add another";
+            this.btnNoPlay6.Click += new System.EventHandler(this.btnNoPlay6_Click);
             // 
             // btnHome6
             // 
@@ -1654,6 +1671,7 @@
             this.btnHome6.Size = new System.Drawing.Size(79, 21);
             this.btnHome6.TabIndex = 86;
             this.btnHome6.Text = "Add another";
+            this.btnHome6.Click += new System.EventHandler(this.btnHome6_Click);
             // 
             // btnShared6
             // 
@@ -1788,6 +1806,7 @@
             this.btnNoPlay5.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay5.TabIndex = 76;
             this.btnNoPlay5.Text = "Add another";
+            this.btnNoPlay5.Click += new System.EventHandler(this.btnNoPlay5_Click);
             // 
             // btnHome5
             // 
@@ -1796,6 +1815,7 @@
             this.btnHome5.Size = new System.Drawing.Size(79, 21);
             this.btnHome5.TabIndex = 75;
             this.btnHome5.Text = "Add another";
+            this.btnHome5.Click += new System.EventHandler(this.btnHome5_Click);
             // 
             // btnShared5
             // 
@@ -1930,6 +1950,7 @@
             this.btnNoPlay4.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay4.TabIndex = 66;
             this.btnNoPlay4.Text = "Add another";
+            this.btnNoPlay4.Click += new System.EventHandler(this.btnNoPlay4_Click);
             // 
             // btnHome4
             // 
@@ -1938,6 +1959,7 @@
             this.btnHome4.Size = new System.Drawing.Size(79, 21);
             this.btnHome4.TabIndex = 65;
             this.btnHome4.Text = "Add another";
+            this.btnHome4.Click += new System.EventHandler(this.btnHome4_Click);
             // 
             // btnShared4
             // 
@@ -2072,6 +2094,7 @@
             this.btnNoPlay3.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay3.TabIndex = 56;
             this.btnNoPlay3.Text = "Add another";
+            this.btnNoPlay3.Click += new System.EventHandler(this.btnNoPlay3_Click);
             // 
             // btnHome3
             // 
@@ -2080,6 +2103,7 @@
             this.btnHome3.Size = new System.Drawing.Size(79, 21);
             this.btnHome3.TabIndex = 55;
             this.btnHome3.Text = "Add another";
+            this.btnHome3.Click += new System.EventHandler(this.btnHome3_Click);
             // 
             // btnShared3
             // 
@@ -2214,6 +2238,7 @@
             this.btnNoPlay2.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay2.TabIndex = 46;
             this.btnNoPlay2.Text = "Add another";
+            this.btnNoPlay2.Click += new System.EventHandler(this.btnNoPlay2_Click);
             // 
             // btnHome2
             // 
@@ -2222,6 +2247,7 @@
             this.btnHome2.Size = new System.Drawing.Size(79, 21);
             this.btnHome2.TabIndex = 45;
             this.btnHome2.Text = "Add another";
+            this.btnHome2.Click += new System.EventHandler(this.btnHome2_Click);
             // 
             // btnShared2
             // 
@@ -2356,6 +2382,7 @@
             this.btnNoPlay1.Size = new System.Drawing.Size(75, 21);
             this.btnNoPlay1.TabIndex = 36;
             this.btnNoPlay1.Text = "Add another";
+            this.btnNoPlay1.Click += new System.EventHandler(this.btnNoPlay1_Click);
             // 
             // btnHome1
             // 
@@ -2364,6 +2391,7 @@
             this.btnHome1.Size = new System.Drawing.Size(79, 21);
             this.btnHome1.TabIndex = 35;
             this.btnHome1.Text = "Add another";
+            this.btnHome1.Click += new System.EventHandler(this.btnHome1_Click);
             // 
             // btnShared1
             // 

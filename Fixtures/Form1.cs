@@ -1760,43 +1760,871 @@ namespace Fixtures
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            bool invalid = false;
-            //Check if date already exists
-            for (int i = 0; i < homeCount[0]; i++)
-            {
-                if (cmbBoxHome.Text == datesHome[division, team, i])
-                {
-                    invalid = true;
-                }
-            }
+            bool check = false;
 
-            if (invalid == false && cmbBoxHome.Text != "")
+            if (homeCount[0] == 12)
             {
-                //Add date to array
-                datesHome[division, team, homeCount[0]] = cmbBoxHome.Text;
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome.Text != "")
+            {
+                for (int i = 0; i < homeCount[0]; i++)
+                {
+                    if (cmbBoxHome.Text == datesHome[division, 0, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 0, homeCount[0]] = cmbBoxHome.Text;
+                    homeCount[0]++;
+                }
+                //Reset text to type new team name
                 cmbBoxHome.SelectedIndex = -1;
-                homeCount[0]++;
+            }
+        }
+
+        private void btnHome1_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[1] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome1.Text != "")
+            {
+                for (int i = 0; i < homeCount[1]; i++)
+                {
+                    if (cmbBoxHome1.Text == datesHome[division, 1, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 1, homeCount[1]] = cmbBoxHome1.Text;
+                    homeCount[1]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome1.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome2_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[2] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome2.Text != "")
+            {
+                for (int i = 0; i < homeCount[2]; i++)
+                {
+                    if (cmbBoxHome2.Text == datesHome[division, 2, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 2, homeCount[2]] = cmbBoxHome2.Text;
+                    homeCount[2]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome2.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome3_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[3] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome3.Text != "")
+            {
+                for (int i = 0; i < homeCount[3]; i++)
+                {
+                    if (cmbBoxHome3.Text == datesHome[division, 3, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 3, homeCount[3]] = cmbBoxHome3.Text;
+                    homeCount[3]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome3.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome4_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[4] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome4.Text != "")
+            {
+                for (int i = 0; i < homeCount[4]; i++)
+                {
+                    if (cmbBoxHome4.Text == datesHome[division, 4, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 4, homeCount[4]] = cmbBoxHome4.Text;
+                    homeCount[4]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome4.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome5_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[5] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome5.Text != "")
+            {
+                for (int i = 0; i < homeCount[5]; i++)
+                {
+                    if (cmbBoxHome5.Text == datesHome[division, 5, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 5, homeCount[5]] = cmbBoxHome5.Text;
+                    homeCount[5]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome5.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome6_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[6] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome6.Text != "")
+            {
+                for (int i = 0; i < homeCount[6]; i++)
+                {
+                    if (cmbBoxHome6.Text == datesHome[division, 6, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 6, homeCount[6]] = cmbBoxHome6.Text;
+                    homeCount[6]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome6.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome7_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[7] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome7.Text != "")
+            {
+                for (int i = 0; i < homeCount[7]; i++)
+                {
+                    if (cmbBoxHome7.Text == datesHome[division, 7, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 7, homeCount[7]] = cmbBoxHome.Text;
+                    homeCount[7]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome7.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome8_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[8] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome8.Text != "")
+            {
+                for (int i = 0; i < homeCount[8]; i++)
+                {
+                    if (cmbBoxHome8.Text == datesHome[division, 8, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 8, homeCount[8]] = cmbBoxHome8.Text;
+                    homeCount[8]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome8.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome9_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[9] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome9.Text != "")
+            {
+                for (int i = 0; i < homeCount[9]; i++)
+                {
+                    if (cmbBoxHome9.Text == datesHome[division, 9, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 9, homeCount[9]] = cmbBoxHome9.Text;
+                    homeCount[9]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome9.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome10_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[10] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome10.Text != "")
+            {
+                for (int i = 0; i < homeCount[10]; i++)
+                {
+                    if (cmbBoxHome10.Text == datesHome[division, 10, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 10, homeCount[10]] = cmbBoxHome10.Text;
+                    homeCount[10]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome10.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome11_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[11] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome11.Text != "")
+            {
+                for (int i = 0; i < homeCount[11]; i++)
+                {
+                    if (cmbBoxHome11.Text == datesHome[division, 11, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 11, homeCount[11]] = cmbBoxHome11.Text;
+                    homeCount[11]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome11.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome12_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[12] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome12.Text != "")
+            {
+                for (int i = 0; i < homeCount[12]; i++)
+                {
+                    if (cmbBoxHome12.Text == datesHome[division, 12, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 12, homeCount[12]] = cmbBoxHome12.Text;
+                    homeCount[12]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome12.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome13_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[13] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome13.Text != "")
+            {
+                for (int i = 0; i < homeCount[13]; i++)
+                {
+                    if (cmbBoxHome13.Text == datesHome[division, 13, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 13, homeCount[13]] = cmbBoxHome13.Text;
+                    homeCount[13]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome13.SelectedIndex = -1;
+            }
+        }
+
+        private void btnHome14_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (homeCount[14] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxHome14.Text != "")
+            {
+                for (int i = 0; i < homeCount[14]; i++)
+                {
+                    if (cmbBoxHome14.Text == datesHome[division, 14, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates home", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesHome[division, 14, homeCount[14]] = cmbBoxHome14.Text;
+                    homeCount[14]++;
+                }
+                //Reset text to type new team name
+                cmbBoxHome14.SelectedIndex = -1;
             }
         }
 
         private void btnNoPlay_Click(object sender, EventArgs e)
         {
-            bool invalid = false;
+            bool check = false;
 
-            for (int i = 0; i < noPlayCount[0]; i++)
+            if (noPlayCount[0] == 12)
             {
-                if (cmbBoxNoPlay.Text == datesNoPlay[division, team, i])
-                {
-                    invalid = true;
-                }
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
-
-            if (invalid == false && cmbBoxNoPlay.Text != "")
+            else if (cmbBoxNoPlay.Text != "")
             {
-                //Add date to array
-                datesNoPlay[division, team, noPlayCount[0]] = cmbBoxNoPlay.Text;
+                for (int i = 0; i < noPlayCount[0]; i++)
+                {
+                    if (cmbBoxNoPlay.Text == datesNoPlay[division, 0, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 0, noPlayCount[0]] = cmbBoxNoPlay.Text;
+                    noPlayCount[0]++;
+                }
+                //Reset text to type new team name
                 cmbBoxNoPlay.SelectedIndex = -1;
-                noPlayCount[0]++;
+            }
+        }
+
+        private void btnNoPlay1_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[1] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay1.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[1]; i++)
+                {
+                    if (cmbBoxNoPlay1.Text == datesNoPlay[division, 1, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 1, noPlayCount[1]] = cmbBoxNoPlay1.Text;
+                    noPlayCount[1]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay1.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay2_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[2] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay2.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[2]; i++)
+                {
+                    if (cmbBoxNoPlay2.Text == datesNoPlay[division, 2, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 2, noPlayCount[2]] = cmbBoxNoPlay2.Text;
+                    noPlayCount[2]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay2.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay3_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[3] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay3.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[3]; i++)
+                {
+                    if (cmbBoxNoPlay3.Text == datesNoPlay[division, 3, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 3, noPlayCount[3]] = cmbBoxNoPlay3.Text;
+                    noPlayCount[3]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay3.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay4_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[4] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay4.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[4]; i++)
+                {
+                    if (cmbBoxNoPlay4.Text == datesNoPlay[division, 4, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 4, noPlayCount[4]] = cmbBoxNoPlay4.Text;
+                    noPlayCount[4]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay4.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay5_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[5] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay5.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[5]; i++)
+                {
+                    if (cmbBoxNoPlay5.Text == datesNoPlay[division, 5, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 5, noPlayCount[5]] = cmbBoxNoPlay5.Text;
+                    noPlayCount[5]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay5.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay6_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[6] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay6.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[6]; i++)
+                {
+                    if (cmbBoxNoPlay6.Text == datesNoPlay[division, 6, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 6, noPlayCount[6]] = cmbBoxNoPlay6.Text;
+                    noPlayCount[6]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay6.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay7_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[7] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay7.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[7]; i++)
+                {
+                    if (cmbBoxNoPlay7.Text == datesNoPlay[division, 7, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 7, noPlayCount[7]] = cmbBoxNoPlay7.Text;
+                    noPlayCount[7]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay7.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay8_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[8] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay8.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[8]; i++)
+                {
+                    if (cmbBoxNoPlay8.Text == datesNoPlay[division, 8, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 8, noPlayCount[8]] = cmbBoxNoPlay8.Text;
+                    noPlayCount[8]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay8.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay9_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[9] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay9.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[9]; i++)
+                {
+                    if (cmbBoxNoPlay9.Text == datesNoPlay[division, 9, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 9, noPlayCount[9]] = cmbBoxNoPlay9.Text;
+                    noPlayCount[9]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay9.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay10_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[10] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay10.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[10]; i++)
+                {
+                    if (cmbBoxNoPlay10.Text == datesNoPlay[division, 10, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 10, noPlayCount[10]] = cmbBoxNoPlay10.Text;
+                    noPlayCount[10]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay10.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay11_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[11] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay11.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[11]; i++)
+                {
+                    if (cmbBoxNoPlay11.Text == datesNoPlay[division, 11, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 11, noPlayCount[11]] = cmbBoxNoPlay11.Text;
+                    noPlayCount[11]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay11.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay12_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[12] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay12.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[12]; i++)
+                {
+                    if (cmbBoxNoPlay12.Text == datesNoPlay[division, 12, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 12, noPlayCount[12]] = cmbBoxNoPlay12.Text;
+                    noPlayCount[12]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay12.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay13_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[13] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay13.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[13]; i++)
+                {
+                    if (cmbBoxNoPlay13.Text == datesNoPlay[division, 13, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 13, noPlayCount[13]] = cmbBoxNoPlay13.Text;
+                    noPlayCount[13]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay13.SelectedIndex = -1;
+            }
+        }
+
+        private void btnNoPlay14_Click(object sender, EventArgs e)
+        {
+            bool check = false;
+
+            if (noPlayCount[14] == 12)
+            {
+                MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
+            }
+            else if (cmbBoxNoPlay14.Text != "")
+            {
+                for (int i = 0; i < noPlayCount[14]; i++)
+                {
+                    if (cmbBoxNoPlay14.Text == datesNoPlay[division, 14, i])
+                    {
+                        MessageBox.Show("The date has already been added.", "Date already added to dates not playing", MessageBoxButtons.OK);
+                        check = true;
+                    }
+                }
+                if (check == false)
+                {
+                    //Save current
+                    datesNoPlay[division, 14, noPlayCount[14]] = cmbBoxNoPlay14.Text;
+                    noPlayCount[14]++;
+                }
+                //Reset text to type new team name
+                cmbBoxNoPlay14.SelectedIndex = -1;
             }
         }
     }
