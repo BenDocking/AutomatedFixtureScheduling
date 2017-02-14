@@ -31,9 +31,11 @@ namespace Fixtures
 
         private int division = 0;
         private int team = 0;
-        private int[] sharedCount = new int[15]; //Shared count for each team
-        private int[] homeCount = new int[15];
-        private int[] noPlayCount = new int[15];
+        private int[,] sharedCount = new int[15, 15]; //Shared count Division, Team
+        private int[,] homeCount = new int[15, 15]; //homeCount Division, Team
+        private int[,] noPlayCount = new int[15, 15]; //noPlayCount Division, Team
+        private int[,] homeIndex = new int[15, 15];
+        private int[,] noPlayIndex = new int[15, 15];
         private int newTabIndex = 1;
         private int[] teamCount = new int[15];
 
@@ -206,7 +208,7 @@ namespace Fixtures
 
             if (newTabIndex < 16)
             {
-                int teamCount = 0;
+                teamCount[division] = 0;
                 bool invalid = false;
                 string input = txtName.Text;
                 input = input.Trim();
@@ -217,11 +219,11 @@ namespace Fixtures
                 {
                     #region Save team 1
                     //Save name
-                    name[division, teamCount] = txtName.Text;
+                    name[division, teamCount[division]] = txtName.Text;
                     //Check if already exists
-                    for (int i = 0; i < sharedCount[teamCount]; i++)
+                    for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                     {
-                        if (txtShared.Text == shared[division, teamCount, i])
+                        if (txtShared.Text == shared[division, teamCount[division], i])
                         {
                             invalid = true;
                         }
@@ -231,13 +233,14 @@ namespace Fixtures
                     if (input != "" && txtShared.Text != "Enter a team" && invalid == false)
                     {
                         //Save shared
-                        shared[division, teamCount, sharedCount[teamCount]] = txtShared.Text;
+                        shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared.Text;
+                        sharedCount[division, teamCount[division]]++;
                     }
                     //Check if date already exists
                     invalid = false;
-                    for (int i = 0; i < homeCount[teamCount]; i++)
+                    for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                     {
-                        if (cmbBoxHome.Text == datesHome[division, teamCount, i])
+                        if (cmbBoxHome.Text == datesHome[division, teamCount[division], i])
                         {
                             invalid = true;
                         }
@@ -245,13 +248,15 @@ namespace Fixtures
                     if (cmbBoxHome.Text != "" && invalid == false)
                     {
                         //Save home date
-                        datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome.Text;
+                        datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome.Text;
+                        homeCount[division, teamCount[division]]++;
+                        homeIndex[division, teamCount[division]] = cmbBoxHome.SelectedIndex;
                     }
                     //Check if date already exists
                     invalid = false;
-                    for (int i = 0; i < noPlayCount[teamCount]; i++)
+                    for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                     {
-                        if (cmbBoxNoPlay.Text == datesNoPlay[division, teamCount, i])
+                        if (cmbBoxNoPlay.Text == datesNoPlay[division, teamCount[division], i])
                         {
                             invalid = true;
                         }
@@ -259,22 +264,24 @@ namespace Fixtures
                     if (cmbBoxNoPlay.Text != "" && invalid == false)
                     {
                         //Save no play date
-                        datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay.Text;
+                        datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay.Text;
+                        noPlayCount[division, teamCount[division]]++;
+                        noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay.SelectedIndex;
                     }
                     invalid = false;
                     #endregion
-                    teamCount++;
+                    teamCount[division]++;
                     input = txtName1.Text;
                     input = input.Trim();
                     if (txtName1.Text != "Enter a team" && input != "")
                     {
                         #region Save team 2
                         //Save name
-                        name[division, teamCount] = txtName1.Text;
+                        name[division, teamCount[division]] = txtName1.Text;
                         //Check if date already exists
-                        for (int i = 0; i < sharedCount[teamCount]; i++)
+                        for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                         {
-                            if (txtShared1.Text == shared[division, teamCount, i])
+                            if (txtShared1.Text == shared[division, teamCount[division], i])
                             {
                                 invalid = true;
                             }
@@ -284,13 +291,14 @@ namespace Fixtures
                         if (input != "" && txtShared1.Text != "Enter a team" && invalid == false)
                         {
                             //Save shared
-                            shared[division, teamCount, sharedCount[teamCount]] = txtShared1.Text;
+                            shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared1.Text;
+                            sharedCount[division, teamCount[division]]++;
                         }
                         //Check if date already exists
                         invalid = false;
-                        for (int i = 0; i < homeCount[teamCount]; i++)
+                        for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                         {
-                            if (cmbBoxHome1.Text == datesHome[division, teamCount, i])
+                            if (cmbBoxHome1.Text == datesHome[division, teamCount[division], i])
                             {
                                 invalid = true;
                             }
@@ -298,13 +306,15 @@ namespace Fixtures
                         if (cmbBoxHome1.Text != "" && invalid == false)
                         {
                             //Save home date
-                            datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome1.Text;
+                            datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome1.Text;
+                            homeCount[division, teamCount[division]]++;
+                            homeIndex[division, teamCount[division]] = cmbBoxHome1.SelectedIndex;
                         }
                         //Check if date already exists
                         invalid = false;
-                        for (int i = 0; i < noPlayCount[teamCount]; i++)
+                        for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                         {
-                            if (cmbBoxNoPlay1.Text == datesNoPlay[division, teamCount, i])
+                            if (cmbBoxNoPlay1.Text == datesNoPlay[division, teamCount[division], i])
                             {
                                 invalid = true;
                             }
@@ -312,22 +322,24 @@ namespace Fixtures
                         if (cmbBoxNoPlay1.Text != "" && invalid == false)
                         {
                             //Save no play date
-                            datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay1.Text;
+                            datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay1.Text;
+                            noPlayCount[division, teamCount[division]]++;
+                            noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay1.SelectedIndex;
                         }
                         invalid = false;
                         #endregion
-                        teamCount++;
+                        teamCount[division]++;
                         input = txtName2.Text;
                         input = input.Trim();
                         if (txtName2.Text != "Enter a team" && input != "")
                         {
                             #region Save team 3
                             //Save name
-                            name[division, teamCount] = txtName2.Text;
+                            name[division, teamCount[division]] = txtName2.Text;
                             //Check if date already exists
-                            for (int i = 0; i < sharedCount[teamCount]; i++)
+                            for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                             {
-                                if (txtShared2.Text == shared[division, teamCount, i])
+                                if (txtShared2.Text == shared[division, teamCount[division], i])
                                 {
                                     invalid = true;
                                 }
@@ -337,13 +349,14 @@ namespace Fixtures
                             if (input != "" && txtShared2.Text != "Enter a team" && invalid == false)
                             {
                                 //Save shared
-                                shared[division, teamCount, sharedCount[teamCount]] = txtShared2.Text;
+                                shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared2.Text;
+                                sharedCount[division, teamCount[division]]++;
                             }
                             //Check if date already exists
                             invalid = false;
-                            for (int i = 0; i < homeCount[teamCount]; i++)
+                            for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                             {
-                                if (cmbBoxHome2.Text == datesHome[division, teamCount, i])
+                                if (cmbBoxHome2.Text == datesHome[division, teamCount[division], i])
                                 {
                                     invalid = true;
                                 }
@@ -351,13 +364,15 @@ namespace Fixtures
                             if (cmbBoxHome2.Text != "" && invalid == false)
                             {
                                 //Save home date
-                                datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome2.Text;
+                                datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome2.Text;
+                                homeCount[division, teamCount[division]]++;
+                                homeIndex[division, teamCount[division]] = cmbBoxHome2.SelectedIndex;
                             }
                             //Check if date already exists
                             invalid = false;
-                            for (int i = 0; i < noPlayCount[teamCount]; i++)
+                            for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                             {
-                                if (cmbBoxNoPlay2.Text == datesNoPlay[division, teamCount, i])
+                                if (cmbBoxNoPlay2.Text == datesNoPlay[division, teamCount[division], i])
                                 {
                                     invalid = true;
                                 }
@@ -365,22 +380,24 @@ namespace Fixtures
                             if (cmbBoxNoPlay2.Text != "" && invalid == false)
                             {
                                 //Save no play date
-                                datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay2.Text;
+                                datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay2.Text;
+                                noPlayCount[division, teamCount[division]]++;
+                                noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay2.SelectedIndex;
                             }
                             invalid = false;
                             #endregion
-                            teamCount++;
+                            teamCount[division]++;
                             input = txtName3.Text;
                             input = input.Trim();
                             if (txtName3.Text != "Enter a team" && input != "")
                             {
                                 #region Save team 4
                                 //Save name
-                                name[division, teamCount] = txtName3.Text;
+                                name[division, teamCount[division]] = txtName3.Text;
                                 //Check if date already exists
-                                for (int i = 0; i < sharedCount[teamCount]; i++)
+                                for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                                 {
-                                    if (txtShared3.Text == shared[division, teamCount, i])
+                                    if (txtShared3.Text == shared[division, teamCount[division], i])
                                     {
                                         invalid = true;
                                     }
@@ -390,13 +407,14 @@ namespace Fixtures
                                 if (input != "" && txtShared3.Text != "Enter a team" && invalid == false)
                                 {
                                     //Save shared
-                                    shared[division, teamCount, sharedCount[teamCount]] = txtShared3.Text;
+                                    shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared3.Text;
+                                    sharedCount[division, teamCount[division]]++;
                                 }
                                 //Check if date already exists
                                 invalid = false;
-                                for (int i = 0; i < homeCount[teamCount]; i++)
+                                for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                                 {
-                                    if (cmbBoxHome3.Text == datesHome[division, teamCount, i])
+                                    if (cmbBoxHome3.Text == datesHome[division, teamCount[division], i])
                                     {
                                         invalid = true;
                                     }
@@ -404,13 +422,15 @@ namespace Fixtures
                                 if (cmbBoxHome3.Text != "" && invalid == false)
                                 {
                                     //Save home date
-                                    datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome3.Text;
+                                    datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome3.Text;
+                                    homeCount[division, teamCount[division]]++;
+                                    homeIndex[division, teamCount[division]] = cmbBoxHome3.SelectedIndex;
                                 }
                                 //Check if date already exists
                                 invalid = false;
-                                for (int i = 0; i < noPlayCount[teamCount]; i++)
+                                for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                                 {
-                                    if (cmbBoxNoPlay3.Text == datesNoPlay[division, teamCount, i])
+                                    if (cmbBoxNoPlay3.Text == datesNoPlay[division, teamCount[division], i])
                                     {
                                         invalid = true;
                                     }
@@ -418,22 +438,24 @@ namespace Fixtures
                                 if (cmbBoxNoPlay3.Text != "" && invalid == false)
                                 {
                                     //Save no play date
-                                    datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay3.Text;
+                                    datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay3.Text;
+                                    noPlayCount[division, teamCount[division]]++;
+                                    noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay3.SelectedIndex;
                                 }
                                 invalid = false;
                                 #endregion
-                                teamCount++;
+                                teamCount[division]++;
                                 input = txtName4.Text;
                                 input = input.Trim();
                                 if (txtName4.Text != "Enter a team" && input != "")
                                 {
                                     #region Save team 5
                                     //Save name
-                                    name[division, teamCount] = txtName4.Text;
+                                    name[division, teamCount[division]] = txtName4.Text;
                                     //Check if date already exists
-                                    for (int i = 0; i < sharedCount[teamCount]; i++)
+                                    for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                                     {
-                                        if (txtShared4.Text == shared[division, teamCount, i])
+                                        if (txtShared4.Text == shared[division, teamCount[division], i])
                                         {
                                             invalid = true;
                                         }
@@ -443,13 +465,14 @@ namespace Fixtures
                                     if (input != "" && txtShared4.Text != "Enter a team" && invalid == false)
                                     {
                                         //Save shared
-                                        shared[division, teamCount, sharedCount[teamCount]] = txtShared4.Text;
+                                        shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared4.Text;
+                                        sharedCount[division, teamCount[division]]++;
                                     }
                                     //Check if date already exists
                                     invalid = false;
-                                    for (int i = 0; i < homeCount[teamCount]; i++)
+                                    for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                                     {
-                                        if (cmbBoxHome4.Text == datesHome[division, teamCount, i])
+                                        if (cmbBoxHome4.Text == datesHome[division, teamCount[division], i])
                                         {
                                             invalid = true;
                                         }
@@ -457,13 +480,15 @@ namespace Fixtures
                                     if (cmbBoxHome4.Text != "" && invalid == false)
                                     {
                                         //Save home date
-                                        datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome4.Text;
+                                        datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome4.Text;
+                                        homeCount[division, teamCount[division]]++;
+                                        homeIndex[division, teamCount[division]] = cmbBoxHome4.SelectedIndex;
                                     }
                                     //Check if date already exists
                                     invalid = false;
-                                    for (int i = 0; i < noPlayCount[teamCount]; i++)
+                                    for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                                     {
-                                        if (cmbBoxNoPlay4.Text == datesNoPlay[division, teamCount, i])
+                                        if (cmbBoxNoPlay4.Text == datesNoPlay[division, teamCount[division], i])
                                         {
                                             invalid = true;
                                         }
@@ -471,22 +496,24 @@ namespace Fixtures
                                     if (cmbBoxNoPlay4.Text != "" && invalid == false)
                                     {
                                         //Save no play date
-                                        datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay4.Text;
+                                        datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay4.Text;
+                                        noPlayCount[division, teamCount[division]]++;
+                                        noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay4.SelectedIndex;
                                     }
                                     invalid = false;
                                     #endregion
-                                    teamCount++;
+                                    teamCount[division]++;
                                     input = txtName5.Text;
                                     input = input.Trim();
                                     if (txtName5.Text != "Enter a team" && input != "")
                                     {
                                         #region Save team 6
                                         //Save name
-                                        name[division, teamCount] = txtName5.Text;
+                                        name[division, teamCount[division]] = txtName5.Text;
                                         //Check if date already exists
-                                        for (int i = 0; i < sharedCount[teamCount]; i++)
+                                        for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                                         {
-                                            if (txtShared5.Text == shared[division, teamCount, i])
+                                            if (txtShared5.Text == shared[division, teamCount[division], i])
                                             {
                                                 invalid = true;
                                             }
@@ -496,13 +523,14 @@ namespace Fixtures
                                         if (input != "" && txtShared5.Text != "Enter a team" && invalid == false)
                                         {
                                             //Save shared
-                                            shared[division, teamCount, sharedCount[teamCount]] = txtShared5.Text;
+                                            shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared5.Text;
+                                            sharedCount[division, teamCount[division]]++;
                                         }
                                         //Check if date already exists
                                         invalid = false;
-                                        for (int i = 0; i < homeCount[teamCount]; i++)
+                                        for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                                         {
-                                            if (cmbBoxHome5.Text == datesHome[division, teamCount, i])
+                                            if (cmbBoxHome5.Text == datesHome[division, teamCount[division], i])
                                             {
                                                 invalid = true;
                                             }
@@ -510,13 +538,15 @@ namespace Fixtures
                                         if (cmbBoxHome5.Text != "" && invalid == false)
                                         {
                                             //Save home date
-                                            datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome5.Text;
+                                            datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome5.Text;
+                                            homeCount[division, teamCount[division]]++;
+                                            homeIndex[division, teamCount[division]] = cmbBoxHome5.SelectedIndex;
                                         }
                                         //Check if date already exists
                                         invalid = false;
-                                        for (int i = 0; i < noPlayCount[teamCount]; i++)
+                                        for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                                         {
-                                            if (cmbBoxNoPlay5.Text == datesNoPlay[division, teamCount, i])
+                                            if (cmbBoxNoPlay5.Text == datesNoPlay[division, teamCount[division], i])
                                             {
                                                 invalid = true;
                                             }
@@ -524,22 +554,24 @@ namespace Fixtures
                                         if (cmbBoxNoPlay5.Text != "" && invalid == false)
                                         {
                                             //Save no play date
-                                            datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay5.Text;
+                                            datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay5.Text;
+                                            noPlayCount[division, teamCount[division]]++;
+                                            noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay5.SelectedIndex;
                                         }
                                         invalid = false;
                                         #endregion
-                                        teamCount++;
+                                        teamCount[division]++;
                                         input = txtName6.Text;
                                         input = input.Trim();
                                         if (txtName6.Text != "Enter a team" && input != "")
                                         {
                                             #region Save team 7
                                             //Save name
-                                            name[division, teamCount] = txtName6.Text;
+                                            name[division, teamCount[division]] = txtName6.Text;
                                             //Check if date already exists
-                                            for (int i = 0; i < sharedCount[teamCount]; i++)
+                                            for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                                             {
-                                                if (txtShared6.Text == shared[division, teamCount, i])
+                                                if (txtShared6.Text == shared[division, teamCount[division], i])
                                                 {
                                                     invalid = true;
                                                 }
@@ -549,13 +581,14 @@ namespace Fixtures
                                             if (input != "" && txtShared6.Text != "Enter a team" && invalid == false)
                                             {
                                                 //Save shared
-                                                shared[division, teamCount, sharedCount[teamCount]] = txtShared6.Text;
+                                                shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared6.Text;
+                                                sharedCount[division, teamCount[division]]++;
                                             }
                                             //Check if date already exists
                                             invalid = false;
-                                            for (int i = 0; i < homeCount[teamCount]; i++)
+                                            for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                                             {
-                                                if (cmbBoxHome6.Text == datesHome[division, teamCount, i])
+                                                if (cmbBoxHome6.Text == datesHome[division, teamCount[division], i])
                                                 {
                                                     invalid = true;
                                                 }
@@ -563,13 +596,15 @@ namespace Fixtures
                                             if (cmbBoxHome6.Text != "" && invalid == false)
                                             {
                                                 //Save home date
-                                                datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome6.Text;
+                                                datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome6.Text;
+                                                homeCount[division, teamCount[division]]++;
+                                                homeIndex[division, teamCount[division]] = cmbBoxHome6.SelectedIndex;
                                             }
                                             //Check if date already exists
                                             invalid = false;
-                                            for (int i = 0; i < noPlayCount[teamCount]; i++)
+                                            for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                                             {
-                                                if (cmbBoxNoPlay6.Text == datesNoPlay[division, teamCount, i])
+                                                if (cmbBoxNoPlay6.Text == datesNoPlay[division, teamCount[division], i])
                                                 {
                                                     invalid = true;
                                                 }
@@ -577,22 +612,24 @@ namespace Fixtures
                                             if (cmbBoxNoPlay6.Text != "" && invalid == false)
                                             {
                                                 //Save no play date
-                                                datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay6.Text;
+                                                datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay6.Text;
+                                                noPlayCount[division, teamCount[division]]++;
+                                                noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay6.SelectedIndex;
                                             }
                                             invalid = false;
                                             #endregion
-                                            teamCount++;
+                                            teamCount[division]++;
                                             input = txtName7.Text;
                                             input = input.Trim();
                                             if (txtName7.Text != "Enter a team" && input != "")
                                             {
                                                 #region Save team 8
                                                 //Save name
-                                                name[division, teamCount] = txtName7.Text;
+                                                name[division, teamCount[division]] = txtName7.Text;
                                                 //Check if date already exists
-                                                for (int i = 0; i < sharedCount[teamCount]; i++)
+                                                for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                                                 {
-                                                    if (txtShared7.Text == shared[division, teamCount, i])
+                                                    if (txtShared7.Text == shared[division, teamCount[division], i])
                                                     {
                                                         invalid = true;
                                                     }
@@ -602,13 +639,14 @@ namespace Fixtures
                                                 if (input != "" && txtShared7.Text != "Enter a team" && invalid == false)
                                                 {
                                                     //Save shared
-                                                    shared[division, teamCount, sharedCount[teamCount]] = txtShared7.Text;
+                                                    shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared7.Text;
+                                                    sharedCount[division, teamCount[division]]++;
                                                 }
                                                 //Check if date already exists
                                                 invalid = false;
-                                                for (int i = 0; i < homeCount[teamCount]; i++)
+                                                for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                                                 {
-                                                    if (cmbBoxHome7.Text == datesHome[division, teamCount, i])
+                                                    if (cmbBoxHome7.Text == datesHome[division, teamCount[division], i])
                                                     {
                                                         invalid = true;
                                                     }
@@ -616,13 +654,15 @@ namespace Fixtures
                                                 if (cmbBoxHome7.Text != "" && invalid == false)
                                                 {
                                                     //Save home date
-                                                    datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome7.Text;
+                                                    datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome7.Text;
+                                                    homeCount[division, teamCount[division]]++;
+                                                    homeIndex[division, teamCount[division]] = cmbBoxHome7.SelectedIndex;
                                                 }
                                                 //Check if date already exists
                                                 invalid = false;
-                                                for (int i = 0; i < noPlayCount[teamCount]; i++)
+                                                for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                                                 {
-                                                    if (cmbBoxNoPlay7.Text == datesNoPlay[division, teamCount, i])
+                                                    if (cmbBoxNoPlay7.Text == datesNoPlay[division, teamCount[division], i])
                                                     {
                                                         invalid = true;
                                                     }
@@ -630,22 +670,24 @@ namespace Fixtures
                                                 if (cmbBoxNoPlay7.Text != "" && invalid == false)
                                                 {
                                                     //Save no play date
-                                                    datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay7.Text;
+                                                    datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay7.Text;
+                                                    noPlayCount[division, teamCount[division]]++;
+                                                    noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay7.SelectedIndex;
                                                 }
                                                 invalid = false;
                                                 #endregion
-                                                teamCount++;
+                                                teamCount[division]++;
                                                 input = txtName8.Text;
                                                 input = input.Trim();
-                                                if (txtName8.Text == "Enter a team" && input != "")
+                                                if (txtName8.Text != "Enter a team" && input != "")
                                                 {
                                                     #region Save team 9
                                                     //Save name
-                                                    name[division, teamCount] = txtName8.Text;
+                                                    name[division, teamCount[division]] = txtName8.Text;
                                                     //Check if date already exists
-                                                    for (int i = 0; i < sharedCount[teamCount]; i++)
+                                                    for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                                                     {
-                                                        if (txtShared8.Text == shared[division, teamCount, i])
+                                                        if (txtShared8.Text == shared[division, teamCount[division], i])
                                                         {
                                                             invalid = true;
                                                         }
@@ -655,13 +697,14 @@ namespace Fixtures
                                                     if (input != "" && txtShared8.Text != "Enter a team" && invalid == false)
                                                     {
                                                         //Save shared
-                                                        shared[division, teamCount, sharedCount[teamCount]] = txtShared8.Text;
+                                                        shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared8.Text;
+                                                        sharedCount[division, teamCount[division]]++;
                                                     }
                                                     //Check if date already exists
                                                     invalid = false;
-                                                    for (int i = 0; i < homeCount[teamCount]; i++)
+                                                    for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                                                     {
-                                                        if (cmbBoxHome8.Text == datesHome[division, teamCount, i])
+                                                        if (cmbBoxHome8.Text == datesHome[division, teamCount[division], i])
                                                         {
                                                             invalid = true;
                                                         }
@@ -669,13 +712,15 @@ namespace Fixtures
                                                     if (cmbBoxHome8.Text != "" && invalid == false)
                                                     {
                                                         //Save home date
-                                                        datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome8.Text;
+                                                        datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome8.Text;
+                                                        homeCount[division, teamCount[division]]++;
+                                                        homeIndex[division, teamCount[division]] = cmbBoxHome8.SelectedIndex;
                                                     }
                                                     //Check if date already exists
                                                     invalid = false;
-                                                    for (int i = 0; i < noPlayCount[teamCount]; i++)
+                                                    for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                                                     {
-                                                        if (cmbBoxNoPlay8.Text == datesNoPlay[division, teamCount, i])
+                                                        if (cmbBoxNoPlay8.Text == datesNoPlay[division, teamCount[division], i])
                                                         {
                                                             invalid = true;
                                                         }
@@ -683,22 +728,24 @@ namespace Fixtures
                                                     if (cmbBoxNoPlay8.Text != "" && invalid == false)
                                                     {
                                                         //Save no play date
-                                                        datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay8.Text;
+                                                        datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay8.Text;
+                                                        noPlayCount[division, teamCount[division]]++;
+                                                        noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay8.SelectedIndex;
                                                     }
                                                     invalid = false;
                                                     #endregion
-                                                    teamCount++;
+                                                    teamCount[division]++;
                                                     input = txtName9.Text;
                                                     input = input.Trim();
                                                     if (txtName9.Text != "Enter a team" && input != "")
                                                     {
                                                         #region Save team 10
                                                         //Save name
-                                                        name[division, teamCount] = txtName9.Text;
+                                                        name[division, teamCount[division]] = txtName9.Text;
                                                         //Check if date already exists
-                                                        for (int i = 0; i < sharedCount[teamCount]; i++)
+                                                        for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                                                         {
-                                                            if (txtShared9.Text == shared[division, teamCount, i])
+                                                            if (txtShared9.Text == shared[division, teamCount[division], i])
                                                             {
                                                                 invalid = true;
                                                             }
@@ -708,13 +755,14 @@ namespace Fixtures
                                                         if (input != "" && txtShared9.Text != "Enter a team" && invalid == false)
                                                         {
                                                             //Save shared
-                                                            shared[division, teamCount, sharedCount[teamCount]] = txtShared9.Text;
+                                                            shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared9.Text;
+                                                            sharedCount[division, teamCount[division]]++;
                                                         }
                                                         //Check if date already exists
                                                         invalid = false;
-                                                        for (int i = 0; i < homeCount[teamCount]; i++)
+                                                        for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                                                         {
-                                                            if (cmbBoxHome9.Text == datesHome[division, teamCount, i])
+                                                            if (cmbBoxHome9.Text == datesHome[division, teamCount[division], i])
                                                             {
                                                                 invalid = true;
                                                             }
@@ -722,13 +770,15 @@ namespace Fixtures
                                                         if (cmbBoxHome9.Text != "" && invalid == false)
                                                         {
                                                             //Save home date
-                                                            datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome9.Text;
+                                                            datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome9.Text;
+                                                            homeCount[division, teamCount[division]]++;
+                                                            homeIndex[division, teamCount[division]] = cmbBoxHome9.SelectedIndex;
                                                         }
                                                         //Check if date already exists
                                                         invalid = false;
-                                                        for (int i = 0; i < noPlayCount[teamCount]; i++)
+                                                        for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                                                         {
-                                                            if (cmbBoxNoPlay9.Text == datesNoPlay[division, teamCount, i])
+                                                            if (cmbBoxNoPlay9.Text == datesNoPlay[division, teamCount[division], i])
                                                             {
                                                                 invalid = true;
                                                             }
@@ -736,22 +786,24 @@ namespace Fixtures
                                                         if (cmbBoxNoPlay9.Text != "" && invalid == false)
                                                         {
                                                             //Save no play date
-                                                            datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay9.Text;
+                                                            datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay9.Text;
+                                                            noPlayCount[division, teamCount[division]]++;
+                                                            noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay9.SelectedIndex;
                                                         }
                                                         invalid = false;
                                                         #endregion
-                                                        teamCount++;
+                                                        teamCount[division]++;
                                                         input = txtName10.Text;
                                                         input = input.Trim();
                                                         if (txtName10.Text != "Enter a team" && input != "")
                                                         {
                                                             #region Save team 11
                                                             //Save name
-                                                            name[division, teamCount] = txtName10.Text;
+                                                            name[division, teamCount[division]] = txtName10.Text;
                                                             //Check if date already exists
-                                                            for (int i = 0; i < sharedCount[teamCount]; i++)
+                                                            for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                                                             {
-                                                                if (txtShared10.Text == shared[division, teamCount, i])
+                                                                if (txtShared10.Text == shared[division, teamCount[division], i])
                                                                 {
                                                                     invalid = true;
                                                                 }
@@ -761,13 +813,14 @@ namespace Fixtures
                                                             if (input != "" && txtShared10.Text != "Enter a team" && invalid == false)
                                                             {
                                                                 //Save shared
-                                                                shared[division, teamCount, sharedCount[teamCount]] = txtShared10.Text;
+                                                                shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared10.Text;
+                                                                sharedCount[division, teamCount[division]]++;
                                                             }
                                                             //Check if date already exists
                                                             invalid = false;
-                                                            for (int i = 0; i < homeCount[teamCount]; i++)
+                                                            for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                                                             {
-                                                                if (cmbBoxHome10.Text == datesHome[division, teamCount, i])
+                                                                if (cmbBoxHome10.Text == datesHome[division, teamCount[division], i])
                                                                 {
                                                                     invalid = true;
                                                                 }
@@ -775,13 +828,15 @@ namespace Fixtures
                                                             if (cmbBoxHome10.Text != "" && invalid == false)
                                                             {
                                                                 //Save home date
-                                                                datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome10.Text;
+                                                                datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome10.Text;
+                                                                homeCount[division, teamCount[division]]++;
+                                                                homeIndex[division, teamCount[division]] = cmbBoxHome10.SelectedIndex;
                                                             }
                                                             //Check if date already exists
                                                             invalid = false;
-                                                            for (int i = 0; i < noPlayCount[teamCount]; i++)
+                                                            for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                                                             {
-                                                                if (cmbBoxNoPlay10.Text == datesNoPlay[division, teamCount, i])
+                                                                if (cmbBoxNoPlay10.Text == datesNoPlay[division, teamCount[division], i])
                                                                 {
                                                                     invalid = true;
                                                                 }
@@ -789,22 +844,24 @@ namespace Fixtures
                                                             if (cmbBoxNoPlay10.Text != "" && invalid == false)
                                                             {
                                                                 //Save no play date
-                                                                datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay10.Text;
+                                                                datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay10.Text;
+                                                                noPlayCount[division, teamCount[division]]++;
+                                                                noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay10.SelectedIndex;
                                                             }
                                                             invalid = false;
                                                             #endregion
-                                                            teamCount++;
+                                                            teamCount[division]++;
                                                             input = txtName11.Text;
                                                             input = input.Trim();
                                                             if (txtName11.Text != "Enter a team" && input != "")
                                                             {
                                                                 #region Save team 12
                                                                 //Save name
-                                                                name[division, teamCount] = txtName11.Text;
+                                                                name[division, teamCount[division]] = txtName11.Text;
                                                                 //Check if date already exists
-                                                                for (int i = 0; i < sharedCount[teamCount]; i++)
+                                                                for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                                                                 {
-                                                                    if (txtShared11.Text == shared[division, teamCount, i])
+                                                                    if (txtShared11.Text == shared[division, teamCount[division], i])
                                                                     {
                                                                         invalid = true;
                                                                     }
@@ -814,13 +871,14 @@ namespace Fixtures
                                                                 if (input != "" && txtShared11.Text != "Enter a team" && invalid == false)
                                                                 {
                                                                     //Save shared
-                                                                    shared[division, teamCount, sharedCount[teamCount]] = txtShared11.Text;
+                                                                    shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared11.Text;
+                                                                    sharedCount[division, teamCount[division]]++;
                                                                 }
                                                                 //Check if date already exists
                                                                 invalid = false;
-                                                                for (int i = 0; i < homeCount[teamCount]; i++)
+                                                                for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                                                                 {
-                                                                    if (cmbBoxHome11.Text == datesHome[division, teamCount, i])
+                                                                    if (cmbBoxHome11.Text == datesHome[division, teamCount[division], i])
                                                                     {
                                                                         invalid = true;
                                                                     }
@@ -828,13 +886,15 @@ namespace Fixtures
                                                                 if (cmbBoxHome11.Text != "" && invalid == false)
                                                                 {
                                                                     //Save home date
-                                                                    datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome11.Text;
+                                                                    datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome11.Text;
+                                                                    homeCount[division, teamCount[division]]++;
+                                                                    homeIndex[division, teamCount[division]] = cmbBoxHome11.SelectedIndex;
                                                                 }
                                                                 //Check if date already exists
                                                                 invalid = false;
-                                                                for (int i = 0; i < noPlayCount[teamCount]; i++)
+                                                                for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                                                                 {
-                                                                    if (cmbBoxNoPlay11.Text == datesNoPlay[division, teamCount, i])
+                                                                    if (cmbBoxNoPlay11.Text == datesNoPlay[division, teamCount[division], i])
                                                                     {
                                                                         invalid = true;
                                                                     }
@@ -842,22 +902,24 @@ namespace Fixtures
                                                                 if (cmbBoxNoPlay11.Text != "" && invalid == false)
                                                                 {
                                                                     //Save no play date
-                                                                    datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay11.Text;
+                                                                    datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay11.Text;
+                                                                    noPlayCount[division, teamCount[division]]++;
+                                                                    noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay11.SelectedIndex;
                                                                 }
                                                                 invalid = false;
                                                                 #endregion
-                                                                teamCount++;
+                                                                teamCount[division]++;
                                                                 input = txtName12.Text;
                                                                 input = input.Trim();
                                                                 if (txtName12.Text != "Enter a team" && input != "")
                                                                 {
                                                                     #region Save team 13
                                                                     //Save name
-                                                                    name[division, teamCount] = txtName12.Text;
+                                                                    name[division, teamCount[division]] = txtName12.Text;
                                                                     //Check if date already exists
-                                                                    for (int i = 0; i < sharedCount[teamCount]; i++)
+                                                                    for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                                                                     {
-                                                                        if (txtShared12.Text == shared[division, teamCount, i])
+                                                                        if (txtShared12.Text == shared[division, teamCount[division], i])
                                                                         {
                                                                             invalid = true;
                                                                         }
@@ -867,13 +929,14 @@ namespace Fixtures
                                                                     if (input != "" && txtShared12.Text != "Enter a team" && invalid == false)
                                                                     {
                                                                         //Save shared
-                                                                        shared[division, teamCount, sharedCount[teamCount]] = txtShared12.Text;
+                                                                        shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared12.Text;
+                                                                        sharedCount[division, teamCount[division]]++;
                                                                     }
                                                                     //Check if date already exists
                                                                     invalid = false;
-                                                                    for (int i = 0; i < homeCount[teamCount]; i++)
+                                                                    for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                                                                     {
-                                                                        if (cmbBoxHome12.Text == datesHome[division, teamCount, i])
+                                                                        if (cmbBoxHome12.Text == datesHome[division, teamCount[division], i])
                                                                         {
                                                                             invalid = true;
                                                                         }
@@ -881,13 +944,15 @@ namespace Fixtures
                                                                     if (cmbBoxHome12.Text != "" && invalid == false)
                                                                     {
                                                                         //Save home date
-                                                                        datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome12.Text;
+                                                                        datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome12.Text;
+                                                                        homeCount[division, teamCount[division]]++;
+                                                                        homeIndex[division, teamCount[division]] = cmbBoxHome12.SelectedIndex;
                                                                     }
                                                                     //Check if date already exists
                                                                     invalid = false;
-                                                                    for (int i = 0; i < noPlayCount[teamCount]; i++)
+                                                                    for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                                                                     {
-                                                                        if (cmbBoxNoPlay12.Text == datesNoPlay[division, teamCount, i])
+                                                                        if (cmbBoxNoPlay12.Text == datesNoPlay[division, teamCount[division], i])
                                                                         {
                                                                             invalid = true;
                                                                         }
@@ -895,22 +960,24 @@ namespace Fixtures
                                                                     if (cmbBoxNoPlay12.Text != "" && invalid == false)
                                                                     {
                                                                         //Save no play date
-                                                                        datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay12.Text;
+                                                                        datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay12.Text;
+                                                                        noPlayCount[division, teamCount[division]]++;
+                                                                        noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay12.SelectedIndex;
                                                                     }
                                                                     invalid = false;
                                                                     #endregion
-                                                                    teamCount++;
+                                                                    teamCount[division]++;
                                                                     input = txtName13.Text;
                                                                     input = input.Trim();
                                                                     if (txtName13.Text != "Enter a team" && input != "")
                                                                     {
                                                                         #region Save team 14
                                                                         //Save name
-                                                                        name[division, teamCount] = txtName13.Text;
+                                                                        name[division, teamCount[division]] = txtName13.Text;
                                                                         //Check if date already exists
-                                                                        for (int i = 0; i < sharedCount[teamCount]; i++)
+                                                                        for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                                                                         {
-                                                                            if (txtShared13.Text == shared[division, teamCount, i])
+                                                                            if (txtShared13.Text == shared[division, teamCount[division], i])
                                                                             {
                                                                                 invalid = true;
                                                                             }
@@ -920,13 +987,14 @@ namespace Fixtures
                                                                         if (input != "" && txtShared13.Text != "Enter a team" && invalid == false)
                                                                         {
                                                                             //Save shared
-                                                                            shared[division, teamCount, sharedCount[teamCount]] = txtShared13.Text;
+                                                                            shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared13.Text;
+                                                                            sharedCount[division, teamCount[division]]++;
                                                                         }
                                                                         //Check if date already exists
                                                                         invalid = false;
-                                                                        for (int i = 0; i < homeCount[teamCount]; i++)
+                                                                        for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                                                                         {
-                                                                            if (cmbBoxHome13.Text == datesHome[division, teamCount, i])
+                                                                            if (cmbBoxHome13.Text == datesHome[division, teamCount[division], i])
                                                                             {
                                                                                 invalid = true;
                                                                             }
@@ -934,13 +1002,15 @@ namespace Fixtures
                                                                         if (cmbBoxHome13.Text != "" && invalid == false)
                                                                         {
                                                                             //Save home date
-                                                                            datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome13.Text;
+                                                                            datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome13.Text;
+                                                                            homeCount[division, teamCount[division]]++;
+                                                                            homeIndex[division, teamCount[division]] = cmbBoxHome13.SelectedIndex;
                                                                         }
                                                                         //Check if date already exists
                                                                         invalid = false;
-                                                                        for (int i = 0; i < noPlayCount[teamCount]; i++)
+                                                                        for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                                                                         {
-                                                                            if (cmbBoxNoPlay13.Text == datesNoPlay[division, teamCount, i])
+                                                                            if (cmbBoxNoPlay13.Text == datesNoPlay[division, teamCount[division], i])
                                                                             {
                                                                                 invalid = true;
                                                                             }
@@ -948,22 +1018,24 @@ namespace Fixtures
                                                                         if (cmbBoxNoPlay13.Text != "" && invalid == false)
                                                                         {
                                                                             //Save no play date
-                                                                            datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay13.Text;
+                                                                            datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay13.Text;
+                                                                            noPlayCount[division, teamCount[division]]++;
+                                                                            noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay13.SelectedIndex;
                                                                         }
                                                                         invalid = false;
                                                                         #endregion
-                                                                        teamCount++;
+                                                                        teamCount[division]++;
                                                                         input = txtName14.Text;
                                                                         input = input.Trim();
                                                                         if (txtName14.Text != "Enter a team" && input != "")
                                                                         {
                                                                             #region Save team 15
                                                                             //Save name
-                                                                            name[division, teamCount] = txtName14.Text;
+                                                                            name[division, teamCount[division]] = txtName14.Text;
                                                                             //Check if date already exists
-                                                                            for (int i = 0; i < sharedCount[teamCount]; i++)
+                                                                            for (int i = 0; i < sharedCount[division, teamCount[division]]; i++)
                                                                             {
-                                                                                if (txtShared14.Text == shared[division, teamCount, i])
+                                                                                if (txtShared14.Text == shared[division, teamCount[division], i])
                                                                                 {
                                                                                     invalid = true;
                                                                                 }
@@ -973,13 +1045,14 @@ namespace Fixtures
                                                                             if (input != "" && txtShared14.Text != "Enter a team" && invalid == false)
                                                                             {
                                                                                 //Save shared
-                                                                                shared[division, teamCount, sharedCount[teamCount]] = txtShared14.Text;
+                                                                                shared[division, teamCount[division], sharedCount[division, teamCount[division]]] = txtShared14.Text;
+                                                                                sharedCount[division, teamCount[division]]++;
                                                                             }
                                                                             //Check if date already exists
                                                                             invalid = false;
-                                                                            for (int i = 0; i < homeCount[teamCount]; i++)
+                                                                            for (int i = 0; i < homeCount[division, teamCount[division]]; i++)
                                                                             {
-                                                                                if (cmbBoxHome14.Text == datesHome[division, teamCount, i])
+                                                                                if (cmbBoxHome14.Text == datesHome[division, teamCount[division], i])
                                                                                 {
                                                                                     invalid = true;
                                                                                 }
@@ -987,13 +1060,15 @@ namespace Fixtures
                                                                             if (cmbBoxHome14.Text != "" && invalid == false)
                                                                             {
                                                                                 //Save home date
-                                                                                datesHome[division, teamCount, homeCount[teamCount]] = cmbBoxHome14.Text;
+                                                                                datesHome[division, teamCount[division], homeCount[division, teamCount[division]]] = cmbBoxHome14.Text;
+                                                                                homeCount[division, teamCount[division]]++;
+                                                                                homeIndex[division, teamCount[division]] = cmbBoxHome14.SelectedIndex;
                                                                             }
                                                                             //Check if date already exists
                                                                             invalid = false;
-                                                                            for (int i = 0; i < noPlayCount[teamCount]; i++)
+                                                                            for (int i = 0; i < noPlayCount[division, teamCount[division]]; i++)
                                                                             {
-                                                                                if (cmbBoxNoPlay14.Text == datesNoPlay[division, teamCount, i])
+                                                                                if (cmbBoxNoPlay14.Text == datesNoPlay[division, teamCount[division], i])
                                                                                 {
                                                                                     invalid = true;
                                                                                 }
@@ -1001,7 +1076,9 @@ namespace Fixtures
                                                                             if (cmbBoxNoPlay14.Text != "" && invalid == false)
                                                                             {
                                                                                 //Save no play date
-                                                                                datesNoPlay[division, teamCount, noPlayCount[teamCount]] = cmbBoxNoPlay14.Text;
+                                                                                datesNoPlay[division, teamCount[division], noPlayCount[division, teamCount[division]]] = cmbBoxNoPlay14.Text;
+                                                                                noPlayCount[division, teamCount[division]]++;
+                                                                                noPlayIndex[division, teamCount[division]] = cmbBoxNoPlay14.SelectedIndex;
                                                                             }
                                                                             invalid = false;
                                                                             #endregion
@@ -1210,46 +1287,607 @@ namespace Fixtures
                 txtTeam7.BringToFront();
                 txtTeam8.BringToFront();
                 #endregion
-                #region Populate objects
-
+                #region Initialize tab
+                txtName.Text = "Enter a team";
+                txtName1.Text = "Enter a team";
+                txtName2.Text = "Enter a team";
+                txtName3.Text = "Enter a team";
+                txtName4.Text = "Enter a team";
+                txtName5.Text = "Enter a team";
+                txtName6.Text = "Enter a team";
+                txtName7.Text = "Enter a team";
+                txtName8.Text = "Enter a team";
+                txtName9.Text = "Enter a team";
+                txtName10.Text = "Enter a team";
+                txtName11.Text = "Enter a team";
+                txtName12.Text = "Enter a team";
+                txtName13.Text = "Enter a team";
+                txtName14.Text = "Enter a team";
+                txtShared.Text = "Enter a team";
+                txtShared1.Text = "Enter a team";
+                txtShared2.Text = "Enter a team";
+                txtShared3.Text = "Enter a team";
+                txtShared4.Text = "Enter a team";
+                txtShared5.Text = "Enter a team";
+                txtShared6.Text = "Enter a team";
+                txtShared7.Text = "Enter a team";
+                txtShared8.Text = "Enter a team";
+                txtShared9.Text = "Enter a team";
+                txtShared10.Text = "Enter a team";
+                txtShared11.Text = "Enter a team";
+                txtShared12.Text = "Enter a team";
+                txtShared13.Text = "Enter a team";
+                txtShared14.Text = "Enter a team";
+                txtName.ForeColor = Color.Gray;
+                txtName1.ForeColor = Color.Gray;
+                txtName2.ForeColor = Color.Gray;
+                txtName3.ForeColor = Color.Gray;
+                txtName4.ForeColor = Color.Gray;
+                txtName5.ForeColor = Color.Gray;
+                txtName6.ForeColor = Color.Gray;
+                txtName7.ForeColor = Color.Gray;
+                txtName8.ForeColor = Color.Gray;
+                txtName9.ForeColor = Color.Gray;
+                txtName10.ForeColor = Color.Gray;
+                txtName11.ForeColor = Color.Gray;
+                txtName12.ForeColor = Color.Gray;
+                txtName13.ForeColor = Color.Gray;
+                txtName14.ForeColor = Color.Gray;
+                txtShared.ForeColor = Color.Gray;
+                txtShared1.ForeColor = Color.Gray;
+                txtShared2.ForeColor = Color.Gray;
+                txtShared3.ForeColor = Color.Gray;
+                txtShared4.ForeColor = Color.Gray;
+                txtShared5.ForeColor = Color.Gray;
+                txtShared6.ForeColor = Color.Gray;
+                txtShared7.ForeColor = Color.Gray;
+                txtShared8.ForeColor = Color.Gray;
+                txtShared9.ForeColor = Color.Gray;
+                txtShared10.ForeColor = Color.Gray;
+                txtShared11.ForeColor = Color.Gray;
+                txtShared12.ForeColor = Color.Gray;
+                txtShared13.ForeColor = Color.Gray;
+                txtShared14.ForeColor = Color.Gray;
+                cmbBoxHome.SelectedIndex = -1;
+                cmbBoxHome1.SelectedIndex = -1;
+                cmbBoxHome2.SelectedIndex = -1;
+                cmbBoxHome3.SelectedIndex = -1;
+                cmbBoxHome4.SelectedIndex = -1;
+                cmbBoxHome5.SelectedIndex = -1;
+                cmbBoxHome6.SelectedIndex = -1;
+                cmbBoxHome7.SelectedIndex = -1;
+                cmbBoxHome8.SelectedIndex = -1;
+                cmbBoxHome9.SelectedIndex = -1;
+                cmbBoxHome10.SelectedIndex = -1;
+                cmbBoxHome11.SelectedIndex = -1;
+                cmbBoxHome12.SelectedIndex = -1;
+                cmbBoxHome13.SelectedIndex = -1;
+                cmbBoxHome14.SelectedIndex = -1;
+                cmbBoxNoPlay.SelectedIndex = -1;
+                cmbBoxNoPlay1.SelectedIndex = -1;
+                cmbBoxNoPlay2.SelectedIndex = -1;
+                cmbBoxNoPlay3.SelectedIndex = -1;
+                cmbBoxNoPlay4.SelectedIndex = -1;
+                cmbBoxNoPlay5.SelectedIndex = -1;
+                cmbBoxNoPlay6.SelectedIndex = -1;
+                cmbBoxNoPlay7.SelectedIndex = -1;
+                cmbBoxNoPlay8.SelectedIndex = -1;
+                cmbBoxNoPlay9.SelectedIndex = -1;
+                cmbBoxNoPlay10.SelectedIndex = -1;
+                cmbBoxNoPlay11.SelectedIndex = -1;
+                cmbBoxNoPlay12.SelectedIndex = -1;
+                cmbBoxNoPlay13.SelectedIndex = -1;
+                cmbBoxNoPlay14.SelectedIndex = -1;
                 #endregion
                 //Store value for current division
                 division = metTabControl.SelectedIndex;
+                #region Populate objects
+                //Populate names
+                //Loop through each team in selected division
+                for (int i = 0; i < teamCount[division]+1; i++)
+                {
+                    switch(i)
+                    {
+                        case 0:
+                            //Populate team 1
+                            txtName.Text = name[division, 0];
+                            if (sharedCount[division, 0] == 0)
+                            {
+                                txtShared.Text = "Enter a team";
+                                txtShared.ForeColor = Color.Gray;
+                            }
+                            else 
+                            {
+                                txtShared.Text = shared[division, 0, sharedCount[division, 0]];
+                                if (txtShared.Text == "")
+                                {
+                                    txtShared.Text = shared[division, 0, sharedCount[division, 0]-1];
+                                }
+                            }
+                            if (homeCount[division, 0] == 0)
+                            {
+                                cmbBoxHome.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome.SelectedIndex = homeIndex[division, 0];
+                            }
+                            if (noPlayCount[division, 0] == 0)
+                            {
+                                cmbBoxNoPlay.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay.SelectedIndex = noPlayIndex[division, 0];
+                            }
+                            break;
+                        case 1:
+                            //Populate team 2
+                            txtName1.Text = name[division, 1];
+                            if (sharedCount[division, 1] == 0)
+                            {
+                                txtShared1.Text = "Enter a team";
+                                txtShared1.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared1.Text = shared[division, 1, sharedCount[division, 1]];
+                                if (txtShared1.Text == "")
+                                {
+                                    txtShared1.Text = shared[division, 1, sharedCount[division, 1] - 1];
+                                }
+                            }
+                            if (homeCount[division, 1] == 0)
+                            {
+                                cmbBoxHome1.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome1.SelectedIndex = homeIndex[division, 1];
+                            }
+                            if (noPlayCount[division, 1] == 0)
+                            {
+                                cmbBoxNoPlay1.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay1.SelectedIndex = noPlayIndex[division, 1];
+                            }
+                            break;
+                        case 2:
+                            //Populate team 3
+                            txtName2.Text = name[division, 2];
+                            if (sharedCount[division, 2] == 0)
+                            {
+                                txtShared2.Text = "Enter a team";
+                                txtShared2.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared2.Text = shared[division, 2, sharedCount[division, 2]];
+                                if (txtShared2.Text == "")
+                                {
+                                    txtShared2.Text = shared[division, 2, sharedCount[division, 2] - 1];
+                                }
+                            }
+                            if (homeCount[division, 2] == 0)
+                            {
+                                cmbBoxHome2.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome2.SelectedIndex = homeIndex[division, 2];
+                            }
+                            if (noPlayCount[division, 2] == 0)
+                            {
+                                cmbBoxNoPlay2.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay2.SelectedIndex = noPlayIndex[division, 2];
+                            }
+                            break;
+                        case 3:
+                            //Populate team 4
+                            txtName3.Text = name[division, 3];
+                            if (sharedCount[division, 3] == 0)
+                            {
+                                txtShared3.Text = "Enter a team";
+                                txtShared3.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared3.Text = shared[division, 3, sharedCount[division, 3]];
+                                if (txtShared3.Text == "")
+                                {
+                                    txtShared3.Text = shared[division, 3, sharedCount[division, 3] - 1];
+                                }
+                            }
+                            if (homeCount[division, 3] == 0)
+                            {
+                                cmbBoxHome3.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome3.SelectedIndex = homeIndex[division, 3];
+                            }
+                            if (noPlayCount[division, 3] == 0)
+                            {
+                                cmbBoxNoPlay3.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay3.SelectedIndex = noPlayIndex[division, 3];
+                            }
+                            break;
+                        case 4:
+                            //Populate team 5
+                            txtName4.Text = name[division, 4];
+                            if (sharedCount[division, 4] == 0)
+                            {
+                                txtShared4.Text = "Enter a team";
+                                txtShared4.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared4.Text = shared[division, 4, sharedCount[division, 4]];
+                                if (txtShared4.Text == "")
+                                {
+                                    txtShared4.Text = shared[division, 4, sharedCount[division, 4] - 1];
+                                }
+                            }
+                            if (homeCount[division, 4] == 0)
+                            {
+                                cmbBoxHome4.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome4.SelectedIndex = homeIndex[division, 4];
+                            }
+                            if (noPlayCount[division, 4] == 0)
+                            {
+                                cmbBoxNoPlay4.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay4.SelectedIndex = noPlayIndex[division, 4];
+                            }
+                            break;
+                        case 5:
+                            //Populate team 6
+                            txtName5.Text = name[division, 5];
+                            if (sharedCount[division, 5] == 0)
+                            {
+                                txtShared5.Text = "Enter a team";
+                                txtShared5.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared5.Text = shared[division, 5, sharedCount[division, 5]];
+                                if (txtShared5.Text == "")
+                                {
+                                    txtShared5.Text = shared[division, 5, sharedCount[division, 5] - 1];
+                                }
+                            }
+                            if (homeCount[division, 5] == 0)
+                            {
+                                cmbBoxHome5.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome5.SelectedIndex = homeIndex[division, 5];
+                            }
+                            if (noPlayCount[division, 5] == 0)
+                            {
+                                cmbBoxNoPlay5.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay5.SelectedIndex = noPlayIndex[division, 5];
+                            }
+                            break;
+                        case 6:
+                            //Populate team 7
+                            txtName6.Text = name[division, 6];
+                            if (sharedCount[division, 6] == 0)
+                            {
+                                txtShared6.Text = "Enter a team";
+                                txtShared6.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared6.Text = shared[division, 6, sharedCount[division, 6]];
+                                if (txtShared6.Text == "")
+                                {
+                                    txtShared6.Text = shared[division, 6, sharedCount[division, 6] - 1];
+                                }
+                            }
+                            if (homeCount[division, 6] == 0)
+                            {
+                                cmbBoxHome6.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome6.SelectedIndex = homeIndex[division, 6];
+                            }
+                            if (noPlayCount[division, 6] == 0)
+                            {
+                                cmbBoxNoPlay6.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay6.SelectedIndex = noPlayIndex[division, 6];
+                            }
+                            break;
+                        case 7:
+                            //Populate team 8
+                            txtName7.Text = name[division, 7];
+                            if (sharedCount[division, 7] == 0)
+                            {
+                                txtShared7.Text = "Enter a team";
+                                txtShared7.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared7.Text = shared[division, 7, sharedCount[division, 7]];
+                                if (txtShared7.Text == "")
+                                {
+                                    txtShared7.Text = shared[division, 7, sharedCount[division, 7] - 1];
+                                }
+                            }
+                            if (homeCount[division, 7] == 0)
+                            {
+                                cmbBoxHome7.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome7.SelectedIndex = homeIndex[division, 7];
+                            }
+                            if (noPlayCount[division, 7] == 0)
+                            {
+                                cmbBoxNoPlay7.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay7.SelectedIndex = noPlayIndex[division, 7];
+                            }
+                            break;
+                        case 8:
+                            //Populate team 9
+                            txtName8.Text = name[division, 8];
+                            if (sharedCount[division, 8] == 8)
+                            {
+                                txtShared8.Text = "Enter a team";
+                                txtShared8.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared8.Text = shared[division, 8, sharedCount[division, 8]];
+                                if (txtShared8.Text == "")
+                                {
+                                    txtShared8.Text = shared[division, 8, sharedCount[division, 8] - 1];
+                                }
+                            }
+                            if (homeCount[division, 8] == 0)
+                            {
+                                cmbBoxHome8.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome8.SelectedIndex = homeIndex[division, 8];
+                            }
+                            if (noPlayCount[division, 8] == 0)
+                            {
+                                cmbBoxNoPlay8.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay8.SelectedIndex = noPlayIndex[division, 8];
+                            }
+                            break;
+                        case 9:
+                            //Populate team 10
+                            txtName9.Text = name[division, 9];
+                            if (sharedCount[division, 9] == 0)
+                            {
+                                txtShared9.Text = "Enter a team";
+                                txtShared9.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared9.Text = shared[division, 9, sharedCount[division, 9]];
+                                if (txtShared9.Text == "")
+                                {
+                                    txtShared9.Text = shared[division, 9, sharedCount[division, 9] - 1];
+                                }
+                            }
+                            if (homeCount[division, 9] == 0)
+                            {
+                                cmbBoxHome9.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome9.SelectedIndex = homeIndex[division, 9];
+                            }
+                            if (noPlayCount[division, 9] == 0)
+                            {
+                                cmbBoxNoPlay9.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay9.SelectedIndex = noPlayIndex[division, 9];
+                            }
+                            break;
+                        case 10:
+                            //Populate team 11
+                            txtName10.Text = name[division, 10];
+                            if (sharedCount[division, 10] == 0)
+                            {
+                                txtShared10.Text = "Enter a team";
+                                txtShared10.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared10.Text = shared[division, 10, sharedCount[division, 10]];
+                                if (txtShared10.Text == "")
+                                {
+                                    txtShared10.Text = shared[division, 10, sharedCount[division, 10] - 1];
+                                }
+                            }
+                            if (homeCount[division, 10] == 0)
+                            {
+                                cmbBoxHome10.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome10.SelectedIndex = homeIndex[division, 10];
+                            }
+                            if (noPlayCount[division, 10] == 0)
+                            {
+                                cmbBoxNoPlay10.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay10.SelectedIndex = noPlayIndex[division, 10];
+                            }
+                            break;
+                        case 11:
+                            //Populate team 12
+                            txtName11.Text = name[division, 11];
+                            if (sharedCount[division, 11] == 0)
+                            {
+                                txtShared11.Text = "Enter a team";
+                                txtShared11.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared11.Text = shared[division, 11, sharedCount[division, 11]];
+                                if (txtShared11.Text == "")
+                                {
+                                    txtShared11.Text = shared[division, 11, sharedCount[division, 11] - 1];
+                                }
+                            }
+                            if (homeCount[division, 11] == 0)
+                            {
+                                cmbBoxHome11.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome11.SelectedIndex = homeIndex[division, 11];
+                            }
+                            if (noPlayCount[division, 11] == 0)
+                            {
+                                cmbBoxNoPlay11.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay11.SelectedIndex = noPlayIndex[division, 11];
+                            }
+                            break;
+                        case 12:
+                            //Populate team 13
+                            txtName12.Text = name[division, 12];
+                            if (sharedCount[division, 12] == 0)
+                            {
+                                txtShared12.Text = "Enter a team";
+                                txtShared12.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared12.Text = shared[division, 12, sharedCount[division, 12]];
+                                if (txtShared12.Text == "")
+                                {
+                                    txtShared12.Text = shared[division, 12, sharedCount[division, 12] - 1];
+                                }
+                            }
+                            if (homeCount[division, 12] == 0)
+                            {
+                                cmbBoxHome12.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome12.SelectedIndex = homeIndex[division, 12];
+                            }
+                            if (noPlayCount[division, 12] == 0)
+                            {
+                                cmbBoxNoPlay12.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay12.SelectedIndex = noPlayIndex[division, 12];
+                            }
+                            break;
+                        case 13:
+                            //Populate team 14
+                            txtName13.Text = name[division, 13];
+                            if (sharedCount[division, 13] == 0)
+                            {
+                                txtShared13.Text = "Enter a team";
+                                txtShared13.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared13.Text = shared[division, 13, sharedCount[division, 13]];
+                                if (txtShared13.Text == "")
+                                {
+                                    txtShared13.Text = shared[division, 13, sharedCount[division, 13] - 1];
+                                }
+                            }
+                            if (homeCount[division, 13] == 0)
+                            {
+                                cmbBoxHome13.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome13.SelectedIndex = homeIndex[division, 13];
+                            }
+                            if (noPlayCount[division, 13] == 0)
+                            {
+                                cmbBoxNoPlay13.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay13.SelectedIndex = noPlayIndex[division, 13];
+                            }
+                            break;
+                        case 14:
+                            //Populate team 15
+                            txtName14.Text = name[division, 14];
+                            if (sharedCount[division, 14] == 0)
+                            {
+                                txtShared14.Text = "Enter a team";
+                                txtShared14.ForeColor = Color.Gray;
+                            }
+                            else
+                            {
+                                txtShared14.Text = shared[division, 14, sharedCount[division, 14]];
+                                if (txtShared14.Text == "")
+                                {
+                                    txtShared14.Text = shared[division, 14, sharedCount[division, 14] - 1];
+                                }
+                            }
+                            if (homeCount[division, 14] == 0)
+                            {
+                                cmbBoxHome14.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxHome14.SelectedIndex = homeIndex[division, 14];
+                            }
+                            if (noPlayCount[division, 14] == 0)
+                            {
+                                cmbBoxNoPlay14.SelectedIndex = -1;
+                            }
+                            else
+                            {
+                                cmbBoxNoPlay14.SelectedIndex = noPlayIndex[division, 14];
+                            }
+                            break;
+                    }
+                }
+                #endregion
             }
         }                
-
-        private void lblSharedDisp_MouseEnter(object sender, EventArgs e)
-        {
-           // lblSharedAll.BringToFront();
-           // lblSharedAll.Show();
-        }
-
-        private void lblSharedDisp_MouseLeave(object sender, EventArgs e)
-        {
-            //lblSharedAll.Hide();
-        }
-
-        private void lblDatesHome_MouseEnter(object sender, EventArgs e)
-        {
-            //lblDatesHomeAll.BringToFront();
-           // lblDatesHomeAll.Show();
-        }
-
-        private void lblDatesHome_MouseLeave(object sender, EventArgs e)
-        {
-            //lblDatesHomeAll.Hide();
-        }
-
-        private void lblDatesNoPlay_MouseEnter(object sender, EventArgs e)
-        {
-           // lblDatesNoPlayAll.BringToFront();
-            //lblDatesNoPlayAll.Show();
-        }
-
-        private void lblDatesNoPlay_MouseLeave(object sender, EventArgs e)
-        {
-            //lblDatesNoPlayAll.Hide();
-        }
 
         private void txt_TextChanged(object sender, EventArgs e)
         {
@@ -1270,12 +1908,13 @@ namespace Fixtures
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            //Increment
-            team++;
-            //sharedCount = 0;
-            //homeCount = 0;
-            //noPlayCount = 0;
-            teamCount[division]++;
+            DialogResult del = MessageBox.Show("Are you sure you are ready to calculate?", "Calculate", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                //Save changes made to current division
+
+                //Begin calculating!
+            }
         }
 
         private void btnShared_Click(object sender, EventArgs e)
@@ -1284,13 +1923,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[0] == 3)
+            if (sharedCount[division, 0] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[0]; i++)
+                for (int i = 0; i < sharedCount[division, 0]; i++)
                 {
                     if (txtShared.Text == shared[division, 0, i])
                     {
@@ -1301,8 +1940,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 0, sharedCount[0]] = txtShared.Text;
-                    sharedCount[0]++;
+                    shared[division, 0, sharedCount[division, 0]] = txtShared.Text;
+                    sharedCount[division, 0]++;
                 }
                 //Reset text to type new team name
                 txtShared.Text = "";
@@ -1316,13 +1955,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[1] == 3)
+            if (sharedCount[division, 1] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared1.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[1]; i++)
+                for (int i = 0; i < sharedCount[division, 1]; i++)
                 {
                     if (txtShared1.Text == shared[division, 1, i])
                     {
@@ -1333,8 +1972,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 1, sharedCount[1]] = txtShared1.Text;
-                    sharedCount[1]++;
+                    shared[division, 1, sharedCount[division, 1]] = txtShared1.Text;
+                    sharedCount[division, 1]++;
                 }
                 //Reset text to type new team name
                 txtShared1.Text = "";
@@ -1348,13 +1987,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[2] == 3)
+            if (sharedCount[division, 2] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared2.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[2]; i++)
+                for (int i = 0; i < sharedCount[division, 2]; i++)
                 {
                     if (txtShared2.Text == shared[division, 2, i])
                     {
@@ -1365,8 +2004,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 2, sharedCount[2]] = txtShared2.Text;
-                    sharedCount[2]++;
+                    shared[division, 2, sharedCount[division, 2]] = txtShared2.Text;
+                    sharedCount[division, 2]++;
                 }
                 //Reset text to type new team name
                 txtShared2.Text = "";
@@ -1380,13 +2019,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[3] == 3)
+            if (sharedCount[division, 3] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared3.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[3]; i++)
+                for (int i = 0; i < sharedCount[division, 3]; i++)
                 {
                     if (txtShared3.Text == shared[division, 3, i])
                     {
@@ -1397,8 +2036,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 3, sharedCount[3]] = txtShared3.Text;
-                    sharedCount[3]++;
+                    shared[division, 3, sharedCount[division, 3]] = txtShared3.Text;
+                    sharedCount[division, 3]++;
                 }
                 //Reset text to type new team name
                 txtShared3.Text = "";
@@ -1412,13 +2051,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[4] == 3)
+            if (sharedCount[division, 4] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared4.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[4]; i++)
+                for (int i = 0; i < sharedCount[division, 4]; i++)
                 {
                     if (txtShared4.Text == shared[division, 4, i])
                     {
@@ -1429,8 +2068,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 4, sharedCount[4]] = txtShared4.Text;
-                    sharedCount[4]++;
+                    shared[division, 4, sharedCount[division, 4]] = txtShared4.Text;
+                    sharedCount[division, 4]++;
                 }
                 //Reset text to type new team name
                 txtShared4.Text = "";
@@ -1444,13 +2083,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[5] == 3)
+            if (sharedCount[division, 5] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared5.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[5]; i++)
+                for (int i = 0; i < sharedCount[division, 5]; i++)
                 {
                     if (txtShared5.Text == shared[division, 5, i])
                     {
@@ -1461,8 +2100,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 5, sharedCount[5]] = txtShared5.Text;
-                    sharedCount[2]++;
+                    shared[division, 5, sharedCount[division, 5]] = txtShared5.Text;
+                    sharedCount[division, 2]++;
                 }
                 //Reset text to type new team name
                 txtShared5.Text = "";
@@ -1476,13 +2115,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[6] == 3)
+            if (sharedCount[division, 6] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared6.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[6]; i++)
+                for (int i = 0; i < sharedCount[division, 6]; i++)
                 {
                     if (txtShared6.Text == shared[division, 6, i])
                     {
@@ -1493,8 +2132,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 6, sharedCount[6]] = txtShared6.Text;
-                    sharedCount[6]++;
+                    shared[division, 6, sharedCount[division, 6]] = txtShared6.Text;
+                    sharedCount[division, 6]++;
                 }
                 //Reset text to type new team name
                 txtShared6.Text = "";
@@ -1508,13 +2147,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[7] == 3)
+            if (sharedCount[division, 7] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared7.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[7]; i++)
+                for (int i = 0; i < sharedCount[division, 7]; i++)
                 {
                     if (txtShared7.Text == shared[division, 7, i])
                     {
@@ -1525,8 +2164,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 7, sharedCount[7]] = txtShared7.Text;
-                    sharedCount[7]++;
+                    shared[division, 7, sharedCount[division, 7]] = txtShared7.Text;
+                    sharedCount[division, 7]++;
                 }
                 //Reset text to type new team name
                 txtShared7.Text = "";
@@ -1540,13 +2179,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[8] == 3)
+            if (sharedCount[division, 8] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared8.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[8]; i++)
+                for (int i = 0; i < sharedCount[division, 8]; i++)
                 {
                     if (txtShared8.Text == shared[division, 8, i])
                     {
@@ -1557,8 +2196,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 8, sharedCount[8]] = txtShared8.Text;
-                    sharedCount[8]++;
+                    shared[division, 8, sharedCount[division, 8]] = txtShared8.Text;
+                    sharedCount[division, 8]++;
                 }
                 //Reset text to type new team name
                 txtShared8.Text = "";
@@ -1572,13 +2211,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[9] == 3)
+            if (sharedCount[division, 9] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared9.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[9]; i++)
+                for (int i = 0; i < sharedCount[division, 9]; i++)
                 {
                     if (txtShared9.Text == shared[division, 9, i])
                     {
@@ -1589,8 +2228,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 9, sharedCount[9]] = txtShared9.Text;
-                    sharedCount[9]++;
+                    shared[division, 9, sharedCount[division, 9]] = txtShared9.Text;
+                    sharedCount[division, 9]++;
                 }
                 //Reset text to type new team name
                 txtShared9.Text = "";
@@ -1604,13 +2243,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[10] == 3)
+            if (sharedCount[division, 10] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared10.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[10]; i++)
+                for (int i = 0; i < sharedCount[division, 10]; i++)
                 {
                     if (txtShared10.Text == shared[division, 10, i])
                     {
@@ -1621,8 +2260,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 10, sharedCount[10]] = txtShared10.Text;
-                    sharedCount[10]++;
+                    shared[division, 10, sharedCount[division, 10]] = txtShared10.Text;
+                    sharedCount[division, 10]++;
                 }
                 //Reset text to type new team name
                 txtShared10.Text = "";
@@ -1636,13 +2275,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[11] == 3)
+            if (sharedCount[division, 11] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared11.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[11]; i++)
+                for (int i = 0; i < sharedCount[division, 11]; i++)
                 {
                     if (txtShared11.Text == shared[division, 11, i])
                     {
@@ -1653,8 +2292,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 11, sharedCount[11]] = txtShared11.Text;
-                    sharedCount[11]++;
+                    shared[division, 11, sharedCount[division, 11]] = txtShared11.Text;
+                    sharedCount[division, 11]++;
                 }
                 //Reset text to type new team name
                 txtShared11.Text = "";
@@ -1668,13 +2307,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[12] == 3)
+            if (sharedCount[division, 12] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared12.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[12]; i++)
+                for (int i = 0; i < sharedCount[division, 12]; i++)
                 {
                     if (txtShared12.Text == shared[division, 12, i])
                     {
@@ -1685,8 +2324,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 12, sharedCount[12]] = txtShared12.Text;
-                    sharedCount[12]++;
+                    shared[division, 12, sharedCount[division, 12]] = txtShared12.Text;
+                    sharedCount[division, 12]++;
                 }
                 //Reset text to type new team name
                 txtShared12.Text = "";
@@ -1700,13 +2339,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[13] == 3)
+            if (sharedCount[division, 13] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared13.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[13]; i++)
+                for (int i = 0; i < sharedCount[division, 13]; i++)
                 {
                     if (txtShared13.Text == shared[division, 13, i])
                     {
@@ -1717,8 +2356,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 13, sharedCount[13]] = txtShared13.Text;
-                    sharedCount[13]++;
+                    shared[division, 13, sharedCount[division, 13]] = txtShared13.Text;
+                    sharedCount[division, 13]++;
                 }
                 //Reset text to type new team name
                 txtShared13.Text = "";
@@ -1732,13 +2371,13 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[14] == 3)
+            if (sharedCount[division, 14] == 3)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
             else if (txtShared14.Text != "Enter a team" && input != "")
             {
-                for (int i = 0; i < sharedCount[14]; i++)
+                for (int i = 0; i < sharedCount[division, 14]; i++)
                 {
                     if (txtShared14.Text == shared[division, 14, i])
                     {
@@ -1749,8 +2388,8 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    shared[division, 14, sharedCount[14]] = txtShared14.Text;
-                    sharedCount[14]++;
+                    shared[division, 14, sharedCount[division, 14]] = txtShared14.Text;
+                    sharedCount[division, 14]++;
                 }
                 //Reset text to type new team name
                 txtShared14.Text = "";
@@ -1762,13 +2401,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[0] == 12)
+            if (homeCount[division, 0] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome.Text != "")
             {
-                for (int i = 0; i < homeCount[0]; i++)
+                for (int i = 0; i < homeCount[division, 0]; i++)
                 {
                     if (cmbBoxHome.Text == datesHome[division, 0, i])
                     {
@@ -1779,8 +2418,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 0, homeCount[0]] = cmbBoxHome.Text;
-                    homeCount[0]++;
+                    datesHome[division, 0, homeCount[division, 0]] = cmbBoxHome.Text;
+                    homeCount[division, 0]++;
+                    homeIndex[division, 0] = cmbBoxHome.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome.SelectedIndex = -1;
@@ -1791,13 +2431,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[1] == 12)
+            if (homeCount[division, 1] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome1.Text != "")
             {
-                for (int i = 0; i < homeCount[1]; i++)
+                for (int i = 0; i < homeCount[division, 1]; i++)
                 {
                     if (cmbBoxHome1.Text == datesHome[division, 1, i])
                     {
@@ -1808,8 +2448,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 1, homeCount[1]] = cmbBoxHome1.Text;
-                    homeCount[1]++;
+                    datesHome[division, 1, homeCount[division, 1]] = cmbBoxHome1.Text;
+                    homeCount[division, 1]++;
+                    homeIndex[division, 1] = cmbBoxHome1.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome1.SelectedIndex = -1;
@@ -1820,13 +2461,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[2] == 12)
+            if (homeCount[division, 2] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome2.Text != "")
             {
-                for (int i = 0; i < homeCount[2]; i++)
+                for (int i = 0; i < homeCount[division, 2]; i++)
                 {
                     if (cmbBoxHome2.Text == datesHome[division, 2, i])
                     {
@@ -1837,8 +2478,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 2, homeCount[2]] = cmbBoxHome2.Text;
-                    homeCount[2]++;
+                    datesHome[division, 2, homeCount[division, 2]] = cmbBoxHome2.Text;
+                    homeCount[division, 2]++;
+                    homeIndex[division, 2] = cmbBoxHome2.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome2.SelectedIndex = -1;
@@ -1849,13 +2491,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[3] == 12)
+            if (homeCount[division, 3] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome3.Text != "")
             {
-                for (int i = 0; i < homeCount[3]; i++)
+                for (int i = 0; i < homeCount[division, 3]; i++)
                 {
                     if (cmbBoxHome3.Text == datesHome[division, 3, i])
                     {
@@ -1866,8 +2508,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 3, homeCount[3]] = cmbBoxHome3.Text;
-                    homeCount[3]++;
+                    datesHome[division, 3, homeCount[division, 3]] = cmbBoxHome3.Text;
+                    homeCount[division, 3]++;
+                    homeIndex[division, 3] = cmbBoxHome3.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome3.SelectedIndex = -1;
@@ -1878,13 +2521,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[4] == 12)
+            if (homeCount[division, 4] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome4.Text != "")
             {
-                for (int i = 0; i < homeCount[4]; i++)
+                for (int i = 0; i < homeCount[division, 4]; i++)
                 {
                     if (cmbBoxHome4.Text == datesHome[division, 4, i])
                     {
@@ -1895,8 +2538,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 4, homeCount[4]] = cmbBoxHome4.Text;
-                    homeCount[4]++;
+                    datesHome[division, 4, homeCount[division, 4]] = cmbBoxHome4.Text;
+                    homeCount[division, 4]++;
+                    homeIndex[division, 4] = cmbBoxHome4.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome4.SelectedIndex = -1;
@@ -1907,13 +2551,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[5] == 12)
+            if (homeCount[division, 5] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome5.Text != "")
             {
-                for (int i = 0; i < homeCount[5]; i++)
+                for (int i = 0; i < homeCount[division, 5]; i++)
                 {
                     if (cmbBoxHome5.Text == datesHome[division, 5, i])
                     {
@@ -1924,8 +2568,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 5, homeCount[5]] = cmbBoxHome5.Text;
-                    homeCount[5]++;
+                    datesHome[division, 5, homeCount[division, 5]] = cmbBoxHome5.Text;
+                    homeCount[division, 5]++;
+                    homeIndex[division, 5] = cmbBoxHome5.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome5.SelectedIndex = -1;
@@ -1936,13 +2581,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[6] == 12)
+            if (homeCount[division, 6] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome6.Text != "")
             {
-                for (int i = 0; i < homeCount[6]; i++)
+                for (int i = 0; i < homeCount[division, 6]; i++)
                 {
                     if (cmbBoxHome6.Text == datesHome[division, 6, i])
                     {
@@ -1953,8 +2598,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 6, homeCount[6]] = cmbBoxHome6.Text;
-                    homeCount[6]++;
+                    datesHome[division, 6, homeCount[division, 6]] = cmbBoxHome6.Text;
+                    homeCount[division, 6]++;
+                    homeIndex[division, 6] = cmbBoxHome6.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome6.SelectedIndex = -1;
@@ -1965,13 +2611,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[7] == 12)
+            if (homeCount[division, 7] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome7.Text != "")
             {
-                for (int i = 0; i < homeCount[7]; i++)
+                for (int i = 0; i < homeCount[division, 7]; i++)
                 {
                     if (cmbBoxHome7.Text == datesHome[division, 7, i])
                     {
@@ -1982,8 +2628,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 7, homeCount[7]] = cmbBoxHome.Text;
-                    homeCount[7]++;
+                    datesHome[division, 7, homeCount[division, 7]] = cmbBoxHome.Text;
+                    homeCount[division, 7]++;
+                    homeIndex[division, 7] = cmbBoxHome7.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome7.SelectedIndex = -1;
@@ -1994,13 +2641,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[8] == 12)
+            if (homeCount[division, 8] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome8.Text != "")
             {
-                for (int i = 0; i < homeCount[8]; i++)
+                for (int i = 0; i < homeCount[division, 8]; i++)
                 {
                     if (cmbBoxHome8.Text == datesHome[division, 8, i])
                     {
@@ -2011,8 +2658,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 8, homeCount[8]] = cmbBoxHome8.Text;
-                    homeCount[8]++;
+                    datesHome[division, 8, homeCount[division, 8]] = cmbBoxHome8.Text;
+                    homeCount[division, 8]++;
+                    homeIndex[division, 8] = cmbBoxHome8.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome8.SelectedIndex = -1;
@@ -2023,13 +2671,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[9] == 12)
+            if (homeCount[division, 9] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome9.Text != "")
             {
-                for (int i = 0; i < homeCount[9]; i++)
+                for (int i = 0; i < homeCount[division, 9]; i++)
                 {
                     if (cmbBoxHome9.Text == datesHome[division, 9, i])
                     {
@@ -2040,8 +2688,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 9, homeCount[9]] = cmbBoxHome9.Text;
-                    homeCount[9]++;
+                    datesHome[division, 9, homeCount[division, 9]] = cmbBoxHome9.Text;
+                    homeCount[division, 9]++;
+                    homeIndex[division, 9] = cmbBoxHome9.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome9.SelectedIndex = -1;
@@ -2052,13 +2701,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[10] == 12)
+            if (homeCount[division, 10] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome10.Text != "")
             {
-                for (int i = 0; i < homeCount[10]; i++)
+                for (int i = 0; i < homeCount[division, 10]; i++)
                 {
                     if (cmbBoxHome10.Text == datesHome[division, 10, i])
                     {
@@ -2069,8 +2718,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 10, homeCount[10]] = cmbBoxHome10.Text;
-                    homeCount[10]++;
+                    datesHome[division, 10, homeCount[division, 10]] = cmbBoxHome10.Text;
+                    homeCount[division, 10]++;
+                    homeIndex[division, 10] = cmbBoxHome10.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome10.SelectedIndex = -1;
@@ -2081,13 +2731,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[11] == 12)
+            if (homeCount[division, 11] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome11.Text != "")
             {
-                for (int i = 0; i < homeCount[11]; i++)
+                for (int i = 0; i < homeCount[division, 11]; i++)
                 {
                     if (cmbBoxHome11.Text == datesHome[division, 11, i])
                     {
@@ -2098,8 +2748,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 11, homeCount[11]] = cmbBoxHome11.Text;
-                    homeCount[11]++;
+                    datesHome[division, 11, homeCount[division, 11]] = cmbBoxHome11.Text;
+                    homeCount[division, 11]++;
+                    homeIndex[division, 11] = cmbBoxHome11.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome11.SelectedIndex = -1;
@@ -2110,13 +2761,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[12] == 12)
+            if (homeCount[division, 12] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome12.Text != "")
             {
-                for (int i = 0; i < homeCount[12]; i++)
+                for (int i = 0; i < homeCount[division, 12]; i++)
                 {
                     if (cmbBoxHome12.Text == datesHome[division, 12, i])
                     {
@@ -2127,8 +2778,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 12, homeCount[12]] = cmbBoxHome12.Text;
-                    homeCount[12]++;
+                    datesHome[division, 12, homeCount[division, 12]] = cmbBoxHome12.Text;
+                    homeCount[division, 12]++;
+                    homeIndex[division, 12] = cmbBoxHome12.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome12.SelectedIndex = -1;
@@ -2139,13 +2791,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[13] == 12)
+            if (homeCount[division, 13] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome13.Text != "")
             {
-                for (int i = 0; i < homeCount[13]; i++)
+                for (int i = 0; i < homeCount[division, 13]; i++)
                 {
                     if (cmbBoxHome13.Text == datesHome[division, 13, i])
                     {
@@ -2156,8 +2808,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 13, homeCount[13]] = cmbBoxHome13.Text;
-                    homeCount[13]++;
+                    datesHome[division, 13, homeCount[division, 13]] = cmbBoxHome13.Text;
+                    homeCount[division, 13]++;
+                    homeIndex[division, 13] = cmbBoxHome13.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome13.SelectedIndex = -1;
@@ -2168,13 +2821,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (homeCount[14] == 12)
+            if (homeCount[division, 14] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max home games added", MessageBoxButtons.OK);
             }
             else if (cmbBoxHome14.Text != "")
             {
-                for (int i = 0; i < homeCount[14]; i++)
+                for (int i = 0; i < homeCount[division, 14]; i++)
                 {
                     if (cmbBoxHome14.Text == datesHome[division, 14, i])
                     {
@@ -2185,8 +2838,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesHome[division, 14, homeCount[14]] = cmbBoxHome14.Text;
-                    homeCount[14]++;
+                    datesHome[division, 14, homeCount[division, 14]] = cmbBoxHome14.Text;
+                    homeCount[division, 14]++;
+                    homeIndex[division, 14] = cmbBoxHome14.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxHome14.SelectedIndex = -1;
@@ -2197,13 +2851,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[0] == 12)
+            if (noPlayCount[division, 0] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay.Text != "")
             {
-                for (int i = 0; i < noPlayCount[0]; i++)
+                for (int i = 0; i < noPlayCount[division, 0]; i++)
                 {
                     if (cmbBoxNoPlay.Text == datesNoPlay[division, 0, i])
                     {
@@ -2214,8 +2868,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 0, noPlayCount[0]] = cmbBoxNoPlay.Text;
-                    noPlayCount[0]++;
+                    datesNoPlay[division, 0, noPlayCount[division, 0]] = cmbBoxNoPlay.Text;
+                    noPlayCount[division, 0]++;
+                    noPlayIndex[division, 0] = cmbBoxNoPlay.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay.SelectedIndex = -1;
@@ -2226,13 +2881,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[1] == 12)
+            if (noPlayCount[division, 1] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay1.Text != "")
             {
-                for (int i = 0; i < noPlayCount[1]; i++)
+                for (int i = 0; i < noPlayCount[division, 1]; i++)
                 {
                     if (cmbBoxNoPlay1.Text == datesNoPlay[division, 1, i])
                     {
@@ -2243,8 +2898,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 1, noPlayCount[1]] = cmbBoxNoPlay1.Text;
-                    noPlayCount[1]++;
+                    datesNoPlay[division, 1, noPlayCount[division, 1]] = cmbBoxNoPlay1.Text;
+                    noPlayCount[division, 1]++;
+                    noPlayIndex[division, 1] = cmbBoxNoPlay1.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay1.SelectedIndex = -1;
@@ -2255,13 +2911,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[2] == 12)
+            if (noPlayCount[division, 2] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay2.Text != "")
             {
-                for (int i = 0; i < noPlayCount[2]; i++)
+                for (int i = 0; i < noPlayCount[division, 2]; i++)
                 {
                     if (cmbBoxNoPlay2.Text == datesNoPlay[division, 2, i])
                     {
@@ -2272,8 +2928,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 2, noPlayCount[2]] = cmbBoxNoPlay2.Text;
-                    noPlayCount[2]++;
+                    datesNoPlay[division, 2, noPlayCount[division, 2]] = cmbBoxNoPlay2.Text;
+                    noPlayCount[division, 2]++;
+                    noPlayIndex[division, 2] = cmbBoxNoPlay2.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay2.SelectedIndex = -1;
@@ -2284,13 +2941,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[3] == 12)
+            if (noPlayCount[division, 3] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay3.Text != "")
             {
-                for (int i = 0; i < noPlayCount[3]; i++)
+                for (int i = 0; i < noPlayCount[division, 3]; i++)
                 {
                     if (cmbBoxNoPlay3.Text == datesNoPlay[division, 3, i])
                     {
@@ -2301,8 +2958,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 3, noPlayCount[3]] = cmbBoxNoPlay3.Text;
-                    noPlayCount[3]++;
+                    datesNoPlay[division, 3, noPlayCount[division, 3]] = cmbBoxNoPlay3.Text;
+                    noPlayCount[division, 3]++;
+                    noPlayIndex[division, 3] = cmbBoxNoPlay3.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay3.SelectedIndex = -1;
@@ -2313,13 +2971,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[4] == 12)
+            if (noPlayCount[division, 4] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay4.Text != "")
             {
-                for (int i = 0; i < noPlayCount[4]; i++)
+                for (int i = 0; i < noPlayCount[division, 4]; i++)
                 {
                     if (cmbBoxNoPlay4.Text == datesNoPlay[division, 4, i])
                     {
@@ -2330,8 +2988,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 4, noPlayCount[4]] = cmbBoxNoPlay4.Text;
-                    noPlayCount[4]++;
+                    datesNoPlay[division, 4, noPlayCount[division, 4]] = cmbBoxNoPlay4.Text;
+                    noPlayCount[division, 4]++;
+                    noPlayIndex[division, 4] = cmbBoxNoPlay4.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay4.SelectedIndex = -1;
@@ -2342,13 +3001,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[5] == 12)
+            if (noPlayCount[division, 5] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay5.Text != "")
             {
-                for (int i = 0; i < noPlayCount[5]; i++)
+                for (int i = 0; i < noPlayCount[division, 5]; i++)
                 {
                     if (cmbBoxNoPlay5.Text == datesNoPlay[division, 5, i])
                     {
@@ -2359,8 +3018,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 5, noPlayCount[5]] = cmbBoxNoPlay5.Text;
-                    noPlayCount[5]++;
+                    datesNoPlay[division, 5, noPlayCount[division, 5]] = cmbBoxNoPlay5.Text;
+                    noPlayCount[division, 5]++;
+                    noPlayIndex[division, 5] = cmbBoxNoPlay5.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay5.SelectedIndex = -1;
@@ -2371,13 +3031,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[6] == 12)
+            if (noPlayCount[division, 6] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay6.Text != "")
             {
-                for (int i = 0; i < noPlayCount[6]; i++)
+                for (int i = 0; i < noPlayCount[division, 6]; i++)
                 {
                     if (cmbBoxNoPlay6.Text == datesNoPlay[division, 6, i])
                     {
@@ -2388,8 +3048,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 6, noPlayCount[6]] = cmbBoxNoPlay6.Text;
-                    noPlayCount[6]++;
+                    datesNoPlay[division, 6, noPlayCount[division, 6]] = cmbBoxNoPlay6.Text;
+                    noPlayCount[division, 6]++;
+                    noPlayIndex[division, 6] = cmbBoxNoPlay6.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay6.SelectedIndex = -1;
@@ -2400,13 +3061,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[7] == 12)
+            if (noPlayCount[division, 7] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay7.Text != "")
             {
-                for (int i = 0; i < noPlayCount[7]; i++)
+                for (int i = 0; i < noPlayCount[division, 7]; i++)
                 {
                     if (cmbBoxNoPlay7.Text == datesNoPlay[division, 7, i])
                     {
@@ -2417,8 +3078,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 7, noPlayCount[7]] = cmbBoxNoPlay7.Text;
-                    noPlayCount[7]++;
+                    datesNoPlay[division, 7, noPlayCount[division, 7]] = cmbBoxNoPlay7.Text;
+                    noPlayCount[division, 7]++;
+                    noPlayIndex[division, 7] = cmbBoxNoPlay7.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay7.SelectedIndex = -1;
@@ -2429,13 +3091,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[8] == 12)
+            if (noPlayCount[division, 8] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay8.Text != "")
             {
-                for (int i = 0; i < noPlayCount[8]; i++)
+                for (int i = 0; i < noPlayCount[division, 8]; i++)
                 {
                     if (cmbBoxNoPlay8.Text == datesNoPlay[division, 8, i])
                     {
@@ -2446,8 +3108,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 8, noPlayCount[8]] = cmbBoxNoPlay8.Text;
-                    noPlayCount[8]++;
+                    datesNoPlay[division, 8, noPlayCount[division, 8]] = cmbBoxNoPlay8.Text;
+                    noPlayCount[division, 8]++;
+                    noPlayIndex[division, 8] = cmbBoxNoPlay8.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay8.SelectedIndex = -1;
@@ -2458,13 +3121,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[9] == 12)
+            if (noPlayCount[division, 9] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay9.Text != "")
             {
-                for (int i = 0; i < noPlayCount[9]; i++)
+                for (int i = 0; i < noPlayCount[division, 9]; i++)
                 {
                     if (cmbBoxNoPlay9.Text == datesNoPlay[division, 9, i])
                     {
@@ -2475,8 +3138,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 9, noPlayCount[9]] = cmbBoxNoPlay9.Text;
-                    noPlayCount[9]++;
+                    datesNoPlay[division, 9, noPlayCount[division, 9]] = cmbBoxNoPlay9.Text;
+                    noPlayCount[division, 9]++;
+                    noPlayIndex[division, 9] = cmbBoxNoPlay9.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay9.SelectedIndex = -1;
@@ -2487,13 +3151,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[10] == 12)
+            if (noPlayCount[division, 10] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay10.Text != "")
             {
-                for (int i = 0; i < noPlayCount[10]; i++)
+                for (int i = 0; i < noPlayCount[division, 10]; i++)
                 {
                     if (cmbBoxNoPlay10.Text == datesNoPlay[division, 10, i])
                     {
@@ -2504,8 +3168,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 10, noPlayCount[10]] = cmbBoxNoPlay10.Text;
-                    noPlayCount[10]++;
+                    datesNoPlay[division, 10, noPlayCount[division, 10]] = cmbBoxNoPlay10.Text;
+                    noPlayCount[division, 10]++;
+                    noPlayIndex[division, 10] = cmbBoxNoPlay10.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay10.SelectedIndex = -1;
@@ -2516,13 +3181,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[11] == 12)
+            if (noPlayCount[division, 11] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay11.Text != "")
             {
-                for (int i = 0; i < noPlayCount[11]; i++)
+                for (int i = 0; i < noPlayCount[division, 11]; i++)
                 {
                     if (cmbBoxNoPlay11.Text == datesNoPlay[division, 11, i])
                     {
@@ -2533,8 +3198,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 11, noPlayCount[11]] = cmbBoxNoPlay11.Text;
-                    noPlayCount[11]++;
+                    datesNoPlay[division, 11, noPlayCount[division, 11]] = cmbBoxNoPlay11.Text;
+                    noPlayCount[division, 11]++;
+                    noPlayIndex[division, 11] = cmbBoxNoPlay11.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay11.SelectedIndex = -1;
@@ -2545,13 +3211,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[12] == 12)
+            if (noPlayCount[division, 12] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay12.Text != "")
             {
-                for (int i = 0; i < noPlayCount[12]; i++)
+                for (int i = 0; i < noPlayCount[division, 12]; i++)
                 {
                     if (cmbBoxNoPlay12.Text == datesNoPlay[division, 12, i])
                     {
@@ -2562,8 +3228,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 12, noPlayCount[12]] = cmbBoxNoPlay12.Text;
-                    noPlayCount[12]++;
+                    datesNoPlay[division, 12, noPlayCount[division, 12]] = cmbBoxNoPlay12.Text;
+                    noPlayCount[division, 12]++;
+                    noPlayIndex[division, 12] = cmbBoxNoPlay12.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay12.SelectedIndex = -1;
@@ -2574,13 +3241,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[13] == 12)
+            if (noPlayCount[division, 13] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay13.Text != "")
             {
-                for (int i = 0; i < noPlayCount[13]; i++)
+                for (int i = 0; i < noPlayCount[division, 13]; i++)
                 {
                     if (cmbBoxNoPlay13.Text == datesNoPlay[division, 13, i])
                     {
@@ -2591,8 +3258,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 13, noPlayCount[13]] = cmbBoxNoPlay13.Text;
-                    noPlayCount[13]++;
+                    datesNoPlay[division, 13, noPlayCount[division, 13]] = cmbBoxNoPlay13.Text;
+                    noPlayCount[division, 13]++;
+                    noPlayIndex[division, 13] = cmbBoxNoPlay13.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay13.SelectedIndex = -1;
@@ -2603,13 +3271,13 @@ namespace Fixtures
         {
             bool check = false;
 
-            if (noPlayCount[14] == 12)
+            if (noPlayCount[division, 14] == 12)
             {
                 MessageBox.Show("Cannot add another date.", "Max no play dates added", MessageBoxButtons.OK);
             }
             else if (cmbBoxNoPlay14.Text != "")
             {
-                for (int i = 0; i < noPlayCount[14]; i++)
+                for (int i = 0; i < noPlayCount[division, 14]; i++)
                 {
                     if (cmbBoxNoPlay14.Text == datesNoPlay[division, 14, i])
                     {
@@ -2620,8 +3288,9 @@ namespace Fixtures
                 if (check == false)
                 {
                     //Save current
-                    datesNoPlay[division, 14, noPlayCount[14]] = cmbBoxNoPlay14.Text;
-                    noPlayCount[14]++;
+                    datesNoPlay[division, 14, noPlayCount[division, 14]] = cmbBoxNoPlay14.Text;
+                    noPlayCount[division, 14]++;
+                    noPlayIndex[division, 14] = cmbBoxNoPlay14.SelectedIndex;
                 }
                 //Reset text to type new team name
                 cmbBoxNoPlay14.SelectedIndex = -1;
@@ -2634,21 +3303,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 0] = null;
-                for (int i = 0; i < sharedCount[0] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 0] + 1; i++)
                 {
                     shared[division, 0, i] = null;
                 }
-                for (int i = 0; i < homeCount[0] + 1; i++)
+                for (int i = 0; i < homeCount[division, 0] + 1; i++)
                 {
                     datesHome[division, 0, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[0] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 0] + 1; i++)
                 {
                     datesNoPlay[division, 0, i] = null;
                 }
-                sharedCount[0] = 0;
-                homeCount[0] = 0;
-                noPlayCount[0] = 0;
+                sharedCount[division, 0] = 0;
+                homeCount[division, 0] = 0;
+                noPlayCount[division, 0] = 0;
 
                 txtName.Text = "Enter a team";
                 txtName.ForeColor = Color.Gray;
@@ -2665,21 +3334,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 1] = null;
-                for (int i = 0; i < sharedCount[1] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 1] + 1; i++)
                 {
                     shared[division, 1, i] = null;
                 }
-                for (int i = 0; i < homeCount[1] + 1; i++)
+                for (int i = 0; i < homeCount[division, 1] + 1; i++)
                 {
                     datesHome[division, 1, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[1] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 1] + 1; i++)
                 {
                     datesNoPlay[division, 1, i] = null;
                 }
-                sharedCount[1] = 0;
-                homeCount[1] = 0;
-                noPlayCount[1] = 0;
+                sharedCount[division, 1] = 0;
+                homeCount[division, 1] = 0;
+                noPlayCount[division, 1] = 0;
 
                 txtName1.Text = "Enter a team";
                 txtName1.ForeColor = Color.Gray;
@@ -2696,21 +3365,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 2] = null;
-                for (int i = 0; i < sharedCount[2] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 2] + 1; i++)
                 {
                     shared[division, 2, i] = null;
                 }
-                for (int i = 0; i < homeCount[2] + 1; i++)
+                for (int i = 0; i < homeCount[division, 2] + 1; i++)
                 {
                     datesHome[division, 2, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[2] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 2] + 1; i++)
                 {
                     datesNoPlay[division, 2, i] = null;
                 }
-                sharedCount[2] = 0;
-                homeCount[2] = 0;
-                noPlayCount[2] = 0;
+                sharedCount[division, 2] = 0;
+                homeCount[division, 2] = 0;
+                noPlayCount[division, 2] = 0;
 
                 txtName2.Text = "Enter a team";
                 txtName2.ForeColor = Color.Gray;
@@ -2727,21 +3396,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 3] = null;
-                for (int i = 0; i < sharedCount[3] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 3] + 1; i++)
                 {
                     shared[division, 3, i] = null;
                 }
-                for (int i = 0; i < homeCount[3] + 1; i++)
+                for (int i = 0; i < homeCount[division, 3] + 1; i++)
                 {
                     datesHome[division, 3, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[3] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 3] + 1; i++)
                 {
                     datesNoPlay[division, 3, i] = null;
                 }
-                sharedCount[3] = 0;
-                homeCount[3] = 0;
-                noPlayCount[3] = 0;
+                sharedCount[division, 3] = 0;
+                homeCount[division, 3] = 0;
+                noPlayCount[division, 3] = 0;
 
                 txtName3.Text = "Enter a team";
                 txtName3.ForeColor = Color.Gray;
@@ -2758,21 +3427,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 4] = null;
-                for (int i = 0; i < sharedCount[4] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 4] + 1; i++)
                 {
                     shared[division, 4, i] = null;
                 }
-                for (int i = 0; i < homeCount[4] + 1; i++)
+                for (int i = 0; i < homeCount[division, 4] + 1; i++)
                 {
                     datesHome[division, 4, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[4] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 4] + 1; i++)
                 {
                     datesNoPlay[division, 4, i] = null;
                 }
-                sharedCount[4] = 0;
-                homeCount[4] = 0;
-                noPlayCount[4] = 0;
+                sharedCount[division, 4] = 0;
+                homeCount[division, 4] = 0;
+                noPlayCount[division, 4] = 0;
 
                 txtName4.Text = "Enter a team";
                 txtName4.ForeColor = Color.Gray;
@@ -2789,21 +3458,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 5] = null;
-                for (int i = 0; i < sharedCount[5] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 5] + 1; i++)
                 {
                     shared[division, 5, i] = null;
                 }
-                for (int i = 0; i < homeCount[5] + 1; i++)
+                for (int i = 0; i < homeCount[division, 5] + 1; i++)
                 {
                     datesHome[division, 5, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[5] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 5] + 1; i++)
                 {
                     datesNoPlay[division, 5, i] = null;
                 }
-                sharedCount[5] = 0;
-                homeCount[5] = 0;
-                noPlayCount[5] = 0;
+                sharedCount[division, 5] = 0;
+                homeCount[division, 5] = 0;
+                noPlayCount[division, 5] = 0;
 
                 txtName5.Text = "Enter a team";
                 txtName5.ForeColor = Color.Gray;
@@ -2820,21 +3489,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 6] = null;
-                for (int i = 0; i < sharedCount[6] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 6] + 1; i++)
                 {
                     shared[division, 6, i] = null;
                 }
-                for (int i = 0; i < homeCount[6] + 1; i++)
+                for (int i = 0; i < homeCount[division, 6] + 1; i++)
                 {
                     datesHome[division, 6, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[6] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 6] + 1; i++)
                 {
                     datesNoPlay[division, 6, i] = null;
                 }
-                sharedCount[6] = 0;
-                homeCount[6] = 0;
-                noPlayCount[6] = 0;
+                sharedCount[division, 6] = 0;
+                homeCount[division, 6] = 0;
+                noPlayCount[division, 6] = 0;
 
                 txtName6.Text = "Enter a team";
                 txtName6.ForeColor = Color.Gray;
@@ -2851,21 +3520,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 7] = null;
-                for (int i = 0; i < sharedCount[7] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 7] + 1; i++)
                 {
                     shared[division, 7, i] = null;
                 }
-                for (int i = 0; i < homeCount[7] + 1; i++)
+                for (int i = 0; i < homeCount[division, 7] + 1; i++)
                 {
                     datesHome[division, 7, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[7] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 7] + 1; i++)
                 {
                     datesNoPlay[division, 7, i] = null;
                 }
-                sharedCount[7] = 0;
-                homeCount[7] = 0;
-                noPlayCount[7] = 0;
+                sharedCount[division, 7] = 0;
+                homeCount[division, 7] = 0;
+                noPlayCount[division, 7] = 0;
 
                 txtName7.Text = "Enter a team";
                 txtName7.ForeColor = Color.Gray;
@@ -2882,21 +3551,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 8] = null;
-                for (int i = 0; i < sharedCount[8] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 8] + 1; i++)
                 {
                     shared[division, 8, i] = null;
                 }
-                for (int i = 0; i < homeCount[8] + 1; i++)
+                for (int i = 0; i < homeCount[division, 8] + 1; i++)
                 {
                     datesHome[division, 8, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[8] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 8] + 1; i++)
                 {
                     datesNoPlay[division, 8, i] = null;
                 }
-                sharedCount[8] = 0;
-                homeCount[8] = 0;
-                noPlayCount[8] = 0;
+                sharedCount[division, 8] = 0;
+                homeCount[division, 8] = 0;
+                noPlayCount[division, 8] = 0;
 
                 txtName8.Text = "Enter a team";
                 txtName8.ForeColor = Color.Gray;
@@ -2913,21 +3582,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 9] = null;
-                for (int i = 0; i < sharedCount[9] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 9] + 1; i++)
                 {
                     shared[division, 9, i] = null;
                 }
-                for (int i = 0; i < homeCount[9] + 1; i++)
+                for (int i = 0; i < homeCount[division, 9] + 1; i++)
                 {
                     datesHome[division, 9, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[9] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 9] + 1; i++)
                 {
                     datesNoPlay[division, 9, i] = null;
                 }
-                sharedCount[9] = 0;
-                homeCount[9] = 0;
-                noPlayCount[9] = 0;
+                sharedCount[division, 9] = 0;
+                homeCount[division, 9] = 0;
+                noPlayCount[division, 9] = 0;
 
                 txtName9.Text = "Enter a team";
                 txtName9.ForeColor = Color.Gray;
@@ -2944,21 +3613,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 10] = null;
-                for (int i = 0; i < sharedCount[10] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 10] + 1; i++)
                 {
                     shared[division, 10, i] = null;
                 }
-                for (int i = 0; i < homeCount[10] + 1; i++)
+                for (int i = 0; i < homeCount[division, 10] + 1; i++)
                 {
                     datesHome[division, 10, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[10] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 10] + 1; i++)
                 {
                     datesNoPlay[division, 10, i] = null;
                 }
-                sharedCount[10] = 0;
-                homeCount[10] = 0;
-                noPlayCount[10] = 0;
+                sharedCount[division, 10] = 0;
+                homeCount[division, 10] = 0;
+                noPlayCount[division, 10] = 0;
 
                 txtName10.Text = "Enter a team";
                 txtName10.ForeColor = Color.Gray;
@@ -2975,21 +3644,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 11] = null;
-                for (int i = 0; i < sharedCount[11] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 11] + 1; i++)
                 {
                     shared[division, 11, i] = null;
                 }
-                for (int i = 0; i < homeCount[11] + 1; i++)
+                for (int i = 0; i < homeCount[division, 11] + 1; i++)
                 {
                     datesHome[division, 11, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[11] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 11] + 1; i++)
                 {
                     datesNoPlay[division, 11, i] = null;
                 }
-                sharedCount[11] = 0;
-                homeCount[11] = 0;
-                noPlayCount[11] = 0;
+                sharedCount[division, 11] = 0;
+                homeCount[division, 11] = 0;
+                noPlayCount[division, 11] = 0;
 
                 txtName11.Text = "Enter a team";
                 txtName11.ForeColor = Color.Gray;
@@ -3006,21 +3675,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 12] = null;
-                for (int i = 0; i < sharedCount[12] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 12] + 1; i++)
                 {
                     shared[division, 12, i] = null;
                 }
-                for (int i = 0; i < homeCount[12] + 1; i++)
+                for (int i = 0; i < homeCount[division, 12] + 1; i++)
                 {
                     datesHome[division, 12, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[12] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 12] + 1; i++)
                 {
                     datesNoPlay[division, 12, i] = null;
                 }
-                sharedCount[12] = 0;
-                homeCount[12] = 0;
-                noPlayCount[12] = 0;
+                sharedCount[division, 12] = 0;
+                homeCount[division, 12] = 0;
+                noPlayCount[division, 12] = 0;
 
                 txtName12.Text = "Enter a team";
                 txtName12.ForeColor = Color.Gray;
@@ -3037,21 +3706,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 13] = null;
-                for (int i = 0; i < sharedCount[13] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 13] + 1; i++)
                 {
                     shared[division, 13, i] = null;
                 }
-                for (int i = 0; i < homeCount[13] + 1; i++)
+                for (int i = 0; i < homeCount[division, 13] + 1; i++)
                 {
                     datesHome[division, 13, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[13] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 13] + 1; i++)
                 {
                     datesNoPlay[division, 13, i] = null;
                 }
-                sharedCount[13] = 0;
-                homeCount[13] = 0;
-                noPlayCount[13] = 0;
+                sharedCount[division, 13] = 0;
+                homeCount[division, 13] = 0;
+                noPlayCount[division, 13] = 0;
 
                 txtName13.Text = "Enter a team";
                 txtName13.ForeColor = Color.Gray;
@@ -3068,21 +3737,21 @@ namespace Fixtures
             if (del == DialogResult.Yes)
             {
                 name[division, 14] = null;
-                for (int i = 0; i < sharedCount[14] + 1; i++)
+                for (int i = 0; i < sharedCount[division, 14] + 1; i++)
                 {
                     shared[division, 14, i] = null;
                 }
-                for (int i = 0; i < homeCount[14] + 1; i++)
+                for (int i = 0; i < homeCount[division, 14] + 1; i++)
                 {
                     datesHome[division, 14, i] = null;
                 }
-                for (int i = 0; i < noPlayCount[14] + 1; i++)
+                for (int i = 0; i < noPlayCount[division, 14] + 1; i++)
                 {
                     datesNoPlay[division, 14, i] = null;
                 }
-                sharedCount[14] = 0;
-                homeCount[14] = 0;
-                noPlayCount[14] = 0;
+                sharedCount[division, 14] = 0;
+                homeCount[division, 14] = 0;
+                noPlayCount[division, 14] = 0;
 
                 txtName14.Text = "Enter a team";
                 txtName14.ForeColor = Color.Gray;
@@ -3090,6 +3759,15 @@ namespace Fixtures
                 txtShared14.ForeColor = Color.Gray;
                 cmbBoxHome14.SelectedIndex = -1;
                 cmbBoxNoPlay14.SelectedIndex = -1;
+            }
+        }
+
+        private void metBtnQuit_Click(object sender, EventArgs e)
+        {
+             DialogResult del = MessageBox.Show("Are you sure you want to quit? All progress will be lost.", "Quit", MessageBoxButtons.YesNo);
+            if (del == DialogResult.Yes)
+            {
+                this.Close();
             }
         }
     }

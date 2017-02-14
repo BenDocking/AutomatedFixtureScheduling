@@ -2641,6 +2641,7 @@
             this.metBtnQuit.Size = new System.Drawing.Size(85, 33);
             this.metBtnQuit.TabIndex = 3;
             this.metBtnQuit.Text = "Quit";
+            this.metBtnQuit.Click += new System.EventHandler(this.metBtnQuit_Click);
             // 
             // metroButton1
             // 
