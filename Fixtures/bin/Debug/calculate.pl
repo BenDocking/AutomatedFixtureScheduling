@@ -2,16 +2,7 @@
 %There will be a lot of team...all divisions
 %define the teams
 %use c# for this
-team(t1).
-team(t2).
-team(t3).
-team(t4).
-team(t5).
-team(t6).
-team(t7).
-team(t8).
-team(t9).
-team(t10).
+
 
 %for teams which share grounds (defined up to 5 teams all sharing grounds)
 sharedGrounds(TeamA, TeamB):-

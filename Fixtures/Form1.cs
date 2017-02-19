@@ -30,7 +30,7 @@ namespace Fixtures
         private string[, ,] datesNoPlay = new string[15, 15, 13]; //Division, Team, Dates
 
         private int division = 0;
-        private int team = 0;
+        private int divCount = 0;
         private int[,] sharedCount = new int[15, 15]; //Shared count Division, Team
         private int[,] homeCount = new int[15, 15]; //homeCount Division, Team
         private int[,] noPlayCount = new int[15, 15]; //noPlayCount Division, Team
@@ -150,7 +150,7 @@ namespace Fixtures
 
             //CODE
 
-            //PlQuery.PlCall("assert(team(brz))");
+            
             
             //DONE
 
@@ -180,7 +180,7 @@ namespace Fixtures
                 //}
             //}
 
-            PlEngine.PlCleanup();
+            //PlEngine.PlCleanup();
         }
 
         private void metTabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -197,6 +197,7 @@ namespace Fixtures
                     this.metTabControl.SelectedIndex = index - 1;
                     this.metTabControl.SelectedTab.BackColor = Color.White;
                     newTabIndex++;
+                    divCount++;
                 }
                 else
                 {
@@ -1025,6 +1026,28 @@ namespace Fixtures
                 //Save changes made to current division
                 saveChanges();
                 //Begin calculating! (Prolog)
+                //Assert teams + params
+                divCount++;
+                for (int d = 0; d < divCount; d++)
+                {
+                    for (int t = 0; t < teamCount[d]; t++)
+                    {
+                        PlQuery.PlCall("assert(team(" + name[d, t] + "))");
+
+                        for (int i = 0; i < sharedCount[d, t]; i++)
+                        {
+                            PlQuery.PlCall("assert(sharedGrounds(" + name[d, t] + ", " + shared[d, t, i] + "))");
+                        }
+                        for (int i = 0; i < homeCount[d, t]; i++)
+                        {
+                            PlQuery.PlCall("assert(home(" + name[d, t] + ", " + datesHome[d, t, i] + "))");
+                        }
+                        for (int i = 0; i < noPlayCount[d, t]; i++)
+                        {
+                            PlQuery.PlCall("assert(noPlay(" + name[d, t] + ", " + datesNoPlay[d, t, i] + "))");
+                        }
+                    }
+                }
             }
         }
 
