@@ -1023,6 +1023,7 @@ namespace Fixtures
             DialogResult calc = MessageBox.Show("Are you sure you are ready to calculate?", "Calculate", MessageBoxButtons.YesNo);
             if (calc == DialogResult.Yes)
             {
+                string week;
                 //Save changes made to current division
                 saveChanges();
                 //Begin calculating! (Prolog)
@@ -1030,6 +1031,8 @@ namespace Fixtures
                 divCount++;
                 for (int d = 0; d < divCount; d++)
                 {
+                    PlQuery.PlCall("assert(division(d" + d + "))");
+
                     for (int t = 0; t < teamCount[d]; t++)
                     {
                         PlQuery.PlCall("assert(team(" + name[d, t] + "))");
@@ -1040,12 +1043,20 @@ namespace Fixtures
                         }
                         for (int i = 0; i < homeCount[d, t]; i++)
                         {
-                            PlQuery.PlCall("assert(home(" + name[d, t] + ", " + datesHome[d, t, i] + "))");
+                            week = convertDate(datesHome[d, t, i]);
+                            PlQuery.PlCall("assert(home(" + name[d, t] + ", " + week + "))");
                         }
                         for (int i = 0; i < noPlayCount[d, t]; i++)
                         {
-                            PlQuery.PlCall("assert(noPlay(" + name[d, t] + ", " + datesNoPlay[d, t, i] + "))");
+                            week = convertDate(datesNoPlay[d, t, i]);
+                            PlQuery.PlCall("assert(noPlay(" + name[d, t] + ", " + week + "))");
                         }
+                        PlQuery.PlCall("assert(inDivision(" + name[d, t] + ", d" + d + "))");
+                    }
+                    //insert a filler team to ensure even teams
+                    if (teamCount[d] % 2 != 0)
+                    {
+                        PlQuery.PlCall("assert(team(fillerTeam))");
                     }
                 }
             }
@@ -3592,6 +3603,94 @@ namespace Fixtures
             sharedCount[division, x] = 0;
             homeCount[division, x] = 0;
             noPlayCount[division, x] = 0;
+        }
+
+        private string convertDate(string x)
+        {
+            string res = "";
+
+            switch(x)
+            {
+                case "17th April":
+                    res = "w1";
+                    break;
+                case "24th April":
+                    res = "w2";
+                    break;
+                case "1st May":
+                    res = "w3";
+                    break;
+                case "8th May":
+                    res = "w4";
+                    break;
+                case "15th May":
+                    res = "w5";
+                    break;
+                case "22nd May":
+                    res = "w6";
+                    break;
+                case "29th May":
+                    res = "w7";
+                    break;
+                case "5th June":
+                    res = "w8";
+                    break;
+                case "12th June":
+                    res = "w9";
+                    break;
+                case "19th June":
+                    res = "w10";
+                    break;
+                case "26th June":
+                    res = "w11";
+                    break;
+                case "3rd July":
+                    res = "w12";
+                    break;
+                case "10th July":
+                    res = "w13";
+                    break;
+                case "17th July":
+                    res = "w14";
+                    break;
+                case "24th July":
+                    res = "w15";
+                    break;
+                case "31st July":
+                    res = "w16";
+                    break;
+                case "7th August":
+                    res = "w17";
+                    break;
+                case "14th August":
+                    res = "w18";
+                    break;
+                case "21st August":
+                    res = "w19";
+                    break;
+                case "28th August":
+                    res = "w20";
+                    break;
+                case "4th September":
+                    res = "w21";
+                    break;
+                case "11th September":
+                    res = "w22";
+                    break;
+                case "18th September":
+                    res = "w23";
+                    break;
+                case "2nd May (Holiday)":
+                    res = "h1";
+                    break;
+                case "30th May (Holiday)":
+                    res = "h2";
+                    break;
+                case "29th August (Holiday)":
+                    res = "h3";
+                    break;
+            }
+            return res;
         }
     }
 }
