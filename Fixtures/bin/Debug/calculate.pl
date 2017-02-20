@@ -5,6 +5,7 @@
 %home(TeamA, Week)
 %noPlay(TeamA, Week)
 %division(d1)
+%inDivision(TeamA, Division)
 
 %there are 26 weeks in the league year including 3 bank holidays
 week(w1).
@@ -30,9 +31,9 @@ week(w20).
 week(w21).
 week(w22).
 week(w23).
-week(w24).
-week(w25).
-week(w26).
+week(h1).
+week(h2).
+week(h3).
 
 away(Team, Week):-
     team(Team),
