@@ -1057,6 +1057,7 @@ namespace Fixtures
                     if (teamCount[d] % 2 != 0)
                     {
                         PlQuery.PlCall("assert(team(fillerTeam))");
+                        PlQuery.PlCall("assert(inDivision(fillerTeam, d" + d + "))");
                     }
                 }
             }
