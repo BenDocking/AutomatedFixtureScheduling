@@ -138,6 +138,22 @@ plays2(TeamA, TeamB, Week):-
     plays2(TeamB, TeamA, W).
 
 %Four teams in division (including potential fillerTeam)
+%Two Matches played in week
+Plays4(TeamA, TeamB, Week):-
+    team(TeamA),
+    team(TeamB),
+    week(Week),
+    inDivision(TeamA, D),
+    inDivision(TeamB, D),
+    division(D),
+    home(TeamA),
+    away(TeamB),
+    playingHome(TeamA),
+    playingAway(TeamB),
+    Plays4(A, B, Week)),
+    not(Plays4(X, Y, Week)),
+
+%One match played in week
 plays4(TeamA, TeamB, Week):-
     team(TeamA),
     team(TeamB),
@@ -160,7 +176,9 @@ plays4(TeamA, TeamB, Week):-
     plays4(Team1, TeamB, W7),
     plays4(Team2, TeamB, W8),
     plays4(Team1, Team2, W9),
-    plays4(Team2, Team1, W10).
+    plays4(Team2, Team1, W10),
+    inDivision(Team1, D),
+    inDivision(Team2, D).
 
 %Use holiday if cannot play any other week
 plays4(TeamA, TeamB, Week):-
