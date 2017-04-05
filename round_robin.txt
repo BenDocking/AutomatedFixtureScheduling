@@ -1,3 +1,5 @@
+:- use_module(library(clpfd)).
+
 %Teams + their parameters are asserted using C#
 %....
 %team(TeamA)
@@ -6,6 +8,22 @@
 %noPlay(TeamA, Week)
 %division(d1)
 %inDivision(TeamA, Division)
+
+%Teams
+team(1).
+team(2).
+team(3).
+team(4).
+team(5).
+team(6).
+
+division(d1).
+inDivision(1, d1).
+inDivision(2, d1).
+inDivision(3, d1).
+inDivision(4, d1).
+inDivision(5, d1).
+inDivision(6, d1).
 
 %There are 26 weeks in the league year including 3 bank holidays
 week(w1).
@@ -300,40 +318,43 @@ plays10(TeamA, TeamB, Week):-
     .
 
 check_not_assigned(_, []).
-%recursively search through match list to see if match is assigned to a week
-check_not_assigned(TeamA, TeamB, [Week | CurrentMatchesTail]) :-
-    \+ match_table(TeamA, TeamB, Week),
-    check_not_assigned(TeamA, TeamB, CurrentMatchesTail).
+%recursively search through match list to see if match is assigned to a week M = [1, 2].
+check_not_assigned(M, [Match | CurrentMatchesTail]) :-
+    \+ match_table(M, Match),
+    check_not_assigned(M, CurrentMatchesTail).
 
-plays(TeamA, TeamB, Week, Matches):-
+plays(TeamA, TeamB, Week):-
     team(TeamA),
     team(TeamB),
     week(Week),
     inDivision(TeamA, D),
     inDivision(TeamB, D),
     division(D),
-    home(TeamA, Week),
+    %home(TeamA, Week),
     away(TeamB, Week),
     playingHome(TeamA, Week),
     playingAway(TeamB, Week),
-    check_not_assigned(TeamA, TeamB, Matches),
-    assertz(match_table(TeamA, TeamB, Week)).
+    check_not_assigned(TeamA, TeamB),
+    %Needs to be done recursively
+    assertz(match_table(TeamA, TeamB)),
+    assertz(output_fixtures(TeamA, TeamB, Week)).
 
 %table of matches (Home, Away, Date)
-:- dynamic(match_table/3).
+:- dynamic(match_table/2).
+:- dynamic(output_fixtures/3).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%Round-Robin%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %table of allocated matches
 :- dynamic(alloc_table/2).
 
-%number playing home must be less than number playing away
-forHome(T, T, X) :-
+%get all teams from 1 .. NumTeams
+forTeams(T, T, X) :-
     T =< X.
-forHome(I, T, X) :-
+forTeams(I, T, X) :-
     T < X,
     T1 is T + 1,
-    forHome(I, T1, X).
+    forTeams(I, T1, X).
 
 %teams represented by integers more than 1
 check_num_input(T) :-
@@ -342,22 +363,22 @@ check_num_input(T) :-
 
 %resets the allocation table of matches
 reset_allocations :-
-    retractall(alloc_table(_, _)).
+    retractall(match_table(_, _)).
 
 %check the match has not already been allocated
 %empty list for once recursion is complete
 check_not_allocated(_, []).
 %recursively search through allocation list to see if team is allocated
 check_not_allocated(T, [X | CurrentMatchesTail]) :-
-    \+ alloc_table(T, X),
-    \+ alloc_table(X, T),
+    \+ match_table(T, X),
+    \+ match_table(X, T),
     check_not_allocated(T, CurrentMatchesTail).
 
 %recursively fetch match allocation
 get_match_allocation(_, 0, CurrentMatches, CurrentMatches).
 get_match_allocation(NumTeams, RemainingNumTeamsPerMatch, CurrentMatches, Matches) :-
     RemainingNumTeamsPerMatch > 0,
-    forHome(T, 1, NumTeams),
+    forTeams(T, 1, NumTeams),
     \+ member(T, CurrentMatches),
     check_not_allocated(T, CurrentMatches),
     append(CurrentMatches, [T], NewMatches),
@@ -367,7 +388,7 @@ get_match_allocation(NumTeams, RemainingNumTeamsPerMatch, CurrentMatches, Matche
 %recursively store/ add matches into allocation list
 store_allocation_1(_, []).
 store_allocation_1(T, [X | MatchesTail]) :-
-    assertz(alloc_table(T, X)),
+    assertz(match_table(T, X)),
     store_allocation_1(T, MatchesTail).
 
 %recursively store allocation from match list
@@ -378,12 +399,14 @@ store_allocation([T | MatchesTail]) :-
 
 %recursively check all required matches are allocated
 check_plays_all(_, []).
-check_plays_all(T, [X | TeamsTail]) :-
-    (    alloc_table(T, X)
-    ;    alloc_table(X, T)),
+check_plays_all(T, [Team | TeamsTail]) :-
+    %check head team from teams list plays next head team from remaining teams list
+    (    match_table(T, Team)
+    ;    match_table(Team, T)),
     check_plays_all(T, TeamsTail).
 
 check_all_play_all([_]).
+%get head team of teams list
 check_all_play_all([T | TeamsTail]) :-
     check_plays_all(T, TeamsTail),
     check_all_play_all(TeamsTail).
@@ -405,9 +428,9 @@ round_robin(NumTeams, NumTeamsPerMatch, Matches) :-
     check_num_input(NumTeams),
     check_num_input(NumTeamsPerMatch),
     reset_allocations,
-    NumTeamsPerMatch1 is NumTeamsPerMatch - 1,
-    do_round_robin(NumTeams, NumTeamsPerMatch1, 1, Matches),
-    findall(T, forHome(T, 1, NumTeams), Teams),
+    NumTeamsPerMatch1 is NumTeamsPerMatch - 1, %1
+    do_round_robin(NumTeams, NumTeamsPerMatch1, 1, Matches), %(NumTeams, 1, 1, Matches_List)
+    findall(T, forTeams(T, 1, NumTeams), Teams), %finds all teams from 1 .. NumTeams
     check_all_play_all(Teams),
     !,
     reset_allocations.
