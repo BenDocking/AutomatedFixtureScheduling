@@ -1034,9 +1034,9 @@ namespace Fixtures
                 {
                     matchCount[d] = 0;
                     //for each division
-                    //Query round-robin
+                    //Query prolog
                     string matches = "";
-                    string reqTeams = Convert.ToString(teamCount[d]);
+                    string reqTeams = Convert.ToString(teamCount[d] + 1);
                     using (var q = new PlQuery("round_robin(" + reqTeams + ", 2, M)"))
                     {
                         foreach (PlQueryVariables v in q.SolutionVariables)
@@ -1045,12 +1045,12 @@ namespace Fixtures
                         }
                     }
 
-                    PlEngine.PlCleanup();
-
                     bool match = false;
-                    int count = 0;
                     int gameCount = 0;
-                    string temp = "";
+                    string tempH = "";
+                    string tempA = "";
+                    string previous = "";
+                    bool home = true;
 
                     foreach (char c in matches)
                     {
@@ -1058,27 +1058,54 @@ namespace Fixtures
                         {
                             if (c != '[' && c != ',')
                             {
-                                //c == team number
+                                //c == team number or ']'
 
-                                if (count % 2 != 0)
+                                if (c != ']')
                                 {
-                                    //end of match
-                                    match = false;
+                                    //match not over
+                                    if (previous == "[")
+                                    {
+                                        //first team beginning
+                                        home = true;
+                                        game[d, gameCount] = Convert.ToString(c);
+                                        tempH = game[d, gameCount];
+                                    }
+                                    else if (previous == ",")
+                                    {
+                                        //second team beginning
+                                        home = false;
+                                        game[d, gameCount] = game[d, gameCount] + Convert.ToString(" vs " + c);
+                                        tempA = Convert.ToString(c);
+                                    }
+                                    else
+                                    {
+                                        //team number double digits
+                                        //add extra digit
+                                        game[d, gameCount] = game[d, gameCount] + Convert.ToString(c);
 
-                                    game[d, gameCount] = game[d, gameCount] + Convert.ToString(" vs " + c);
-                                    gameCount++;
-
-                                    //add mirror match
-                                    game[d, gameCount] = Convert.ToString(c + " vs " + temp);
-                                    gameCount++;
-                                    matchCount[d]++;
+                                        if (home == true)
+                                        {
+                                            tempH = tempH + Convert.ToString(c);
+                                        }
+                                        else
+                                        {
+                                            tempA = tempA + Convert.ToString(c);
+                                        }
+                                    }
                                 }
                                 else
                                 {
-                                    game[d, gameCount] = Convert.ToString(c);
-                                    temp = game[d, gameCount];
+                                    //end of match
+                                    match = false;
+                                    gameCount++;
+
+                                    //add mirror match
+                                    game[d, gameCount] = Convert.ToString(tempA + " vs " + tempH);
+                                    gameCount++;
+                                    matchCount[d]++;
+                                    tempA = "";
+                                    tempH = "";
                                 }
-                                count++;
                             }
                         }
 
@@ -1087,6 +1114,8 @@ namespace Fixtures
                             //potential start of match e.g. '['2, 3]
                             match = true;
                         }
+
+                        previous = Convert.ToString(c);
                     }
                 }
 
@@ -1096,10 +1125,15 @@ namespace Fixtures
                     {
                         for (int m = 0; m < matchCount[div]; m++) //for each match in division
                         {
-
+                            //if away team not play home and not noPlay for any of the teams in match 
+                            //then add match as available for that date
+                            
+                            //Add another variable to teams called assigned... if not assigned for any of the teams...
                         }
                     }
                 }
+
+                PlEngine.PlCleanup();
             }
         }
 

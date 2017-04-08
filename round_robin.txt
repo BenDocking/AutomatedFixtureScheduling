@@ -346,7 +346,7 @@ plays(TeamA, TeamB, Week):-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%Round-Robin%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %table of allocated matches
-:- dynamic(alloc_table/2).
+:- dynamic(match_table/2).
 
 %get all teams from 1 .. NumTeams
 forTeams(T, T, X) :-
