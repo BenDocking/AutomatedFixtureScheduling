@@ -29,6 +29,8 @@ namespace Fixtures
         private string[, ,] datesHome = new string[15, 15, 13]; //Division, Team, Dates
         private string[, ,] datesNoPlay = new string[15, 15, 13]; //Division, Team, Dates
 
+        public string[] game = new string[210]; //Home, Away ... The list of all matches which must take place
+
         private int division = 0;
         private int divCount = 0;
         private int[,] sharedCount = new int[15, 15]; //Shared count Division, Team
@@ -147,40 +149,6 @@ namespace Fixtures
             txtShared13.ForeColor = Color.Gray;
             txtShared14.ForeColor = Color.Gray;
             #endregion
-
-            //CODE
-
-            
-            
-            //DONE
-
-            //using (var q = new PlQuery("playing(fra,R,G), atomic_list_concat(['France plays in round ', R, ' game ', G], L)"))
-            //{
-                //foreach (PlQueryVariables v in q.SolutionVariables)
-                //{
-                    //richTextBox1.AppendText(v["L"].ToString());
-                   // richTextBox1.AppendText("\n");
-                //}
-
-                /*richTextBox1.AppendText("\n\nall children from uwe:");
-                q.Variables["P"].Unify("uwe");
-                foreach (PlQueryVariables v in q.SolutionVariables)
-                {
-                    richTextBox1.AppendText("\n");
-                    richTextBox1.AppendText(v["C"].ToString());
-                }*/
-            //}
-
-            //using (var q = new PlQuery("plays(ger,fra,R,G), atomic_list_concat(['Germany could play France in round ', R, ' game ', G], L)"))
-            //{
-                //foreach (PlQueryVariables v in q.SolutionVariables)
-                //{
-                    //richTextBox1.AppendText(v["L"].ToString());
-                    //richTextBox1.AppendText("\n");
-                //}
-            //}
-
-            //PlEngine.PlCleanup();
         }
 
         private void metTabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -1060,6 +1028,88 @@ namespace Fixtures
                         PlQuery.PlCall("assert(inDivision(fillerTeam, d" + d + "))");
                     }
                 }
+
+                //Query round-robin
+                string matches = "";
+                using (var q = new PlQuery("round_robin(6, 2, M)"))
+                {
+                    foreach (PlQueryVariables v in q.SolutionVariables)
+                    {
+                        matches = v["M"].ToString();
+                    }
+                }
+
+                PlEngine.PlCleanup();
+
+                bool match = false;
+                int count = 0;
+                int gameCount = 0;
+                string temp = "";
+
+                foreach (char c in matches)
+                {
+                    if (match == true)
+                    {
+                        if (c != '[' && c != ',')
+                        {
+                            //c == team number
+
+                            if (count % 2 != 0)
+                            {
+                                //end of match
+                                match = false;
+
+                                game[gameCount] = game[gameCount] + Convert.ToString(" vs " + c);
+                                gameCount++;
+
+                                //add mirror match
+                                game[gameCount] = Convert.ToString(c + " vs " + temp);
+                                gameCount++;
+                            }
+                            else
+                            {
+                                game[gameCount] = Convert.ToString(c);
+                                temp = game[gameCount];
+                            }
+                            count++;
+                        }
+                    }
+
+                    if (c == '[')
+                    {
+                        //potential start of match e.g. '['2, 3]
+                        match = true;
+                    }
+                }
+
+
+                //using (var q = new PlQuery("playing(fra,R,G), atomic_list_concat(['France plays in round ', R, ' game ', G], L)"))
+                //{
+                //foreach (PlQueryVariables v in q.SolutionVariables)
+                //{
+                //richTextBox1.AppendText(v["L"].ToString());
+                // richTextBox1.AppendText("\n");
+                //}
+
+                /*richTextBox1.AppendText("\n\nall children from uwe:");
+                q.Variables["P"].Unify("uwe");
+                foreach (PlQueryVariables v in q.SolutionVariables)
+                {
+                    richTextBox1.AppendText("\n");
+                    richTextBox1.AppendText(v["C"].ToString());
+                }*/
+                //}
+
+                //using (var q = new PlQuery("plays(ger,fra,R,G), atomic_list_concat(['Germany could play France in round ', R, ' game ', G], L)"))
+                //{
+                //foreach (PlQueryVariables v in q.SolutionVariables)
+                //{
+                //richTextBox1.AppendText(v["L"].ToString());
+                //richTextBox1.AppendText("\n");
+                //}
+                //}
+
+                //PlEngine.PlCleanup();
             }
         }
 
