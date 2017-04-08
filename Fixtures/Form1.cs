@@ -29,10 +29,11 @@ namespace Fixtures
         private string[, ,] datesHome = new string[15, 15, 13]; //Division, Team, Dates
         private string[, ,] datesNoPlay = new string[15, 15, 13]; //Division, Team, Dates
 
-        public string[,] game = new string[15, 210]; //Division, Matches ... The list of all matches which must take place
+        private string[,] game = new string[15, 210]; //Division, Matches ... The list of all matches which must take place
 
         private int division = 0;
         private int divCount = 0;
+        private int[] matchCount = new int[15]; //amount of matches which must take place in each division
         private int[,] sharedCount = new int[15, 15]; //Shared count Division, Team
         private int[,] homeCount = new int[15, 15]; //homeCount Division, Team
         private int[,] noPlayCount = new int[15, 15]; //noPlayCount Division, Team
@@ -991,7 +992,6 @@ namespace Fixtures
             DialogResult calc = MessageBox.Show("Are you sure you are ready to calculate?", "Calculate", MessageBoxButtons.YesNo);
             if (calc == DialogResult.Yes)
             {
-                int[] matchCount = new int[15]; //amount of matches which must take place in each division
                 string week;
                 //Save changes made to current division
                 saveChanges();
@@ -1074,7 +1074,7 @@ namespace Fixtures
                                     {
                                         //second team beginning
                                         home = false;
-                                        game[d, gameCount] = game[d, gameCount] + Convert.ToString(" vs " + c);
+                                        game[d, gameCount] = game[d, gameCount] + Convert.ToString("vs" + c);
                                         tempA = Convert.ToString(c);
                                     }
                                     else
@@ -1100,7 +1100,7 @@ namespace Fixtures
                                     gameCount++;
 
                                     //add mirror match
-                                    game[d, gameCount] = Convert.ToString(tempA + " vs " + tempH);
+                                    game[d, gameCount] = Convert.ToString(tempA + "vs" + tempH);
                                     gameCount++;
                                     matchCount[d]++;
                                     tempA = "";
@@ -1119,21 +1119,13 @@ namespace Fixtures
                     }
                 }
 
-                for (int div = 0; div < divCount; div++) //for each division
-                {
-                    for (int date = 0; date < 26; date++) //for each date
-                    {
-                        for (int m = 0; m < matchCount[div]; m++) //for each match in division
-                        {
-                            //if away team not play home and not noPlay for any of the teams in match 
-                            //then add match as available for that date
-                            
-                            //Add another variable to teams called assigned... if not assigned for any of the teams...
-                        }
-                    }
-                }
-
                 PlEngine.PlCleanup();
+
+                //goto form2 (output form)
+                //this.Hide();
+                Form2 frm = new Form2(divCount, matchCount, game, name, shared, datesHome, datesNoPlay);
+                frm.FormClosed += (s, args) => this.Close();
+                frm.Show();
             }
         }
 

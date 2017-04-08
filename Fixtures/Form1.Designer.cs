@@ -2673,6 +2673,7 @@
             this.Controls.Add(this.metTabControl);
             this.MinimumSize = new System.Drawing.Size(1045, 569);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
             this.Text = "Cricket League Fixtures Helper";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.metTabControl.ResumeLayout(false);
