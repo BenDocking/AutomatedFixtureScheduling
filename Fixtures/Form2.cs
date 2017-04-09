@@ -42,6 +42,7 @@ namespace Fixtures
             string previous = "start";
             string temp = "";
             bool home = true;
+            int count = 0;
 
             for (int div = 0; div < divCount; div++) //for each division
             {
@@ -83,6 +84,19 @@ namespace Fixtures
                         }
 
                         previous = "start";
+                        bool valid = true;
+
+                        for (int i = 0; i < 13; i++) //for each possible dates home
+                        {
+                            if (convertDate(datesHome[div, teamAway, i]) == date ||     //team playing away must play home ... invalid match date
+                                convertDate(datesNoPlay[div, teamHome, i]) == date ||   //team in match cannot play on date ... invalid match date
+                                convertDate(datesNoPlay[div, teamAway, i]) == date)  
+                            {
+                                valid = false;
+                                count++;
+                            }
+                        }
+                        
                         //if away team not play home and not noPlay for any of the teams in match 
                         //then add match as available for that date
 
@@ -175,6 +189,9 @@ namespace Fixtures
                     break;
                 case "29th August (Holiday)":
                     res = 25;
+                    break;
+                default:
+                    res = 100;
                     break;
             }
             return res;

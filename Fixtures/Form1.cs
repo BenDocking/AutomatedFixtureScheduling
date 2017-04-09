@@ -1122,7 +1122,7 @@ namespace Fixtures
                 PlEngine.PlCleanup();
 
                 //goto form2 (output form)
-                //this.Hide();
+                this.Hide();
                 Form2 frm = new Form2(divCount, matchCount, game, name, shared, datesHome, datesNoPlay);
                 frm.FormClosed += (s, args) => this.Close();
                 frm.Show();
