@@ -736,7 +736,7 @@ namespace Fixtures
                         case 8:
                             //Populate team 9
                             txtName8.Text = name[division, 8];
-                            if (sharedCount[division, 8] == 8)
+                            if (sharedCount[division, 8] == 0)
                             {
                                 txtShared8.Text = "Enter a team";
                                 txtShared8.ForeColor = Color.Gray;
@@ -992,43 +992,43 @@ namespace Fixtures
             DialogResult calc = MessageBox.Show("Are you sure you are ready to calculate?", "Calculate", MessageBoxButtons.YesNo);
             if (calc == DialogResult.Yes)
             {
-                string week;
+                //string week;
                 //Save changes made to current division
                 saveChanges();
                 //Begin calculating! (Prolog)
                 //Assert teams + params
                 divCount++;
-                for (int d = 0; d < divCount; d++)
-                {
-                    PlQuery.PlCall("assert(division(d" + d + "))");
+                //for (int d = 0; d < divCount; d++)
+                //{
+                //    PlQuery.PlCall("assert(division(d" + d + "))");
 
-                    for (int t = 0; t < teamCount[d]; t++)
-                    {
-                        PlQuery.PlCall("assert(team(" + name[d, t] + "))");
+                //    for (int t = 0; t < teamCount[d]; t++)
+                //    {
+                //        PlQuery.PlCall("assert(team(" + name[d, t] + "))");
 
-                        for (int i = 0; i < sharedCount[d, t]; i++)
-                        {
-                            PlQuery.PlCall("assert(sharedGrounds(" + name[d, t] + ", " + shared[d, t, i] + "))");
-                        }
-                        for (int i = 0; i < homeCount[d, t]; i++)
-                        {
-                            week = convertDate(datesHome[d, t, i]);
-                            PlQuery.PlCall("assert(home(" + name[d, t] + ", " + week + "))");
-                        }
-                        for (int i = 0; i < noPlayCount[d, t]; i++)
-                        {
-                            week = convertDate(datesNoPlay[d, t, i]);
-                            PlQuery.PlCall("assert(noPlay(" + name[d, t] + ", " + week + "))");
-                        }
-                        PlQuery.PlCall("assert(inDivision(" + name[d, t] + ", d" + d + "))");
-                    }
-                    //insert a filler team to ensure even teams
-                    if (teamCount[d] % 2 != 0)
-                    {
-                        PlQuery.PlCall("assert(team(fillerTeam))");
-                        PlQuery.PlCall("assert(inDivision(fillerTeam, d" + d + "))");
-                    }
-                }
+                //        for (int i = 0; i < sharedCount[d, t]; i++)
+                //        {
+                //            PlQuery.PlCall("assert(sharedGrounds(" + name[d, t] + ", " + shared[d, t, i] + "))");
+                //        }
+                //        for (int i = 0; i < homeCount[d, t]; i++)
+                //        {
+                //            week = convertDate(datesHome[d, t, i]);
+                //            PlQuery.PlCall("assert(home(" + name[d, t] + ", " + week + "))");
+                //        }
+                //        for (int i = 0; i < noPlayCount[d, t]; i++)
+                //        {
+                //            week = convertDate(datesNoPlay[d, t, i]);
+                //            PlQuery.PlCall("assert(noPlay(" + name[d, t] + ", " + week + "))");
+                //        }
+                //        PlQuery.PlCall("assert(inDivision(" + name[d, t] + ", d" + d + "))");
+                //    }
+                //    //insert a filler team to ensure even teams
+                //    if (teamCount[d] % 2 != 0)
+                //    {
+                //        PlQuery.PlCall("assert(team(fillerTeam))");
+                //        PlQuery.PlCall("assert(inDivision(fillerTeam, d" + d + "))");
+                //    }
+                //}
 
                 for (int d = 0; d < divCount; d++)
                 {
@@ -1123,7 +1123,7 @@ namespace Fixtures
 
                 //goto form2 (output form)
                 this.Hide();
-                Form2 frm = new Form2(divCount, matchCount, game, name, shared, datesHome, datesNoPlay);
+                Form2 frm = new Form2(divCount, matchCount, game, name, shared, datesHome, datesNoPlay, teamCount);
                 frm.FormClosed += (s, args) => this.Close();
                 frm.Show();
             }
