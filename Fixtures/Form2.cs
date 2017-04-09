@@ -88,9 +88,9 @@ namespace Fixtures
 
                         for (int i = 0; i < 13; i++) //for each possible dates home
                         {
-                            if (convertDate(datesHome[div, teamAway, i]) == date ||     //team playing away must play home ... invalid match date
-                                convertDate(datesNoPlay[div, teamHome, i]) == date ||   //team in match cannot play on date ... invalid match date
-                                convertDate(datesNoPlay[div, teamAway, i]) == date)  
+                            if (convertDate(datesHome[div, teamAway-1, i]) == date ||     //team playing away must play home ... invalid match date
+                                convertDate(datesNoPlay[div, teamHome-1, i]) == date ||   //team in match cannot play on date ... invalid match date
+                                convertDate(datesNoPlay[div, teamAway-1, i]) == date)  
                             {
                                 valid = false;
                                 count++;
