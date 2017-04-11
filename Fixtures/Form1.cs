@@ -25,7 +25,7 @@ namespace Fixtures
     {
         //Global input variables
         private string[,] name = new string[15, 15]; //Division, Team
-        private string[, ,] shared = new string[15,15,4]; //Max 15 divisions, 15 teams, 4 teams for single grounds
+        private string[, ,] shared = new string[15, 15, 2]; //Max 15 divisions, 15 teams, 2 teams for single grounds
         private string[, ,] datesHome = new string[15, 15, 13]; //Division, Team, Dates
         private string[, ,] datesNoPlay = new string[15, 15, 13]; //Division, Team, Dates
 
@@ -1123,7 +1123,7 @@ namespace Fixtures
 
                 //goto form2 (output form)
                 this.Hide();
-                Form2 frm = new Form2(divCount, matchCount, game, name, shared, datesHome, datesNoPlay, teamCount);
+                Form2 frm = new Form2(divCount, matchCount, game, name, shared, datesHome, datesNoPlay, teamCount, sharedCount);
                 frm.FormClosed += (s, args) => this.Close();
                 frm.Show();
             }
@@ -1135,7 +1135,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 0] > 2)
+            if (sharedCount[division, 0] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1167,7 +1167,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 1] > 2)
+            if (sharedCount[division, 1] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1199,7 +1199,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 2] > 2)
+            if (sharedCount[division, 2] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1231,7 +1231,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 3] > 2)
+            if (sharedCount[division, 3] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1263,7 +1263,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 4] > 2)
+            if (sharedCount[division, 4] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1295,7 +1295,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 5] > 2)
+            if (sharedCount[division, 5] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1327,7 +1327,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 6] > 2)
+            if (sharedCount[division, 6] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1359,7 +1359,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 7] > 2)
+            if (sharedCount[division, 7] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1391,7 +1391,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 8] > 2)
+            if (sharedCount[division, 8] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1423,7 +1423,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 9] > 2)
+            if (sharedCount[division, 9] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1455,7 +1455,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 10] > 2)
+            if (sharedCount[division, 10] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1487,7 +1487,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 11] > 2)
+            if (sharedCount[division, 11] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1519,7 +1519,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 12] > 2)
+            if (sharedCount[division, 12] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1551,7 +1551,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 13] > 2)
+            if (sharedCount[division, 13] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -1583,7 +1583,7 @@ namespace Fixtures
             input = input.Trim();
             bool check = false;
 
-            if (sharedCount[division, 14] > 2)
+            if (sharedCount[division, 14] > 0)
             {
                 MessageBox.Show("Cannot add another team.", "Max teams added", MessageBoxButtons.OK);
             }
@@ -3634,6 +3634,7 @@ namespace Fixtures
                                                                         }
                                                                         invalid = false;
                                                                         #endregion
+                                                                        teamCount[division]++;
                                                                     }
                                                                 }
                                                             }

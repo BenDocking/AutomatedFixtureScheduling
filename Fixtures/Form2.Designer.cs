@@ -434,6 +434,37 @@
             this.metroTabPage13 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage14 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage15 = new MetroFramework.Controls.MetroTabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox8 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox9 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox10 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox11 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox12 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox13 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox14 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox15 = new System.Windows.Forms.RichTextBox();
+            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
+            this.line2 = new MetroFramework.Controls.MetroLabel();
+            this.line3 = new MetroFramework.Controls.MetroLabel();
+            this.line4 = new MetroFramework.Controls.MetroLabel();
+            this.line5 = new MetroFramework.Controls.MetroLabel();
+            this.line6 = new MetroFramework.Controls.MetroLabel();
+            this.line7 = new MetroFramework.Controls.MetroLabel();
+            this.line8 = new MetroFramework.Controls.MetroLabel();
+            this.line9 = new MetroFramework.Controls.MetroLabel();
+            this.line10 = new MetroFramework.Controls.MetroLabel();
+            this.line11 = new MetroFramework.Controls.MetroLabel();
+            this.line12 = new MetroFramework.Controls.MetroLabel();
+            this.line13 = new MetroFramework.Controls.MetroLabel();
+            this.line14 = new MetroFramework.Controls.MetroLabel();
+            this.sharedLine = new MetroFramework.Controls.MetroLabel();
             this.metTabControl.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -467,6 +498,37 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.sharedLine);
+            this.metroTabPage1.Controls.Add(this.line14);
+            this.metroTabPage1.Controls.Add(this.line13);
+            this.metroTabPage1.Controls.Add(this.line12);
+            this.metroTabPage1.Controls.Add(this.line11);
+            this.metroTabPage1.Controls.Add(this.line10);
+            this.metroTabPage1.Controls.Add(this.line9);
+            this.metroTabPage1.Controls.Add(this.line8);
+            this.metroTabPage1.Controls.Add(this.line7);
+            this.metroTabPage1.Controls.Add(this.line6);
+            this.metroTabPage1.Controls.Add(this.line5);
+            this.metroTabPage1.Controls.Add(this.line4);
+            this.metroTabPage1.Controls.Add(this.line3);
+            this.metroTabPage1.Controls.Add(this.line2);
+            this.metroTabPage1.Controls.Add(this.metroLabel25);
+            this.metroTabPage1.Controls.Add(this.metroLabel24);
+            this.metroTabPage1.Controls.Add(this.richTextBox15);
+            this.metroTabPage1.Controls.Add(this.richTextBox14);
+            this.metroTabPage1.Controls.Add(this.richTextBox13);
+            this.metroTabPage1.Controls.Add(this.richTextBox12);
+            this.metroTabPage1.Controls.Add(this.richTextBox11);
+            this.metroTabPage1.Controls.Add(this.richTextBox10);
+            this.metroTabPage1.Controls.Add(this.richTextBox9);
+            this.metroTabPage1.Controls.Add(this.richTextBox8);
+            this.metroTabPage1.Controls.Add(this.richTextBox7);
+            this.metroTabPage1.Controls.Add(this.richTextBox6);
+            this.metroTabPage1.Controls.Add(this.richTextBox5);
+            this.metroTabPage1.Controls.Add(this.richTextBox4);
+            this.metroTabPage1.Controls.Add(this.richTextBox3);
+            this.metroTabPage1.Controls.Add(this.richTextBox2);
+            this.metroTabPage1.Controls.Add(this.richTextBox1);
             this.metroTabPage1.Controls.Add(this.team15);
             this.metroTabPage1.Controls.Add(this.team14);
             this.metroTabPage1.Controls.Add(this.team13);
@@ -7951,7 +8013,7 @@
             this.metroLabel18.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel18.Location = new System.Drawing.Point(3, 596);
             this.metroLabel18.Name = "metroLabel18";
-            this.metroLabel18.Size = new System.Drawing.Size(982, 30);
+            this.metroLabel18.Size = new System.Drawing.Size(972, 30);
             this.metroLabel18.TabIndex = 365;
             // 
             // metroLabel20
@@ -7970,7 +8032,7 @@
             this.metroLabel21.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel21.Location = new System.Drawing.Point(3, 570);
             this.metroLabel21.Name = "metroLabel21";
-            this.metroLabel21.Size = new System.Drawing.Size(982, 37);
+            this.metroLabel21.Size = new System.Drawing.Size(972, 37);
             this.metroLabel21.TabIndex = 361;
             // 
             // metroLabel22
@@ -7989,7 +8051,7 @@
             this.metroLabel23.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel23.Location = new System.Drawing.Point(3, 544);
             this.metroLabel23.Name = "metroLabel23";
-            this.metroLabel23.Size = new System.Drawing.Size(982, 40);
+            this.metroLabel23.Size = new System.Drawing.Size(972, 40);
             this.metroLabel23.TabIndex = 357;
             // 
             // metroLabel1
@@ -8008,7 +8070,7 @@
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.Location = new System.Drawing.Point(3, 517);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(982, 28);
+            this.metroLabel3.Size = new System.Drawing.Size(972, 28);
             this.metroLabel3.TabIndex = 353;
             // 
             // metroLabel4
@@ -8027,7 +8089,7 @@
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel5.Location = new System.Drawing.Point(3, 491);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(982, 39);
+            this.metroLabel5.Size = new System.Drawing.Size(972, 39);
             this.metroLabel5.TabIndex = 349;
             // 
             // metroLabel6
@@ -8046,7 +8108,7 @@
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel7.Location = new System.Drawing.Point(3, 465);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(982, 34);
+            this.metroLabel7.Size = new System.Drawing.Size(972, 34);
             this.metroLabel7.TabIndex = 345;
             // 
             // metroLabel8
@@ -8065,7 +8127,7 @@
             this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel9.Location = new System.Drawing.Point(3, 439);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(982, 37);
+            this.metroLabel9.Size = new System.Drawing.Size(972, 37);
             this.metroLabel9.TabIndex = 341;
             // 
             // metroLabel10
@@ -8084,7 +8146,7 @@
             this.metroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel11.Location = new System.Drawing.Point(3, 413);
             this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(982, 40);
+            this.metroLabel11.Size = new System.Drawing.Size(972, 40);
             this.metroLabel11.TabIndex = 337;
             // 
             // txtTeam14
@@ -8103,7 +8165,7 @@
             this.lblBack14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack14.Location = new System.Drawing.Point(3, 387);
             this.lblBack14.Name = "lblBack14";
-            this.lblBack14.Size = new System.Drawing.Size(982, 28);
+            this.lblBack14.Size = new System.Drawing.Size(972, 28);
             this.lblBack14.TabIndex = 326;
             // 
             // txtTeam13
@@ -8122,7 +8184,7 @@
             this.lblBack13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack13.Location = new System.Drawing.Point(3, 361);
             this.lblBack13.Name = "lblBack13";
-            this.lblBack13.Size = new System.Drawing.Size(982, 39);
+            this.lblBack13.Size = new System.Drawing.Size(972, 39);
             this.lblBack13.TabIndex = 316;
             // 
             // txtTeam12
@@ -8141,7 +8203,7 @@
             this.lblBack12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack12.Location = new System.Drawing.Point(3, 335);
             this.lblBack12.Name = "lblBack12";
-            this.lblBack12.Size = new System.Drawing.Size(982, 34);
+            this.lblBack12.Size = new System.Drawing.Size(972, 34);
             this.lblBack12.TabIndex = 306;
             // 
             // txtTeam11
@@ -8160,7 +8222,7 @@
             this.lblBack11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack11.Location = new System.Drawing.Point(3, 309);
             this.lblBack11.Name = "lblBack11";
-            this.lblBack11.Size = new System.Drawing.Size(982, 37);
+            this.lblBack11.Size = new System.Drawing.Size(972, 37);
             this.lblBack11.TabIndex = 296;
             // 
             // txtTeam10
@@ -8179,7 +8241,7 @@
             this.lblBack10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack10.Location = new System.Drawing.Point(3, 283);
             this.lblBack10.Name = "lblBack10";
-            this.lblBack10.Size = new System.Drawing.Size(982, 40);
+            this.lblBack10.Size = new System.Drawing.Size(972, 40);
             this.lblBack10.TabIndex = 286;
             // 
             // txtTeam9
@@ -8198,7 +8260,7 @@
             this.lblBack9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack9.Location = new System.Drawing.Point(3, 257);
             this.lblBack9.Name = "lblBack9";
-            this.lblBack9.Size = new System.Drawing.Size(982, 41);
+            this.lblBack9.Size = new System.Drawing.Size(972, 41);
             this.lblBack9.TabIndex = 276;
             // 
             // txtTeam8
@@ -8217,7 +8279,7 @@
             this.lblBack8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack8.Location = new System.Drawing.Point(3, 231);
             this.lblBack8.Name = "lblBack8";
-            this.lblBack8.Size = new System.Drawing.Size(982, 39);
+            this.lblBack8.Size = new System.Drawing.Size(972, 39);
             this.lblBack8.TabIndex = 266;
             // 
             // metroLabel19
@@ -8245,7 +8307,7 @@
             this.lblBack7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack7.Location = new System.Drawing.Point(3, 205);
             this.lblBack7.Name = "lblBack7";
-            this.lblBack7.Size = new System.Drawing.Size(982, 37);
+            this.lblBack7.Size = new System.Drawing.Size(972, 37);
             this.lblBack7.TabIndex = 255;
             // 
             // metroLabel17
@@ -8273,7 +8335,7 @@
             this.lblBack6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack6.Location = new System.Drawing.Point(3, 179);
             this.lblBack6.Name = "lblBack6";
-            this.lblBack6.Size = new System.Drawing.Size(982, 38);
+            this.lblBack6.Size = new System.Drawing.Size(972, 38);
             this.lblBack6.TabIndex = 244;
             // 
             // txtTeam5
@@ -8292,7 +8354,7 @@
             this.lblBack5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack5.Location = new System.Drawing.Point(3, 153);
             this.lblBack5.Name = "lblBack5";
-            this.lblBack5.Size = new System.Drawing.Size(982, 37);
+            this.lblBack5.Size = new System.Drawing.Size(972, 37);
             this.lblBack5.TabIndex = 234;
             // 
             // txtTeam4
@@ -8311,7 +8373,7 @@
             this.lblBack4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack4.Location = new System.Drawing.Point(3, 127);
             this.lblBack4.Name = "lblBack4";
-            this.lblBack4.Size = new System.Drawing.Size(982, 48);
+            this.lblBack4.Size = new System.Drawing.Size(972, 48);
             this.lblBack4.TabIndex = 224;
             // 
             // txtTeam3
@@ -8330,7 +8392,7 @@
             this.lblBack3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack3.Location = new System.Drawing.Point(3, 101);
             this.lblBack3.Name = "lblBack3";
-            this.lblBack3.Size = new System.Drawing.Size(982, 40);
+            this.lblBack3.Size = new System.Drawing.Size(972, 40);
             this.lblBack3.TabIndex = 214;
             // 
             // txtTeam2
@@ -8349,7 +8411,7 @@
             this.lblBack2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack2.Location = new System.Drawing.Point(3, 75);
             this.lblBack2.Name = "lblBack2";
-            this.lblBack2.Size = new System.Drawing.Size(982, 48);
+            this.lblBack2.Size = new System.Drawing.Size(972, 48);
             this.lblBack2.TabIndex = 204;
             // 
             // txtTeam1
@@ -8368,7 +8430,7 @@
             this.lblBack1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblBack1.Location = new System.Drawing.Point(3, 49);
             this.lblBack1.Name = "lblBack1";
-            this.lblBack1.Size = new System.Drawing.Size(982, 37);
+            this.lblBack1.Size = new System.Drawing.Size(972, 37);
             this.lblBack1.TabIndex = 194;
             // 
             // metroLabel2
@@ -8583,12 +8645,311 @@
             this.metroTabPage15.Text = "Division 15";
             this.metroTabPage15.VerticalScrollbarBarColor = true;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(971, 24);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox1.TabIndex = 702;
+            this.richTextBox1.Text = "";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.Location = new System.Drawing.Point(971, 50);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox2.TabIndex = 703;
+            this.richTextBox2.Text = "";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox3.Location = new System.Drawing.Point(971, 76);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox3.TabIndex = 704;
+            this.richTextBox3.Text = "";
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox4.Location = new System.Drawing.Point(971, 102);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox4.TabIndex = 705;
+            this.richTextBox4.Text = "";
+            // 
+            // richTextBox5
+            // 
+            this.richTextBox5.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox5.Location = new System.Drawing.Point(971, 128);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox5.TabIndex = 706;
+            this.richTextBox5.Text = "";
+            // 
+            // richTextBox6
+            // 
+            this.richTextBox6.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox6.Location = new System.Drawing.Point(971, 154);
+            this.richTextBox6.Name = "richTextBox6";
+            this.richTextBox6.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox6.TabIndex = 707;
+            this.richTextBox6.Text = "";
+            // 
+            // richTextBox7
+            // 
+            this.richTextBox7.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox7.Location = new System.Drawing.Point(971, 180);
+            this.richTextBox7.Name = "richTextBox7";
+            this.richTextBox7.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox7.TabIndex = 708;
+            this.richTextBox7.Text = "";
+            // 
+            // richTextBox8
+            // 
+            this.richTextBox8.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox8.Location = new System.Drawing.Point(971, 206);
+            this.richTextBox8.Name = "richTextBox8";
+            this.richTextBox8.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox8.TabIndex = 709;
+            this.richTextBox8.Text = "";
+            // 
+            // richTextBox9
+            // 
+            this.richTextBox9.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox9.Location = new System.Drawing.Point(971, 232);
+            this.richTextBox9.Name = "richTextBox9";
+            this.richTextBox9.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox9.TabIndex = 710;
+            this.richTextBox9.Text = "";
+            // 
+            // richTextBox10
+            // 
+            this.richTextBox10.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox10.Location = new System.Drawing.Point(971, 258);
+            this.richTextBox10.Name = "richTextBox10";
+            this.richTextBox10.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox10.TabIndex = 711;
+            this.richTextBox10.Text = "";
+            // 
+            // richTextBox11
+            // 
+            this.richTextBox11.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox11.Location = new System.Drawing.Point(971, 284);
+            this.richTextBox11.Name = "richTextBox11";
+            this.richTextBox11.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox11.TabIndex = 712;
+            this.richTextBox11.Text = "";
+            // 
+            // richTextBox12
+            // 
+            this.richTextBox12.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox12.Location = new System.Drawing.Point(971, 310);
+            this.richTextBox12.Name = "richTextBox12";
+            this.richTextBox12.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox12.TabIndex = 713;
+            this.richTextBox12.Text = "";
+            // 
+            // richTextBox13
+            // 
+            this.richTextBox13.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox13.Location = new System.Drawing.Point(971, 336);
+            this.richTextBox13.Name = "richTextBox13";
+            this.richTextBox13.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox13.TabIndex = 714;
+            this.richTextBox13.Text = "";
+            // 
+            // richTextBox14
+            // 
+            this.richTextBox14.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox14.Location = new System.Drawing.Point(971, 362);
+            this.richTextBox14.Name = "richTextBox14";
+            this.richTextBox14.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox14.TabIndex = 715;
+            this.richTextBox14.Text = "";
+            // 
+            // richTextBox15
+            // 
+            this.richTextBox15.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox15.Location = new System.Drawing.Point(971, 388);
+            this.richTextBox15.Name = "richTextBox15";
+            this.richTextBox15.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox15.TabIndex = 716;
+            this.richTextBox15.Text = "";
+            // 
+            // metroLabel24
+            // 
+            this.metroLabel24.AutoSize = true;
+            this.metroLabel24.BackColor = System.Drawing.Color.White;
+            this.metroLabel24.CustomBackground = true;
+            this.metroLabel24.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel24.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.metroLabel24.Location = new System.Drawing.Point(994, 418);
+            this.metroLabel24.Name = "metroLabel24";
+            this.metroLabel24.Size = new System.Drawing.Size(106, 19);
+            this.metroLabel24.TabIndex = 718;
+            this.metroLabel24.Text = "Shared grounds";
+            // 
+            // metroLabel25
+            // 
+            this.metroLabel25.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.metroLabel25.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel25.Location = new System.Drawing.Point(970, 49);
+            this.metroLabel25.Name = "metroLabel25";
+            this.metroLabel25.Size = new System.Drawing.Size(343, 1);
+            this.metroLabel25.TabIndex = 719;
+            // 
+            // line2
+            // 
+            this.line2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line2.Location = new System.Drawing.Point(970, 75);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(343, 1);
+            this.line2.TabIndex = 720;
+            // 
+            // line3
+            // 
+            this.line3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line3.Location = new System.Drawing.Point(970, 101);
+            this.line3.Name = "line3";
+            this.line3.Size = new System.Drawing.Size(343, 1);
+            this.line3.TabIndex = 721;
+            // 
+            // line4
+            // 
+            this.line4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line4.Location = new System.Drawing.Point(970, 127);
+            this.line4.Name = "line4";
+            this.line4.Size = new System.Drawing.Size(343, 1);
+            this.line4.TabIndex = 722;
+            // 
+            // line5
+            // 
+            this.line5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line5.Location = new System.Drawing.Point(970, 153);
+            this.line5.Name = "line5";
+            this.line5.Size = new System.Drawing.Size(343, 1);
+            this.line5.TabIndex = 723;
+            // 
+            // line6
+            // 
+            this.line6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line6.Location = new System.Drawing.Point(970, 179);
+            this.line6.Name = "line6";
+            this.line6.Size = new System.Drawing.Size(343, 1);
+            this.line6.TabIndex = 724;
+            // 
+            // line7
+            // 
+            this.line7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line7.Location = new System.Drawing.Point(970, 205);
+            this.line7.Name = "line7";
+            this.line7.Size = new System.Drawing.Size(343, 1);
+            this.line7.TabIndex = 725;
+            // 
+            // line8
+            // 
+            this.line8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line8.Location = new System.Drawing.Point(970, 231);
+            this.line8.Name = "line8";
+            this.line8.Size = new System.Drawing.Size(343, 1);
+            this.line8.TabIndex = 726;
+            // 
+            // line9
+            // 
+            this.line9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line9.Location = new System.Drawing.Point(970, 257);
+            this.line9.Name = "line9";
+            this.line9.Size = new System.Drawing.Size(343, 1);
+            this.line9.TabIndex = 727;
+            // 
+            // line10
+            // 
+            this.line10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line10.Location = new System.Drawing.Point(970, 283);
+            this.line10.Name = "line10";
+            this.line10.Size = new System.Drawing.Size(343, 1);
+            this.line10.TabIndex = 728;
+            // 
+            // line11
+            // 
+            this.line11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line11.Location = new System.Drawing.Point(970, 309);
+            this.line11.Name = "line11";
+            this.line11.Size = new System.Drawing.Size(343, 1);
+            this.line11.TabIndex = 729;
+            // 
+            // line12
+            // 
+            this.line12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line12.Location = new System.Drawing.Point(970, 335);
+            this.line12.Name = "line12";
+            this.line12.Size = new System.Drawing.Size(343, 1);
+            this.line12.TabIndex = 730;
+            // 
+            // line13
+            // 
+            this.line13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line13.Location = new System.Drawing.Point(970, 361);
+            this.line13.Name = "line13";
+            this.line13.Size = new System.Drawing.Size(343, 1);
+            this.line13.TabIndex = 731;
+            // 
+            // line14
+            // 
+            this.line14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line14.Location = new System.Drawing.Point(970, 387);
+            this.line14.Name = "line14";
+            this.line14.Size = new System.Drawing.Size(343, 1);
+            this.line14.TabIndex = 732;
+            // 
+            // sharedLine
+            // 
+            this.sharedLine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.sharedLine.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.sharedLine.Location = new System.Drawing.Point(970, 439);
+            this.sharedLine.Name = "sharedLine";
+            this.sharedLine.Size = new System.Drawing.Size(343, 1);
+            this.sharedLine.TabIndex = 733;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 750);
             this.Controls.Add(this.metTabControl);
+            this.MaximumSize = new System.Drawing.Size(1370, 750);
             this.MinimumSize = new System.Drawing.Size(1370, 750);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation;
@@ -9008,6 +9369,37 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage14;
         private MetroFramework.Controls.MetroTabPage metroTabPage15;
         private MetroFramework.Controls.MetroButton assignB2;
+        private MetroFramework.Controls.MetroLabel metroLabel24;
+        private System.Windows.Forms.RichTextBox richTextBox15;
+        private System.Windows.Forms.RichTextBox richTextBox14;
+        private System.Windows.Forms.RichTextBox richTextBox13;
+        private System.Windows.Forms.RichTextBox richTextBox12;
+        private System.Windows.Forms.RichTextBox richTextBox11;
+        private System.Windows.Forms.RichTextBox richTextBox10;
+        private System.Windows.Forms.RichTextBox richTextBox9;
+        private System.Windows.Forms.RichTextBox richTextBox8;
+        private System.Windows.Forms.RichTextBox richTextBox7;
+        private System.Windows.Forms.RichTextBox richTextBox6;
+        private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private MetroFramework.Controls.MetroLabel line14;
+        private MetroFramework.Controls.MetroLabel line13;
+        private MetroFramework.Controls.MetroLabel line12;
+        private MetroFramework.Controls.MetroLabel line11;
+        private MetroFramework.Controls.MetroLabel line10;
+        private MetroFramework.Controls.MetroLabel line9;
+        private MetroFramework.Controls.MetroLabel line8;
+        private MetroFramework.Controls.MetroLabel line7;
+        private MetroFramework.Controls.MetroLabel line6;
+        private MetroFramework.Controls.MetroLabel line5;
+        private MetroFramework.Controls.MetroLabel line4;
+        private MetroFramework.Controls.MetroLabel line3;
+        private MetroFramework.Controls.MetroLabel line2;
+        private MetroFramework.Controls.MetroLabel metroLabel25;
+        private MetroFramework.Controls.MetroLabel sharedLine;
     }
 }
 

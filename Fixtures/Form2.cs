@@ -18,14 +18,15 @@ namespace Fixtures
         private int division = 0;
         private int[] matchCount = new int[15];
         private int[] teamCount = new int[15];
+        private int[,] sharedCount = new int[15, 15];
         private string[,] game = new string[15, 210]; //Division, Matches ... The list of all matches which must take place
 
         private string[,] name = new string[15, 15]; //Division, Team
-        private string[,,] shared = new string[15, 15, 4]; //Max 15 divisions, 15 teams, 4 teams for single grounds
+        private string[,,] shared = new string[15, 15, 2]; //Max 15 divisions, 15 teams, 4 teams for single grounds
         private string[,,] datesHome = new string[15, 15, 13]; //Division, Team, Dates
         private string[,,] datesNoPlay = new string[15, 15, 13]; //Division, Team, Dates
 
-        public Form2(int d, int[] m, string[,] g, string[,] n, string[, ,] s, string[, ,] dh, string[, ,] dnp, int[] tc)
+        public Form2(int d, int[] m, string[,] g, string[,] n, string[, ,] s, string[, ,] dh, string[, ,] dnp, int[] tc, int[,] sc)
         {
             InitializeComponent();
             divCount = d;
@@ -36,6 +37,7 @@ namespace Fixtures
             datesHome = dh;
             datesNoPlay = dnp;
             teamCount = tc;
+            sharedCount = sc;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,9 +47,9 @@ namespace Fixtures
             string previous = "start";
             string temp = "";
             bool home = true;
-            int count = 0;
+            //int count = 0;
 
-            #region Initialize comboBoxes
+            #region Initialize
             matchA1.DropDownStyle = ComboBoxStyle.DropDownList;
             matchA2.DropDownStyle = ComboBoxStyle.DropDownList;
             matchA3.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -209,23 +211,52 @@ namespace Fixtures
             matchG21.DropDownStyle = ComboBoxStyle.DropDownList;
             matchG22.DropDownStyle = ComboBoxStyle.DropDownList;
             matchG23.DropDownStyle = ComboBoxStyle.DropDownList;
-            #endregion
-
             team1.Hide();
+            team1.CustomBackground = true;
+            team1.BackColor = Color.White;
             team2.Hide();
+            team2.CustomBackground = true;
+            team2.BackColor = Color.White;
             team3.Hide();
+            team3.CustomBackground = true;
+            team3.BackColor = Color.White;
             team4.Hide();
+            team4.CustomBackground = true;
+            team4.BackColor = Color.White;
             team5.Hide();
+            team5.CustomBackground = true;
+            team5.BackColor = Color.White;
             team6.Hide();
+            team6.CustomBackground = true;
+            team6.BackColor = Color.White;
             team7.Hide();
+            team7.CustomBackground = true;
+            team7.BackColor = Color.White;
             team8.Hide();
+            team8.CustomBackground = true;
+            team8.BackColor = Color.White;
             team9.Hide();
+            team9.CustomBackground = true;
+            team9.BackColor = Color.White;
             team10.Hide();
+            team10.CustomBackground = true;
+            team10.BackColor = Color.White;
             team11.Hide();
+            team11.CustomBackground = true;
+            team11.BackColor = Color.White;
             team12.Hide();
+            team12.CustomBackground = true;
+            team12.BackColor = Color.White;
             team13.Hide();
+            team13.CustomBackground = true;
+            team13.BackColor = Color.White;
             team14.Hide();
+            team14.CustomBackground = true;
+            team14.BackColor = Color.White;
             team15.Hide();
+            team15.CustomBackground = true;
+            team15.BackColor = Color.White;
+            #endregion
 
             for (int i = 15; i > divCount; i--)
             {
@@ -233,6 +264,8 @@ namespace Fixtures
                 metTabControl.SelectedIndex = divCount;
                 metTabControl.TabPages.Remove(metTabControl.SelectedTab);
             }
+
+            //Calculate match availablity
 
             for (int div = 0; div < divCount; div++) //for each division
             {
@@ -274,18 +307,18 @@ namespace Fixtures
                         }
 
                         previous = "start";
-                        bool valid = true;
+                        //bool valid = true;
 
-                        for (int i = 0; i < 13; i++) //for each possible dates home
-                        {
-                            if (convertDate(datesHome[div, teamAway-1, i]) == date ||     //team playing away must play home ... invalid match date
-                                convertDate(datesNoPlay[div, teamHome-1, i]) == date ||   //team in match cannot play on date ... invalid match date
-                                convertDate(datesNoPlay[div, teamAway-1, i]) == date)  
-                            {
-                                valid = false;
-                                count++;
-                            }
-                        }
+                        //for (int i = 0; i < 13; i++) //for each possible dates home
+                        //{
+                        //    if (convertDate(datesHome[div, teamAway, i]) == date ||     //team playing away must play home ... invalid match date
+                        //        convertDate(datesNoPlay[div, teamHome, i]) == date ||   //team in match cannot play on date ... invalid match date
+                        //        convertDate(datesNoPlay[div, teamAway, i]) == date)  
+                        //    {
+                        //        valid = false;
+                        //        count++;
+                        //    }
+                        //}
                         
                         //if away team not play home and not noPlay for any of the teams in match 
                         //then add match as available for that date
@@ -304,83 +337,74 @@ namespace Fixtures
 
             switch (x)
             {
-                case "17th April":
-                    res = 0;
-                    break;
-                case "24th April":
+                case "Week 1":
                     res = 1;
                     break;
-                case "1st May":
+                case "Week 2":
                     res = 2;
                     break;
-                case "8th May":
+                case "Week 3":
                     res = 3;
                     break;
-                case "15th May":
+                case "Week 4":
                     res = 4;
                     break;
-                case "22nd May":
+                case "Week 5":
                     res = 5;
                     break;
-                case "29th May":
+                case "Week 6":
                     res = 6;
                     break;
-                case "5th June":
+                case "Week 7":
                     res = 7;
                     break;
-                case "12th June":
+                case "Week 8":
                     res = 8;
                     break;
-                case "19th June":
+                case "Week 9":
                     res = 9;
                     break;
-                case "26th June":
+                case "Week 10":
                     res = 10;
                     break;
-                case "3rd July":
+                case "Week 11":
                     res = 11;
                     break;
-                case "10th July":
+                case "Week 12":
                     res = 12;
                     break;
-                case "17th July":
+                case "Week 13":
                     res = 13;
                     break;
-                case "24th July":
+                case "Week 14":
                     res = 14;
                     break;
-                case "31st July":
+                case "Week 15":
                     res = 15;
                     break;
-                case "7th August":
+                case "Week 16":
                     res = 16;
                     break;
-                case "14th August":
+                case "Week 17":
                     res = 17;
                     break;
-                case "21st August":
+                case "Week 18":
                     res = 18;
                     break;
-                case "28th August":
+                case "Week 19":
                     res = 19;
                     break;
-                case "4th September":
+                case "Week 20":
                     res = 20;
                     break;
-                case "11th September":
+                case "Week 21":
                     res = 21;
                     break;
-                case "18th September":
+                case "Week 22":
                     res = 22;
                     break;
-                case "2nd May (Holiday)":
+                case "Week 23":
                     res = 23;
-                    break;
-                case "30th May (Holiday)":
-                    res = 24;
-                    break;
-                case "29th August (Holiday)":
-                    res = 25;
                     break;
                 default:
                     res = 100;
@@ -391,6 +415,40 @@ namespace Fixtures
 
         private void metTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string sharedGroundsInfo = "";
+
+            richTextBox1.Hide();
+            richTextBox2.Hide();
+            richTextBox3.Hide();
+            richTextBox4.Hide();
+            richTextBox5.Hide();
+            richTextBox6.Hide();
+            richTextBox7.Hide();
+            richTextBox8.Hide();
+            richTextBox9.Hide();
+            richTextBox10.Hide();
+            richTextBox11.Hide();
+            richTextBox12.Hide();
+            richTextBox13.Hide();
+            richTextBox14.Hide();
+            richTextBox15.Hide();
+            metroLabel24.Hide();
+            metroLabel25.Hide();
+            line2.Hide();
+            line3.Hide();
+            line4.Hide();
+            line5.Hide();
+            line6.Hide();
+            line7.Hide();
+            line8.Hide();
+            line9.Hide();
+            line10.Hide();
+            line11.Hide();
+            line12.Hide();
+            line13.Hide();
+            line14.Hide();
+            sharedLine.Hide();
+
             //save changes before moving tabs
 
             //
@@ -786,6 +844,38 @@ namespace Fixtures
             metTabControl.SelectedTab.Controls.Add(assignG21);
             metTabControl.SelectedTab.Controls.Add(assignG22);
             metTabControl.SelectedTab.Controls.Add(assignG23);
+            metTabControl.SelectedTab.Controls.Add(richTextBox1);
+            metTabControl.SelectedTab.Controls.Add(richTextBox2);
+            metTabControl.SelectedTab.Controls.Add(richTextBox3);
+            metTabControl.SelectedTab.Controls.Add(richTextBox4);
+            metTabControl.SelectedTab.Controls.Add(richTextBox5);
+            metTabControl.SelectedTab.Controls.Add(richTextBox6);
+            metTabControl.SelectedTab.Controls.Add(richTextBox7);
+            metTabControl.SelectedTab.Controls.Add(richTextBox8);
+            metTabControl.SelectedTab.Controls.Add(richTextBox9);
+            metTabControl.SelectedTab.Controls.Add(richTextBox10);
+            metTabControl.SelectedTab.Controls.Add(richTextBox11);
+            metTabControl.SelectedTab.Controls.Add(richTextBox12);
+            metTabControl.SelectedTab.Controls.Add(richTextBox13);
+            metTabControl.SelectedTab.Controls.Add(richTextBox14);
+            metTabControl.SelectedTab.Controls.Add(richTextBox15);
+            metTabControl.SelectedTab.Controls.Add(metroLabel24);
+            metTabControl.SelectedTab.Controls.Add(metroLabel25);
+            metTabControl.SelectedTab.Controls.Add(line2);
+            metTabControl.SelectedTab.Controls.Add(line3);
+            metTabControl.SelectedTab.Controls.Add(line4);
+            metTabControl.SelectedTab.Controls.Add(line5);
+            metTabControl.SelectedTab.Controls.Add(line6);
+            metTabControl.SelectedTab.Controls.Add(line7);
+            metTabControl.SelectedTab.Controls.Add(line8);
+            metTabControl.SelectedTab.Controls.Add(line9);
+            metTabControl.SelectedTab.Controls.Add(line10);
+            metTabControl.SelectedTab.Controls.Add(line11);
+            metTabControl.SelectedTab.Controls.Add(line12);
+            metTabControl.SelectedTab.Controls.Add(line13);
+            metTabControl.SelectedTab.Controls.Add(line14);
+            metTabControl.SelectedTab.Controls.Add(sharedLine);
+            metroLabel15.BringToFront();
             lblBack.BringToFront();
             lblBack1.BringToFront();
             lblBack2.BringToFront();
@@ -809,7 +899,6 @@ namespace Fixtures
             metroLabel23.BringToFront();
             metroLabel21.BringToFront();
             metroLabel18.BringToFront();
-            metroLabel15.BringToFront();
             txtTeam.BringToFront();
             txtTeam1.BringToFront();
             txtTeam2.BringToFront();
@@ -834,6 +923,38 @@ namespace Fixtures
             metroLabel20.BringToFront();
             metroLabel16.BringToFront();
             metroLabel12.BringToFront();
+            metroLabel15.BringToFront();
+            richTextBox1.BringToFront();
+            richTextBox2.BringToFront();
+            richTextBox3.BringToFront();
+            richTextBox4.BringToFront();
+            richTextBox5.BringToFront();
+            richTextBox6.BringToFront();
+            richTextBox7.BringToFront();
+            richTextBox8.BringToFront();
+            richTextBox9.BringToFront();
+            richTextBox10.BringToFront();
+            richTextBox11.BringToFront();
+            richTextBox12.BringToFront();
+            richTextBox13.BringToFront();
+            richTextBox14.BringToFront();
+            richTextBox15.BringToFront();
+            metroLabel24.BringToFront();
+            metroLabel25.BringToFront();
+            line2.BringToFront();
+            line3.BringToFront();
+            line4.BringToFront();
+            line5.BringToFront();
+            line6.BringToFront();
+            line7.BringToFront();
+            line8.BringToFront();
+            line9.BringToFront();
+            line10.BringToFront();
+            line11.BringToFront();
+            line12.BringToFront();
+            line13.BringToFront();
+            line14.BringToFront();
+            sharedLine.BringToFront();
             team1.BringToFront();
             team2.BringToFront();
             team3.BringToFront();
@@ -1858,7 +1979,7 @@ namespace Fixtures
             }
             #endregion
 
-            #region Display teams key
+            #region Display teams key + Shared grounds indicator
             switch (teamCount[division])
             {
                 case 0:
@@ -2254,6 +2375,310 @@ namespace Fixtures
                     team15.Text = "15 - " + name[division, 14];
                     break;
             }
+
+            //Shared grounds indicator
+
+            if (sharedCount[division, 0] != 0)
+            {
+                //team shares grounds
+                richTextBox1.Show();
+                team1.BringToFront();
+                team1.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                metroLabel25.Show();
+                metroLabel25.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team1.Text + " shares with:\n      " + shared[division, 0, 0];
+                for (int j = 1; j < sharedCount[division, 0]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 0, j];
+                }
+            }
+            else
+            {
+                team1.BackColor = Color.White;
+            }
+            if (sharedCount[division, 1] != 0)
+            {
+                //team shares grounds
+                richTextBox2.Show();
+                team2.BringToFront();
+                team2.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                metroLabel25.Show();
+                line2.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team2.Text + " shares with:\n      " + shared[division, 1, 0];
+                for (int j = 1; j < sharedCount[division, 1]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 1, j];
+                }
+            }
+            else
+            {
+                team2.BackColor = Color.White;
+            }
+            if (sharedCount[division, 2] != 0)
+            {
+                //team shares grounds
+                richTextBox3.Show();
+                team3.BringToFront();
+                team3.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line2.Show();
+                line3.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team3.Text + " shares with:\n      " + shared[division, 2, 0];
+                for (int j = 1; j < sharedCount[division, 2]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 2, j];
+                }
+            }
+            else
+            {
+                team3.BackColor = Color.White;
+            }
+            if (sharedCount[division, 3] != 0)
+            {
+                //team shares grounds
+                richTextBox4.Show();
+                team4.BringToFront();
+                team4.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line3.Show();
+                line4.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team4.Text + " shares with:\n      " + shared[division, 3, 0];
+                for (int j = 1; j < sharedCount[division, 3]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 3, j];
+                }
+            }
+            else
+            {
+                team4.BackColor = Color.White;
+            }
+            if (sharedCount[division, 4] != 0)
+            {
+                //team shares grounds
+                richTextBox5.Show();
+                team5.BringToFront();
+                team5.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line4.Show();
+                line5.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team5.Text + " shares with:\n      " + shared[division, 4, 0];
+                for (int j = 1; j < sharedCount[division, 4]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 4, j];
+                }
+            }
+            else
+            {
+                team5.BackColor = Color.White;
+            }
+            if (sharedCount[division, 5] != 0)
+            {
+                //team shares grounds
+                richTextBox6.Show();
+                team6.BringToFront();
+                team6.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line5.Show();
+                line6.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team6.Text + " shares with:\n      " + shared[division, 5, 0];
+                for (int j = 1; j < sharedCount[division, 5]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 5, j];
+                }
+            }
+            else
+            {
+                team6.BackColor = Color.White;
+            }
+            if (sharedCount[division, 6] != 0)
+            {
+                //team shares grounds
+                richTextBox7.Show();
+                team7.BringToFront();
+                team7.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line6.Show();
+                line7.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team7.Text + " shares with:\n      " + shared[division, 6, 0];
+                for (int j = 1; j < sharedCount[division, 6]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 6, j];
+                }
+            }
+            else
+            {
+                team7.BackColor = Color.White;
+            }
+            if (sharedCount[division, 7] != 0)
+            {
+                //team shares grounds
+                richTextBox8.Show();
+                team8.BringToFront();
+                team8.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line7.Show();
+                line8.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team8.Text + " shares with:\n      " + shared[division, 7, 0];
+                for (int j = 1; j < sharedCount[division, 7]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 7, j];
+                }
+            }
+            else
+            {
+                team8.BackColor = Color.White;
+            }
+            if (sharedCount[division, 8] != 0)
+            {
+                //team shares grounds
+                richTextBox9.Show();
+                team9.BringToFront();
+                team9.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line8.Show();
+                line9.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team9.Text + " shares with:\n      " + shared[division, 8, 0];
+                for (int j = 1; j < sharedCount[division, 8]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 8, j];
+                }
+            }
+            else
+            {
+                team9.BackColor = Color.White;
+            }
+            if (sharedCount[division, 9] != 0)
+            {
+                //team shares grounds
+                richTextBox10.Show();
+                team10.BringToFront();
+                team10.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line9.Show();
+                line10.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team10.Text + " shares with:\n      " + shared[division, 9, 0];
+                for (int j = 1; j < sharedCount[division, 9]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 9, j];
+                }
+            }
+            else
+            {
+                team10.BackColor = Color.White;
+            }
+            if (sharedCount[division, 10] != 0)
+            {
+                //team shares grounds
+                richTextBox11.Show();
+                team11.BringToFront();
+                team11.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line10.Show();
+                line11.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team11.Text + " shares with:\n      " + shared[division, 10, 0];
+                for (int j = 1; j < sharedCount[division, 10]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 10, j];
+                }
+            }
+            else
+            {
+                team11.BackColor = Color.White;
+            }
+            if (sharedCount[division, 11] != 0)
+            {
+                //team shares grounds
+                richTextBox12.Show();
+                team12.BringToFront();
+                team12.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line11.Show();
+                line12.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team12.Text + " shares with:\n      " + shared[division, 11, 0];
+                for (int j = 1; j < sharedCount[division, 11]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 11, j];
+                }
+            }
+            else
+            {
+                team12.BackColor = Color.White;
+            }
+            if (sharedCount[division, 12] != 0)
+            {
+                //team shares grounds
+                richTextBox13.Show();
+                team13.BringToFront();
+                team13.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line12.Show();
+                line13.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team13.Text + " shares with:\n      " + shared[division, 12, 0];
+                for (int j = 1; j < sharedCount[division, 12]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 12, j];
+                }
+            }
+            else
+            {
+                team13.BackColor = Color.White;
+            }
+            if (sharedCount[division, 13] != 0)
+            {
+                //team shares grounds
+                richTextBox14.Show();
+                team14.BringToFront();
+                team14.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line13.Show();
+                line14.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team14.Text + " shares with:\n      " + shared[division, 13, 0];
+                for (int j = 1; j < sharedCount[division, 13]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 13, j];
+                }
+            }
+            else
+            {
+                team14.BackColor = Color.White;
+            }
+            if (sharedCount[division, 14] != 0)
+            {
+                //team shares grounds
+                richTextBox15.Show();
+                team15.BringToFront();
+                team15.BackColor = Color.DeepSkyBlue;
+                metroLabel24.Show();
+                line14.Show();
+                sharedLine.Show();
+                sharedGroundsInfo = sharedGroundsInfo + "\n" + team15.Text + " shares with:\n      " + shared[division, 14, 0];
+                for (int j = 1; j < sharedCount[division, 14]; j++)
+                {
+                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 14, j];
+                }
+            }
+            else
+            {
+                team15.BackColor = Color.White;
+            }
+
+            metroLabel24.Text = sharedGroundsInfo;
             #endregion
 
         }
