@@ -6197,7 +6197,7 @@ namespace Fixtures
             if (assignD4.Text == "Assign")
             {
                 assignD4.Text = "Undo";
-                matchA4.Enabled = false;
+                matchD4.Enabled = false;
                 matchesAssigned[division, 3, 3] = matchD4.Text; //Assign the match
                 teamAssigned[division, 3, teams.Item1] = true;//assign the teams
                 teamAssigned[division, 3, teams.Item2] = true;
@@ -6458,18 +6458,18 @@ namespace Fixtures
 
         private void assignD5_Click(object sender, EventArgs e)
         {
-            Tuple<int, int> teams = getHomeAway(matchE5.Text.Trim());
+            Tuple<int, int> teams = getHomeAway(matchD5.Text.Trim());
 
-            if (assignE5.Text == "Assign")
+            if (assignD5.Text == "Assign")
             {
-                assignE5.Text = "Undo";
-                matchE5.Enabled = false;
-                matchesAssigned[division, 4, 3] = matchE5.Text; //Assign the match
+                assignD5.Text = "Undo";
+                matchD5.Enabled = false;
+                matchesAssigned[division, 4, 3] = matchD5.Text; //Assign the match
                 teamAssigned[division, 4, teams.Item1] = true;//assign the teams
                 teamAssigned[division, 4, teams.Item2] = true;
                 for (int i = 0; i < 210; i++) //remove match from game array
                 {
-                    if (game[division, i] == matchE5.Text)
+                    if (game[division, i] == matchD5.Text)
                     {
                         game[division, i] = null;
                         break;
@@ -6478,19 +6478,19 @@ namespace Fixtures
             }
             else
             {
-                assignE5.Text = "Assign";
+                assignD5.Text = "Assign";
                 teamAssigned[division, 4, teams.Item1] = false; //un-assign the teams
                 teamAssigned[division, 4, teams.Item2] = false;
                 for (int i = 0; i < 210; i++) //add match back to game array
                 {
                     if (game[division, i] == null)
                     {
-                        game[division, i] = matchE5.Text;
+                        game[division, i] = matchD5.Text;
                         break;
                     }
                 }
                 matchesAssigned[division, 4, 3] = null; //remove assigned match
-                matchE5.Enabled = true;
+                matchD5.Enabled = true;
             }
         }
 
@@ -7137,6 +7137,4262 @@ namespace Fixtures
                 }
                 matchesAssigned[division, 6, 6] = null; //remove assigned match
                 matchG7.Enabled = true;
+            }
+        }
+
+        private void assignA8_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA8.Text.Trim());
+
+            if (assignA8.Text == "Assign")
+            {
+                assignA8.Text = "Undo";
+                matchA8.Enabled = false;
+                matchesAssigned[division, 7, 0] = matchA8.Text; //Assign the match
+                teamAssigned[division, 7, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 7, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA8.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA8.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA8.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 7, 0] = null; //remove assigned match
+                matchA8.Enabled = true;
+            }
+        }
+
+        private void assignB8_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB8.Text.Trim());
+
+            if (assignB8.Text == "Assign")
+            {
+                assignB8.Text = "Undo";
+                matchB8.Enabled = false;
+                matchesAssigned[division, 7, 1] = matchB8.Text; //Assign the match
+                teamAssigned[division, 7, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 7, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB8.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB8.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB8.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 7, 1] = null; //remove assigned match
+                matchB8.Enabled = true;
+            }
+        }
+
+        private void assignC8_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC8.Text.Trim());
+
+            if (assignC8.Text == "Assign")
+            {
+                assignC8.Text = "Undo";
+                matchC8.Enabled = false;
+                matchesAssigned[division, 7, 2] = matchC8.Text; //Assign the match
+                teamAssigned[division, 7, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 7, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC8.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC8.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC8.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 7, 2] = null; //remove assigned match
+                matchC8.Enabled = true;
+            }
+        }
+
+        private void assignD8_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD8.Text.Trim());
+
+            if (assignD8.Text == "Assign")
+            {
+                assignD8.Text = "Undo";
+                matchD8.Enabled = false;
+                matchesAssigned[division, 7, 3] = matchD8.Text; //Assign the match
+                teamAssigned[division, 7, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 7, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD8.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD8.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD8.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 7, 3] = null; //remove assigned match
+                matchD8.Enabled = true;
+            }
+        }
+
+        private void assignE8_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE8.Text.Trim());
+
+            if (assignE8.Text == "Assign")
+            {
+                assignE8.Text = "Undo";
+                matchE8.Enabled = false;
+                matchesAssigned[division, 7, 4] = matchE8.Text; //Assign the match
+                teamAssigned[division, 7, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 7, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE8.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE8.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE8.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 7, 4] = null; //remove assigned match
+                matchE8.Enabled = true;
+            }
+        }
+
+        private void assignF8_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF8.Text.Trim());
+
+            if (assignA8.Text == "Assign")
+            {
+                assignF8.Text = "Undo";
+                matchF8.Enabled = false;
+                matchesAssigned[division, 7, 5] = matchF8.Text; //Assign the match
+                teamAssigned[division, 7, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 7, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF8.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF8.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF8.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 7, 5] = null; //remove assigned match
+                matchF8.Enabled = true;
+            }
+        }
+
+        private void assignG8_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG8.Text.Trim());
+
+            if (assignG8.Text == "Assign")
+            {
+                assignG8.Text = "Undo";
+                matchG8.Enabled = false;
+                matchesAssigned[division, 7, 6] = matchG8.Text; //Assign the match
+                teamAssigned[division, 7, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 7, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG8.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG8.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG8.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 7, 6] = null; //remove assigned match
+                matchG8.Enabled = true;
+            }
+        }
+
+        private void assignA9_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA9.Text.Trim());
+
+            if (assignA9.Text == "Assign")
+            {
+                assignA9.Text = "Undo";
+                matchA9.Enabled = false;
+                matchesAssigned[division, 8, 0] = matchA9.Text; //Assign the match
+                teamAssigned[division, 8, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 8, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA9.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA9.Text = "Assign";
+                teamAssigned[division, 8, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 8, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA9.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 8, 0] = null; //remove assigned match
+                matchA9.Enabled = true;
+            }
+        }
+
+        private void assignB9_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB9.Text.Trim());
+
+            if (assignB9.Text == "Assign")
+            {
+                assignB9.Text = "Undo";
+                matchB9.Enabled = false;
+                matchesAssigned[division, 8, 1] = matchB9.Text; //Assign the match
+                teamAssigned[division, 8, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 8, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB9.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB9.Text = "Assign";
+                teamAssigned[division, 8, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 8, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB9.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 8, 1] = null; //remove assigned match
+                matchB9.Enabled = true;
+            }
+        }
+
+        private void assignC9_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC9.Text.Trim());
+
+            if (assignC9.Text == "Assign")
+            {
+                assignC9.Text = "Undo";
+                matchC9.Enabled = false;
+                matchesAssigned[division, 8, 2] = matchC9.Text; //Assign the match
+                teamAssigned[division, 8, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 8, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC9.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC9.Text = "Assign";
+                teamAssigned[division, 8, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 8, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC9.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 8, 2] = null; //remove assigned match
+                matchC9.Enabled = true;
+            }
+        }
+
+        private void assignD9_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD9.Text.Trim());
+
+            if (assignD9.Text == "Assign")
+            {
+                assignD9.Text = "Undo";
+                matchD9.Enabled = false;
+                matchesAssigned[division, 8, 3] = matchD9.Text; //Assign the match
+                teamAssigned[division, 8, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 8, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD9.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD9.Text = "Assign";
+                teamAssigned[division, 8, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 8, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD9.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 8, 3] = null; //remove assigned match
+                matchD9.Enabled = true;
+            }
+        }
+
+        private void assignE9_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE9.Text.Trim());
+
+            if (assignE9.Text == "Assign")
+            {
+                assignE9.Text = "Undo";
+                matchE9.Enabled = false;
+                matchesAssigned[division, 8, 4] = matchE9.Text; //Assign the match
+                teamAssigned[division, 8, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 8, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE9.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE9.Text = "Assign";
+                teamAssigned[division, 8, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 8, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE9.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 8, 4] = null; //remove assigned match
+                matchE9.Enabled = true;
+            }
+        }
+
+        private void assignF9_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF9.Text.Trim());
+
+            if (assignF9.Text == "Assign")
+            {
+                assignF9.Text = "Undo";
+                matchF9.Enabled = false;
+                matchesAssigned[division, 8, 5] = matchF9.Text; //Assign the match
+                teamAssigned[division, 8, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 8, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF9.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF9.Text = "Assign";
+                teamAssigned[division, 8, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 8, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF9.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 8, 5] = null; //remove assigned match
+                matchF9.Enabled = true;
+            }
+        }
+
+        private void assignG9_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG9.Text.Trim());
+
+            if (assignG9.Text == "Assign")
+            {
+                assignG9.Text = "Undo";
+                matchG9.Enabled = false;
+                matchesAssigned[division, 8, 6] = matchG9.Text; //Assign the match
+                teamAssigned[division, 8, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 8, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG9.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG9.Text = "Assign";
+                teamAssigned[division, 8, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 8, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG9.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 8, 6] = null; //remove assigned match
+                matchG9.Enabled = true;
+            }
+        }
+
+        private void assignA10_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA10.Text.Trim());
+
+            if (assignA10.Text == "Assign")
+            {
+                assignA10.Text = "Undo";
+                matchA10.Enabled = false;
+                matchesAssigned[division, 9, 0] = matchA10.Text; //Assign the match
+                teamAssigned[division, 9, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 9, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA10.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA10.Text = "Assign";
+                teamAssigned[division, 9, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 9, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA10.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 9, 0] = null; //remove assigned match
+                matchA10.Enabled = true;
+            }
+        }
+
+        private void assignB10_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB10.Text.Trim());
+
+            if (assignB10.Text == "Assign")
+            {
+                assignB10.Text = "Undo";
+                matchB10.Enabled = false;
+                matchesAssigned[division, 9, 1] = matchB10.Text; //Assign the match
+                teamAssigned[division, 9, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 9, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB10.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB10.Text = "Assign";
+                teamAssigned[division, 9, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 9, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB10.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 9, 1] = null; //remove assigned match
+                matchB10.Enabled = true;
+            }
+        }
+
+        private void assignC10_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC10.Text.Trim());
+
+            if (assignC10.Text == "Assign")
+            {
+                assignC10.Text = "Undo";
+                matchC10.Enabled = false;
+                matchesAssigned[division, 9, 2] = matchC10.Text; //Assign the match
+                teamAssigned[division, 9, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 9, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC10.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC10.Text = "Assign";
+                teamAssigned[division, 9, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 9, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC10.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 9, 2] = null; //remove assigned match
+                matchC10.Enabled = true;
+            }
+        }
+
+        private void assignD10_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD10.Text.Trim());
+
+            if (assignD10.Text == "Assign")
+            {
+                assignD10.Text = "Undo";
+                matchD10.Enabled = false;
+                matchesAssigned[division, 9, 3] = matchD10.Text; //Assign the match
+                teamAssigned[division, 9, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 9, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD10.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD10.Text = "Assign";
+                teamAssigned[division, 9, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 9, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD10.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 9, 3] = null; //remove assigned match
+                matchD10.Enabled = true;
+            }
+        }
+
+        private void assignE10_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE10.Text.Trim());
+
+            if (assignE10.Text == "Assign")
+            {
+                assignE10.Text = "Undo";
+                matchE10.Enabled = false;
+                matchesAssigned[division, 9, 4] = matchE10.Text; //Assign the match
+                teamAssigned[division, 9, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 9, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE10.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE10.Text = "Assign";
+                teamAssigned[division, 9, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 9, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE10.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 9, 4] = null; //remove assigned match
+                matchE10.Enabled = true;
+            }
+        }
+
+        private void assignF10_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF10.Text.Trim());
+
+            if (assignF10.Text == "Assign")
+            {
+                assignF10.Text = "Undo";
+                matchF10.Enabled = false;
+                matchesAssigned[division, 9, 5] = matchF10.Text; //Assign the match
+                teamAssigned[division, 9, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 9, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF10.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF10.Text = "Assign";
+                teamAssigned[division, 9, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 9, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF10.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 9, 5] = null; //remove assigned match
+                matchF10.Enabled = true;
+            }
+        }
+
+        private void assignG10_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG10.Text.Trim());
+
+            if (assignG10.Text == "Assign")
+            {
+                assignG10.Text = "Undo";
+                matchG10.Enabled = false;
+                matchesAssigned[division, 9, 6] = matchG10.Text; //Assign the match
+                teamAssigned[division, 9, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 9, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG10.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG10.Text = "Assign";
+                teamAssigned[division, 9, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 9, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG10.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 9, 6] = null; //remove assigned match
+                matchG10.Enabled = true;
+            }
+        }
+
+        private void assignA11_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA11.Text.Trim());
+
+            if (assignA11.Text == "Assign")
+            {
+                assignA11.Text = "Undo";
+                matchA11.Enabled = false;
+                matchesAssigned[division, 10, 0] = matchA11.Text; //Assign the match
+                teamAssigned[division, 10, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 10, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA11.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA11.Text = "Assign";
+                teamAssigned[division, 10, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 10, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA11.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 10, 0] = null; //remove assigned match
+                matchA11.Enabled = true;
+            }
+        }
+
+        private void assignB11_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB11.Text.Trim());
+
+            if (assignB11.Text == "Assign")
+            {
+                assignB11.Text = "Undo";
+                matchB11.Enabled = false;
+                matchesAssigned[division, 10, 1] = matchB11.Text; //Assign the match
+                teamAssigned[division, 10, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 10, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB11.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB11.Text = "Assign";
+                teamAssigned[division, 10, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 10, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB11.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 10, 1] = null; //remove assigned match
+                matchB11.Enabled = true;
+            }
+        }
+
+        private void assignC11_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC11.Text.Trim());
+
+            if (assignC11.Text == "Assign")
+            {
+                assignC11.Text = "Undo";
+                matchC11.Enabled = false;
+                matchesAssigned[division, 10, 2] = matchC11.Text; //Assign the match
+                teamAssigned[division, 10, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 10, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC11.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC11.Text = "Assign";
+                teamAssigned[division, 10, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 10, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC11.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 10, 2] = null; //remove assigned match
+                matchC11.Enabled = true;
+            }
+        }
+
+        private void assignD11_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD11.Text.Trim());
+
+            if (assignD11.Text == "Assign")
+            {
+                assignD11.Text = "Undo";
+                matchD11.Enabled = false;
+                matchesAssigned[division, 10, 3] = matchD11.Text; //Assign the match
+                teamAssigned[division, 10, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 10, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD11.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD11.Text = "Assign";
+                teamAssigned[division, 10, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 10, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD11.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 10, 3] = null; //remove assigned match
+                matchD11.Enabled = true;
+            }
+        }
+
+        private void assignE11_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE11.Text.Trim());
+
+            if (assignE11.Text == "Assign")
+            {
+                assignE11.Text = "Undo";
+                matchE11.Enabled = false;
+                matchesAssigned[division, 10, 4] = matchE11.Text; //Assign the match
+                teamAssigned[division, 10, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 10, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE11.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE11.Text = "Assign";
+                teamAssigned[division, 10, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 10, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE11.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 10, 4] = null; //remove assigned match
+                matchE11.Enabled = true;
+            }
+        }
+
+        private void assignF11_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF11.Text.Trim());
+
+            if (assignF11.Text == "Assign")
+            {
+                assignF11.Text = "Undo";
+                matchF11.Enabled = false;
+                matchesAssigned[division, 10, 5] = matchF11.Text; //Assign the match
+                teamAssigned[division, 10, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 10, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF11.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF11.Text = "Assign";
+                teamAssigned[division, 10, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 10, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF11.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 10, 5] = null; //remove assigned match
+                matchF11.Enabled = true;
+            }
+        }
+
+        private void assignG11_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG11.Text.Trim());
+
+            if (assignG11.Text == "Assign")
+            {
+                assignG11.Text = "Undo";
+                matchG11.Enabled = false;
+                matchesAssigned[division, 10, 6] = matchG11.Text; //Assign the match
+                teamAssigned[division, 10, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 10, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG11.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG11.Text = "Assign";
+                teamAssigned[division, 10, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 10, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG11.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 10, 6] = null; //remove assigned match
+                matchG11.Enabled = true;
+            }
+        }
+
+        private void assignA12_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA12.Text.Trim());
+
+            if (assignA12.Text == "Assign")
+            {
+                assignA12.Text = "Undo";
+                matchA12.Enabled = false;
+                matchesAssigned[division, 11, 0] = matchA12.Text; //Assign the match
+                teamAssigned[division, 11, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 11, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA12.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA12.Text = "Assign";
+                teamAssigned[division, 11, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 11, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA12.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 11, 0] = null; //remove assigned match
+                matchA12.Enabled = true;
+            }
+        }
+
+        private void assignB12_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB12.Text.Trim());
+
+            if (assignB12.Text == "Assign")
+            {
+                assignB12.Text = "Undo";
+                matchB12.Enabled = false;
+                matchesAssigned[division, 11, 1] = matchB12.Text; //Assign the match
+                teamAssigned[division, 11, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 11, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB12.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB12.Text = "Assign";
+                teamAssigned[division, 11, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 11, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB12.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 11, 1] = null; //remove assigned match
+                matchB12.Enabled = true;
+            }
+        }
+
+        private void assignC12_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC12.Text.Trim());
+
+            if (assignC12.Text == "Assign")
+            {
+                assignC12.Text = "Undo";
+                matchC12.Enabled = false;
+                matchesAssigned[division, 11, 2] = matchC12.Text; //Assign the match
+                teamAssigned[division, 11, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 11, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC12.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC12.Text = "Assign";
+                teamAssigned[division, 11, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 11, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC12.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 11, 2] = null; //remove assigned match
+                matchC12.Enabled = true;
+            }
+        }
+
+        private void assignD12_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD12.Text.Trim());
+
+            if (assignD12.Text == "Assign")
+            {
+                assignD12.Text = "Undo";
+                matchD12.Enabled = false;
+                matchesAssigned[division, 11, 3] = matchD12.Text; //Assign the match
+                teamAssigned[division, 11, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 11, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD12.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD12.Text = "Assign";
+                teamAssigned[division, 11, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 11, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD12.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 11, 3] = null; //remove assigned match
+                matchD12.Enabled = true;
+            }
+        }
+
+        private void assignE12_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE12.Text.Trim());
+
+            if (assignE12.Text == "Assign")
+            {
+                assignE12.Text = "Undo";
+                matchE12.Enabled = false;
+                matchesAssigned[division, 11, 4] = matchE12.Text; //Assign the match
+                teamAssigned[division, 11, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 11, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE12.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE12.Text = "Assign";
+                teamAssigned[division, 11, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 11, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE12.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 11, 4] = null; //remove assigned match
+                matchE12.Enabled = true;
+            }
+        }
+
+        private void assignF12_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF12.Text.Trim());
+
+            if (assignF12.Text == "Assign")
+            {
+                assignF12.Text = "Undo";
+                matchF12.Enabled = false;
+                matchesAssigned[division, 11, 5] = matchF12.Text; //Assign the match
+                teamAssigned[division, 11, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 11, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF12.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF12.Text = "Assign";
+                teamAssigned[division, 11, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 11, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF12.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 11, 5] = null; //remove assigned match
+                matchF12.Enabled = true;
+            }
+        }
+
+        private void assignG12_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG12.Text.Trim());
+
+            if (assignG12.Text == "Assign")
+            {
+                assignG12.Text = "Undo";
+                matchG12.Enabled = false;
+                matchesAssigned[division, 11, 6] = matchG12.Text; //Assign the match
+                teamAssigned[division, 11, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 11, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG12.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG12.Text = "Assign";
+                teamAssigned[division, 11, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 11, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG12.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 11, 6] = null; //remove assigned match
+                matchG12.Enabled = true;
+            }
+        }
+
+        private void assignA13_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA13.Text.Trim());
+
+            if (assignA13.Text == "Assign")
+            {
+                assignA13.Text = "Undo";
+                matchA13.Enabled = false;
+                matchesAssigned[division, 12, 0] = matchA13.Text; //Assign the match
+                teamAssigned[division, 12, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 12, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA13.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA13.Text = "Assign";
+                teamAssigned[division, 12, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 12, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA13.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 12, 0] = null; //remove assigned match
+                matchA13.Enabled = true;
+            }
+        }
+
+        private void assignB13_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB13.Text.Trim());
+
+            if (assignB13.Text == "Assign")
+            {
+                assignB13.Text = "Undo";
+                matchB13.Enabled = false;
+                matchesAssigned[division, 12, 1] = matchB13.Text; //Assign the match
+                teamAssigned[division, 12, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 12, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB13.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB13.Text = "Assign";
+                teamAssigned[division, 12, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 12, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB13.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 12, 1] = null; //remove assigned match
+                matchB13.Enabled = true;
+            }
+        }
+
+        private void assignC13_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC13.Text.Trim());
+
+            if (assignC13.Text == "Assign")
+            {
+                assignC13.Text = "Undo";
+                matchC13.Enabled = false;
+                matchesAssigned[division, 12, 2] = matchC13.Text; //Assign the match
+                teamAssigned[division, 12, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 12, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC13.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC13.Text = "Assign";
+                teamAssigned[division, 12, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 12, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC13.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 12, 2] = null; //remove assigned match
+                matchC13.Enabled = true;
+            }
+        }
+
+        private void assignD13_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD13.Text.Trim());
+
+            if (assignD13.Text == "Assign")
+            {
+                assignD13.Text = "Undo";
+                matchD13.Enabled = false;
+                matchesAssigned[division, 12, 3] = matchD13.Text; //Assign the match
+                teamAssigned[division, 12, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 12, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD13.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD13.Text = "Assign";
+                teamAssigned[division, 12, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 12, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD13.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 12, 3] = null; //remove assigned match
+                matchD13.Enabled = true;
+            }
+        }
+
+        private void assignE13_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE13.Text.Trim());
+
+            if (assignE13.Text == "Assign")
+            {
+                assignE13.Text = "Undo";
+                matchE13.Enabled = false;
+                matchesAssigned[division, 12, 4] = matchE13.Text; //Assign the match
+                teamAssigned[division, 12, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 12, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE13.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE13.Text = "Assign";
+                teamAssigned[division, 12, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 12, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE13.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 12, 4] = null; //remove assigned match
+                matchE13.Enabled = true;
+            }
+        }
+
+        private void assignF13_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF13.Text.Trim());
+
+            if (assignF13.Text == "Assign")
+            {
+                assignF13.Text = "Undo";
+                matchF13.Enabled = false;
+                matchesAssigned[division, 12, 5] = matchF13.Text; //Assign the match
+                teamAssigned[division, 12, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 12, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF13.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF13.Text = "Assign";
+                teamAssigned[division, 12, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 12, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF13.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 12, 5] = null; //remove assigned match
+                matchF13.Enabled = true;
+            }
+        }
+
+        private void assignG13_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG13.Text.Trim());
+
+            if (assignG13.Text == "Assign")
+            {
+                assignG13.Text = "Undo";
+                matchG13.Enabled = false;
+                matchesAssigned[division, 12, 6] = matchG13.Text; //Assign the match
+                teamAssigned[division, 12, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 12, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG13.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG13.Text = "Assign";
+                teamAssigned[division, 12, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 12, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG13.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 12, 6] = null; //remove assigned match
+                matchG13.Enabled = true;
+            }
+        }
+
+        private void assignA14_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA14.Text.Trim());
+
+            if (assignA14.Text == "Assign")
+            {
+                assignA14.Text = "Undo";
+                matchA14.Enabled = false;
+                matchesAssigned[division, 13, 0] = matchA14.Text; //Assign the match
+                teamAssigned[division, 13, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 13, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA14.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA14.Text = "Assign";
+                teamAssigned[division, 13, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 13, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA14.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 13, 0] = null; //remove assigned match
+                matchA14.Enabled = true;
+            }
+        }
+
+        private void assignB14_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB14.Text.Trim());
+
+            if (assignB14.Text == "Assign")
+            {
+                assignB14.Text = "Undo";
+                matchB14.Enabled = false;
+                matchesAssigned[division, 13, 1] = matchB14.Text; //Assign the match
+                teamAssigned[division, 13, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 13, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB14.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB14.Text = "Assign";
+                teamAssigned[division, 13, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 13, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB14.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 13, 1] = null; //remove assigned match
+                matchB14.Enabled = true;
+            }
+        }
+
+        private void assignC14_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC14.Text.Trim());
+
+            if (assignC14.Text == "Assign")
+            {
+                assignC14.Text = "Undo";
+                matchC14.Enabled = false;
+                matchesAssigned[division, 13, 2] = matchC14.Text; //Assign the match
+                teamAssigned[division, 13, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 13, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC14.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC14.Text = "Assign";
+                teamAssigned[division, 13, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 13, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC14.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 13, 2] = null; //remove assigned match
+                matchC14.Enabled = true;
+            }
+        }
+
+        private void assignD14_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD14.Text.Trim());
+
+            if (assignD14.Text == "Assign")
+            {
+                assignD14.Text = "Undo";
+                matchD14.Enabled = false;
+                matchesAssigned[division, 13, 3] = matchD14.Text; //Assign the match
+                teamAssigned[division, 13, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 13, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD14.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD14.Text = "Assign";
+                teamAssigned[division, 13, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 13, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD14.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 13, 3] = null; //remove assigned match
+                matchD14.Enabled = true;
+            }
+        }
+
+        private void assignE14_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE14.Text.Trim());
+
+            if (assignE14.Text == "Assign")
+            {
+                assignE14.Text = "Undo";
+                matchE14.Enabled = false;
+                matchesAssigned[division, 13, 4] = matchE14.Text; //Assign the match
+                teamAssigned[division, 13, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 13, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE14.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE14.Text = "Assign";
+                teamAssigned[division, 13, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 13, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE14.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 13, 4] = null; //remove assigned match
+                matchE14.Enabled = true;
+            }
+        }
+
+        private void assignF14_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF14.Text.Trim());
+
+            if (assignF14.Text == "Assign")
+            {
+                assignF14.Text = "Undo";
+                matchF14.Enabled = false;
+                matchesAssigned[division, 13, 5] = matchF14.Text; //Assign the match
+                teamAssigned[division, 13, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 13, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF14.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF14.Text = "Assign";
+                teamAssigned[division, 13, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 13, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF14.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 13, 5] = null; //remove assigned match
+                matchF14.Enabled = true;
+            }
+        }
+
+        private void assignG14_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG14.Text.Trim());
+
+            if (assignG14.Text == "Assign")
+            {
+                assignG14.Text = "Undo";
+                matchG14.Enabled = false;
+                matchesAssigned[division, 13, 6] = matchG14.Text; //Assign the match
+                teamAssigned[division, 13, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 13, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG14.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG14.Text = "Assign";
+                teamAssigned[division, 13, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 13, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG14.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 13, 6] = null; //remove assigned match
+                matchG14.Enabled = true;
+            }
+        }
+
+        private void assignA15_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA15.Text.Trim());
+
+            if (assignA15.Text == "Assign")
+            {
+                assignA15.Text = "Undo";
+                matchA15.Enabled = false;
+                matchesAssigned[division, 14, 0] = matchA15.Text; //Assign the match
+                teamAssigned[division, 14, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 14, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA15.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA15.Text = "Assign";
+                teamAssigned[division, 14, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 14, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA15.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 14, 0] = null; //remove assigned match
+                matchA15.Enabled = true;
+            }
+        }
+
+        private void assignB15_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB15.Text.Trim());
+
+            if (assignB15.Text == "Assign")
+            {
+                assignB15.Text = "Undo";
+                matchB15.Enabled = false;
+                matchesAssigned[division, 14, 1] = matchB15.Text; //Assign the match
+                teamAssigned[division, 14, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 14, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB15.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB15.Text = "Assign";
+                teamAssigned[division, 14, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 14, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB15.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 14, 1] = null; //remove assigned match
+                matchB15.Enabled = true;
+            }
+        }
+
+        private void assignC15_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC15.Text.Trim());
+
+            if (assignC15.Text == "Assign")
+            {
+                assignC15.Text = "Undo";
+                matchC15.Enabled = false;
+                matchesAssigned[division, 14, 2] = matchC15.Text; //Assign the match
+                teamAssigned[division, 14, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 14, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC15.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC15.Text = "Assign";
+                teamAssigned[division, 14, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 14, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC15.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 14, 2] = null; //remove assigned match
+                matchC15.Enabled = true;
+            }
+        }
+
+        private void assignD15_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD15.Text.Trim());
+
+            if (assignD15.Text == "Assign")
+            {
+                assignD15.Text = "Undo";
+                matchD15.Enabled = false;
+                matchesAssigned[division, 14, 3] = matchD15.Text; //Assign the match
+                teamAssigned[division, 14, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 14, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD15.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD15.Text = "Assign";
+                teamAssigned[division, 14, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 14, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD15.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 14, 3] = null; //remove assigned match
+                matchD15.Enabled = true;
+            }
+        }
+
+        private void assignE15_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE15.Text.Trim());
+
+            if (assignE15.Text == "Assign")
+            {
+                assignE15.Text = "Undo";
+                matchE15.Enabled = false;
+                matchesAssigned[division, 14, 4] = matchE15.Text; //Assign the match
+                teamAssigned[division, 14, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 14, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE15.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE15.Text = "Assign";
+                teamAssigned[division, 14, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 14, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE15.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 14, 4] = null; //remove assigned match
+                matchE15.Enabled = true;
+            }
+        }
+
+        private void assignF15_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF15.Text.Trim());
+
+            if (assignF15.Text == "Assign")
+            {
+                assignF15.Text = "Undo";
+                matchF15.Enabled = false;
+                matchesAssigned[division, 14, 5] = matchF15.Text; //Assign the match
+                teamAssigned[division, 14, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 14, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF15.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF15.Text = "Assign";
+                teamAssigned[division, 14, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 14, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF15.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 14, 5] = null; //remove assigned match
+                matchF15.Enabled = true;
+            }
+        }
+
+        private void assignG15_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG15.Text.Trim());
+
+            if (assignG15.Text == "Assign")
+            {
+                assignG15.Text = "Undo";
+                matchG15.Enabled = false;
+                matchesAssigned[division, 14, 6] = matchG15.Text; //Assign the match
+                teamAssigned[division, 14, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 14, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG15.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG15.Text = "Assign";
+                teamAssigned[division, 14, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 14, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG15.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 14, 6] = null; //remove assigned match
+                matchG15.Enabled = true;
+            }
+        }
+
+        private void assignA16_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA16.Text.Trim());
+
+            if (assignA16.Text == "Assign")
+            {
+                assignA16.Text = "Undo";
+                matchA16.Enabled = false;
+                matchesAssigned[division, 15, 0] = matchA16.Text; //Assign the match
+                teamAssigned[division, 15, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 15, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA16.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA16.Text = "Assign";
+                teamAssigned[division, 15, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 15, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA16.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 15, 0] = null; //remove assigned match
+                matchA16.Enabled = true;
+            }
+        }
+
+        private void assignB16_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB16.Text.Trim());
+
+            if (assignB16.Text == "Assign")
+            {
+                assignB16.Text = "Undo";
+                matchB16.Enabled = false;
+                matchesAssigned[division, 15, 1] = matchB16.Text; //Assign the match
+                teamAssigned[division, 15, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 15, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB16.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB16.Text = "Assign";
+                teamAssigned[division, 15, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 15, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB16.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 15, 1] = null; //remove assigned match
+                matchB16.Enabled = true;
+            }
+        }
+
+        private void assignC16_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC16.Text.Trim());
+
+            if (assignC16.Text == "Assign")
+            {
+                assignC16.Text = "Undo";
+                matchC16.Enabled = false;
+                matchesAssigned[division, 15, 2] = matchC16.Text; //Assign the match
+                teamAssigned[division, 15, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 15, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC16.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC16.Text = "Assign";
+                teamAssigned[division, 15, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 15, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC16.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 15, 2] = null; //remove assigned match
+                matchC16.Enabled = true;
+            }
+        }
+
+        private void assignD16_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD16.Text.Trim());
+
+            if (assignD16.Text == "Assign")
+            {
+                assignD16.Text = "Undo";
+                matchD16.Enabled = false;
+                matchesAssigned[division, 15, 3] = matchD16.Text; //Assign the match
+                teamAssigned[division, 15, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 15, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD16.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD16.Text = "Assign";
+                teamAssigned[division, 15, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 15, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD16.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 15, 3] = null; //remove assigned match
+                matchD16.Enabled = true;
+            }
+        }
+
+        private void assignE16_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE16.Text.Trim());
+
+            if (assignE16.Text == "Assign")
+            {
+                assignE16.Text = "Undo";
+                matchE16.Enabled = false;
+                matchesAssigned[division, 15, 4] = matchE16.Text; //Assign the match
+                teamAssigned[division, 15, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 15, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE16.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE16.Text = "Assign";
+                teamAssigned[division, 15, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 15, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE16.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 15, 4] = null; //remove assigned match
+                matchE16.Enabled = true;
+            }
+        }
+
+        private void assignF16_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF16.Text.Trim());
+
+            if (assignF16.Text == "Assign")
+            {
+                assignF16.Text = "Undo";
+                matchF16.Enabled = false;
+                matchesAssigned[division, 15, 5] = matchF16.Text; //Assign the match
+                teamAssigned[division, 15, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 15, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF16.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF16.Text = "Assign";
+                teamAssigned[division, 15, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 15, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF16.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 15, 5] = null; //remove assigned match
+                matchF16.Enabled = true;
+            }
+        }
+
+        private void assignG16_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG16.Text.Trim());
+
+            if (assignG16.Text == "Assign")
+            {
+                assignG16.Text = "Undo";
+                matchG16.Enabled = false;
+                matchesAssigned[division, 15, 6] = matchG16.Text; //Assign the match
+                teamAssigned[division, 15, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 15, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG16.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG16.Text = "Assign";
+                teamAssigned[division, 15, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 15, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG16.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 15, 6] = null; //remove assigned match
+                matchG16.Enabled = true;
+            }
+        }
+
+        private void assignA17_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA17.Text.Trim());
+
+            if (assignA17.Text == "Assign")
+            {
+                assignA17.Text = "Undo";
+                matchA17.Enabled = false;
+                matchesAssigned[division, 16, 0] = matchA17.Text; //Assign the match
+                teamAssigned[division, 16, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 16, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA17.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA17.Text = "Assign";
+                teamAssigned[division, 16, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 16, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA17.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 16, 0] = null; //remove assigned match
+                matchA17.Enabled = true;
+            }
+        }
+
+        private void assignB17_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB17.Text.Trim());
+
+            if (assignB17.Text == "Assign")
+            {
+                assignB17.Text = "Undo";
+                matchB17.Enabled = false;
+                matchesAssigned[division, 16, 1] = matchB17.Text; //Assign the match
+                teamAssigned[division, 16, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 16, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB17.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB17.Text = "Assign";
+                teamAssigned[division, 16, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 16, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB17.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 16, 1] = null; //remove assigned match
+                matchB17.Enabled = true;
+            }
+        }
+
+        private void assignC17_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC17.Text.Trim());
+
+            if (assignC17.Text == "Assign")
+            {
+                assignC17.Text = "Undo";
+                matchC17.Enabled = false;
+                matchesAssigned[division, 16, 2] = matchC17.Text; //Assign the match
+                teamAssigned[division, 16, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 16, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC17.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC17.Text = "Assign";
+                teamAssigned[division, 16, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 16, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC17.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 16, 2] = null; //remove assigned match
+                matchC17.Enabled = true;
+            }
+        }
+
+        private void assignD17_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD17.Text.Trim());
+
+            if (assignD17.Text == "Assign")
+            {
+                assignD17.Text = "Undo";
+                matchD17.Enabled = false;
+                matchesAssigned[division, 16, 3] = matchD17.Text; //Assign the match
+                teamAssigned[division, 16, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 16, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD17.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD17.Text = "Assign";
+                teamAssigned[division, 16, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 16, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD17.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 16, 3] = null; //remove assigned match
+                matchD17.Enabled = true;
+            }
+        }
+
+        private void assignE17_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE17.Text.Trim());
+
+            if (assignE17.Text == "Assign")
+            {
+                assignE17.Text = "Undo";
+                matchE17.Enabled = false;
+                matchesAssigned[division, 16, 4] = matchE17.Text; //Assign the match
+                teamAssigned[division, 16, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 16, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE17.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE17.Text = "Assign";
+                teamAssigned[division, 16, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 16, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE17.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 16, 4] = null; //remove assigned match
+                matchE17.Enabled = true;
+            }
+        }
+
+        private void assignF17_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF17.Text.Trim());
+
+            if (assignF17.Text == "Assign")
+            {
+                assignF17.Text = "Undo";
+                matchF17.Enabled = false;
+                matchesAssigned[division, 16, 5] = matchF17.Text; //Assign the match
+                teamAssigned[division, 16, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 16, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF17.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF17.Text = "Assign";
+                teamAssigned[division, 16, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 16, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF17.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 16, 5] = null; //remove assigned match
+                matchF17.Enabled = true;
+            }
+        }
+
+        private void assignG17_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG17.Text.Trim());
+
+            if (assignG17.Text == "Assign")
+            {
+                assignG17.Text = "Undo";
+                matchG17.Enabled = false;
+                matchesAssigned[division, 16, 6] = matchG17.Text; //Assign the match
+                teamAssigned[division, 16, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 16, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG17.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG17.Text = "Assign";
+                teamAssigned[division, 16, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 16, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG17.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 16, 6] = null; //remove assigned match
+                matchG17.Enabled = true;
+            }
+        }
+
+        private void assignA18_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA18.Text.Trim());
+
+            if (assignA18.Text == "Assign")
+            {
+                assignA18.Text = "Undo";
+                matchA18.Enabled = false;
+                matchesAssigned[division, 17, 0] = matchA18.Text; //Assign the match
+                teamAssigned[division, 17, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 17, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA18.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA18.Text = "Assign";
+                teamAssigned[division, 17, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 17, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA18.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 17, 0] = null; //remove assigned match
+                matchA18.Enabled = true;
+            }
+        }
+
+        private void assignB18_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB18.Text.Trim());
+
+            if (assignB18.Text == "Assign")
+            {
+                assignB18.Text = "Undo";
+                matchB18.Enabled = false;
+                matchesAssigned[division, 17, 1] = matchB18.Text; //Assign the match
+                teamAssigned[division, 17, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 17, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB18.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB18.Text = "Assign";
+                teamAssigned[division, 17, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 17, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB18.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 17, 1] = null; //remove assigned match
+                matchB18.Enabled = true;
+            }
+        }
+
+        private void assignC18_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC18.Text.Trim());
+
+            if (assignC18.Text == "Assign")
+            {
+                assignC18.Text = "Undo";
+                matchC18.Enabled = false;
+                matchesAssigned[division, 17, 2] = matchC18.Text; //Assign the match
+                teamAssigned[division, 17, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 17, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC18.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC18.Text = "Assign";
+                teamAssigned[division, 17, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 17, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC18.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 17, 2] = null; //remove assigned match
+                matchC18.Enabled = true;
+            }
+        }
+
+        private void assignD18_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD18.Text.Trim());
+
+            if (assignD18.Text == "Assign")
+            {
+                assignD18.Text = "Undo";
+                matchD18.Enabled = false;
+                matchesAssigned[division, 17, 3] = matchD18.Text; //Assign the match
+                teamAssigned[division, 17, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 17, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD18.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD18.Text = "Assign";
+                teamAssigned[division, 17, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 17, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD18.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 17, 3] = null; //remove assigned match
+                matchD18.Enabled = true;
+            }
+        }
+
+        private void assignE18_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE18.Text.Trim());
+
+            if (assignE18.Text == "Assign")
+            {
+                assignE18.Text = "Undo";
+                matchE18.Enabled = false;
+                matchesAssigned[division, 17, 4] = matchE18.Text; //Assign the match
+                teamAssigned[division, 17, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 17, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE18.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE18.Text = "Assign";
+                teamAssigned[division, 17, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 17, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE18.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 17, 4] = null; //remove assigned match
+                matchE18.Enabled = true;
+            }
+        }
+
+        private void assignF18_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF18.Text.Trim());
+
+            if (assignF18.Text == "Assign")
+            {
+                assignF18.Text = "Undo";
+                matchF18.Enabled = false;
+                matchesAssigned[division, 17, 5] = matchF18.Text; //Assign the match
+                teamAssigned[division, 17, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 17, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF18.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF18.Text = "Assign";
+                teamAssigned[division, 17, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 17, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF18.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 17, 5] = null; //remove assigned match
+                matchF18.Enabled = true;
+            }
+        }
+
+        private void assignG18_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG18.Text.Trim());
+
+            if (assignG18.Text == "Assign")
+            {
+                assignG18.Text = "Undo";
+                matchG18.Enabled = false;
+                matchesAssigned[division, 17, 6] = matchG18.Text; //Assign the match
+                teamAssigned[division, 17, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 17, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG18.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG18.Text = "Assign";
+                teamAssigned[division, 17, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 17, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG18.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 17, 6] = null; //remove assigned match
+                matchG18.Enabled = true;
+            }
+        }
+
+        private void assignA19_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA19.Text.Trim());
+
+            if (assignA19.Text == "Assign")
+            {
+                assignA19.Text = "Undo";
+                matchA19.Enabled = false;
+                matchesAssigned[division, 18, 0] = matchA19.Text; //Assign the match
+                teamAssigned[division, 18, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 18, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA19.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA19.Text = "Assign";
+                teamAssigned[division, 18, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 18, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA19.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 18, 0] = null; //remove assigned match
+                matchA19.Enabled = true;
+            }
+        }
+
+        private void assignB19_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB19.Text.Trim());
+
+            if (assignB19.Text == "Assign")
+            {
+                assignB19.Text = "Undo";
+                matchB19.Enabled = false;
+                matchesAssigned[division, 18, 1] = matchB19.Text; //Assign the match
+                teamAssigned[division, 18, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 18, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB19.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB19.Text = "Assign";
+                teamAssigned[division, 18, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 18, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB19.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 18, 1] = null; //remove assigned match
+                matchB19.Enabled = true;
+            }
+        }
+
+        private void assignC19_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC19.Text.Trim());
+
+            if (assignC19.Text == "Assign")
+            {
+                assignC19.Text = "Undo";
+                matchC19.Enabled = false;
+                matchesAssigned[division, 18, 2] = matchC19.Text; //Assign the match
+                teamAssigned[division, 18, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 18, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC19.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC19.Text = "Assign";
+                teamAssigned[division, 18, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 18, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC19.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 18, 2] = null; //remove assigned match
+                matchC19.Enabled = true;
+            }
+        }
+
+        private void assignD19_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD19.Text.Trim());
+
+            if (assignD19.Text == "Assign")
+            {
+                assignD19.Text = "Undo";
+                matchD19.Enabled = false;
+                matchesAssigned[division, 18, 3] = matchD19.Text; //Assign the match
+                teamAssigned[division, 18, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 18, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD19.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD19.Text = "Assign";
+                teamAssigned[division, 18, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 18, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD19.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 18, 3] = null; //remove assigned match
+                matchD19.Enabled = true;
+            }
+        }
+
+        private void assignE19_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE19.Text.Trim());
+
+            if (assignE19.Text == "Assign")
+            {
+                assignE19.Text = "Undo";
+                matchE19.Enabled = false;
+                matchesAssigned[division, 18, 4] = matchE19.Text; //Assign the match
+                teamAssigned[division, 18, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 18, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE19.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE19.Text = "Assign";
+                teamAssigned[division, 18, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 18, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE19.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 18, 4] = null; //remove assigned match
+                matchE19.Enabled = true;
+            }
+        }
+
+        private void assignF19_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF19.Text.Trim());
+
+            if (assignF19.Text == "Assign")
+            {
+                assignF19.Text = "Undo";
+                matchF19.Enabled = false;
+                matchesAssigned[division, 18, 5] = matchF19.Text; //Assign the match
+                teamAssigned[division, 18, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 18, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF19.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF19.Text = "Assign";
+                teamAssigned[division, 18, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 18, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF19.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 18, 5] = null; //remove assigned match
+                matchF19.Enabled = true;
+            }
+        }
+
+        private void assignG19_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG19.Text.Trim());
+
+            if (assignG19.Text == "Assign")
+            {
+                assignG19.Text = "Undo";
+                matchG19.Enabled = false;
+                matchesAssigned[division, 18, 6] = matchG19.Text; //Assign the match
+                teamAssigned[division, 18, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 18, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG19.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG19.Text = "Assign";
+                teamAssigned[division, 18, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 18, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG19.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 18, 6] = null; //remove assigned match
+                matchG19.Enabled = true;
+            }
+        }
+
+        private void assignA20_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA20.Text.Trim());
+
+            if (assignA20.Text == "Assign")
+            {
+                assignA20.Text = "Undo";
+                matchA20.Enabled = false;
+                matchesAssigned[division, 19, 0] = matchA20.Text; //Assign the match
+                teamAssigned[division, 19, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 19, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA20.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA20.Text = "Assign";
+                teamAssigned[division, 19, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 19, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA20.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 19, 0] = null; //remove assigned match
+                matchA20.Enabled = true;
+            }
+        }
+
+        private void assignB20_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB20.Text.Trim());
+
+            if (assignB20.Text == "Assign")
+            {
+                assignB20.Text = "Undo";
+                matchB20.Enabled = false;
+                matchesAssigned[division, 19, 1] = matchB20.Text; //Assign the match
+                teamAssigned[division, 19, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 19, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB20.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB20.Text = "Assign";
+                teamAssigned[division, 19, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 19, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB20.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 19, 1] = null; //remove assigned match
+                matchB20.Enabled = true;
+            }
+        }
+
+        private void assignC20_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC20.Text.Trim());
+
+            if (assignC20.Text == "Assign")
+            {
+                assignC20.Text = "Undo";
+                matchC20.Enabled = false;
+                matchesAssigned[division, 19, 2] = matchC20.Text; //Assign the match
+                teamAssigned[division, 19, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 19, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC20.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC20.Text = "Assign";
+                teamAssigned[division, 19, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 19, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC20.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 19, 2] = null; //remove assigned match
+                matchC20.Enabled = true;
+            }
+        }
+
+        private void assignD20_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD20.Text.Trim());
+
+            if (assignD20.Text == "Assign")
+            {
+                assignD20.Text = "Undo";
+                matchD20.Enabled = false;
+                matchesAssigned[division, 19, 3] = matchD20.Text; //Assign the match
+                teamAssigned[division, 19, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 19, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD20.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD20.Text = "Assign";
+                teamAssigned[division, 19, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 19, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD20.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 19, 3] = null; //remove assigned match
+                matchD20.Enabled = true;
+            }
+        }
+
+        private void assignE20_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE20.Text.Trim());
+
+            if (assignE20.Text == "Assign")
+            {
+                assignE20.Text = "Undo";
+                matchE20.Enabled = false;
+                matchesAssigned[division, 19, 4] = matchE20.Text; //Assign the match
+                teamAssigned[division, 19, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 19, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE20.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE20.Text = "Assign";
+                teamAssigned[division, 19, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 19, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE20.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 19, 4] = null; //remove assigned match
+                matchE20.Enabled = true;
+            }
+        }
+
+        private void assignF20_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF20.Text.Trim());
+
+            if (assignF20.Text == "Assign")
+            {
+                assignF20.Text = "Undo";
+                matchF20.Enabled = false;
+                matchesAssigned[division, 19, 5] = matchF20.Text; //Assign the match
+                teamAssigned[division, 19, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 19, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF20.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF20.Text = "Assign";
+                teamAssigned[division, 19, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 19, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF20.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 19, 5] = null; //remove assigned match
+                matchF20.Enabled = true;
+            }
+        }
+
+        private void assignG20_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG20.Text.Trim());
+
+            if (assignG20.Text == "Assign")
+            {
+                assignG20.Text = "Undo";
+                matchG20.Enabled = false;
+                matchesAssigned[division, 19, 6] = matchG20.Text; //Assign the match
+                teamAssigned[division, 19, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 19, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG20.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG20.Text = "Assign";
+                teamAssigned[division, 19, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 19, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG20.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 19, 6] = null; //remove assigned match
+                matchG20.Enabled = true;
+            }
+        }
+
+        private void assignA21_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA21.Text.Trim());
+
+            if (assignA21.Text == "Assign")
+            {
+                assignA21.Text = "Undo";
+                matchA21.Enabled = false;
+                matchesAssigned[division, 20, 0] = matchA21.Text; //Assign the match
+                teamAssigned[division, 20, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 20, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA21.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA21.Text = "Assign";
+                teamAssigned[division, 20, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 20, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA21.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 20, 0] = null; //remove assigned match
+                matchA21.Enabled = true;
+            }
+        }
+
+        private void assignB21_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB21.Text.Trim());
+
+            if (assignB21.Text == "Assign")
+            {
+                assignB21.Text = "Undo";
+                matchB21.Enabled = false;
+                matchesAssigned[division, 20, 1] = matchB21.Text; //Assign the match
+                teamAssigned[division, 20, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 20, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB21.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB21.Text = "Assign";
+                teamAssigned[division, 20, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 20, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB21.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 20, 1] = null; //remove assigned match
+                matchB21.Enabled = true;
+            }
+        }
+
+        private void assignC21_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC21.Text.Trim());
+
+            if (assignC21.Text == "Assign")
+            {
+                assignC21.Text = "Undo";
+                matchC21.Enabled = false;
+                matchesAssigned[division, 20, 2] = matchC21.Text; //Assign the match
+                teamAssigned[division, 20, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 20, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC21.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC21.Text = "Assign";
+                teamAssigned[division, 20, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 20, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC21.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 20, 2] = null; //remove assigned match
+                matchC21.Enabled = true;
+            }
+        }
+
+        private void assignD21_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD21.Text.Trim());
+
+            if (assignD21.Text == "Assign")
+            {
+                assignD21.Text = "Undo";
+                matchD21.Enabled = false;
+                matchesAssigned[division, 20, 3] = matchD21.Text; //Assign the match
+                teamAssigned[division, 20, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 20, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD21.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD21.Text = "Assign";
+                teamAssigned[division, 20, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 20, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD21.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 20, 3] = null; //remove assigned match
+                matchD21.Enabled = true;
+            }
+        }
+
+        private void assignE21_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE21.Text.Trim());
+
+            if (assignE21.Text == "Assign")
+            {
+                assignE21.Text = "Undo";
+                matchE21.Enabled = false;
+                matchesAssigned[division, 20, 4] = matchE21.Text; //Assign the match
+                teamAssigned[division, 20, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 20, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE21.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE21.Text = "Assign";
+                teamAssigned[division, 20, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 20, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE21.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 20, 4] = null; //remove assigned match
+                matchE21.Enabled = true;
+            }
+        }
+
+        private void assignF21_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF21.Text.Trim());
+
+            if (assignF21.Text == "Assign")
+            {
+                assignF21.Text = "Undo";
+                matchF21.Enabled = false;
+                matchesAssigned[division, 20, 5] = matchF21.Text; //Assign the match
+                teamAssigned[division, 20, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 20, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF21.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF21.Text = "Assign";
+                teamAssigned[division, 20, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 20, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF21.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 20, 5] = null; //remove assigned match
+                matchF21.Enabled = true;
+            }
+        }
+
+        private void assignG21_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG21.Text.Trim());
+
+            if (assignG21.Text == "Assign")
+            {
+                assignG21.Text = "Undo";
+                matchG21.Enabled = false;
+                matchesAssigned[division, 20, 6] = matchG21.Text; //Assign the match
+                teamAssigned[division, 20, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 20, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG21.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG21.Text = "Assign";
+                teamAssigned[division, 20, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 20, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG21.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 20, 6] = null; //remove assigned match
+                matchG21.Enabled = true;
+            }
+        }
+
+        private void assignA22_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA22.Text.Trim());
+
+            if (assignA22.Text == "Assign")
+            {
+                assignA22.Text = "Undo";
+                matchA22.Enabled = false;
+                matchesAssigned[division, 21, 0] = matchA22.Text; //Assign the match
+                teamAssigned[division, 21, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 21, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA22.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA22.Text = "Assign";
+                teamAssigned[division, 21, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 21, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA22.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 21, 0] = null; //remove assigned match
+                matchA22.Enabled = true;
+            }
+        }
+
+        private void assignB22_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB22.Text.Trim());
+
+            if (assignB22.Text == "Assign")
+            {
+                assignB22.Text = "Undo";
+                matchB22.Enabled = false;
+                matchesAssigned[division, 21, 1] = matchB22.Text; //Assign the match
+                teamAssigned[division, 21, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 21, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB22.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB22.Text = "Assign";
+                teamAssigned[division, 21, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 21, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB22.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 21, 1] = null; //remove assigned match
+                matchB22.Enabled = true;
+            }
+        }
+
+        private void assignC22_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC22.Text.Trim());
+
+            if (assignC22.Text == "Assign")
+            {
+                assignC22.Text = "Undo";
+                matchC22.Enabled = false;
+                matchesAssigned[division, 21, 2] = matchC22.Text; //Assign the match
+                teamAssigned[division, 21, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 21, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC22.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC22.Text = "Assign";
+                teamAssigned[division, 21, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 21, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC22.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 21, 2] = null; //remove assigned match
+                matchC22.Enabled = true;
+            }
+        }
+
+        private void assignD22_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD22.Text.Trim());
+
+            if (assignD22.Text == "Assign")
+            {
+                assignD22.Text = "Undo";
+                matchD22.Enabled = false;
+                matchesAssigned[division, 21, 3] = matchD22.Text; //Assign the match
+                teamAssigned[division, 21, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 21, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD22.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD22.Text = "Assign";
+                teamAssigned[division, 21, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 21, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD22.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 21, 3] = null; //remove assigned match
+                matchD22.Enabled = true;
+            }
+        }
+
+        private void assignE22_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE22.Text.Trim());
+
+            if (assignE22.Text == "Assign")
+            {
+                assignE22.Text = "Undo";
+                matchE22.Enabled = false;
+                matchesAssigned[division, 21, 4] = matchE22.Text; //Assign the match
+                teamAssigned[division, 21, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 21, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE22.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE22.Text = "Assign";
+                teamAssigned[division, 21, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 21, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE22.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 21, 4] = null; //remove assigned match
+                matchE22.Enabled = true;
+            }
+        }
+
+        private void assignF22_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF22.Text.Trim());
+
+            if (assignF22.Text == "Assign")
+            {
+                assignF22.Text = "Undo";
+                matchF22.Enabled = false;
+                matchesAssigned[division, 21, 5] = matchF22.Text; //Assign the match
+                teamAssigned[division, 21, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 21, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF22.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF22.Text = "Assign";
+                teamAssigned[division, 21, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 21, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF22.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 21, 5] = null; //remove assigned match
+                matchF22.Enabled = true;
+            }
+        }
+
+        private void assignG22_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG22.Text.Trim());
+
+            if (assignG22.Text == "Assign")
+            {
+                assignG22.Text = "Undo";
+                matchG22.Enabled = false;
+                matchesAssigned[division, 21, 6] = matchG22.Text; //Assign the match
+                teamAssigned[division, 21, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 21, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG22.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG22.Text = "Assign";
+                teamAssigned[division, 21, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 21, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG22.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 21, 6] = null; //remove assigned match
+                matchG22.Enabled = true;
+            }
+        }
+
+        private void assignA23_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA23.Text.Trim());
+
+            if (assignA23.Text == "Assign")
+            {
+                assignA23.Text = "Undo";
+                matchA23.Enabled = false;
+                matchesAssigned[division, 22, 0] = matchA23.Text; //Assign the match
+                teamAssigned[division, 22, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 22, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA23.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA23.Text = "Assign";
+                teamAssigned[division, 22, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 22, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA23.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 22, 0] = null; //remove assigned match
+                matchA23.Enabled = true;
+            }
+        }
+
+        private void assignB23_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB23.Text.Trim());
+
+            if (assignB23.Text == "Assign")
+            {
+                assignB23.Text = "Undo";
+                matchB23.Enabled = false;
+                matchesAssigned[division, 22, 1] = matchB23.Text; //Assign the match
+                teamAssigned[division, 22, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 22, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB23.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB23.Text = "Assign";
+                teamAssigned[division, 22, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 22, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB23.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 22, 1] = null; //remove assigned match
+                matchB23.Enabled = true;
+            }
+        }
+
+        private void assignC23_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC23.Text.Trim());
+
+            if (assignC23.Text == "Assign")
+            {
+                assignC23.Text = "Undo";
+                matchC23.Enabled = false;
+                matchesAssigned[division, 22, 2] = matchC23.Text; //Assign the match
+                teamAssigned[division, 22, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 22, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC23.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC23.Text = "Assign";
+                teamAssigned[division, 22, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 22, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC23.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 22, 2] = null; //remove assigned match
+                matchC23.Enabled = true;
+            }
+        }
+
+        private void assignD23_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD23.Text.Trim());
+
+            if (assignD23.Text == "Assign")
+            {
+                assignD23.Text = "Undo";
+                matchD23.Enabled = false;
+                matchesAssigned[division, 22, 3] = matchD23.Text; //Assign the match
+                teamAssigned[division, 22, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 22, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD23.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD23.Text = "Assign";
+                teamAssigned[division, 22, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 22, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD23.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 22, 3] = null; //remove assigned match
+                matchD23.Enabled = true;
+            }
+        }
+
+        private void assignE23_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE23.Text.Trim());
+
+            if (assignE23.Text == "Assign")
+            {
+                assignE23.Text = "Undo";
+                matchE23.Enabled = false;
+                matchesAssigned[division, 22, 4] = matchE23.Text; //Assign the match
+                teamAssigned[division, 22, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 22, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE23.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE23.Text = "Assign";
+                teamAssigned[division, 22, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 22, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE23.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 22, 4] = null; //remove assigned match
+                matchE23.Enabled = true;
+            }
+        }
+
+        private void assignF23_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF23.Text.Trim());
+
+            if (assignF23.Text == "Assign")
+            {
+                assignF23.Text = "Undo";
+                matchF23.Enabled = false;
+                matchesAssigned[division, 22, 5] = matchF23.Text; //Assign the match
+                teamAssigned[division, 22, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 22, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF23.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF23.Text = "Assign";
+                teamAssigned[division, 22, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 22, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF23.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 22, 5] = null; //remove assigned match
+                matchF23.Enabled = true;
+            }
+        }
+
+        private void assignG23_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG23.Text.Trim());
+
+            if (assignG23.Text == "Assign")
+            {
+                assignG23.Text = "Undo";
+                matchG23.Enabled = false;
+                matchesAssigned[division, 22, 6] = matchG23.Text; //Assign the match
+                teamAssigned[division, 22, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 22, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG23.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG23.Text = "Assign";
+                teamAssigned[division, 22, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 22, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG23.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 22, 6] = null; //remove assigned match
+                matchG23.Enabled = true;
             }
         }
     }

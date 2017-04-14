@@ -465,6 +465,7 @@
             this.metroTabPage13 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage14 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage15 = new MetroFramework.Controls.MetroTabPage();
+            this.btnDone = new MetroFramework.Controls.MetroButton();
             this.metTabControl.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -1457,6 +1458,7 @@
             this.assignG23.Size = new System.Drawing.Size(44, 21);
             this.assignG23.TabIndex = 683;
             this.assignG23.Text = "Assign";
+            this.assignG23.Click += new System.EventHandler(this.assignG23_Click);
             // 
             // matchG22
             // 
@@ -1474,6 +1476,7 @@
             this.assignG22.Size = new System.Drawing.Size(44, 21);
             this.assignG22.TabIndex = 681;
             this.assignG22.Text = "Assign";
+            this.assignG22.Click += new System.EventHandler(this.assignG22_Click);
             // 
             // matchG21
             // 
@@ -1491,6 +1494,7 @@
             this.assignG21.Size = new System.Drawing.Size(44, 21);
             this.assignG21.TabIndex = 679;
             this.assignG21.Text = "Assign";
+            this.assignG21.Click += new System.EventHandler(this.assignG21_Click);
             // 
             // matchG20
             // 
@@ -1508,6 +1512,7 @@
             this.assignG20.Size = new System.Drawing.Size(44, 21);
             this.assignG20.TabIndex = 677;
             this.assignG20.Text = "Assign";
+            this.assignG20.Click += new System.EventHandler(this.assignG20_Click);
             // 
             // matchG19
             // 
@@ -1525,6 +1530,7 @@
             this.assignG19.Size = new System.Drawing.Size(44, 21);
             this.assignG19.TabIndex = 675;
             this.assignG19.Text = "Assign";
+            this.assignG19.Click += new System.EventHandler(this.assignG19_Click);
             // 
             // matchG18
             // 
@@ -1542,6 +1548,7 @@
             this.assignG18.Size = new System.Drawing.Size(44, 21);
             this.assignG18.TabIndex = 673;
             this.assignG18.Text = "Assign";
+            this.assignG18.Click += new System.EventHandler(this.assignG18_Click);
             // 
             // matchG17
             // 
@@ -1559,6 +1566,7 @@
             this.assignG17.Size = new System.Drawing.Size(44, 21);
             this.assignG17.TabIndex = 671;
             this.assignG17.Text = "Assign";
+            this.assignG17.Click += new System.EventHandler(this.assignG17_Click);
             // 
             // matchG16
             // 
@@ -1576,6 +1584,7 @@
             this.assignG16.Size = new System.Drawing.Size(44, 21);
             this.assignG16.TabIndex = 669;
             this.assignG16.Text = "Assign";
+            this.assignG16.Click += new System.EventHandler(this.assignG16_Click);
             // 
             // matchG15
             // 
@@ -1593,6 +1602,7 @@
             this.assignG15.Size = new System.Drawing.Size(44, 21);
             this.assignG15.TabIndex = 667;
             this.assignG15.Text = "Assign";
+            this.assignG15.Click += new System.EventHandler(this.assignG15_Click);
             // 
             // matchG14
             // 
@@ -1610,6 +1620,7 @@
             this.assignG14.Size = new System.Drawing.Size(44, 21);
             this.assignG14.TabIndex = 665;
             this.assignG14.Text = "Assign";
+            this.assignG14.Click += new System.EventHandler(this.assignG14_Click);
             // 
             // matchG13
             // 
@@ -1627,6 +1638,7 @@
             this.assignG13.Size = new System.Drawing.Size(44, 21);
             this.assignG13.TabIndex = 663;
             this.assignG13.Text = "Assign";
+            this.assignG13.Click += new System.EventHandler(this.assignG13_Click);
             // 
             // matchG12
             // 
@@ -1644,6 +1656,7 @@
             this.assignG12.Size = new System.Drawing.Size(44, 21);
             this.assignG12.TabIndex = 661;
             this.assignG12.Text = "Assign";
+            this.assignG12.Click += new System.EventHandler(this.assignG12_Click);
             // 
             // matchG11
             // 
@@ -1661,6 +1674,7 @@
             this.assignG11.Size = new System.Drawing.Size(44, 21);
             this.assignG11.TabIndex = 659;
             this.assignG11.Text = "Assign";
+            this.assignG11.Click += new System.EventHandler(this.assignG11_Click);
             // 
             // matchG10
             // 
@@ -1678,6 +1692,7 @@
             this.assignG10.Size = new System.Drawing.Size(44, 21);
             this.assignG10.TabIndex = 657;
             this.assignG10.Text = "Assign";
+            this.assignG10.Click += new System.EventHandler(this.assignG10_Click);
             // 
             // matchG9
             // 
@@ -1695,6 +1710,7 @@
             this.assignG9.Size = new System.Drawing.Size(44, 21);
             this.assignG9.TabIndex = 655;
             this.assignG9.Text = "Assign";
+            this.assignG9.Click += new System.EventHandler(this.assignG9_Click);
             // 
             // matchG8
             // 
@@ -1712,6 +1728,7 @@
             this.assignG8.Size = new System.Drawing.Size(44, 21);
             this.assignG8.TabIndex = 653;
             this.assignG8.Text = "Assign";
+            this.assignG8.Click += new System.EventHandler(this.assignG8_Click);
             // 
             // matchG7
             // 
@@ -1783,6 +1800,7 @@
             this.assignF23.Size = new System.Drawing.Size(44, 21);
             this.assignF23.TabIndex = 647;
             this.assignF23.Text = "Assign";
+            this.assignF23.Click += new System.EventHandler(this.assignF23_Click);
             // 
             // matchF22
             // 
@@ -1800,6 +1818,7 @@
             this.assignF22.Size = new System.Drawing.Size(44, 21);
             this.assignF22.TabIndex = 645;
             this.assignF22.Text = "Assign";
+            this.assignF22.Click += new System.EventHandler(this.assignF22_Click);
             // 
             // matchF21
             // 
@@ -1817,6 +1836,7 @@
             this.assignF21.Size = new System.Drawing.Size(44, 21);
             this.assignF21.TabIndex = 643;
             this.assignF21.Text = "Assign";
+            this.assignF21.Click += new System.EventHandler(this.assignF21_Click);
             // 
             // matchF20
             // 
@@ -1834,6 +1854,7 @@
             this.assignF20.Size = new System.Drawing.Size(44, 21);
             this.assignF20.TabIndex = 641;
             this.assignF20.Text = "Assign";
+            this.assignF20.Click += new System.EventHandler(this.assignF20_Click);
             // 
             // matchF19
             // 
@@ -1851,6 +1872,7 @@
             this.assignF19.Size = new System.Drawing.Size(44, 21);
             this.assignF19.TabIndex = 639;
             this.assignF19.Text = "Assign";
+            this.assignF19.Click += new System.EventHandler(this.assignF19_Click);
             // 
             // matchF18
             // 
@@ -1868,6 +1890,7 @@
             this.assignF18.Size = new System.Drawing.Size(44, 21);
             this.assignF18.TabIndex = 637;
             this.assignF18.Text = "Assign";
+            this.assignF18.Click += new System.EventHandler(this.assignF18_Click);
             // 
             // matchF17
             // 
@@ -1885,6 +1908,7 @@
             this.assignF17.Size = new System.Drawing.Size(44, 21);
             this.assignF17.TabIndex = 635;
             this.assignF17.Text = "Assign";
+            this.assignF17.Click += new System.EventHandler(this.assignF17_Click);
             // 
             // matchF16
             // 
@@ -1902,6 +1926,7 @@
             this.assignF16.Size = new System.Drawing.Size(44, 21);
             this.assignF16.TabIndex = 633;
             this.assignF16.Text = "Assign";
+            this.assignF16.Click += new System.EventHandler(this.assignF16_Click);
             // 
             // matchF15
             // 
@@ -1919,6 +1944,7 @@
             this.assignF15.Size = new System.Drawing.Size(44, 21);
             this.assignF15.TabIndex = 631;
             this.assignF15.Text = "Assign";
+            this.assignF15.Click += new System.EventHandler(this.assignF15_Click);
             // 
             // matchF14
             // 
@@ -1936,6 +1962,7 @@
             this.assignF14.Size = new System.Drawing.Size(44, 21);
             this.assignF14.TabIndex = 629;
             this.assignF14.Text = "Assign";
+            this.assignF14.Click += new System.EventHandler(this.assignF14_Click);
             // 
             // matchF13
             // 
@@ -1953,6 +1980,7 @@
             this.assignF13.Size = new System.Drawing.Size(44, 21);
             this.assignF13.TabIndex = 627;
             this.assignF13.Text = "Assign";
+            this.assignF13.Click += new System.EventHandler(this.assignF13_Click);
             // 
             // matchF12
             // 
@@ -1970,6 +1998,7 @@
             this.assignF12.Size = new System.Drawing.Size(44, 21);
             this.assignF12.TabIndex = 625;
             this.assignF12.Text = "Assign";
+            this.assignF12.Click += new System.EventHandler(this.assignF12_Click);
             // 
             // matchF11
             // 
@@ -1987,6 +2016,7 @@
             this.assignF11.Size = new System.Drawing.Size(44, 21);
             this.assignF11.TabIndex = 623;
             this.assignF11.Text = "Assign";
+            this.assignF11.Click += new System.EventHandler(this.assignF11_Click);
             // 
             // matchF10
             // 
@@ -2004,6 +2034,7 @@
             this.assignF10.Size = new System.Drawing.Size(44, 21);
             this.assignF10.TabIndex = 621;
             this.assignF10.Text = "Assign";
+            this.assignF10.Click += new System.EventHandler(this.assignF10_Click);
             // 
             // matchF9
             // 
@@ -2021,6 +2052,7 @@
             this.assignF9.Size = new System.Drawing.Size(44, 21);
             this.assignF9.TabIndex = 619;
             this.assignF9.Text = "Assign";
+            this.assignF9.Click += new System.EventHandler(this.assignF9_Click);
             // 
             // matchF8
             // 
@@ -2038,6 +2070,7 @@
             this.assignF8.Size = new System.Drawing.Size(44, 21);
             this.assignF8.TabIndex = 617;
             this.assignF8.Text = "Assign";
+            this.assignF8.Click += new System.EventHandler(this.assignF8_Click);
             // 
             // matchF7
             // 
@@ -2181,6 +2214,7 @@
             this.assignE23.Size = new System.Drawing.Size(44, 21);
             this.assignE23.TabIndex = 601;
             this.assignE23.Text = "Assign";
+            this.assignE23.Click += new System.EventHandler(this.assignE23_Click);
             // 
             // matchE22
             // 
@@ -2198,6 +2232,7 @@
             this.assignE22.Size = new System.Drawing.Size(44, 21);
             this.assignE22.TabIndex = 599;
             this.assignE22.Text = "Assign";
+            this.assignE22.Click += new System.EventHandler(this.assignE22_Click);
             // 
             // matchE21
             // 
@@ -2215,6 +2250,7 @@
             this.assignE21.Size = new System.Drawing.Size(44, 21);
             this.assignE21.TabIndex = 597;
             this.assignE21.Text = "Assign";
+            this.assignE21.Click += new System.EventHandler(this.assignE21_Click);
             // 
             // matchE20
             // 
@@ -2232,6 +2268,7 @@
             this.assignE20.Size = new System.Drawing.Size(44, 21);
             this.assignE20.TabIndex = 595;
             this.assignE20.Text = "Assign";
+            this.assignE20.Click += new System.EventHandler(this.assignE20_Click);
             // 
             // matchE19
             // 
@@ -2249,6 +2286,7 @@
             this.assignE19.Size = new System.Drawing.Size(44, 21);
             this.assignE19.TabIndex = 593;
             this.assignE19.Text = "Assign";
+            this.assignE19.Click += new System.EventHandler(this.assignE19_Click);
             // 
             // matchE18
             // 
@@ -2266,6 +2304,7 @@
             this.assignE18.Size = new System.Drawing.Size(44, 21);
             this.assignE18.TabIndex = 591;
             this.assignE18.Text = "Assign";
+            this.assignE18.Click += new System.EventHandler(this.assignE18_Click);
             // 
             // matchE17
             // 
@@ -2283,6 +2322,7 @@
             this.assignE17.Size = new System.Drawing.Size(44, 21);
             this.assignE17.TabIndex = 589;
             this.assignE17.Text = "Assign";
+            this.assignE17.Click += new System.EventHandler(this.assignE17_Click);
             // 
             // matchE16
             // 
@@ -2300,6 +2340,7 @@
             this.assignE16.Size = new System.Drawing.Size(44, 21);
             this.assignE16.TabIndex = 587;
             this.assignE16.Text = "Assign";
+            this.assignE16.Click += new System.EventHandler(this.assignE16_Click);
             // 
             // matchE15
             // 
@@ -2317,6 +2358,7 @@
             this.assignE15.Size = new System.Drawing.Size(44, 21);
             this.assignE15.TabIndex = 585;
             this.assignE15.Text = "Assign";
+            this.assignE15.Click += new System.EventHandler(this.assignE15_Click);
             // 
             // matchE14
             // 
@@ -2334,6 +2376,7 @@
             this.assignE14.Size = new System.Drawing.Size(44, 21);
             this.assignE14.TabIndex = 583;
             this.assignE14.Text = "Assign";
+            this.assignE14.Click += new System.EventHandler(this.assignE14_Click);
             // 
             // matchE13
             // 
@@ -2351,6 +2394,7 @@
             this.assignE13.Size = new System.Drawing.Size(44, 21);
             this.assignE13.TabIndex = 581;
             this.assignE13.Text = "Assign";
+            this.assignE13.Click += new System.EventHandler(this.assignE13_Click);
             // 
             // matchE12
             // 
@@ -2368,6 +2412,7 @@
             this.assignE12.Size = new System.Drawing.Size(44, 21);
             this.assignE12.TabIndex = 579;
             this.assignE12.Text = "Assign";
+            this.assignE12.Click += new System.EventHandler(this.assignE12_Click);
             // 
             // matchE11
             // 
@@ -2385,6 +2430,7 @@
             this.assignE11.Size = new System.Drawing.Size(44, 21);
             this.assignE11.TabIndex = 577;
             this.assignE11.Text = "Assign";
+            this.assignE11.Click += new System.EventHandler(this.assignE11_Click);
             // 
             // matchE10
             // 
@@ -2402,6 +2448,7 @@
             this.assignE10.Size = new System.Drawing.Size(44, 21);
             this.assignE10.TabIndex = 575;
             this.assignE10.Text = "Assign";
+            this.assignE10.Click += new System.EventHandler(this.assignE10_Click);
             // 
             // matchE9
             // 
@@ -2419,6 +2466,7 @@
             this.assignE9.Size = new System.Drawing.Size(44, 21);
             this.assignE9.TabIndex = 573;
             this.assignE9.Text = "Assign";
+            this.assignE9.Click += new System.EventHandler(this.assignE9_Click);
             // 
             // matchE8
             // 
@@ -2436,6 +2484,7 @@
             this.assignE8.Size = new System.Drawing.Size(44, 21);
             this.assignE8.TabIndex = 571;
             this.assignE8.Text = "Assign";
+            this.assignE8.Click += new System.EventHandler(this.assignE8_Click);
             // 
             // matchE7
             // 
@@ -2543,6 +2592,7 @@
             this.assignD23.Size = new System.Drawing.Size(44, 21);
             this.assignD23.TabIndex = 559;
             this.assignD23.Text = "Assign";
+            this.assignD23.Click += new System.EventHandler(this.assignD23_Click);
             // 
             // matchD22
             // 
@@ -2560,6 +2610,7 @@
             this.assignD22.Size = new System.Drawing.Size(44, 21);
             this.assignD22.TabIndex = 557;
             this.assignD22.Text = "Assign";
+            this.assignD22.Click += new System.EventHandler(this.assignD22_Click);
             // 
             // matchD21
             // 
@@ -2577,6 +2628,7 @@
             this.assignD21.Size = new System.Drawing.Size(44, 21);
             this.assignD21.TabIndex = 555;
             this.assignD21.Text = "Assign";
+            this.assignD21.Click += new System.EventHandler(this.assignD21_Click);
             // 
             // matchD20
             // 
@@ -2594,6 +2646,7 @@
             this.assignD20.Size = new System.Drawing.Size(44, 21);
             this.assignD20.TabIndex = 553;
             this.assignD20.Text = "Assign";
+            this.assignD20.Click += new System.EventHandler(this.assignD20_Click);
             // 
             // matchD19
             // 
@@ -2611,6 +2664,7 @@
             this.assignD19.Size = new System.Drawing.Size(44, 21);
             this.assignD19.TabIndex = 551;
             this.assignD19.Text = "Assign";
+            this.assignD19.Click += new System.EventHandler(this.assignD19_Click);
             // 
             // matchD18
             // 
@@ -2628,6 +2682,7 @@
             this.assignD18.Size = new System.Drawing.Size(44, 21);
             this.assignD18.TabIndex = 549;
             this.assignD18.Text = "Assign";
+            this.assignD18.Click += new System.EventHandler(this.assignD18_Click);
             // 
             // matchD17
             // 
@@ -2645,6 +2700,7 @@
             this.assignD17.Size = new System.Drawing.Size(44, 21);
             this.assignD17.TabIndex = 547;
             this.assignD17.Text = "Assign";
+            this.assignD17.Click += new System.EventHandler(this.assignD17_Click);
             // 
             // matchD16
             // 
@@ -2662,6 +2718,7 @@
             this.assignD16.Size = new System.Drawing.Size(44, 21);
             this.assignD16.TabIndex = 545;
             this.assignD16.Text = "Assign";
+            this.assignD16.Click += new System.EventHandler(this.assignD16_Click);
             // 
             // matchD15
             // 
@@ -2679,6 +2736,7 @@
             this.assignD15.Size = new System.Drawing.Size(44, 21);
             this.assignD15.TabIndex = 543;
             this.assignD15.Text = "Assign";
+            this.assignD15.Click += new System.EventHandler(this.assignD15_Click);
             // 
             // matchD14
             // 
@@ -2696,6 +2754,7 @@
             this.assignD14.Size = new System.Drawing.Size(44, 21);
             this.assignD14.TabIndex = 541;
             this.assignD14.Text = "Assign";
+            this.assignD14.Click += new System.EventHandler(this.assignD14_Click);
             // 
             // matchD13
             // 
@@ -2713,6 +2772,7 @@
             this.assignD13.Size = new System.Drawing.Size(44, 21);
             this.assignD13.TabIndex = 539;
             this.assignD13.Text = "Assign";
+            this.assignD13.Click += new System.EventHandler(this.assignD13_Click);
             // 
             // matchD12
             // 
@@ -2730,6 +2790,7 @@
             this.assignD12.Size = new System.Drawing.Size(44, 21);
             this.assignD12.TabIndex = 537;
             this.assignD12.Text = "Assign";
+            this.assignD12.Click += new System.EventHandler(this.assignD12_Click);
             // 
             // matchD11
             // 
@@ -2747,6 +2808,7 @@
             this.assignD11.Size = new System.Drawing.Size(44, 21);
             this.assignD11.TabIndex = 535;
             this.assignD11.Text = "Assign";
+            this.assignD11.Click += new System.EventHandler(this.assignD11_Click);
             // 
             // matchD10
             // 
@@ -2764,6 +2826,7 @@
             this.assignD10.Size = new System.Drawing.Size(44, 21);
             this.assignD10.TabIndex = 533;
             this.assignD10.Text = "Assign";
+            this.assignD10.Click += new System.EventHandler(this.assignD10_Click);
             // 
             // matchD9
             // 
@@ -2781,6 +2844,7 @@
             this.assignD9.Size = new System.Drawing.Size(44, 21);
             this.assignD9.TabIndex = 531;
             this.assignD9.Text = "Assign";
+            this.assignD9.Click += new System.EventHandler(this.assignD9_Click);
             // 
             // matchD8
             // 
@@ -2798,6 +2862,7 @@
             this.assignD8.Size = new System.Drawing.Size(44, 21);
             this.assignD8.TabIndex = 529;
             this.assignD8.Text = "Assign";
+            this.assignD8.Click += new System.EventHandler(this.assignD8_Click);
             // 
             // matchD7
             // 
@@ -2905,6 +2970,7 @@
             this.assignC23.Size = new System.Drawing.Size(44, 21);
             this.assignC23.TabIndex = 517;
             this.assignC23.Text = "Assign";
+            this.assignC23.Click += new System.EventHandler(this.assignC23_Click);
             // 
             // matchC22
             // 
@@ -2922,6 +2988,7 @@
             this.assignC22.Size = new System.Drawing.Size(44, 21);
             this.assignC22.TabIndex = 515;
             this.assignC22.Text = "Assign";
+            this.assignC22.Click += new System.EventHandler(this.assignC22_Click);
             // 
             // matchC21
             // 
@@ -2939,6 +3006,7 @@
             this.assignC21.Size = new System.Drawing.Size(44, 21);
             this.assignC21.TabIndex = 513;
             this.assignC21.Text = "Assign";
+            this.assignC21.Click += new System.EventHandler(this.assignC21_Click);
             // 
             // matchC20
             // 
@@ -2956,6 +3024,7 @@
             this.assignC20.Size = new System.Drawing.Size(44, 21);
             this.assignC20.TabIndex = 511;
             this.assignC20.Text = "Assign";
+            this.assignC20.Click += new System.EventHandler(this.assignC20_Click);
             // 
             // matchC19
             // 
@@ -2973,6 +3042,7 @@
             this.assignC19.Size = new System.Drawing.Size(44, 21);
             this.assignC19.TabIndex = 509;
             this.assignC19.Text = "Assign";
+            this.assignC19.Click += new System.EventHandler(this.assignC19_Click);
             // 
             // matchC18
             // 
@@ -2990,6 +3060,7 @@
             this.assignC18.Size = new System.Drawing.Size(44, 21);
             this.assignC18.TabIndex = 507;
             this.assignC18.Text = "Assign";
+            this.assignC18.Click += new System.EventHandler(this.assignC18_Click);
             // 
             // matchC17
             // 
@@ -3007,6 +3078,7 @@
             this.assignC17.Size = new System.Drawing.Size(44, 21);
             this.assignC17.TabIndex = 505;
             this.assignC17.Text = "Assign";
+            this.assignC17.Click += new System.EventHandler(this.assignC17_Click);
             // 
             // matchC16
             // 
@@ -3024,6 +3096,7 @@
             this.assignC16.Size = new System.Drawing.Size(44, 21);
             this.assignC16.TabIndex = 503;
             this.assignC16.Text = "Assign";
+            this.assignC16.Click += new System.EventHandler(this.assignC16_Click);
             // 
             // matchC15
             // 
@@ -3041,6 +3114,7 @@
             this.assignC15.Size = new System.Drawing.Size(44, 21);
             this.assignC15.TabIndex = 501;
             this.assignC15.Text = "Assign";
+            this.assignC15.Click += new System.EventHandler(this.assignC15_Click);
             // 
             // matchC14
             // 
@@ -3058,6 +3132,7 @@
             this.assignC14.Size = new System.Drawing.Size(44, 21);
             this.assignC14.TabIndex = 499;
             this.assignC14.Text = "Assign";
+            this.assignC14.Click += new System.EventHandler(this.assignC14_Click);
             // 
             // matchC13
             // 
@@ -3075,6 +3150,7 @@
             this.assignC13.Size = new System.Drawing.Size(44, 21);
             this.assignC13.TabIndex = 497;
             this.assignC13.Text = "Assign";
+            this.assignC13.Click += new System.EventHandler(this.assignC13_Click);
             // 
             // matchC12
             // 
@@ -3092,6 +3168,7 @@
             this.assignC12.Size = new System.Drawing.Size(44, 21);
             this.assignC12.TabIndex = 495;
             this.assignC12.Text = "Assign";
+            this.assignC12.Click += new System.EventHandler(this.assignC12_Click);
             // 
             // matchC11
             // 
@@ -3109,6 +3186,7 @@
             this.assignC11.Size = new System.Drawing.Size(44, 21);
             this.assignC11.TabIndex = 493;
             this.assignC11.Text = "Assign";
+            this.assignC11.Click += new System.EventHandler(this.assignC11_Click);
             // 
             // matchC10
             // 
@@ -3126,6 +3204,7 @@
             this.assignC10.Size = new System.Drawing.Size(44, 21);
             this.assignC10.TabIndex = 491;
             this.assignC10.Text = "Assign";
+            this.assignC10.Click += new System.EventHandler(this.assignC10_Click);
             // 
             // matchC9
             // 
@@ -3143,6 +3222,7 @@
             this.assignC9.Size = new System.Drawing.Size(44, 21);
             this.assignC9.TabIndex = 489;
             this.assignC9.Text = "Assign";
+            this.assignC9.Click += new System.EventHandler(this.assignC9_Click);
             // 
             // matchC8
             // 
@@ -3160,6 +3240,7 @@
             this.assignC8.Size = new System.Drawing.Size(44, 21);
             this.assignC8.TabIndex = 487;
             this.assignC8.Text = "Assign";
+            this.assignC8.Click += new System.EventHandler(this.assignC8_Click);
             // 
             // matchC7
             // 
@@ -3267,6 +3348,7 @@
             this.assignB23.Size = new System.Drawing.Size(44, 21);
             this.assignB23.TabIndex = 475;
             this.assignB23.Text = "Assign";
+            this.assignB23.Click += new System.EventHandler(this.assignB23_Click);
             // 
             // matchB22
             // 
@@ -3284,6 +3366,7 @@
             this.assignB22.Size = new System.Drawing.Size(44, 21);
             this.assignB22.TabIndex = 473;
             this.assignB22.Text = "Assign";
+            this.assignB22.Click += new System.EventHandler(this.assignB22_Click);
             // 
             // matchB21
             // 
@@ -3301,6 +3384,7 @@
             this.assignB21.Size = new System.Drawing.Size(44, 21);
             this.assignB21.TabIndex = 471;
             this.assignB21.Text = "Assign";
+            this.assignB21.Click += new System.EventHandler(this.assignB21_Click);
             // 
             // matchB20
             // 
@@ -3318,6 +3402,7 @@
             this.assignB20.Size = new System.Drawing.Size(44, 21);
             this.assignB20.TabIndex = 469;
             this.assignB20.Text = "Assign";
+            this.assignB20.Click += new System.EventHandler(this.assignB20_Click);
             // 
             // matchB19
             // 
@@ -3335,6 +3420,7 @@
             this.assignB19.Size = new System.Drawing.Size(44, 21);
             this.assignB19.TabIndex = 467;
             this.assignB19.Text = "Assign";
+            this.assignB19.Click += new System.EventHandler(this.assignB19_Click);
             // 
             // matchB18
             // 
@@ -3352,6 +3438,7 @@
             this.assignB18.Size = new System.Drawing.Size(44, 21);
             this.assignB18.TabIndex = 465;
             this.assignB18.Text = "Assign";
+            this.assignB18.Click += new System.EventHandler(this.assignB18_Click);
             // 
             // matchB17
             // 
@@ -3369,6 +3456,7 @@
             this.assignB17.Size = new System.Drawing.Size(44, 21);
             this.assignB17.TabIndex = 463;
             this.assignB17.Text = "Assign";
+            this.assignB17.Click += new System.EventHandler(this.assignB17_Click);
             // 
             // matchB16
             // 
@@ -3386,6 +3474,7 @@
             this.assignB16.Size = new System.Drawing.Size(44, 21);
             this.assignB16.TabIndex = 461;
             this.assignB16.Text = "Assign";
+            this.assignB16.Click += new System.EventHandler(this.assignB16_Click);
             // 
             // matchB15
             // 
@@ -3403,6 +3492,7 @@
             this.assignB15.Size = new System.Drawing.Size(44, 21);
             this.assignB15.TabIndex = 459;
             this.assignB15.Text = "Assign";
+            this.assignB15.Click += new System.EventHandler(this.assignB15_Click);
             // 
             // matchB14
             // 
@@ -3420,6 +3510,7 @@
             this.assignB14.Size = new System.Drawing.Size(44, 21);
             this.assignB14.TabIndex = 457;
             this.assignB14.Text = "Assign";
+            this.assignB14.Click += new System.EventHandler(this.assignB14_Click);
             // 
             // matchB13
             // 
@@ -3437,6 +3528,7 @@
             this.assignB13.Size = new System.Drawing.Size(44, 21);
             this.assignB13.TabIndex = 455;
             this.assignB13.Text = "Assign";
+            this.assignB13.Click += new System.EventHandler(this.assignB13_Click);
             // 
             // matchB12
             // 
@@ -3454,6 +3546,7 @@
             this.assignB12.Size = new System.Drawing.Size(44, 21);
             this.assignB12.TabIndex = 453;
             this.assignB12.Text = "Assign";
+            this.assignB12.Click += new System.EventHandler(this.assignB12_Click);
             // 
             // matchB11
             // 
@@ -3471,6 +3564,7 @@
             this.assignB11.Size = new System.Drawing.Size(44, 21);
             this.assignB11.TabIndex = 451;
             this.assignB11.Text = "Assign";
+            this.assignB11.Click += new System.EventHandler(this.assignB11_Click);
             // 
             // matchB10
             // 
@@ -3488,6 +3582,7 @@
             this.assignB10.Size = new System.Drawing.Size(44, 21);
             this.assignB10.TabIndex = 449;
             this.assignB10.Text = "Assign";
+            this.assignB10.Click += new System.EventHandler(this.assignB10_Click);
             // 
             // matchB9
             // 
@@ -3505,6 +3600,7 @@
             this.assignB9.Size = new System.Drawing.Size(44, 21);
             this.assignB9.TabIndex = 447;
             this.assignB9.Text = "Assign";
+            this.assignB9.Click += new System.EventHandler(this.assignB9_Click);
             // 
             // matchB8
             // 
@@ -3522,6 +3618,7 @@
             this.assignB8.Size = new System.Drawing.Size(44, 21);
             this.assignB8.TabIndex = 445;
             this.assignB8.Text = "Assign";
+            this.assignB8.Click += new System.EventHandler(this.assignB8_Click);
             // 
             // matchB7
             // 
@@ -3737,6 +3834,7 @@
             this.assignA23.Size = new System.Drawing.Size(44, 21);
             this.assignA23.TabIndex = 421;
             this.assignA23.Text = "Assign";
+            this.assignA23.Click += new System.EventHandler(this.assignA23_Click);
             // 
             // matchA22
             // 
@@ -3754,6 +3852,7 @@
             this.assignA22.Size = new System.Drawing.Size(44, 21);
             this.assignA22.TabIndex = 419;
             this.assignA22.Text = "Assign";
+            this.assignA22.Click += new System.EventHandler(this.assignA22_Click);
             // 
             // matchA21
             // 
@@ -3771,6 +3870,7 @@
             this.assignA21.Size = new System.Drawing.Size(44, 21);
             this.assignA21.TabIndex = 417;
             this.assignA21.Text = "Assign";
+            this.assignA21.Click += new System.EventHandler(this.assignA21_Click);
             // 
             // matchA20
             // 
@@ -3788,6 +3888,7 @@
             this.assignA20.Size = new System.Drawing.Size(44, 21);
             this.assignA20.TabIndex = 415;
             this.assignA20.Text = "Assign";
+            this.assignA20.Click += new System.EventHandler(this.assignA20_Click);
             // 
             // matchA19
             // 
@@ -3805,6 +3906,7 @@
             this.assignA19.Size = new System.Drawing.Size(44, 21);
             this.assignA19.TabIndex = 413;
             this.assignA19.Text = "Assign";
+            this.assignA19.Click += new System.EventHandler(this.assignA19_Click);
             // 
             // matchA18
             // 
@@ -3822,6 +3924,7 @@
             this.assignA18.Size = new System.Drawing.Size(44, 21);
             this.assignA18.TabIndex = 411;
             this.assignA18.Text = "Assign";
+            this.assignA18.Click += new System.EventHandler(this.assignA18_Click);
             // 
             // matchA16
             // 
@@ -3839,6 +3942,7 @@
             this.assignA16.Size = new System.Drawing.Size(44, 21);
             this.assignA16.TabIndex = 409;
             this.assignA16.Text = "Assign";
+            this.assignA16.Click += new System.EventHandler(this.assignA16_Click);
             // 
             // matchA15
             // 
@@ -3856,6 +3960,7 @@
             this.assignA15.Size = new System.Drawing.Size(44, 21);
             this.assignA15.TabIndex = 407;
             this.assignA15.Text = "Assign";
+            this.assignA15.Click += new System.EventHandler(this.assignA15_Click);
             // 
             // matchA14
             // 
@@ -3873,6 +3978,7 @@
             this.assignA14.Size = new System.Drawing.Size(44, 21);
             this.assignA14.TabIndex = 405;
             this.assignA14.Text = "Assign";
+            this.assignA14.Click += new System.EventHandler(this.assignA14_Click);
             // 
             // matchA17
             // 
@@ -3890,6 +3996,7 @@
             this.assignA17.Size = new System.Drawing.Size(44, 21);
             this.assignA17.TabIndex = 405;
             this.assignA17.Text = "Assign";
+            this.assignA17.Click += new System.EventHandler(this.assignA17_Click);
             // 
             // matchA13
             // 
@@ -3907,6 +4014,7 @@
             this.assignA13.Size = new System.Drawing.Size(44, 21);
             this.assignA13.TabIndex = 403;
             this.assignA13.Text = "Assign";
+            this.assignA13.Click += new System.EventHandler(this.assignA13_Click);
             // 
             // matchA12
             // 
@@ -3924,6 +4032,7 @@
             this.assignA12.Size = new System.Drawing.Size(44, 21);
             this.assignA12.TabIndex = 401;
             this.assignA12.Text = "Assign";
+            this.assignA12.Click += new System.EventHandler(this.assignA12_Click);
             // 
             // matchA11
             // 
@@ -3941,6 +4050,7 @@
             this.assignA11.Size = new System.Drawing.Size(44, 21);
             this.assignA11.TabIndex = 399;
             this.assignA11.Text = "Assign";
+            this.assignA11.Click += new System.EventHandler(this.assignA11_Click);
             // 
             // matchA10
             // 
@@ -3958,6 +4068,7 @@
             this.assignA10.Size = new System.Drawing.Size(44, 21);
             this.assignA10.TabIndex = 397;
             this.assignA10.Text = "Assign";
+            this.assignA10.Click += new System.EventHandler(this.assignA10_Click);
             // 
             // matchA9
             // 
@@ -3975,6 +4086,7 @@
             this.assignA9.Size = new System.Drawing.Size(44, 21);
             this.assignA9.TabIndex = 395;
             this.assignA9.Text = "Assign";
+            this.assignA9.Click += new System.EventHandler(this.assignA9_Click);
             // 
             // matchA8
             // 
@@ -3992,6 +4104,7 @@
             this.assignA8.Size = new System.Drawing.Size(44, 21);
             this.assignA8.TabIndex = 393;
             this.assignA8.Text = "Assign";
+            this.assignA8.Click += new System.EventHandler(this.assignA8_Click);
             // 
             // matchA7
             // 
@@ -4853,12 +4966,22 @@
             this.metroTabPage15.Text = "Division 15";
             this.metroTabPage15.VerticalScrollbarBarColor = true;
             // 
+            // btnDone
+            // 
+            this.btnDone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDone.Location = new System.Drawing.Point(345, 25);
+            this.btnDone.Name = "btnDone";
+            this.btnDone.Size = new System.Drawing.Size(106, 28);
+            this.btnDone.TabIndex = 3;
+            this.btnDone.Text = "Convert to Excel";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 750);
             this.Controls.Add(this.metTabControl);
+            this.Controls.Add(this.btnDone);
             this.MaximumSize = new System.Drawing.Size(1370, 750);
             this.MinimumSize = new System.Drawing.Size(1370, 750);
             this.Name = "Form2";
@@ -5310,6 +5433,7 @@
         private MetroFramework.Controls.MetroLabel line2;
         private MetroFramework.Controls.MetroLabel metroLabel25;
         private MetroFramework.Controls.MetroLabel sharedLine;
+        private MetroFramework.Controls.MetroButton btnDone;
     }
 }
 
