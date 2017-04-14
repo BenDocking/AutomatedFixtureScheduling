@@ -19,6 +19,8 @@ namespace Fixtures
         private int[] matchCount = new int[15];
         private int[] teamCount = new int[15];
         private int[,] sharedCount = new int[15, 15];
+        private int[,] noPlayCount = new int[15, 15];
+        private int[,] homeCount = new int[15, 15];
         private string[,] game = new string[15, 210]; //Division, Matches ... The list of all matches which must take place
 
         private string[,] name = new string[15, 15]; //Division, Team
@@ -26,7 +28,10 @@ namespace Fixtures
         private string[,,] datesHome = new string[15, 15, 13]; //Division, Team, Dates
         private string[,,] datesNoPlay = new string[15, 15, 13]; //Division, Team, Dates
 
-        public Form2(int d, int[] m, string[,] g, string[,] n, string[, ,] s, string[, ,] dh, string[, ,] dnp, int[] tc, int[,] sc)
+        private string[,,] matchesAssigned = new string[15, 23, 7]; //Division, Date, Matches
+        private bool[,,] teamAssigned = new bool[15, 23, 15]; //Division, Date, Team
+
+        public Form2(int d, int[] m, string[,] g, string[,] n, string[, ,] s, string[, ,] dh, string[, ,] dnp, int[] tc, int[,] sc, int[,] npc, int[,] hc)
         {
             InitializeComponent();
             divCount = d;
@@ -38,17 +43,12 @@ namespace Fixtures
             datesNoPlay = dnp;
             teamCount = tc;
             sharedCount = sc;
+            noPlayCount = npc;
+            homeCount = hc;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            int teamHome = 0;
-            int teamAway = 0;
-            string previous = "start";
-            string temp = "";
-            bool home = true;
-            //int count = 0;
-
             #region Initialize
             matchA1.DropDownStyle = ComboBoxStyle.DropDownList;
             matchA2.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -263,69 +263,6 @@ namespace Fixtures
                 //remove non-used divisions
                 metTabControl.SelectedIndex = divCount;
                 metTabControl.TabPages.Remove(metTabControl.SelectedTab);
-            }
-
-            //Calculate match availablity
-
-            for (int div = 0; div < divCount; div++) //for each division
-            {
-                for (int date = 0; date < 26; date++) //for each date
-                {
-                    for (int m = 0; m < matchCount[div]; m++) //for each match in division
-                    {
-                        //store teams at integers for home and away
-                        foreach (char c in game[div, m])
-                        {
-                            if (c != 'v' && c != 's') //if c is a team number
-                            {
-                                if (previous == "start")
-                                {
-                                    home = true;
-                                    teamHome = (int)Char.GetNumericValue(c);
-                                }
-                                else if (previous == "s")
-                                {
-                                    home = false;
-                                    teamAway = (int)Char.GetNumericValue(c);
-                                }
-                                else
-                                {
-                                    temp = previous + Convert.ToString(c);
-
-                                    if (home == true)
-                                    {
-                                        teamHome = Convert.ToInt32(temp);
-                                    }
-                                    else
-                                    {
-                                        teamAway = Convert.ToInt32(temp);
-                                    }
-                                }
-                            }
-
-                            previous = Convert.ToString(c);
-                        }
-
-                        previous = "start";
-                        //bool valid = true;
-
-                        //for (int i = 0; i < 13; i++) //for each possible dates home
-                        //{
-                        //    if (convertDate(datesHome[div, teamAway, i]) == date ||     //team playing away must play home ... invalid match date
-                        //        convertDate(datesNoPlay[div, teamHome, i]) == date ||   //team in match cannot play on date ... invalid match date
-                        //        convertDate(datesNoPlay[div, teamAway, i]) == date)  
-                        //    {
-                        //        valid = false;
-                        //        count++;
-                        //    }
-                        //}
-                        
-                        //if away team not play home and not noPlay for any of the teams in match 
-                        //then add match as available for that date
-
-                        //Add another variable to teams called assigned... if not assigned for any of the teams...
-                    }
-                }
             }
 
             this.metTabControl.SelectedIndex = 0;
@@ -2383,7 +2320,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox1.Show();
                 team1.BringToFront();
-                team1.BackColor = Color.DeepSkyBlue;
+                team1.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 metroLabel25.Show();
                 metroLabel25.Show();
@@ -2391,7 +2328,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team1.Text + " shares with:\n      " + shared[division, 0, 0];
                 for (int j = 1; j < sharedCount[division, 0]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 0, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 0, j];
                 }
             }
             else
@@ -2403,7 +2340,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox2.Show();
                 team2.BringToFront();
-                team2.BackColor = Color.DeepSkyBlue;
+                team2.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 metroLabel25.Show();
                 line2.Show();
@@ -2411,7 +2348,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team2.Text + " shares with:\n      " + shared[division, 1, 0];
                 for (int j = 1; j < sharedCount[division, 1]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 1, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 1, j];
                 }
             }
             else
@@ -2423,7 +2360,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox3.Show();
                 team3.BringToFront();
-                team3.BackColor = Color.DeepSkyBlue;
+                team3.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line2.Show();
                 line3.Show();
@@ -2431,7 +2368,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team3.Text + " shares with:\n      " + shared[division, 2, 0];
                 for (int j = 1; j < sharedCount[division, 2]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 2, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 2, j];
                 }
             }
             else
@@ -2443,7 +2380,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox4.Show();
                 team4.BringToFront();
-                team4.BackColor = Color.DeepSkyBlue;
+                team4.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line3.Show();
                 line4.Show();
@@ -2451,7 +2388,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team4.Text + " shares with:\n      " + shared[division, 3, 0];
                 for (int j = 1; j < sharedCount[division, 3]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 3, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 3, j];
                 }
             }
             else
@@ -2463,7 +2400,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox5.Show();
                 team5.BringToFront();
-                team5.BackColor = Color.DeepSkyBlue;
+                team5.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line4.Show();
                 line5.Show();
@@ -2471,7 +2408,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team5.Text + " shares with:\n      " + shared[division, 4, 0];
                 for (int j = 1; j < sharedCount[division, 4]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 4, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 4, j];
                 }
             }
             else
@@ -2483,7 +2420,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox6.Show();
                 team6.BringToFront();
-                team6.BackColor = Color.DeepSkyBlue;
+                team6.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line5.Show();
                 line6.Show();
@@ -2491,7 +2428,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team6.Text + " shares with:\n      " + shared[division, 5, 0];
                 for (int j = 1; j < sharedCount[division, 5]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 5, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 5, j];
                 }
             }
             else
@@ -2503,7 +2440,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox7.Show();
                 team7.BringToFront();
-                team7.BackColor = Color.DeepSkyBlue;
+                team7.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line6.Show();
                 line7.Show();
@@ -2511,7 +2448,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team7.Text + " shares with:\n      " + shared[division, 6, 0];
                 for (int j = 1; j < sharedCount[division, 6]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 6, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 6, j];
                 }
             }
             else
@@ -2523,7 +2460,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox8.Show();
                 team8.BringToFront();
-                team8.BackColor = Color.DeepSkyBlue;
+                team8.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line7.Show();
                 line8.Show();
@@ -2531,7 +2468,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team8.Text + " shares with:\n      " + shared[division, 7, 0];
                 for (int j = 1; j < sharedCount[division, 7]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 7, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 7, j];
                 }
             }
             else
@@ -2543,7 +2480,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox9.Show();
                 team9.BringToFront();
-                team9.BackColor = Color.DeepSkyBlue;
+                team9.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line8.Show();
                 line9.Show();
@@ -2551,7 +2488,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team9.Text + " shares with:\n      " + shared[division, 8, 0];
                 for (int j = 1; j < sharedCount[division, 8]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 8, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 8, j];
                 }
             }
             else
@@ -2563,7 +2500,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox10.Show();
                 team10.BringToFront();
-                team10.BackColor = Color.DeepSkyBlue;
+                team10.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line9.Show();
                 line10.Show();
@@ -2571,7 +2508,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team10.Text + " shares with:\n      " + shared[division, 9, 0];
                 for (int j = 1; j < sharedCount[division, 9]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 9, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 9, j];
                 }
             }
             else
@@ -2583,7 +2520,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox11.Show();
                 team11.BringToFront();
-                team11.BackColor = Color.DeepSkyBlue;
+                team11.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line10.Show();
                 line11.Show();
@@ -2591,7 +2528,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team11.Text + " shares with:\n      " + shared[division, 10, 0];
                 for (int j = 1; j < sharedCount[division, 10]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 10, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 10, j];
                 }
             }
             else
@@ -2603,7 +2540,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox12.Show();
                 team12.BringToFront();
-                team12.BackColor = Color.DeepSkyBlue;
+                team12.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line11.Show();
                 line12.Show();
@@ -2611,7 +2548,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team12.Text + " shares with:\n      " + shared[division, 11, 0];
                 for (int j = 1; j < sharedCount[division, 11]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 11, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 11, j];
                 }
             }
             else
@@ -2623,7 +2560,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox13.Show();
                 team13.BringToFront();
-                team13.BackColor = Color.DeepSkyBlue;
+                team13.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line12.Show();
                 line13.Show();
@@ -2631,7 +2568,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team13.Text + " shares with:\n      " + shared[division, 12, 0];
                 for (int j = 1; j < sharedCount[division, 12]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 12, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 12, j];
                 }
             }
             else
@@ -2643,7 +2580,7 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox14.Show();
                 team14.BringToFront();
-                team14.BackColor = Color.DeepSkyBlue;
+                team14.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line13.Show();
                 line14.Show();
@@ -2651,7 +2588,7 @@ namespace Fixtures
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team14.Text + " shares with:\n      " + shared[division, 13, 0];
                 for (int j = 1; j < sharedCount[division, 13]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 13, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 13, j];
                 }
             }
             else
@@ -2663,14 +2600,14 @@ namespace Fixtures
                 //team shares grounds
                 richTextBox15.Show();
                 team15.BringToFront();
-                team15.BackColor = Color.DeepSkyBlue;
+                team15.BackColor = SystemColors.Control;
                 metroLabel24.Show();
                 line14.Show();
                 sharedLine.Show();
                 sharedGroundsInfo = sharedGroundsInfo + "\n" + team15.Text + " shares with:\n      " + shared[division, 14, 0];
                 for (int j = 1; j < sharedCount[division, 14]; j++)
                 {
-                    sharedGroundsInfo = sharedGroundsInfo + ", " + shared[division, 14, j];
+                    sharedGroundsInfo = sharedGroundsInfo + " and " + shared[division, 14, j];
                 }
             }
             else
@@ -2682,5 +2619,4527 @@ namespace Fixtures
             #endregion
 
         }
+
+        private bool checkValid(string g, int week) //used to check if a game is valid for a given date
+        {
+            bool valid = true;
+            Tuple<int, int> teams = getHomeAway(g);
+
+            //loop through every date team cannot play
+            for (int i = 0; i < noPlayCount[division, teams.Item1]; i++)
+            {
+                if (convertDate(datesNoPlay[division, teams.Item1, i]) == week)
+                    valid = false;
+            }
+            //loop through every date team cannot play
+            for (int i = 0; i < noPlayCount[division, teams.Item2]; i++)
+            {
+                if (convertDate(datesNoPlay[division, teams.Item2, i]) == week)
+                    valid = false;
+            }
+            //loop through every date teamAway must play home
+            for (int i = 0; i < homeCount[division, teams.Item2]; i++)
+            {
+                if (convertDate(datesHome[division, teams.Item2, i]) == week)
+                    valid = false;
+            }
+            //check if match is already assigned to date
+            if (teamAssigned[division, week-1, teams.Item1] == true || teamAssigned[division, week-1, teams.Item2] == true)
+            {
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        private Tuple<int, int> getHomeAway(string g)
+        {
+            string previous = "start";
+            bool home = true;
+            string temp = "";
+            int teamHome = 0;
+            int teamAway = 0;
+
+            //store teams at integers for home and away
+            foreach (char c in g.Trim())
+            {
+                if (c != 'v' && c != 's') //if c is a team number
+                {
+                    if (previous == "start")
+                    {
+                        home = true;
+                        teamHome = (int)Char.GetNumericValue(c) - 1;
+                    }
+                    else if (previous == "s")
+                    {
+                        home = false;
+                        teamAway = (int)Char.GetNumericValue(c) - 1;
+                    }
+                    else if (c != ' ')
+                    {
+                        temp = previous + Convert.ToString(c);
+
+                        if (home == true)
+                        {
+                            teamHome = Convert.ToInt16(temp) - 1;
+                        }
+                        else
+                        {
+                            teamAway = Convert.ToInt16(temp) - 1;
+                        }
+                    }
+                }
+
+                previous = Convert.ToString(c);
+            }
+
+            return new Tuple<int, int>(teamHome, teamAway);
+        }
+
+        #region comboBoxes_Click
+
+        private void matchA1_Click(object sender, EventArgs e)
+        {
+            matchA1.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 1);
+                    if (valid != false)
+                        matchA1.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB1_Click(object sender, EventArgs e)
+        {
+            matchB1.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 1);
+                    if (valid != false)
+                        matchB1.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC1_Click(object sender, EventArgs e)
+        {
+            matchC1.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 1);
+                    if (valid != false)
+                        matchC1.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD1_Click(object sender, EventArgs e)
+        {
+            matchD1.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 1);
+                    if (valid != false)
+                        matchD1.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE1_Click(object sender, EventArgs e)
+        {
+            matchE1.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 1);
+                    if (valid != false)
+                        matchE1.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF1_Click(object sender, EventArgs e)
+        {
+            matchF1.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 1);
+                    if (valid != false)
+                        matchF1.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG1_Click(object sender, EventArgs e)
+        {
+            matchG1.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 1);
+                    if (valid != false)
+                        matchG1.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA2_Click(object sender, EventArgs e)
+        {
+            matchA2.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 2);
+                    if (valid != false)
+                        matchA2.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB2_Click(object sender, EventArgs e)
+        {
+            matchB2.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 2);
+                    if (valid != false)
+                        matchB2.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC2_Click(object sender, EventArgs e)
+        {
+            matchC2.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 2);
+                    if (valid != false)
+                        matchC2.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD2_Click(object sender, EventArgs e)
+        {
+            matchD2.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 2);
+                    if (valid != false)
+                        matchD2.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE2_Click(object sender, EventArgs e)
+        {
+            matchE2.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 2);
+                    if (valid != false)
+                        matchE2.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF2_Click(object sender, EventArgs e)
+        {
+            matchF2.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 2);
+                    if (valid != false)
+                        matchF2.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG2_Click(object sender, EventArgs e)
+        {
+            matchG2.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 2);
+                    if (valid != false)
+                        matchG2.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA3_Click(object sender, EventArgs e)
+        {
+            matchA3.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 3);
+                    if (valid != false)
+                        matchA3.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB3_Click(object sender, EventArgs e)
+        {
+            matchB3.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 3);
+                    if (valid != false)
+                        matchB3.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC3_Click(object sender, EventArgs e)
+        {
+            matchC3.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 3);
+                    if (valid != false)
+                        matchC3.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD3_Click(object sender, EventArgs e)
+        {
+            matchD3.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 3);
+                    if (valid != false)
+                        matchD3.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE3_Click(object sender, EventArgs e)
+        {
+            matchE3.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 3);
+                    if (valid != false)
+                        matchE3.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF3_Click(object sender, EventArgs e)
+        {
+            matchF3.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 3);
+                    if (valid != false)
+                        matchF3.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG3_Click(object sender, EventArgs e)
+        {
+            matchG3.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 3);
+                    if (valid != false)
+                        matchG3.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA4_Click(object sender, EventArgs e)
+        {
+            matchA4.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 4);
+                    if (valid != false)
+                        matchA4.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB4_Click(object sender, EventArgs e)
+        {
+            matchB4.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 4);
+                    if (valid != false)
+                        matchB4.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC4_Click(object sender, EventArgs e)
+        {
+            matchC4.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 4);
+                    if (valid != false)
+                        matchC4.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD4_Click(object sender, EventArgs e)
+        {
+            matchD4.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 4);
+                    if (valid != false)
+                        matchD4.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE4_Click(object sender, EventArgs e)
+        {
+            matchE4.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 4);
+                    if (valid != false)
+                        matchE4.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF4_Click(object sender, EventArgs e)
+        {
+            matchF4.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 4);
+                    if (valid != false)
+                        matchF4.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG4_Click(object sender, EventArgs e)
+        {
+            matchG4.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 4);
+                    if (valid != false)
+                        matchG4.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA5_Click(object sender, EventArgs e)
+        {
+            matchA5.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 5);
+                    if (valid != false)
+                        matchA5.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB5_Click(object sender, EventArgs e)
+        {
+            matchB5.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 5);
+                    if (valid != false)
+                        matchB5.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC5_Click(object sender, EventArgs e)
+        {
+            matchC5.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 5);
+                    if (valid != false)
+                        matchC5.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD5_Click(object sender, EventArgs e)
+        {
+            matchD5.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 5);
+                    if (valid != false)
+                        matchD5.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE5_Click(object sender, EventArgs e)
+        {
+            matchE5.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 5);
+                    if (valid != false)
+                        matchE5.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF5_Click(object sender, EventArgs e)
+        {
+            matchF5.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 5);
+                    if (valid != false)
+                        matchF5.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG5_Click(object sender, EventArgs e)
+        {
+            matchG5.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 5);
+                    if (valid != false)
+                        matchG5.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA6_Click(object sender, EventArgs e)
+        {
+            matchA6.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 6);
+                    if (valid != false)
+                        matchA6.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB6_Click(object sender, EventArgs e)
+        {
+            matchB6.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 6);
+                    if (valid != false)
+                        matchB6.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC6_Click(object sender, EventArgs e)
+        {
+            matchC6.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 6);
+                    if (valid != false)
+                        matchC6.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD6_Click(object sender, EventArgs e)
+        {
+            matchD6.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 6);
+                    if (valid != false)
+                        matchD6.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE6_Click(object sender, EventArgs e)
+        {
+            matchE6.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 6);
+                    if (valid != false)
+                        matchE6.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF6_Click(object sender, EventArgs e)
+        {
+            matchF6.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 6);
+                    if (valid != false)
+                        matchF6.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG6_Click(object sender, EventArgs e)
+        {
+            matchG6.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 6);
+                    if (valid != false)
+                        matchG6.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA7_Click(object sender, EventArgs e)
+        {
+            matchA7.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 7);
+                    if (valid != false)
+                        matchA7.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB7_Click(object sender, EventArgs e)
+        {
+            matchB7.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 7);
+                    if (valid != false)
+                        matchB7.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC7_Click(object sender, EventArgs e)
+        {
+            matchC7.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 7);
+                    if (valid != false)
+                        matchC7.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD7_Click(object sender, EventArgs e)
+        {
+            matchD7.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 7);
+                    if (valid != false)
+                        matchD7.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE7_Click(object sender, EventArgs e)
+        {
+            matchE7.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 7);
+                    if (valid != false)
+                        matchE7.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF7_Click(object sender, EventArgs e)
+        {
+            matchF7.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 7);
+                    if (valid != false)
+                        matchF7.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG7_Click(object sender, EventArgs e)
+        {
+            matchG7.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 7);
+                    if (valid != false)
+                        matchG7.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA8_Click(object sender, EventArgs e)
+        {
+            matchA8.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 8);
+                    if (valid != false)
+                        matchA8.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB8_Click(object sender, EventArgs e)
+        {
+            matchB8.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 8);
+                    if (valid != false)
+                        matchB8.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC8_Click(object sender, EventArgs e)
+        {
+            matchC8.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 8);
+                    if (valid != false)
+                        matchC8.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD8_Click(object sender, EventArgs e)
+        {
+            matchD8.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 8);
+                    if (valid != false)
+                        matchD8.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE8_Click(object sender, EventArgs e)
+        {
+            matchE8.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 8);
+                    if (valid != false)
+                        matchE8.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF8_Click(object sender, EventArgs e)
+        {
+            matchF8.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 8);
+                    if (valid != false)
+                        matchF8.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG8_Click(object sender, EventArgs e)
+        {
+            matchG8.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 8);
+                    if (valid != false)
+                        matchG8.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA9_Click(object sender, EventArgs e)
+        {
+            matchA9.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 9);
+                    if (valid != false)
+                        matchA9.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB9_Click(object sender, EventArgs e)
+        {
+            matchB9.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 9);
+                    if (valid != false)
+                        matchB9.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC9_Click(object sender, EventArgs e)
+        {
+            matchC9.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 9);
+                    if (valid != false)
+                        matchC9.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD9_Click(object sender, EventArgs e)
+        {
+            matchD9.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 9);
+                    if (valid != false)
+                        matchD9.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE9_Click(object sender, EventArgs e)
+        {
+            matchE9.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 9);
+                    if (valid != false)
+                        matchE9.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF9_Click(object sender, EventArgs e)
+        {
+            matchF9.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 9);
+                    if (valid != false)
+                        matchF9.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG9_Click(object sender, EventArgs e)
+        {
+            matchG9.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 9);
+                    if (valid != false)
+                        matchG9.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA10_Click(object sender, EventArgs e)
+        {
+            matchA10.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 10);
+                    if (valid != false)
+                        matchA10.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB10_Click(object sender, EventArgs e)
+        {
+            matchB10.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 10);
+                    if (valid != false)
+                        matchB10.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC10_Click(object sender, EventArgs e)
+        {
+            matchC10.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 10);
+                    if (valid != false)
+                        matchC10.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD10_Click(object sender, EventArgs e)
+        {
+            matchD10.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 10);
+                    if (valid != false)
+                        matchD10.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE10_Click(object sender, EventArgs e)
+        {
+            matchE10.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 10);
+                    if (valid != false)
+                        matchE10.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF10_Click(object sender, EventArgs e)
+        {
+            matchF10.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 10);
+                    if (valid != false)
+                        matchF10.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG10_Click(object sender, EventArgs e)
+        {
+            matchG10.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 10);
+                    if (valid != false)
+                        matchG10.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA11_Click(object sender, EventArgs e)
+        {
+            matchA11.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 11);
+                    if (valid != false)
+                        matchA11.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB11_Click(object sender, EventArgs e)
+        {
+            matchB11.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 11);
+                    if (valid != false)
+                        matchB11.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC11_Click(object sender, EventArgs e)
+        {
+            matchC11.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 11);
+                    if (valid != false)
+                        matchC11.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD11_Click(object sender, EventArgs e)
+        {
+            matchD11.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 11);
+                    if (valid != false)
+                        matchD11.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE11_Click(object sender, EventArgs e)
+        {
+            matchE11.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 11);
+                    if (valid != false)
+                        matchE11.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF11_Click(object sender, EventArgs e)
+        {
+            matchF11.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 11);
+                    if (valid != false)
+                        matchF11.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG11_Click(object sender, EventArgs e)
+        {
+            matchG11.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 11);
+                    if (valid != false)
+                        matchG11.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA12_Click(object sender, EventArgs e)
+        {
+            matchA12.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 12);
+                    if (valid != false)
+                        matchA12.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB12_Click(object sender, EventArgs e)
+        {
+            matchB12.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 12);
+                    if (valid != false)
+                        matchB12.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC12_Click(object sender, EventArgs e)
+        {
+            matchC12.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 12);
+                    if (valid != false)
+                        matchC12.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD12_Click(object sender, EventArgs e)
+        {
+            matchD12.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 12);
+                    if (valid != false)
+                        matchD12.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE12_Click(object sender, EventArgs e)
+        {
+            matchE12.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 12);
+                    if (valid != false)
+                        matchE12.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF12_Click(object sender, EventArgs e)
+        {
+            matchF12.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 12);
+                    if (valid != false)
+                        matchF12.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG12_Click(object sender, EventArgs e)
+        {
+            matchG12.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 12);
+                    if (valid != false)
+                        matchG12.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA13_Click(object sender, EventArgs e)
+        {
+            matchA13.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 13);
+                    if (valid != false)
+                        matchA13.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB13_Click(object sender, EventArgs e)
+        {
+            matchB13.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 13);
+                    if (valid != false)
+                        matchB13.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC13_Click(object sender, EventArgs e)
+        {
+            matchC13.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 13);
+                    if (valid != false)
+                        matchC13.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD13_Click(object sender, EventArgs e)
+        {
+            matchD13.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 13);
+                    if (valid != false)
+                        matchD13.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE13_Click(object sender, EventArgs e)
+        {
+            matchE13.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 13);
+                    if (valid != false)
+                        matchE13.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF13_Click(object sender, EventArgs e)
+        {
+            matchF13.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 13);
+                    if (valid != false)
+                        matchF13.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG13_Click(object sender, EventArgs e)
+        {
+            matchG13.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 13);
+                    if (valid != false)
+                        matchG13.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA14_Click(object sender, EventArgs e)
+        {
+            matchA14.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 14);
+                    if (valid != false)
+                        matchA14.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB14_Click(object sender, EventArgs e)
+        {
+            matchB14.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 14);
+                    if (valid != false)
+                        matchB14.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC14_Click(object sender, EventArgs e)
+        {
+            matchC14.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 14);
+                    if (valid != false)
+                        matchC14.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD14_Click(object sender, EventArgs e)
+        {
+            matchD14.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 14);
+                    if (valid != false)
+                        matchD14.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE14_Click(object sender, EventArgs e)
+        {
+            matchE14.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 14);
+                    if (valid != false)
+                        matchE14.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF14_Click(object sender, EventArgs e)
+        {
+            matchF14.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 14);
+                    if (valid != false)
+                        matchF14.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG14_Click(object sender, EventArgs e)
+        {
+            matchG14.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 14);
+                    if (valid != false)
+                        matchG14.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA15_Click(object sender, EventArgs e)
+        {
+            matchA15.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 15);
+                    if (valid != false)
+                        matchA15.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB15_Click(object sender, EventArgs e)
+        {
+            matchB15.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 15);
+                    if (valid != false)
+                        matchB15.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC15_Click(object sender, EventArgs e)
+        {
+            matchC15.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 15);
+                    if (valid != false)
+                        matchC15.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD15_Click(object sender, EventArgs e)
+        {
+            matchD15.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 15);
+                    if (valid != false)
+                        matchD15.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE15_Click(object sender, EventArgs e)
+        {
+            matchE15.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 15);
+                    if (valid != false)
+                        matchE15.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF15_Click(object sender, EventArgs e)
+        {
+            matchF15.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 15);
+                    if (valid != false)
+                        matchF15.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG15_Click(object sender, EventArgs e)
+        {
+            matchG15.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 15);
+                    if (valid != false)
+                        matchG15.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA16_Click(object sender, EventArgs e)
+        {
+            matchA16.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 16);
+                    if (valid != false)
+                        matchA16.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB16_Click(object sender, EventArgs e)
+        {
+            matchB16.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 16);
+                    if (valid != false)
+                        matchB16.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC16_Click(object sender, EventArgs e)
+        {
+            matchC16.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 16);
+                    if (valid != false)
+                        matchC16.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD16_Click(object sender, EventArgs e)
+        {
+            matchD16.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 16);
+                    if (valid != false)
+                        matchD16.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE16_Click(object sender, EventArgs e)
+        {
+            matchE16.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 16);
+                    if (valid != false)
+                        matchE16.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF16_Click(object sender, EventArgs e)
+        {
+            matchF16.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 16);
+                    if (valid != false)
+                        matchF16.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG16_Click(object sender, EventArgs e)
+        {
+            matchG16.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 16);
+                    if (valid != false)
+                        matchG16.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA17_Click(object sender, EventArgs e)
+        {
+            matchA17.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 17);
+                    if (valid != false)
+                        matchA17.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB17_Click(object sender, EventArgs e)
+        {
+            matchB17.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 17);
+                    if (valid != false)
+                        matchB17.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC17_Click(object sender, EventArgs e)
+        {
+            matchC17.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 17);
+                    if (valid != false)
+                        matchC17.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD17_Click(object sender, EventArgs e)
+        {
+            matchD17.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 17);
+                    if (valid != false)
+                        matchD17.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE17_Click(object sender, EventArgs e)
+        {
+            matchE17.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 17);
+                    if (valid != false)
+                        matchE17.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF17_Click(object sender, EventArgs e)
+        {
+            matchF17.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 17);
+                    if (valid != false)
+                        matchF17.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG17_Click(object sender, EventArgs e)
+        {
+            matchG17.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 17);
+                    if (valid != false)
+                        matchG17.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA18_Click(object sender, EventArgs e)
+        {
+            matchA18.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 18);
+                    if (valid != false)
+                        matchA18.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB18_Click(object sender, EventArgs e)
+        {
+            matchB18.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 18);
+                    if (valid != false)
+                        matchB18.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC18_Click(object sender, EventArgs e)
+        {
+            matchC18.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 18);
+                    if (valid != false)
+                        matchC18.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD18_Click(object sender, EventArgs e)
+        {
+            matchD18.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 18);
+                    if (valid != false)
+                        matchD18.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE18_Click(object sender, EventArgs e)
+        {
+            matchE18.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 18);
+                    if (valid != false)
+                        matchE18.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF18_Click(object sender, EventArgs e)
+        {
+            matchF18.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 18);
+                    if (valid != false)
+                        matchF18.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG18_Click(object sender, EventArgs e)
+        {
+            matchG18.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 18);
+                    if (valid != false)
+                        matchG18.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA19_Click(object sender, EventArgs e)
+        {
+            matchA19.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 19);
+                    if (valid != false)
+                        matchA19.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB19_Click(object sender, EventArgs e)
+        {
+            matchB19.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 19);
+                    if (valid != false)
+                        matchB19.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC19_Click(object sender, EventArgs e)
+        {
+            matchC19.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 19);
+                    if (valid != false)
+                        matchC19.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD19_Click(object sender, EventArgs e)
+        {
+            matchD19.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 19);
+                    if (valid != false)
+                        matchD19.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE19_Click(object sender, EventArgs e)
+        {
+            matchE19.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 19);
+                    if (valid != false)
+                        matchE19.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF19_Click(object sender, EventArgs e)
+        {
+            matchF19.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 19);
+                    if (valid != false)
+                        matchF19.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG19_Click(object sender, EventArgs e)
+        {
+            matchG19.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 19);
+                    if (valid != false)
+                        matchG19.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA20_Click(object sender, EventArgs e)
+        {
+            matchA20.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 20);
+                    if (valid != false)
+                        matchA20.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB20_Click(object sender, EventArgs e)
+        {
+            matchB20.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 20);
+                    if (valid != false)
+                        matchB20.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC20_Click(object sender, EventArgs e)
+        {
+            matchC20.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 20);
+                    if (valid != false)
+                        matchC20.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD20_Click(object sender, EventArgs e)
+        {
+            matchD20.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 20);
+                    if (valid != false)
+                        matchD20.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE20_Click(object sender, EventArgs e)
+        {
+            matchE20.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 20);
+                    if (valid != false)
+                        matchE20.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF20_Click(object sender, EventArgs e)
+        {
+            matchF20.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 20);
+                    if (valid != false)
+                        matchF20.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG20_Click(object sender, EventArgs e)
+        {
+            matchG20.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 20);
+                    if (valid != false)
+                        matchG20.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA21_Click(object sender, EventArgs e)
+        {
+            matchA21.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 21);
+                    if (valid != false)
+                        matchA21.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB21_Click(object sender, EventArgs e)
+        {
+            matchB21.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 21);
+                    if (valid != false)
+                        matchB21.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC21_Click(object sender, EventArgs e)
+        {
+            matchC21.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 21);
+                    if (valid != false)
+                        matchC21.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD21_Click(object sender, EventArgs e)
+        {
+            matchD21.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 21);
+                    if (valid != false)
+                        matchD21.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE21_Click(object sender, EventArgs e)
+        {
+            matchE21.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 21);
+                    if (valid != false)
+                        matchE21.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF21_Click(object sender, EventArgs e)
+        {
+            matchF21.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 21);
+                    if (valid != false)
+                        matchF21.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG21_Click(object sender, EventArgs e)
+        {
+            matchG21.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 21);
+                    if (valid != false)
+                        matchG21.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA22_Click(object sender, EventArgs e)
+        {
+            matchA22.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 22);
+                    if (valid != false)
+                        matchA22.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB22_Click(object sender, EventArgs e)
+        {
+            matchB22.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 22);
+                    if (valid != false)
+                        matchB22.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchC22_Click(object sender, EventArgs e)
+        {
+            matchC22.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 22);
+                    if (valid != false)
+                        matchC22.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD22_Click(object sender, EventArgs e)
+        {
+            matchD22.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 22);
+                    if (valid != false)
+                        matchD22.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE22_Click(object sender, EventArgs e)
+        {
+            matchE22.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 22);
+                    if (valid != false)
+                        matchE22.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF22_Click(object sender, EventArgs e)
+        {
+            matchF22.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 22);
+                    if (valid != false)
+                        matchF22.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG22_Click(object sender, EventArgs e)
+        {
+            matchG22.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 22);
+                    if (valid != false)
+                        matchG22.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchA23_Click(object sender, EventArgs e)
+        {
+            matchA23.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 23);
+                    if (valid != false)
+                        matchA23.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchB23_Click(object sender, EventArgs e)
+        {
+            matchB23.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 23);
+                    if (valid != false)
+                        matchB23.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void MatchC23_Click(object sender, EventArgs e)
+        {
+            matchC23.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 23);
+                    if (valid != false)
+                        matchC23.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchD23_Click(object sender, EventArgs e)
+        {
+            matchD23.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 23);
+                    if (valid != false)
+                        matchD23.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchE23_Click(object sender, EventArgs e)
+        {
+            matchE23.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 23);
+                    if (valid != false)
+                        matchE23.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchF23_Click(object sender, EventArgs e)
+        {
+            matchF23.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 23);
+                    if (valid != false)
+                        matchF23.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        private void matchG23_Click(object sender, EventArgs e)
+        {
+            matchG23.Items.Clear(); //reset comboBox
+            bool valid = true;
+            foreach (string g in game) //loop through each match/ game which must be assigned
+            {
+                if (g != null)
+                {
+                    valid = checkValid(g, 23);
+                    if (valid != false)
+                        matchG23.Items.Add(g); //add game to comboBox
+                    valid = true;
+                }
+            }
+        }
+
+        #endregion
+
+        #region buttons_Click
+
+        private void assignA1_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA1.Text.Trim());
+
+            if (assignA1.Text == "Assign")
+            {
+                assignA1.Text = "Undo";
+                matchA1.Enabled = false;
+                matchesAssigned[division, 0, 0] = matchA1.Text; //Assign the match
+                teamAssigned[division, 0, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 0, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA1.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA1.Text = "Assign";
+                teamAssigned[division, 0, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 0, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA1.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 0, 0] = null; //remove assigned match
+                matchA1.Enabled = true;
+            }
+        }
+
+        private void assignB1_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB1.Text.Trim());
+
+            if (assignB1.Text == "Assign")
+            {
+                assignB1.Text = "Undo";
+                matchB1.Enabled = false;
+                matchesAssigned[division, 0, 1] = matchB1.Text; //Assign the match
+                teamAssigned[division, 0, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 0, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB1.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB1.Text = "Assign";
+                teamAssigned[division, 0, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 0, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB1.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 0, 1] = null; //remove assigned match
+                matchB1.Enabled = true;
+            }
+        }
+
+        private void assignC1_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC1.Text.Trim());
+
+            if (assignC1.Text == "Assign")
+            {
+                assignC1.Text = "Undo";
+                matchC1.Enabled = false;
+                matchesAssigned[division, 0, 2] = matchC1.Text; //Assign the match
+                teamAssigned[division, 0, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 0, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC1.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC1.Text = "Assign";
+                teamAssigned[division, 0, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 0, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC1.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 0, 2] = null; //remove assigned match
+                matchC1.Enabled = true;
+            }
+        }
+
+        private void assignD1_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD1.Text.Trim());
+
+            if (assignD1.Text == "Assign")
+            {
+                assignD1.Text = "Undo";
+                matchD1.Enabled = false;
+                matchesAssigned[division, 0, 3] = matchD1.Text; //Assign the match
+                teamAssigned[division, 0, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 0, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD1.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD1.Text = "Assign";
+                teamAssigned[division, 0, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 0, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD1.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 0, 3] = null; //remove assigned match
+                matchD1.Enabled = true;
+            }
+        }
+
+        private void assignE1_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE1.Text.Trim());
+
+            if (assignE1.Text == "Assign")
+            {
+                assignE1.Text = "Undo";
+                matchE1.Enabled = false;
+                matchesAssigned[division, 0, 4] = matchE1.Text; //Assign the match
+                teamAssigned[division, 0, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 0, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE1.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE1.Text = "Assign";
+                teamAssigned[division, 0, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 0, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE1.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 0, 4] = null; //remove assigned match
+                matchE1.Enabled = true;
+            }
+        }
+
+        private void assignF1_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF1.Text.Trim());
+
+            if (assignF1.Text == "Assign")
+            {
+                assignF1.Text = "Undo";
+                matchF1.Enabled = false;
+                matchesAssigned[division, 0, 5] = matchF1.Text; //Assign the match
+                teamAssigned[division, 0, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 0, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF1.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF1.Text = "Assign";
+                teamAssigned[division, 0, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 0, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF1.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 0, 5] = null; //remove assigned match
+                matchF1.Enabled = true;
+            }
+        }
+
+        private void assignG1_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG1.Text.Trim());
+
+            if (assignG1.Text == "Assign")
+            {
+                assignG1.Text = "Undo";
+                matchG1.Enabled = false;
+                matchesAssigned[division, 0, 6] = matchG1.Text; //Assign the match
+                teamAssigned[division, 0, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 0, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG1.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG1.Text = "Assign";
+                teamAssigned[division, 0, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 0, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG1.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 0, 6] = null; //remove assigned match
+                matchG1.Enabled = true;
+            }
+        }
+
+        private void assignA2_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA2.Text.Trim());
+
+            if (assignA2.Text == "Assign")
+            {
+                assignA2.Text = "Undo";
+                matchA2.Enabled = false;
+                matchesAssigned[division, 1, 0] = matchA2.Text; //Assign the match
+                teamAssigned[division, 1, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 1, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA2.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA2.Text = "Assign";
+                teamAssigned[division, 1, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 1, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA2.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 1, 0] = null; //remove assigned match
+                matchA2.Enabled = true;
+            }
+        }
+
+        private void assignB2_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB2.Text.Trim());
+
+            if (assignB2.Text == "Assign")
+            {
+                assignB2.Text = "Undo";
+                matchB2.Enabled = false;
+                matchesAssigned[division, 1, 1] = matchB2.Text; //Assign the match
+                teamAssigned[division, 1, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 1, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB2.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB2.Text = "Assign";
+                teamAssigned[division, 1, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 1, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB2.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 1, 1] = null; //remove assigned match
+                matchB2.Enabled = true;
+            }
+        }
+
+        private void assignC2_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC2.Text.Trim());
+
+            if (assignC2.Text == "Assign")
+            {
+                assignC2.Text = "Undo";
+                matchC2.Enabled = false;
+                matchesAssigned[division, 1, 2] = matchC2.Text; //Assign the match
+                teamAssigned[division, 1, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 1, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC2.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC2.Text = "Assign";
+                teamAssigned[division, 1, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 1, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC2.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 1, 2] = null; //remove assigned match
+                matchC2.Enabled = true;
+            }
+        }
+
+        private void assignD2_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD2.Text.Trim());
+
+            if (assignD2.Text == "Assign")
+            {
+                assignD2.Text = "Undo";
+                matchD2.Enabled = false;
+                matchesAssigned[division, 1, 3] = matchD2.Text; //Assign the match
+                teamAssigned[division, 1, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 1, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD2.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD2.Text = "Assign";
+                teamAssigned[division, 1, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 1, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD2.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 1, 3] = null; //remove assigned match
+                matchD2.Enabled = true;
+            }
+        }
+
+        private void assignE2_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE2.Text.Trim());
+
+            if (assignE2.Text == "Assign")
+            {
+                assignE2.Text = "Undo";
+                matchE2.Enabled = false;
+                matchesAssigned[division, 1, 4] = matchE2.Text; //Assign the match
+                teamAssigned[division, 1, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 1, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE2.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE2.Text = "Assign";
+                teamAssigned[division, 1, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 1, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE2.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 1, 4] = null; //remove assigned match
+                matchE2.Enabled = true;
+            }
+        }
+
+        private void assignF2_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF2.Text.Trim());
+
+            if (assignF2.Text == "Assign")
+            {
+                assignF2.Text = "Undo";
+                matchF2.Enabled = false;
+                matchesAssigned[division, 1, 5] = matchF2.Text; //Assign the match
+                teamAssigned[division, 1, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 1, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF2.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF2.Text = "Assign";
+                teamAssigned[division, 1, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 1, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF2.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 1, 5] = null; //remove assigned match
+                matchF2.Enabled = true;
+            }
+        }
+
+        private void assignG2_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG2.Text.Trim());
+
+            if (assignG2.Text == "Assign")
+            {
+                assignG2.Text = "Undo";
+                matchG2.Enabled = false;
+                matchesAssigned[division, 1, 6] = matchG2.Text; //Assign the match
+                teamAssigned[division, 1, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 1, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG2.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG2.Text = "Assign";
+                teamAssigned[division, 1, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 1, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG2.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 1, 6] = null; //remove assigned match
+                matchG2.Enabled = true;
+            }
+        }
+
+        private void assignA3_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA3.Text.Trim());
+
+            if (assignA3.Text == "Assign")
+            {
+                assignA3.Text = "Undo";
+                matchA3.Enabled = false;
+                matchesAssigned[division, 2, 0] = matchA3.Text; //Assign the match
+                teamAssigned[division, 2, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 2, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA3.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA3.Text = "Assign";
+                teamAssigned[division, 2, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 2, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA3.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 2, 0] = null; //remove assigned match
+                matchA3.Enabled = true;
+            }
+        }
+
+        private void assignB3_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB3.Text.Trim());
+
+            if (assignB3.Text == "Assign")
+            {
+                assignB3.Text = "Undo";
+                matchB3.Enabled = false;
+                matchesAssigned[division, 2, 1] = matchB3.Text; //Assign the match
+                teamAssigned[division, 2, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 2, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB3.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB3.Text = "Assign";
+                teamAssigned[division, 2, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 2, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB3.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 2, 1] = null; //remove assigned match
+                matchB3.Enabled = true;
+            }
+        }
+
+        private void assignC3_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC3.Text.Trim());
+
+            if (assignC3.Text == "Assign")
+            {
+                assignC3.Text = "Undo";
+                matchC3.Enabled = false;
+                matchesAssigned[division, 2, 2] = matchC3.Text; //Assign the match
+                teamAssigned[division, 2, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 2, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC3.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC3.Text = "Assign";
+                teamAssigned[division, 2, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 2, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC3.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 2, 2] = null; //remove assigned match
+                matchC3.Enabled = true;
+            }
+        }
+
+        private void assignD3_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD3.Text.Trim());
+
+            if (assignD3.Text == "Assign")
+            {
+                assignD3.Text = "Undo";
+                matchD3.Enabled = false;
+                matchesAssigned[division, 2, 3] = matchD3.Text; //Assign the match
+                teamAssigned[division, 2, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 2, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD3.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD3.Text = "Assign";
+                teamAssigned[division, 2, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 2, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD3.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 2, 3] = null; //remove assigned match
+                matchD3.Enabled = true;
+            }
+        }
+
+        private void assignE3_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE3.Text.Trim());
+
+            if (assignE3.Text == "Assign")
+            {
+                assignE3.Text = "Undo";
+                matchE3.Enabled = false;
+                matchesAssigned[division, 2, 4] = matchE3.Text; //Assign the match
+                teamAssigned[division, 2, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 2, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE3.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE3.Text = "Assign";
+                teamAssigned[division, 2, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 2, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE3.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 2, 4] = null; //remove assigned match
+                matchE3.Enabled = true;
+            }
+        }
+
+        private void assignF3_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF3.Text.Trim());
+
+            if (assignF3.Text == "Assign")
+            {
+                assignF3.Text = "Undo";
+                matchF3.Enabled = false;
+                matchesAssigned[division, 2, 5] = matchF3.Text; //Assign the match
+                teamAssigned[division, 2, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 2, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF3.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF3.Text = "Assign";
+                teamAssigned[division, 2, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 2, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF3.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 2, 5] = null; //remove assigned match
+                matchF3.Enabled = true;
+            }
+        }
+
+        private void assignG3_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG3.Text.Trim());
+
+            if (assignG3.Text == "Assign")
+            {
+                assignG3.Text = "Undo";
+                matchG3.Enabled = false;
+                matchesAssigned[division, 2, 6] = matchG3.Text; //Assign the match
+                teamAssigned[division, 2, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 2, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG3.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG3.Text = "Assign";
+                teamAssigned[division, 2, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 2, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG3.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 2, 6] = null; //remove assigned match
+                matchG3.Enabled = true;
+            }
+        }
+
+        private void assignA4_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA4.Text.Trim());
+
+            if (assignA4.Text == "Assign")
+            {
+                assignA4.Text = "Undo";
+                matchA4.Enabled = false;
+                matchesAssigned[division, 3, 0] = matchA4.Text; //Assign the match
+                teamAssigned[division, 3, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 3, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA4.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA4.Text = "Assign";
+                teamAssigned[division, 3, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 3, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA4.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 3, 0] = null; //remove assigned match
+                matchA4.Enabled = true;
+            }
+        }
+
+        private void assignB4_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB4.Text.Trim());
+
+            if (assignB4.Text == "Assign")
+            {
+                assignB4.Text = "Undo";
+                matchB4.Enabled = false;
+                matchesAssigned[division, 3, 1] = matchB4.Text; //Assign the match
+                teamAssigned[division, 3, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 3, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB4.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB4.Text = "Assign";
+                teamAssigned[division, 3, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 3, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB4.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 3, 1] = null; //remove assigned match
+                matchB4.Enabled = true;
+            }
+        }
+
+        private void assignC4_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC4.Text.Trim());
+
+            if (assignC4.Text == "Assign")
+            {
+                assignC4.Text = "Undo";
+                matchC4.Enabled = false;
+                matchesAssigned[division, 3, 2] = matchC4.Text; //Assign the match
+                teamAssigned[division, 3, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 3, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC4.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC4.Text = "Assign";
+                teamAssigned[division, 3, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 3, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC4.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 3, 2] = null; //remove assigned match
+                matchC4.Enabled = true;
+            }
+        }
+
+        private void assignD4_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD4.Text.Trim());
+
+            if (assignD4.Text == "Assign")
+            {
+                assignD4.Text = "Undo";
+                matchA4.Enabled = false;
+                matchesAssigned[division, 3, 3] = matchD4.Text; //Assign the match
+                teamAssigned[division, 3, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 3, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD4.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD4.Text = "Assign";
+                teamAssigned[division, 3, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 3, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD4.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 3, 3] = null; //remove assigned match
+                matchD4.Enabled = true;
+            }
+        }
+
+        private void assignE4_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE4.Text.Trim());
+
+            if (assignE4.Text == "Assign")
+            {
+                assignE4.Text = "Undo";
+                matchE4.Enabled = false;
+                matchesAssigned[division, 3, 4] = matchE4.Text; //Assign the match
+                teamAssigned[division, 3, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 3, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE4.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE4.Text = "Assign";
+                teamAssigned[division, 3, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 3, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE4.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 3, 4] = null; //remove assigned match
+                matchE4.Enabled = true;
+            }
+        }
+
+        private void assignF4_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF4.Text.Trim());
+
+            if (assignF4.Text == "Assign")
+            {
+                assignF4.Text = "Undo";
+                matchF4.Enabled = false;
+                matchesAssigned[division, 3, 5] = matchF4.Text; //Assign the match
+                teamAssigned[division, 3, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 3, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF4.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF4.Text = "Assign";
+                teamAssigned[division, 3, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 3, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF4.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 3, 5] = null; //remove assigned match
+                matchF4.Enabled = true;
+            }
+        }
+
+        private void assignG4_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG4.Text.Trim());
+
+            if (assignG4.Text == "Assign")
+            {
+                assignG4.Text = "Undo";
+                matchG4.Enabled = false;
+                matchesAssigned[division, 3, 6] = matchG4.Text; //Assign the match
+                teamAssigned[division, 3, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 3, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG4.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG4.Text = "Assign";
+                teamAssigned[division, 3, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 3, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG4.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 3, 6] = null; //remove assigned match
+                matchG4.Enabled = true;
+            }
+        }
+
+        private void assignA5_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA5.Text.Trim());
+
+            if (assignA5.Text == "Assign")
+            {
+                assignA5.Text = "Undo";
+                matchA5.Enabled = false;
+                matchesAssigned[division, 4, 0] = matchA5.Text; //Assign the match
+                teamAssigned[division, 4, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 4, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA5.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA5.Text = "Assign";
+                teamAssigned[division, 4, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 4, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA5.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 4, 0] = null; //remove assigned match
+                matchA5.Enabled = true;
+            }
+        }
+
+        private void assignB5_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB5.Text.Trim());
+
+            if (assignB5.Text == "Assign")
+            {
+                assignB5.Text = "Undo";
+                matchB5.Enabled = false;
+                matchesAssigned[division, 4, 1] = matchB5.Text; //Assign the match
+                teamAssigned[division, 4, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 4, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB5.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB5.Text = "Assign";
+                teamAssigned[division, 4, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 4, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB5.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 4, 1] = null; //remove assigned match
+                matchB5.Enabled = true;
+            }
+        }
+
+        private void assignC5_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC5.Text.Trim());
+
+            if (assignC5.Text == "Assign")
+            {
+                assignC5.Text = "Undo";
+                matchC5.Enabled = false;
+                matchesAssigned[division, 4, 2] = matchC5.Text; //Assign the match
+                teamAssigned[division, 4, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 4, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC5.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC5.Text = "Assign";
+                teamAssigned[division, 4, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 4, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC5.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 4, 2] = null; //remove assigned match
+                matchC5.Enabled = true;
+            }
+        }
+
+        private void assignD5_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE5.Text.Trim());
+
+            if (assignE5.Text == "Assign")
+            {
+                assignE5.Text = "Undo";
+                matchE5.Enabled = false;
+                matchesAssigned[division, 4, 3] = matchE5.Text; //Assign the match
+                teamAssigned[division, 4, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 4, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE5.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE5.Text = "Assign";
+                teamAssigned[division, 4, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 4, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE5.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 4, 3] = null; //remove assigned match
+                matchE5.Enabled = true;
+            }
+        }
+
+        private void assignE5_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE5.Text.Trim());
+
+            if (assignE5.Text == "Assign")
+            {
+                assignE5.Text = "Undo";
+                matchE5.Enabled = false;
+                matchesAssigned[division, 4, 4] = matchE5.Text; //Assign the match
+                teamAssigned[division, 4, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 4, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE5.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE5.Text = "Assign";
+                teamAssigned[division, 4, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 4, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE5.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 4, 4] = null; //remove assigned match
+                matchE5.Enabled = true;
+            }
+        }
+
+        private void assignF5_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF5.Text.Trim());
+
+            if (assignF5.Text == "Assign")
+            {
+                assignF5.Text = "Undo";
+                matchF5.Enabled = false;
+                matchesAssigned[division, 4, 5] = matchF5.Text; //Assign the match
+                teamAssigned[division, 4, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 4, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF5.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF5.Text = "Assign";
+                teamAssigned[division, 4, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 4, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF5.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 4, 5] = null; //remove assigned match
+                matchF5.Enabled = true;
+            }
+        }
+
+        private void assignG5_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG5.Text.Trim());
+
+            if (assignG5.Text == "Assign")
+            {
+                assignG5.Text = "Undo";
+                matchG5.Enabled = false;
+                matchesAssigned[division, 4, 6] = matchG5.Text; //Assign the match
+                teamAssigned[division, 4, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 4, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG5.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG5.Text = "Assign";
+                teamAssigned[division, 4, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 4, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG5.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 4, 6] = null; //remove assigned match
+                matchG5.Enabled = true;
+            }
+        }
+
+        private void assignA6_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA6.Text.Trim());
+
+            if (assignA6.Text == "Assign")
+            {
+                assignA6.Text = "Undo";
+                matchA6.Enabled = false;
+                matchesAssigned[division, 5, 0] = matchA6.Text; //Assign the match
+                teamAssigned[division, 5, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 5, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA6.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA6.Text = "Assign";
+                teamAssigned[division, 5, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 5, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA6.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 5, 0] = null; //remove assigned match
+                matchA6.Enabled = true;
+            }
+        }
+
+        private void assignB6_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB6.Text.Trim());
+
+            if (assignB6.Text == "Assign")
+            {
+                assignB6.Text = "Undo";
+                matchB6.Enabled = false;
+                matchesAssigned[division, 5, 1] = matchB6.Text; //Assign the match
+                teamAssigned[division, 5, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 5, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB6.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB6.Text = "Assign";
+                teamAssigned[division, 5, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 5, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB6.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 5, 1] = null; //remove assigned match
+                matchB6.Enabled = true;
+            }
+        }
+
+        private void assignC6_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC6.Text.Trim());
+
+            if (assignC6.Text == "Assign")
+            {
+                assignC6.Text = "Undo";
+                matchC6.Enabled = false;
+                matchesAssigned[division, 5, 2] = matchC6.Text; //Assign the match
+                teamAssigned[division, 5, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 5, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC6.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC6.Text = "Assign";
+                teamAssigned[division, 5, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 5, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC6.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 5, 2] = null; //remove assigned match
+                matchC6.Enabled = true;
+            }
+        }
+
+        private void assignD6_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD6.Text.Trim());
+
+            if (assignD6.Text == "Assign")
+            {
+                assignD6.Text = "Undo";
+                matchD6.Enabled = false;
+                matchesAssigned[division, 5, 3] = matchD6.Text; //Assign the match
+                teamAssigned[division, 5, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 5, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD6.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD6.Text = "Assign";
+                teamAssigned[division, 5, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 5, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD6.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 5, 3] = null; //remove assigned match
+                matchD6.Enabled = true;
+            }
+        }
+
+        private void assignE6_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE6.Text.Trim());
+
+            if (assignE6.Text == "Assign")
+            {
+                assignE6.Text = "Undo";
+                matchE6.Enabled = false;
+                matchesAssigned[division, 5, 4] = matchE6.Text; //Assign the match
+                teamAssigned[division, 5, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 5, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE6.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE6.Text = "Assign";
+                teamAssigned[division, 5, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 5, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE6.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 5, 4] = null; //remove assigned match
+                matchE6.Enabled = true;
+            }
+        }
+
+        private void assignF6_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF6.Text.Trim());
+
+            if (assignF6.Text == "Assign")
+            {
+                assignF6.Text = "Undo";
+                matchF6.Enabled = false;
+                matchesAssigned[division, 5, 5] = matchF6.Text; //Assign the match
+                teamAssigned[division, 5, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 5, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF6.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF6.Text = "Assign";
+                teamAssigned[division, 5, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 5, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF6.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 5, 5] = null; //remove assigned match
+                matchF6.Enabled = true;
+            }
+        }
+
+        private void assignG6_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG6.Text.Trim());
+
+            if (assignG6.Text == "Assign")
+            {
+                assignG6.Text = "Undo";
+                matchG6.Enabled = false;
+                matchesAssigned[division, 5, 6] = matchG6.Text; //Assign the match
+                teamAssigned[division, 5, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 5, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG6.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG6.Text = "Assign";
+                teamAssigned[division, 5, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 5, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG6.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 5, 6] = null; //remove assigned match
+                matchG6.Enabled = true;
+            }
+        }
+
+        private void assignA7_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchA7.Text.Trim());
+
+            if (assignA7.Text == "Assign")
+            {
+                assignA7.Text = "Undo";
+                matchA7.Enabled = false;
+                matchesAssigned[division, 6, 0] = matchA7.Text; //Assign the match
+                teamAssigned[division, 6, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 6, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchA7.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignA7.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchA7.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 6, 0] = null; //remove assigned match
+                matchA7.Enabled = true;
+            }
+        }
+
+        private void assignB7_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchB7.Text.Trim());
+
+            if (assignB7.Text == "Assign")
+            {
+                assignB7.Text = "Undo";
+                matchB7.Enabled = false;
+                matchesAssigned[division, 6, 1] = matchB7.Text; //Assign the match
+                teamAssigned[division, 6, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 6, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchB7.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignB7.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchB7.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 6, 1] = null; //remove assigned match
+                matchB7.Enabled = true;
+            }
+        }
+
+        private void assignC7_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchC7.Text.Trim());
+
+            if (assignC7.Text == "Assign")
+            {
+                assignC7.Text = "Undo";
+                matchC7.Enabled = false;
+                matchesAssigned[division, 6, 2] = matchC7.Text; //Assign the match
+                teamAssigned[division, 6, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 6, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchC7.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignC7.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchC7.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 6, 2] = null; //remove assigned match
+                matchC7.Enabled = true;
+            }
+        }
+
+        private void assignD7_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchD7.Text.Trim());
+
+            if (assignD7.Text == "Assign")
+            {
+                assignD7.Text = "Undo";
+                matchD7.Enabled = false;
+                matchesAssigned[division, 6, 3] = matchD7.Text; //Assign the match
+                teamAssigned[division, 6, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 6, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchD7.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignD7.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchD7.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 6, 3] = null; //remove assigned match
+                matchD7.Enabled = true;
+            }
+        }
+
+        private void assignE7_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchE7.Text.Trim());
+
+            if (assignE7.Text == "Assign")
+            {
+                assignE7.Text = "Undo";
+                matchE7.Enabled = false;
+                matchesAssigned[division, 6, 4] = matchE7.Text; //Assign the match
+                teamAssigned[division, 6, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 6, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchE7.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignE7.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchE7.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 6, 4] = null; //remove assigned match
+                matchE7.Enabled = true;
+            }
+        }
+
+        private void assignF7_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchF7.Text.Trim());
+
+            if (assignF7.Text == "Assign")
+            {
+                assignF7.Text = "Undo";
+                matchF7.Enabled = false;
+                matchesAssigned[division, 6, 5] = matchF7.Text; //Assign the match
+                teamAssigned[division, 6, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 6, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchF7.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignF7.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchF7.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 6, 5] = null; //remove assigned match
+                matchF7.Enabled = true;
+            }
+        }
+
+        private void assignG7_Click(object sender, EventArgs e)
+        {
+            Tuple<int, int> teams = getHomeAway(matchG7.Text.Trim());
+
+            if (assignG7.Text == "Assign")
+            {
+                assignG7.Text = "Undo";
+                matchG7.Enabled = false;
+                matchesAssigned[division, 6, 6] = matchG7.Text; //Assign the match
+                teamAssigned[division, 6, teams.Item1] = true;//assign the teams
+                teamAssigned[division, 6, teams.Item2] = true;
+                for (int i = 0; i < 210; i++) //remove match from game array
+                {
+                    if (game[division, i] == matchG7.Text)
+                    {
+                        game[division, i] = null;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                assignG7.Text = "Assign";
+                teamAssigned[division, 6, teams.Item1] = false; //un-assign the teams
+                teamAssigned[division, 6, teams.Item2] = false;
+                for (int i = 0; i < 210; i++) //add match back to game array
+                {
+                    if (game[division, i] == null)
+                    {
+                        game[division, i] = matchG7.Text;
+                        break;
+                    }
+                }
+                matchesAssigned[division, 6, 6] = null; //remove assigned match
+                matchG7.Enabled = true;
+            }
+        }
     }
+
+    #endregion
 }

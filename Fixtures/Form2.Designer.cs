@@ -30,6 +30,37 @@
         {
             this.metTabControl = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.sharedLine = new MetroFramework.Controls.MetroLabel();
+            this.line14 = new MetroFramework.Controls.MetroLabel();
+            this.line13 = new MetroFramework.Controls.MetroLabel();
+            this.line12 = new MetroFramework.Controls.MetroLabel();
+            this.line11 = new MetroFramework.Controls.MetroLabel();
+            this.line10 = new MetroFramework.Controls.MetroLabel();
+            this.line9 = new MetroFramework.Controls.MetroLabel();
+            this.line8 = new MetroFramework.Controls.MetroLabel();
+            this.line7 = new MetroFramework.Controls.MetroLabel();
+            this.line6 = new MetroFramework.Controls.MetroLabel();
+            this.line5 = new MetroFramework.Controls.MetroLabel();
+            this.line4 = new MetroFramework.Controls.MetroLabel();
+            this.line3 = new MetroFramework.Controls.MetroLabel();
+            this.line2 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
+            this.richTextBox15 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox14 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox13 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox12 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox11 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox10 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox9 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox8 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.team15 = new MetroFramework.Controls.MetroLabel();
             this.team14 = new MetroFramework.Controls.MetroLabel();
             this.team13 = new MetroFramework.Controls.MetroLabel();
@@ -434,37 +465,6 @@
             this.metroTabPage13 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage14 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage15 = new MetroFramework.Controls.MetroTabPage();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox8 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox9 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox10 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox11 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox12 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox13 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox14 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox15 = new System.Windows.Forms.RichTextBox();
-            this.metroLabel24 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel25 = new MetroFramework.Controls.MetroLabel();
-            this.line2 = new MetroFramework.Controls.MetroLabel();
-            this.line3 = new MetroFramework.Controls.MetroLabel();
-            this.line4 = new MetroFramework.Controls.MetroLabel();
-            this.line5 = new MetroFramework.Controls.MetroLabel();
-            this.line6 = new MetroFramework.Controls.MetroLabel();
-            this.line7 = new MetroFramework.Controls.MetroLabel();
-            this.line8 = new MetroFramework.Controls.MetroLabel();
-            this.line9 = new MetroFramework.Controls.MetroLabel();
-            this.line10 = new MetroFramework.Controls.MetroLabel();
-            this.line11 = new MetroFramework.Controls.MetroLabel();
-            this.line12 = new MetroFramework.Controls.MetroLabel();
-            this.line13 = new MetroFramework.Controls.MetroLabel();
-            this.line14 = new MetroFramework.Controls.MetroLabel();
-            this.sharedLine = new MetroFramework.Controls.MetroLabel();
             this.metTabControl.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -929,6 +929,349 @@
             this.metroTabPage1.VerticalScrollbar = true;
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             // 
+            // sharedLine
+            // 
+            this.sharedLine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.sharedLine.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.sharedLine.Location = new System.Drawing.Point(970, 439);
+            this.sharedLine.Name = "sharedLine";
+            this.sharedLine.Size = new System.Drawing.Size(343, 1);
+            this.sharedLine.TabIndex = 733;
+            // 
+            // line14
+            // 
+            this.line14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line14.Location = new System.Drawing.Point(970, 387);
+            this.line14.Name = "line14";
+            this.line14.Size = new System.Drawing.Size(343, 1);
+            this.line14.TabIndex = 732;
+            // 
+            // line13
+            // 
+            this.line13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line13.Location = new System.Drawing.Point(970, 361);
+            this.line13.Name = "line13";
+            this.line13.Size = new System.Drawing.Size(343, 1);
+            this.line13.TabIndex = 731;
+            // 
+            // line12
+            // 
+            this.line12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line12.Location = new System.Drawing.Point(970, 335);
+            this.line12.Name = "line12";
+            this.line12.Size = new System.Drawing.Size(343, 1);
+            this.line12.TabIndex = 730;
+            // 
+            // line11
+            // 
+            this.line11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line11.Location = new System.Drawing.Point(970, 309);
+            this.line11.Name = "line11";
+            this.line11.Size = new System.Drawing.Size(343, 1);
+            this.line11.TabIndex = 729;
+            // 
+            // line10
+            // 
+            this.line10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line10.Location = new System.Drawing.Point(970, 283);
+            this.line10.Name = "line10";
+            this.line10.Size = new System.Drawing.Size(343, 1);
+            this.line10.TabIndex = 728;
+            // 
+            // line9
+            // 
+            this.line9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line9.Location = new System.Drawing.Point(970, 257);
+            this.line9.Name = "line9";
+            this.line9.Size = new System.Drawing.Size(343, 1);
+            this.line9.TabIndex = 727;
+            // 
+            // line8
+            // 
+            this.line8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line8.Location = new System.Drawing.Point(970, 231);
+            this.line8.Name = "line8";
+            this.line8.Size = new System.Drawing.Size(343, 1);
+            this.line8.TabIndex = 726;
+            // 
+            // line7
+            // 
+            this.line7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line7.Location = new System.Drawing.Point(970, 205);
+            this.line7.Name = "line7";
+            this.line7.Size = new System.Drawing.Size(343, 1);
+            this.line7.TabIndex = 725;
+            // 
+            // line6
+            // 
+            this.line6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line6.Location = new System.Drawing.Point(970, 179);
+            this.line6.Name = "line6";
+            this.line6.Size = new System.Drawing.Size(343, 1);
+            this.line6.TabIndex = 724;
+            // 
+            // line5
+            // 
+            this.line5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line5.Location = new System.Drawing.Point(970, 153);
+            this.line5.Name = "line5";
+            this.line5.Size = new System.Drawing.Size(343, 1);
+            this.line5.TabIndex = 723;
+            // 
+            // line4
+            // 
+            this.line4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line4.Location = new System.Drawing.Point(970, 127);
+            this.line4.Name = "line4";
+            this.line4.Size = new System.Drawing.Size(343, 1);
+            this.line4.TabIndex = 722;
+            // 
+            // line3
+            // 
+            this.line3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line3.Location = new System.Drawing.Point(970, 101);
+            this.line3.Name = "line3";
+            this.line3.Size = new System.Drawing.Size(343, 1);
+            this.line3.TabIndex = 721;
+            // 
+            // line2
+            // 
+            this.line2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.line2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.line2.Location = new System.Drawing.Point(970, 75);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(343, 1);
+            this.line2.TabIndex = 720;
+            // 
+            // metroLabel25
+            // 
+            this.metroLabel25.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.metroLabel25.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel25.Location = new System.Drawing.Point(970, 49);
+            this.metroLabel25.Name = "metroLabel25";
+            this.metroLabel25.Size = new System.Drawing.Size(343, 1);
+            this.metroLabel25.TabIndex = 719;
+            // 
+            // metroLabel24
+            // 
+            this.metroLabel24.AutoSize = true;
+            this.metroLabel24.BackColor = System.Drawing.Color.White;
+            this.metroLabel24.CustomBackground = true;
+            this.metroLabel24.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel24.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.metroLabel24.Location = new System.Drawing.Point(994, 418);
+            this.metroLabel24.Name = "metroLabel24";
+            this.metroLabel24.Size = new System.Drawing.Size(106, 19);
+            this.metroLabel24.TabIndex = 718;
+            this.metroLabel24.Text = "Shared grounds";
+            // 
+            // richTextBox15
+            // 
+            this.richTextBox15.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox15.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox15.Enabled = false;
+            this.richTextBox15.Location = new System.Drawing.Point(971, 388);
+            this.richTextBox15.Name = "richTextBox15";
+            this.richTextBox15.ReadOnly = true;
+            this.richTextBox15.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox15.TabIndex = 716;
+            this.richTextBox15.Text = "";
+            // 
+            // richTextBox14
+            // 
+            this.richTextBox14.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox14.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox14.Enabled = false;
+            this.richTextBox14.Location = new System.Drawing.Point(971, 362);
+            this.richTextBox14.Name = "richTextBox14";
+            this.richTextBox14.ReadOnly = true;
+            this.richTextBox14.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox14.TabIndex = 715;
+            this.richTextBox14.Text = "";
+            // 
+            // richTextBox13
+            // 
+            this.richTextBox13.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox13.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox13.Enabled = false;
+            this.richTextBox13.Location = new System.Drawing.Point(971, 336);
+            this.richTextBox13.Name = "richTextBox13";
+            this.richTextBox13.ReadOnly = true;
+            this.richTextBox13.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox13.TabIndex = 714;
+            this.richTextBox13.Text = "";
+            // 
+            // richTextBox12
+            // 
+            this.richTextBox12.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox12.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox12.Enabled = false;
+            this.richTextBox12.Location = new System.Drawing.Point(971, 310);
+            this.richTextBox12.Name = "richTextBox12";
+            this.richTextBox12.ReadOnly = true;
+            this.richTextBox12.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox12.TabIndex = 713;
+            this.richTextBox12.Text = "";
+            // 
+            // richTextBox11
+            // 
+            this.richTextBox11.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox11.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox11.Enabled = false;
+            this.richTextBox11.Location = new System.Drawing.Point(971, 284);
+            this.richTextBox11.Name = "richTextBox11";
+            this.richTextBox11.ReadOnly = true;
+            this.richTextBox11.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox11.TabIndex = 712;
+            this.richTextBox11.Text = "";
+            // 
+            // richTextBox10
+            // 
+            this.richTextBox10.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox10.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox10.Enabled = false;
+            this.richTextBox10.Location = new System.Drawing.Point(971, 258);
+            this.richTextBox10.Name = "richTextBox10";
+            this.richTextBox10.ReadOnly = true;
+            this.richTextBox10.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox10.TabIndex = 711;
+            this.richTextBox10.Text = "";
+            // 
+            // richTextBox9
+            // 
+            this.richTextBox9.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox9.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox9.Enabled = false;
+            this.richTextBox9.Location = new System.Drawing.Point(971, 232);
+            this.richTextBox9.Name = "richTextBox9";
+            this.richTextBox9.ReadOnly = true;
+            this.richTextBox9.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox9.TabIndex = 710;
+            this.richTextBox9.Text = "";
+            // 
+            // richTextBox8
+            // 
+            this.richTextBox8.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox8.Enabled = false;
+            this.richTextBox8.Location = new System.Drawing.Point(971, 206);
+            this.richTextBox8.Name = "richTextBox8";
+            this.richTextBox8.ReadOnly = true;
+            this.richTextBox8.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox8.TabIndex = 709;
+            this.richTextBox8.Text = "";
+            // 
+            // richTextBox7
+            // 
+            this.richTextBox7.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox7.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox7.Enabled = false;
+            this.richTextBox7.Location = new System.Drawing.Point(971, 180);
+            this.richTextBox7.Name = "richTextBox7";
+            this.richTextBox7.ReadOnly = true;
+            this.richTextBox7.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox7.TabIndex = 708;
+            this.richTextBox7.Text = "";
+            // 
+            // richTextBox6
+            // 
+            this.richTextBox6.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox6.Enabled = false;
+            this.richTextBox6.Location = new System.Drawing.Point(971, 154);
+            this.richTextBox6.Name = "richTextBox6";
+            this.richTextBox6.ReadOnly = true;
+            this.richTextBox6.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox6.TabIndex = 707;
+            this.richTextBox6.Text = "";
+            // 
+            // richTextBox5
+            // 
+            this.richTextBox5.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox5.Enabled = false;
+            this.richTextBox5.Location = new System.Drawing.Point(971, 128);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.ReadOnly = true;
+            this.richTextBox5.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox5.TabIndex = 706;
+            this.richTextBox5.Text = "";
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox4.Enabled = false;
+            this.richTextBox4.Location = new System.Drawing.Point(971, 102);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.ReadOnly = true;
+            this.richTextBox4.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox4.TabIndex = 705;
+            this.richTextBox4.Text = "";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox3.Enabled = false;
+            this.richTextBox3.Location = new System.Drawing.Point(971, 76);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
+            this.richTextBox3.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox3.TabIndex = 704;
+            this.richTextBox3.Text = "";
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox2.Enabled = false;
+            this.richTextBox2.Location = new System.Drawing.Point(971, 50);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox2.TabIndex = 703;
+            this.richTextBox2.Text = "";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Location = new System.Drawing.Point(971, 24);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(341, 25);
+            this.richTextBox1.TabIndex = 702;
+            this.richTextBox1.Text = "";
+            // 
             // team15
             // 
             this.team15.AutoSize = true;
@@ -1101,37 +1444,11 @@
             // matchG23
             // 
             this.matchG23.FormattingEnabled = true;
-            this.matchG23.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG23.Location = new System.Drawing.Point(837, 599);
             this.matchG23.Name = "matchG23";
             this.matchG23.Size = new System.Drawing.Size(71, 21);
             this.matchG23.TabIndex = 684;
+            this.matchG23.Click += new System.EventHandler(this.matchG23_Click);
             // 
             // assignG23
             // 
@@ -1144,37 +1461,11 @@
             // matchG22
             // 
             this.matchG22.FormattingEnabled = true;
-            this.matchG22.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG22.Location = new System.Drawing.Point(837, 573);
             this.matchG22.Name = "matchG22";
             this.matchG22.Size = new System.Drawing.Size(71, 21);
             this.matchG22.TabIndex = 682;
+            this.matchG22.Click += new System.EventHandler(this.matchG22_Click);
             // 
             // assignG22
             // 
@@ -1187,37 +1478,11 @@
             // matchG21
             // 
             this.matchG21.FormattingEnabled = true;
-            this.matchG21.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG21.Location = new System.Drawing.Point(837, 547);
             this.matchG21.Name = "matchG21";
             this.matchG21.Size = new System.Drawing.Size(71, 21);
             this.matchG21.TabIndex = 680;
+            this.matchG21.Click += new System.EventHandler(this.matchG21_Click);
             // 
             // assignG21
             // 
@@ -1230,37 +1495,11 @@
             // matchG20
             // 
             this.matchG20.FormattingEnabled = true;
-            this.matchG20.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG20.Location = new System.Drawing.Point(837, 520);
             this.matchG20.Name = "matchG20";
             this.matchG20.Size = new System.Drawing.Size(71, 21);
             this.matchG20.TabIndex = 678;
+            this.matchG20.Click += new System.EventHandler(this.matchG20_Click);
             // 
             // assignG20
             // 
@@ -1273,37 +1512,11 @@
             // matchG19
             // 
             this.matchG19.FormattingEnabled = true;
-            this.matchG19.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG19.Location = new System.Drawing.Point(837, 494);
             this.matchG19.Name = "matchG19";
             this.matchG19.Size = new System.Drawing.Size(71, 21);
             this.matchG19.TabIndex = 676;
+            this.matchG19.Click += new System.EventHandler(this.matchG19_Click);
             // 
             // assignG19
             // 
@@ -1316,37 +1529,11 @@
             // matchG18
             // 
             this.matchG18.FormattingEnabled = true;
-            this.matchG18.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG18.Location = new System.Drawing.Point(837, 468);
             this.matchG18.Name = "matchG18";
             this.matchG18.Size = new System.Drawing.Size(71, 21);
             this.matchG18.TabIndex = 674;
+            this.matchG18.Click += new System.EventHandler(this.matchG18_Click);
             // 
             // assignG18
             // 
@@ -1359,37 +1546,11 @@
             // matchG17
             // 
             this.matchG17.FormattingEnabled = true;
-            this.matchG17.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG17.Location = new System.Drawing.Point(837, 442);
             this.matchG17.Name = "matchG17";
             this.matchG17.Size = new System.Drawing.Size(71, 21);
             this.matchG17.TabIndex = 672;
+            this.matchG17.Click += new System.EventHandler(this.matchG17_Click);
             // 
             // assignG17
             // 
@@ -1402,37 +1563,11 @@
             // matchG16
             // 
             this.matchG16.FormattingEnabled = true;
-            this.matchG16.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG16.Location = new System.Drawing.Point(837, 416);
             this.matchG16.Name = "matchG16";
             this.matchG16.Size = new System.Drawing.Size(71, 21);
             this.matchG16.TabIndex = 670;
+            this.matchG16.Click += new System.EventHandler(this.matchG16_Click);
             // 
             // assignG16
             // 
@@ -1445,37 +1580,11 @@
             // matchG15
             // 
             this.matchG15.FormattingEnabled = true;
-            this.matchG15.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG15.Location = new System.Drawing.Point(837, 390);
             this.matchG15.Name = "matchG15";
             this.matchG15.Size = new System.Drawing.Size(71, 21);
             this.matchG15.TabIndex = 668;
+            this.matchG15.Click += new System.EventHandler(this.matchG15_Click);
             // 
             // assignG15
             // 
@@ -1488,37 +1597,11 @@
             // matchG14
             // 
             this.matchG14.FormattingEnabled = true;
-            this.matchG14.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG14.Location = new System.Drawing.Point(837, 364);
             this.matchG14.Name = "matchG14";
             this.matchG14.Size = new System.Drawing.Size(71, 21);
             this.matchG14.TabIndex = 666;
+            this.matchG14.Click += new System.EventHandler(this.matchG14_Click);
             // 
             // assignG14
             // 
@@ -1531,37 +1614,11 @@
             // matchG13
             // 
             this.matchG13.FormattingEnabled = true;
-            this.matchG13.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG13.Location = new System.Drawing.Point(837, 338);
             this.matchG13.Name = "matchG13";
             this.matchG13.Size = new System.Drawing.Size(71, 21);
             this.matchG13.TabIndex = 664;
+            this.matchG13.Click += new System.EventHandler(this.matchG13_Click);
             // 
             // assignG13
             // 
@@ -1574,37 +1631,11 @@
             // matchG12
             // 
             this.matchG12.FormattingEnabled = true;
-            this.matchG12.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG12.Location = new System.Drawing.Point(837, 312);
             this.matchG12.Name = "matchG12";
             this.matchG12.Size = new System.Drawing.Size(71, 21);
             this.matchG12.TabIndex = 662;
+            this.matchG12.Click += new System.EventHandler(this.matchG12_Click);
             // 
             // assignG12
             // 
@@ -1617,37 +1648,11 @@
             // matchG11
             // 
             this.matchG11.FormattingEnabled = true;
-            this.matchG11.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG11.Location = new System.Drawing.Point(837, 286);
             this.matchG11.Name = "matchG11";
             this.matchG11.Size = new System.Drawing.Size(71, 21);
             this.matchG11.TabIndex = 660;
+            this.matchG11.Click += new System.EventHandler(this.matchG11_Click);
             // 
             // assignG11
             // 
@@ -1660,37 +1665,11 @@
             // matchG10
             // 
             this.matchG10.FormattingEnabled = true;
-            this.matchG10.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG10.Location = new System.Drawing.Point(837, 260);
             this.matchG10.Name = "matchG10";
             this.matchG10.Size = new System.Drawing.Size(71, 21);
             this.matchG10.TabIndex = 658;
+            this.matchG10.Click += new System.EventHandler(this.matchG10_Click);
             // 
             // assignG10
             // 
@@ -1703,37 +1682,11 @@
             // matchG9
             // 
             this.matchG9.FormattingEnabled = true;
-            this.matchG9.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG9.Location = new System.Drawing.Point(837, 234);
             this.matchG9.Name = "matchG9";
             this.matchG9.Size = new System.Drawing.Size(71, 21);
             this.matchG9.TabIndex = 656;
+            this.matchG9.Click += new System.EventHandler(this.matchG9_Click);
             // 
             // assignG9
             // 
@@ -1746,37 +1699,11 @@
             // matchG8
             // 
             this.matchG8.FormattingEnabled = true;
-            this.matchG8.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG8.Location = new System.Drawing.Point(837, 208);
             this.matchG8.Name = "matchG8";
             this.matchG8.Size = new System.Drawing.Size(71, 21);
             this.matchG8.TabIndex = 654;
+            this.matchG8.Click += new System.EventHandler(this.matchG8_Click);
             // 
             // assignG8
             // 
@@ -1789,37 +1716,11 @@
             // matchG7
             // 
             this.matchG7.FormattingEnabled = true;
-            this.matchG7.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG7.Location = new System.Drawing.Point(837, 182);
             this.matchG7.Name = "matchG7";
             this.matchG7.Size = new System.Drawing.Size(71, 21);
             this.matchG7.TabIndex = 652;
+            this.matchG7.Click += new System.EventHandler(this.matchG7_Click);
             // 
             // assignG7
             // 
@@ -1828,41 +1729,16 @@
             this.assignG7.Size = new System.Drawing.Size(44, 21);
             this.assignG7.TabIndex = 651;
             this.assignG7.Text = "Assign";
+            this.assignG7.Click += new System.EventHandler(this.assignG7_Click);
             // 
             // matchG6
             // 
             this.matchG6.FormattingEnabled = true;
-            this.matchG6.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG6.Location = new System.Drawing.Point(837, 156);
             this.matchG6.Name = "matchG6";
             this.matchG6.Size = new System.Drawing.Size(71, 21);
             this.matchG6.TabIndex = 188;
+            this.matchG6.Click += new System.EventHandler(this.matchG6_Click);
             // 
             // assignG6
             // 
@@ -1871,41 +1747,16 @@
             this.assignG6.Size = new System.Drawing.Size(44, 21);
             this.assignG6.TabIndex = 187;
             this.assignG6.Text = "Assign";
+            this.assignG6.Click += new System.EventHandler(this.assignG6_Click);
             // 
             // matchG5
             // 
             this.matchG5.FormattingEnabled = true;
-            this.matchG5.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG5.Location = new System.Drawing.Point(837, 130);
             this.matchG5.Name = "matchG5";
             this.matchG5.Size = new System.Drawing.Size(71, 21);
             this.matchG5.TabIndex = 650;
+            this.matchG5.Click += new System.EventHandler(this.matchG5_Click);
             // 
             // assignG5
             // 
@@ -1914,41 +1765,16 @@
             this.assignG5.Size = new System.Drawing.Size(44, 21);
             this.assignG5.TabIndex = 649;
             this.assignG5.Text = "Assign";
+            this.assignG5.Click += new System.EventHandler(this.assignG5_Click);
             // 
             // matchF23
             // 
             this.matchF23.FormattingEnabled = true;
-            this.matchF23.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF23.Location = new System.Drawing.Point(716, 599);
             this.matchF23.Name = "matchF23";
             this.matchF23.Size = new System.Drawing.Size(71, 21);
             this.matchF23.TabIndex = 648;
+            this.matchF23.Click += new System.EventHandler(this.matchF23_Click);
             // 
             // assignF23
             // 
@@ -1961,37 +1787,11 @@
             // matchF22
             // 
             this.matchF22.FormattingEnabled = true;
-            this.matchF22.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF22.Location = new System.Drawing.Point(716, 573);
             this.matchF22.Name = "matchF22";
             this.matchF22.Size = new System.Drawing.Size(71, 21);
             this.matchF22.TabIndex = 646;
+            this.matchF22.Click += new System.EventHandler(this.matchF22_Click);
             // 
             // assignF22
             // 
@@ -2004,37 +1804,11 @@
             // matchF21
             // 
             this.matchF21.FormattingEnabled = true;
-            this.matchF21.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF21.Location = new System.Drawing.Point(716, 547);
             this.matchF21.Name = "matchF21";
             this.matchF21.Size = new System.Drawing.Size(71, 21);
             this.matchF21.TabIndex = 644;
+            this.matchF21.Click += new System.EventHandler(this.matchF21_Click);
             // 
             // assignF21
             // 
@@ -2047,37 +1821,11 @@
             // matchF20
             // 
             this.matchF20.FormattingEnabled = true;
-            this.matchF20.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF20.Location = new System.Drawing.Point(716, 520);
             this.matchF20.Name = "matchF20";
             this.matchF20.Size = new System.Drawing.Size(71, 21);
             this.matchF20.TabIndex = 642;
+            this.matchF20.Click += new System.EventHandler(this.matchF20_Click);
             // 
             // assignF20
             // 
@@ -2090,37 +1838,11 @@
             // matchF19
             // 
             this.matchF19.FormattingEnabled = true;
-            this.matchF19.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF19.Location = new System.Drawing.Point(716, 494);
             this.matchF19.Name = "matchF19";
             this.matchF19.Size = new System.Drawing.Size(71, 21);
             this.matchF19.TabIndex = 640;
+            this.matchF19.Click += new System.EventHandler(this.matchF19_Click);
             // 
             // assignF19
             // 
@@ -2133,37 +1855,11 @@
             // matchF18
             // 
             this.matchF18.FormattingEnabled = true;
-            this.matchF18.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF18.Location = new System.Drawing.Point(716, 468);
             this.matchF18.Name = "matchF18";
             this.matchF18.Size = new System.Drawing.Size(71, 21);
             this.matchF18.TabIndex = 638;
+            this.matchF18.Click += new System.EventHandler(this.matchF18_Click);
             // 
             // assignF18
             // 
@@ -2176,37 +1872,11 @@
             // matchF17
             // 
             this.matchF17.FormattingEnabled = true;
-            this.matchF17.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF17.Location = new System.Drawing.Point(716, 442);
             this.matchF17.Name = "matchF17";
             this.matchF17.Size = new System.Drawing.Size(71, 21);
             this.matchF17.TabIndex = 636;
+            this.matchF17.Click += new System.EventHandler(this.matchF17_Click);
             // 
             // assignF17
             // 
@@ -2219,37 +1889,11 @@
             // matchF16
             // 
             this.matchF16.FormattingEnabled = true;
-            this.matchF16.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF16.Location = new System.Drawing.Point(716, 416);
             this.matchF16.Name = "matchF16";
             this.matchF16.Size = new System.Drawing.Size(71, 21);
             this.matchF16.TabIndex = 634;
+            this.matchF16.Click += new System.EventHandler(this.matchF16_Click);
             // 
             // assignF16
             // 
@@ -2262,37 +1906,11 @@
             // matchF15
             // 
             this.matchF15.FormattingEnabled = true;
-            this.matchF15.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF15.Location = new System.Drawing.Point(716, 390);
             this.matchF15.Name = "matchF15";
             this.matchF15.Size = new System.Drawing.Size(71, 21);
             this.matchF15.TabIndex = 632;
+            this.matchF15.Click += new System.EventHandler(this.matchF15_Click);
             // 
             // assignF15
             // 
@@ -2305,37 +1923,11 @@
             // matchF14
             // 
             this.matchF14.FormattingEnabled = true;
-            this.matchF14.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF14.Location = new System.Drawing.Point(716, 364);
             this.matchF14.Name = "matchF14";
             this.matchF14.Size = new System.Drawing.Size(71, 21);
             this.matchF14.TabIndex = 630;
+            this.matchF14.Click += new System.EventHandler(this.matchF14_Click);
             // 
             // assignF14
             // 
@@ -2348,37 +1940,11 @@
             // matchF13
             // 
             this.matchF13.FormattingEnabled = true;
-            this.matchF13.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF13.Location = new System.Drawing.Point(716, 338);
             this.matchF13.Name = "matchF13";
             this.matchF13.Size = new System.Drawing.Size(71, 21);
             this.matchF13.TabIndex = 628;
+            this.matchF13.Click += new System.EventHandler(this.matchF13_Click);
             // 
             // assignF13
             // 
@@ -2391,37 +1957,11 @@
             // matchF12
             // 
             this.matchF12.FormattingEnabled = true;
-            this.matchF12.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF12.Location = new System.Drawing.Point(716, 312);
             this.matchF12.Name = "matchF12";
             this.matchF12.Size = new System.Drawing.Size(71, 21);
             this.matchF12.TabIndex = 626;
+            this.matchF12.Click += new System.EventHandler(this.matchF12_Click);
             // 
             // assignF12
             // 
@@ -2434,37 +1974,11 @@
             // matchF11
             // 
             this.matchF11.FormattingEnabled = true;
-            this.matchF11.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF11.Location = new System.Drawing.Point(716, 286);
             this.matchF11.Name = "matchF11";
             this.matchF11.Size = new System.Drawing.Size(71, 21);
             this.matchF11.TabIndex = 624;
+            this.matchF11.Click += new System.EventHandler(this.matchF11_Click);
             // 
             // assignF11
             // 
@@ -2477,37 +1991,11 @@
             // matchF10
             // 
             this.matchF10.FormattingEnabled = true;
-            this.matchF10.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF10.Location = new System.Drawing.Point(716, 260);
             this.matchF10.Name = "matchF10";
             this.matchF10.Size = new System.Drawing.Size(71, 21);
             this.matchF10.TabIndex = 622;
+            this.matchF10.Click += new System.EventHandler(this.matchF10_Click);
             // 
             // assignF10
             // 
@@ -2520,37 +2008,11 @@
             // matchF9
             // 
             this.matchF9.FormattingEnabled = true;
-            this.matchF9.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF9.Location = new System.Drawing.Point(716, 234);
             this.matchF9.Name = "matchF9";
             this.matchF9.Size = new System.Drawing.Size(71, 21);
             this.matchF9.TabIndex = 620;
+            this.matchF9.Click += new System.EventHandler(this.matchF9_Click);
             // 
             // assignF9
             // 
@@ -2563,37 +2025,11 @@
             // matchF8
             // 
             this.matchF8.FormattingEnabled = true;
-            this.matchF8.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF8.Location = new System.Drawing.Point(716, 208);
             this.matchF8.Name = "matchF8";
             this.matchF8.Size = new System.Drawing.Size(71, 21);
             this.matchF8.TabIndex = 618;
+            this.matchF8.Click += new System.EventHandler(this.matchF8_Click);
             // 
             // assignF8
             // 
@@ -2606,37 +2042,11 @@
             // matchF7
             // 
             this.matchF7.FormattingEnabled = true;
-            this.matchF7.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF7.Location = new System.Drawing.Point(716, 182);
             this.matchF7.Name = "matchF7";
             this.matchF7.Size = new System.Drawing.Size(71, 21);
             this.matchF7.TabIndex = 616;
+            this.matchF7.Click += new System.EventHandler(this.matchF7_Click);
             // 
             // assignF7
             // 
@@ -2645,41 +2055,16 @@
             this.assignF7.Size = new System.Drawing.Size(44, 21);
             this.assignF7.TabIndex = 615;
             this.assignF7.Text = "Assign";
+            this.assignF7.Click += new System.EventHandler(this.assignF7_Click);
             // 
             // matchF6
             // 
             this.matchF6.FormattingEnabled = true;
-            this.matchF6.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF6.Location = new System.Drawing.Point(716, 156);
             this.matchF6.Name = "matchF6";
             this.matchF6.Size = new System.Drawing.Size(71, 21);
             this.matchF6.TabIndex = 614;
+            this.matchF6.Click += new System.EventHandler(this.matchF6_Click);
             // 
             // assignF6
             // 
@@ -2688,41 +2073,16 @@
             this.assignF6.Size = new System.Drawing.Size(44, 21);
             this.assignF6.TabIndex = 613;
             this.assignF6.Text = "Assign";
+            this.assignF6.Click += new System.EventHandler(this.assignF6_Click);
             // 
             // matchF5
             // 
             this.matchF5.FormattingEnabled = true;
-            this.matchF5.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF5.Location = new System.Drawing.Point(716, 130);
             this.matchF5.Name = "matchF5";
             this.matchF5.Size = new System.Drawing.Size(71, 21);
             this.matchF5.TabIndex = 612;
+            this.matchF5.Click += new System.EventHandler(this.matchF5_Click);
             // 
             // assignF5
             // 
@@ -2731,41 +2091,16 @@
             this.assignF5.Size = new System.Drawing.Size(44, 21);
             this.assignF5.TabIndex = 611;
             this.assignF5.Text = "Assign";
+            this.assignF5.Click += new System.EventHandler(this.assignF5_Click);
             // 
             // matchG4
             // 
             this.matchG4.FormattingEnabled = true;
-            this.matchG4.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG4.Location = new System.Drawing.Point(837, 104);
             this.matchG4.Name = "matchG4";
             this.matchG4.Size = new System.Drawing.Size(71, 21);
             this.matchG4.TabIndex = 610;
+            this.matchG4.Click += new System.EventHandler(this.matchG4_Click);
             // 
             // assignG4
             // 
@@ -2774,41 +2109,16 @@
             this.assignG4.Size = new System.Drawing.Size(44, 21);
             this.assignG4.TabIndex = 609;
             this.assignG4.Text = "Assign";
+            this.assignG4.Click += new System.EventHandler(this.assignG4_Click);
             // 
             // matchF4
             // 
             this.matchF4.FormattingEnabled = true;
-            this.matchF4.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF4.Location = new System.Drawing.Point(716, 104);
             this.matchF4.Name = "matchF4";
             this.matchF4.Size = new System.Drawing.Size(71, 21);
             this.matchF4.TabIndex = 608;
+            this.matchF4.Click += new System.EventHandler(this.matchF4_Click);
             // 
             // assignF4
             // 
@@ -2817,41 +2127,16 @@
             this.assignF4.Size = new System.Drawing.Size(44, 21);
             this.assignF4.TabIndex = 607;
             this.assignF4.Text = "Assign";
+            this.assignF4.Click += new System.EventHandler(this.assignF4_Click);
             // 
             // matchG3
             // 
             this.matchG3.FormattingEnabled = true;
-            this.matchG3.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG3.Location = new System.Drawing.Point(837, 78);
             this.matchG3.Name = "matchG3";
             this.matchG3.Size = new System.Drawing.Size(71, 21);
             this.matchG3.TabIndex = 606;
+            this.matchG3.Click += new System.EventHandler(this.matchG3_Click);
             // 
             // assignG3
             // 
@@ -2860,41 +2145,16 @@
             this.assignG3.Size = new System.Drawing.Size(44, 21);
             this.assignG3.TabIndex = 605;
             this.assignG3.Text = "Assign";
+            this.assignG3.Click += new System.EventHandler(this.assignG3_Click);
             // 
             // matchF3
             // 
             this.matchF3.FormattingEnabled = true;
-            this.matchF3.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF3.Location = new System.Drawing.Point(716, 78);
             this.matchF3.Name = "matchF3";
             this.matchF3.Size = new System.Drawing.Size(71, 21);
             this.matchF3.TabIndex = 604;
+            this.matchF3.Click += new System.EventHandler(this.matchF3_Click);
             // 
             // assignF3
             // 
@@ -2903,41 +2163,16 @@
             this.assignF3.Size = new System.Drawing.Size(44, 21);
             this.assignF3.TabIndex = 603;
             this.assignF3.Text = "Assign";
+            this.assignF3.Click += new System.EventHandler(this.assignF3_Click);
             // 
             // matchE23
             // 
             this.matchE23.FormattingEnabled = true;
-            this.matchE23.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE23.Location = new System.Drawing.Point(595, 599);
             this.matchE23.Name = "matchE23";
             this.matchE23.Size = new System.Drawing.Size(71, 21);
             this.matchE23.TabIndex = 602;
+            this.matchE23.Click += new System.EventHandler(this.matchE23_Click);
             // 
             // assignE23
             // 
@@ -2950,37 +2185,11 @@
             // matchE22
             // 
             this.matchE22.FormattingEnabled = true;
-            this.matchE22.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE22.Location = new System.Drawing.Point(595, 573);
             this.matchE22.Name = "matchE22";
             this.matchE22.Size = new System.Drawing.Size(71, 21);
             this.matchE22.TabIndex = 600;
+            this.matchE22.Click += new System.EventHandler(this.matchE22_Click);
             // 
             // assignE22
             // 
@@ -2993,37 +2202,11 @@
             // matchE21
             // 
             this.matchE21.FormattingEnabled = true;
-            this.matchE21.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE21.Location = new System.Drawing.Point(595, 547);
             this.matchE21.Name = "matchE21";
             this.matchE21.Size = new System.Drawing.Size(71, 21);
             this.matchE21.TabIndex = 598;
+            this.matchE21.Click += new System.EventHandler(this.matchE21_Click);
             // 
             // assignE21
             // 
@@ -3036,37 +2219,11 @@
             // matchE20
             // 
             this.matchE20.FormattingEnabled = true;
-            this.matchE20.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE20.Location = new System.Drawing.Point(595, 520);
             this.matchE20.Name = "matchE20";
             this.matchE20.Size = new System.Drawing.Size(71, 21);
             this.matchE20.TabIndex = 596;
+            this.matchE20.Click += new System.EventHandler(this.matchE20_Click);
             // 
             // assignE20
             // 
@@ -3079,37 +2236,11 @@
             // matchE19
             // 
             this.matchE19.FormattingEnabled = true;
-            this.matchE19.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE19.Location = new System.Drawing.Point(595, 494);
             this.matchE19.Name = "matchE19";
             this.matchE19.Size = new System.Drawing.Size(71, 21);
             this.matchE19.TabIndex = 594;
+            this.matchE19.Click += new System.EventHandler(this.matchE19_Click);
             // 
             // assignE19
             // 
@@ -3122,37 +2253,11 @@
             // matchE18
             // 
             this.matchE18.FormattingEnabled = true;
-            this.matchE18.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE18.Location = new System.Drawing.Point(595, 468);
             this.matchE18.Name = "matchE18";
             this.matchE18.Size = new System.Drawing.Size(71, 21);
             this.matchE18.TabIndex = 592;
+            this.matchE18.Click += new System.EventHandler(this.matchE18_Click);
             // 
             // assignE18
             // 
@@ -3165,37 +2270,11 @@
             // matchE17
             // 
             this.matchE17.FormattingEnabled = true;
-            this.matchE17.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE17.Location = new System.Drawing.Point(595, 442);
             this.matchE17.Name = "matchE17";
             this.matchE17.Size = new System.Drawing.Size(71, 21);
             this.matchE17.TabIndex = 590;
+            this.matchE17.Click += new System.EventHandler(this.matchE17_Click);
             // 
             // assignE17
             // 
@@ -3208,37 +2287,11 @@
             // matchE16
             // 
             this.matchE16.FormattingEnabled = true;
-            this.matchE16.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE16.Location = new System.Drawing.Point(595, 416);
             this.matchE16.Name = "matchE16";
             this.matchE16.Size = new System.Drawing.Size(71, 21);
             this.matchE16.TabIndex = 588;
+            this.matchE16.Click += new System.EventHandler(this.matchE16_Click);
             // 
             // assignE16
             // 
@@ -3251,37 +2304,11 @@
             // matchE15
             // 
             this.matchE15.FormattingEnabled = true;
-            this.matchE15.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE15.Location = new System.Drawing.Point(595, 390);
             this.matchE15.Name = "matchE15";
             this.matchE15.Size = new System.Drawing.Size(71, 21);
             this.matchE15.TabIndex = 586;
+            this.matchE15.Click += new System.EventHandler(this.matchE15_Click);
             // 
             // assignE15
             // 
@@ -3294,37 +2321,11 @@
             // matchE14
             // 
             this.matchE14.FormattingEnabled = true;
-            this.matchE14.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE14.Location = new System.Drawing.Point(595, 364);
             this.matchE14.Name = "matchE14";
             this.matchE14.Size = new System.Drawing.Size(71, 21);
             this.matchE14.TabIndex = 584;
+            this.matchE14.Click += new System.EventHandler(this.matchE14_Click);
             // 
             // assignE14
             // 
@@ -3337,37 +2338,11 @@
             // matchE13
             // 
             this.matchE13.FormattingEnabled = true;
-            this.matchE13.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE13.Location = new System.Drawing.Point(595, 338);
             this.matchE13.Name = "matchE13";
             this.matchE13.Size = new System.Drawing.Size(71, 21);
             this.matchE13.TabIndex = 582;
+            this.matchE13.Click += new System.EventHandler(this.matchE13_Click);
             // 
             // assignE13
             // 
@@ -3380,37 +2355,11 @@
             // matchE12
             // 
             this.matchE12.FormattingEnabled = true;
-            this.matchE12.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE12.Location = new System.Drawing.Point(595, 312);
             this.matchE12.Name = "matchE12";
             this.matchE12.Size = new System.Drawing.Size(71, 21);
             this.matchE12.TabIndex = 580;
+            this.matchE12.Click += new System.EventHandler(this.matchE12_Click);
             // 
             // assignE12
             // 
@@ -3423,37 +2372,11 @@
             // matchE11
             // 
             this.matchE11.FormattingEnabled = true;
-            this.matchE11.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE11.Location = new System.Drawing.Point(595, 286);
             this.matchE11.Name = "matchE11";
             this.matchE11.Size = new System.Drawing.Size(71, 21);
             this.matchE11.TabIndex = 578;
+            this.matchE11.Click += new System.EventHandler(this.matchE11_Click);
             // 
             // assignE11
             // 
@@ -3466,37 +2389,11 @@
             // matchE10
             // 
             this.matchE10.FormattingEnabled = true;
-            this.matchE10.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE10.Location = new System.Drawing.Point(595, 260);
             this.matchE10.Name = "matchE10";
             this.matchE10.Size = new System.Drawing.Size(71, 21);
             this.matchE10.TabIndex = 576;
+            this.matchE10.Click += new System.EventHandler(this.matchE10_Click);
             // 
             // assignE10
             // 
@@ -3509,37 +2406,11 @@
             // matchE9
             // 
             this.matchE9.FormattingEnabled = true;
-            this.matchE9.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE9.Location = new System.Drawing.Point(595, 234);
             this.matchE9.Name = "matchE9";
             this.matchE9.Size = new System.Drawing.Size(71, 21);
             this.matchE9.TabIndex = 574;
+            this.matchE9.Click += new System.EventHandler(this.matchE9_Click);
             // 
             // assignE9
             // 
@@ -3552,37 +2423,11 @@
             // matchE8
             // 
             this.matchE8.FormattingEnabled = true;
-            this.matchE8.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE8.Location = new System.Drawing.Point(595, 208);
             this.matchE8.Name = "matchE8";
             this.matchE8.Size = new System.Drawing.Size(71, 21);
             this.matchE8.TabIndex = 572;
+            this.matchE8.Click += new System.EventHandler(this.matchE8_Click);
             // 
             // assignE8
             // 
@@ -3595,37 +2440,11 @@
             // matchE7
             // 
             this.matchE7.FormattingEnabled = true;
-            this.matchE7.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE7.Location = new System.Drawing.Point(595, 182);
             this.matchE7.Name = "matchE7";
             this.matchE7.Size = new System.Drawing.Size(71, 21);
             this.matchE7.TabIndex = 570;
+            this.matchE7.Click += new System.EventHandler(this.matchE7_Click);
             // 
             // assignE7
             // 
@@ -3634,41 +2453,16 @@
             this.assignE7.Size = new System.Drawing.Size(44, 21);
             this.assignE7.TabIndex = 569;
             this.assignE7.Text = "Assign";
+            this.assignE7.Click += new System.EventHandler(this.assignE7_Click);
             // 
             // matchE6
             // 
             this.matchE6.FormattingEnabled = true;
-            this.matchE6.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE6.Location = new System.Drawing.Point(595, 156);
             this.matchE6.Name = "matchE6";
             this.matchE6.Size = new System.Drawing.Size(71, 21);
             this.matchE6.TabIndex = 568;
+            this.matchE6.Click += new System.EventHandler(this.matchE6_Click);
             // 
             // assignE6
             // 
@@ -3677,41 +2471,16 @@
             this.assignE6.Size = new System.Drawing.Size(44, 21);
             this.assignE6.TabIndex = 567;
             this.assignE6.Text = "Assign";
+            this.assignE6.Click += new System.EventHandler(this.assignE6_Click);
             // 
             // matchE5
             // 
             this.matchE5.FormattingEnabled = true;
-            this.matchE5.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE5.Location = new System.Drawing.Point(595, 130);
             this.matchE5.Name = "matchE5";
             this.matchE5.Size = new System.Drawing.Size(71, 21);
             this.matchE5.TabIndex = 566;
+            this.matchE5.Click += new System.EventHandler(this.matchE5_Click);
             // 
             // assignE5
             // 
@@ -3720,41 +2489,16 @@
             this.assignE5.Size = new System.Drawing.Size(44, 21);
             this.assignE5.TabIndex = 565;
             this.assignE5.Text = "Assign";
+            this.assignE5.Click += new System.EventHandler(this.assignE5_Click);
             // 
             // matchE4
             // 
             this.matchE4.FormattingEnabled = true;
-            this.matchE4.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE4.Location = new System.Drawing.Point(595, 104);
             this.matchE4.Name = "matchE4";
             this.matchE4.Size = new System.Drawing.Size(71, 21);
             this.matchE4.TabIndex = 564;
+            this.matchE4.Click += new System.EventHandler(this.matchE4_Click);
             // 
             // assignE4
             // 
@@ -3763,41 +2507,16 @@
             this.assignE4.Size = new System.Drawing.Size(44, 21);
             this.assignE4.TabIndex = 563;
             this.assignE4.Text = "Assign";
+            this.assignE4.Click += new System.EventHandler(this.assignE4_Click);
             // 
             // matchE3
             // 
             this.matchE3.FormattingEnabled = true;
-            this.matchE3.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE3.Location = new System.Drawing.Point(595, 78);
             this.matchE3.Name = "matchE3";
             this.matchE3.Size = new System.Drawing.Size(71, 21);
             this.matchE3.TabIndex = 562;
+            this.matchE3.Click += new System.EventHandler(this.matchE3_Click);
             // 
             // assignE3
             // 
@@ -3806,41 +2525,16 @@
             this.assignE3.Size = new System.Drawing.Size(44, 21);
             this.assignE3.TabIndex = 561;
             this.assignE3.Text = "Assign";
+            this.assignE3.Click += new System.EventHandler(this.assignE3_Click);
             // 
             // matchD23
             // 
             this.matchD23.FormattingEnabled = true;
-            this.matchD23.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD23.Location = new System.Drawing.Point(474, 599);
             this.matchD23.Name = "matchD23";
             this.matchD23.Size = new System.Drawing.Size(71, 21);
             this.matchD23.TabIndex = 560;
+            this.matchD23.Click += new System.EventHandler(this.matchD23_Click);
             // 
             // assignD23
             // 
@@ -3853,37 +2547,11 @@
             // matchD22
             // 
             this.matchD22.FormattingEnabled = true;
-            this.matchD22.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD22.Location = new System.Drawing.Point(474, 573);
             this.matchD22.Name = "matchD22";
             this.matchD22.Size = new System.Drawing.Size(71, 21);
             this.matchD22.TabIndex = 558;
+            this.matchD22.Click += new System.EventHandler(this.matchD22_Click);
             // 
             // assignD22
             // 
@@ -3896,37 +2564,11 @@
             // matchD21
             // 
             this.matchD21.FormattingEnabled = true;
-            this.matchD21.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD21.Location = new System.Drawing.Point(474, 547);
             this.matchD21.Name = "matchD21";
             this.matchD21.Size = new System.Drawing.Size(71, 21);
             this.matchD21.TabIndex = 556;
+            this.matchD21.Click += new System.EventHandler(this.matchD21_Click);
             // 
             // assignD21
             // 
@@ -3939,37 +2581,11 @@
             // matchD20
             // 
             this.matchD20.FormattingEnabled = true;
-            this.matchD20.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD20.Location = new System.Drawing.Point(474, 520);
             this.matchD20.Name = "matchD20";
             this.matchD20.Size = new System.Drawing.Size(71, 21);
             this.matchD20.TabIndex = 554;
+            this.matchD20.Click += new System.EventHandler(this.matchD20_Click);
             // 
             // assignD20
             // 
@@ -3982,37 +2598,11 @@
             // matchD19
             // 
             this.matchD19.FormattingEnabled = true;
-            this.matchD19.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD19.Location = new System.Drawing.Point(474, 494);
             this.matchD19.Name = "matchD19";
             this.matchD19.Size = new System.Drawing.Size(71, 21);
             this.matchD19.TabIndex = 552;
+            this.matchD19.Click += new System.EventHandler(this.matchD19_Click);
             // 
             // assignD19
             // 
@@ -4025,37 +2615,11 @@
             // matchD18
             // 
             this.matchD18.FormattingEnabled = true;
-            this.matchD18.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD18.Location = new System.Drawing.Point(474, 468);
             this.matchD18.Name = "matchD18";
             this.matchD18.Size = new System.Drawing.Size(71, 21);
             this.matchD18.TabIndex = 550;
+            this.matchD18.Click += new System.EventHandler(this.matchD18_Click);
             // 
             // assignD18
             // 
@@ -4068,37 +2632,11 @@
             // matchD17
             // 
             this.matchD17.FormattingEnabled = true;
-            this.matchD17.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD17.Location = new System.Drawing.Point(474, 442);
             this.matchD17.Name = "matchD17";
             this.matchD17.Size = new System.Drawing.Size(71, 21);
             this.matchD17.TabIndex = 548;
+            this.matchD17.Click += new System.EventHandler(this.matchD17_Click);
             // 
             // assignD17
             // 
@@ -4111,37 +2649,11 @@
             // matchD16
             // 
             this.matchD16.FormattingEnabled = true;
-            this.matchD16.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD16.Location = new System.Drawing.Point(474, 416);
             this.matchD16.Name = "matchD16";
             this.matchD16.Size = new System.Drawing.Size(71, 21);
             this.matchD16.TabIndex = 546;
+            this.matchD16.Click += new System.EventHandler(this.matchD16_Click);
             // 
             // assignD16
             // 
@@ -4154,37 +2666,11 @@
             // matchD15
             // 
             this.matchD15.FormattingEnabled = true;
-            this.matchD15.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD15.Location = new System.Drawing.Point(474, 390);
             this.matchD15.Name = "matchD15";
             this.matchD15.Size = new System.Drawing.Size(71, 21);
             this.matchD15.TabIndex = 544;
+            this.matchD15.Click += new System.EventHandler(this.matchD15_Click);
             // 
             // assignD15
             // 
@@ -4197,37 +2683,11 @@
             // matchD14
             // 
             this.matchD14.FormattingEnabled = true;
-            this.matchD14.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD14.Location = new System.Drawing.Point(474, 364);
             this.matchD14.Name = "matchD14";
             this.matchD14.Size = new System.Drawing.Size(71, 21);
             this.matchD14.TabIndex = 542;
+            this.matchD14.Click += new System.EventHandler(this.matchD14_Click);
             // 
             // assignD14
             // 
@@ -4240,37 +2700,11 @@
             // matchD13
             // 
             this.matchD13.FormattingEnabled = true;
-            this.matchD13.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD13.Location = new System.Drawing.Point(474, 338);
             this.matchD13.Name = "matchD13";
             this.matchD13.Size = new System.Drawing.Size(71, 21);
             this.matchD13.TabIndex = 540;
+            this.matchD13.Click += new System.EventHandler(this.matchD13_Click);
             // 
             // assignD13
             // 
@@ -4283,37 +2717,11 @@
             // matchD12
             // 
             this.matchD12.FormattingEnabled = true;
-            this.matchD12.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD12.Location = new System.Drawing.Point(474, 312);
             this.matchD12.Name = "matchD12";
             this.matchD12.Size = new System.Drawing.Size(71, 21);
             this.matchD12.TabIndex = 538;
+            this.matchD12.Click += new System.EventHandler(this.matchD12_Click);
             // 
             // assignD12
             // 
@@ -4326,37 +2734,11 @@
             // matchD11
             // 
             this.matchD11.FormattingEnabled = true;
-            this.matchD11.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD11.Location = new System.Drawing.Point(474, 286);
             this.matchD11.Name = "matchD11";
             this.matchD11.Size = new System.Drawing.Size(71, 21);
             this.matchD11.TabIndex = 536;
+            this.matchD11.Click += new System.EventHandler(this.matchD11_Click);
             // 
             // assignD11
             // 
@@ -4369,37 +2751,11 @@
             // matchD10
             // 
             this.matchD10.FormattingEnabled = true;
-            this.matchD10.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD10.Location = new System.Drawing.Point(474, 260);
             this.matchD10.Name = "matchD10";
             this.matchD10.Size = new System.Drawing.Size(71, 21);
             this.matchD10.TabIndex = 534;
+            this.matchD10.Click += new System.EventHandler(this.matchD10_Click);
             // 
             // assignD10
             // 
@@ -4412,37 +2768,11 @@
             // matchD9
             // 
             this.matchD9.FormattingEnabled = true;
-            this.matchD9.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD9.Location = new System.Drawing.Point(474, 234);
             this.matchD9.Name = "matchD9";
             this.matchD9.Size = new System.Drawing.Size(71, 21);
             this.matchD9.TabIndex = 532;
+            this.matchD9.Click += new System.EventHandler(this.matchD9_Click);
             // 
             // assignD9
             // 
@@ -4455,37 +2785,11 @@
             // matchD8
             // 
             this.matchD8.FormattingEnabled = true;
-            this.matchD8.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD8.Location = new System.Drawing.Point(474, 208);
             this.matchD8.Name = "matchD8";
             this.matchD8.Size = new System.Drawing.Size(71, 21);
             this.matchD8.TabIndex = 530;
+            this.matchD8.Click += new System.EventHandler(this.matchD8_Click);
             // 
             // assignD8
             // 
@@ -4498,37 +2802,11 @@
             // matchD7
             // 
             this.matchD7.FormattingEnabled = true;
-            this.matchD7.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD7.Location = new System.Drawing.Point(474, 182);
             this.matchD7.Name = "matchD7";
             this.matchD7.Size = new System.Drawing.Size(71, 21);
             this.matchD7.TabIndex = 528;
+            this.matchD7.Click += new System.EventHandler(this.matchD7_Click);
             // 
             // assignD7
             // 
@@ -4537,41 +2815,16 @@
             this.assignD7.Size = new System.Drawing.Size(44, 21);
             this.assignD7.TabIndex = 527;
             this.assignD7.Text = "Assign";
+            this.assignD7.Click += new System.EventHandler(this.assignD7_Click);
             // 
             // matchD6
             // 
             this.matchD6.FormattingEnabled = true;
-            this.matchD6.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD6.Location = new System.Drawing.Point(474, 156);
             this.matchD6.Name = "matchD6";
             this.matchD6.Size = new System.Drawing.Size(71, 21);
             this.matchD6.TabIndex = 526;
+            this.matchD6.Click += new System.EventHandler(this.matchD6_Click);
             // 
             // assignD6
             // 
@@ -4580,41 +2833,16 @@
             this.assignD6.Size = new System.Drawing.Size(44, 21);
             this.assignD6.TabIndex = 525;
             this.assignD6.Text = "Assign";
+            this.assignD6.Click += new System.EventHandler(this.assignD6_Click);
             // 
             // matchD5
             // 
             this.matchD5.FormattingEnabled = true;
-            this.matchD5.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD5.Location = new System.Drawing.Point(474, 130);
             this.matchD5.Name = "matchD5";
             this.matchD5.Size = new System.Drawing.Size(71, 21);
             this.matchD5.TabIndex = 524;
+            this.matchD5.Click += new System.EventHandler(this.matchD5_Click);
             // 
             // assignD5
             // 
@@ -4623,41 +2851,16 @@
             this.assignD5.Size = new System.Drawing.Size(44, 21);
             this.assignD5.TabIndex = 523;
             this.assignD5.Text = "Assign";
+            this.assignD5.Click += new System.EventHandler(this.assignD5_Click);
             // 
             // matchD4
             // 
             this.matchD4.FormattingEnabled = true;
-            this.matchD4.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD4.Location = new System.Drawing.Point(474, 104);
             this.matchD4.Name = "matchD4";
             this.matchD4.Size = new System.Drawing.Size(71, 21);
             this.matchD4.TabIndex = 522;
+            this.matchD4.Click += new System.EventHandler(this.matchD4_Click);
             // 
             // assignD4
             // 
@@ -4666,41 +2869,16 @@
             this.assignD4.Size = new System.Drawing.Size(44, 21);
             this.assignD4.TabIndex = 521;
             this.assignD4.Text = "Assign";
+            this.assignD4.Click += new System.EventHandler(this.assignD4_Click);
             // 
             // matchD3
             // 
             this.matchD3.FormattingEnabled = true;
-            this.matchD3.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD3.Location = new System.Drawing.Point(474, 78);
             this.matchD3.Name = "matchD3";
             this.matchD3.Size = new System.Drawing.Size(71, 21);
             this.matchD3.TabIndex = 520;
+            this.matchD3.Click += new System.EventHandler(this.matchD3_Click);
             // 
             // assignD3
             // 
@@ -4709,41 +2887,16 @@
             this.assignD3.Size = new System.Drawing.Size(44, 21);
             this.assignD3.TabIndex = 519;
             this.assignD3.Text = "Assign";
+            this.assignD3.Click += new System.EventHandler(this.assignD3_Click);
             // 
             // matchC23
             // 
             this.matchC23.FormattingEnabled = true;
-            this.matchC23.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC23.Location = new System.Drawing.Point(353, 599);
             this.matchC23.Name = "matchC23";
             this.matchC23.Size = new System.Drawing.Size(71, 21);
             this.matchC23.TabIndex = 518;
+            this.matchC23.Click += new System.EventHandler(this.MatchC23_Click);
             // 
             // assignC23
             // 
@@ -4756,37 +2909,11 @@
             // matchC22
             // 
             this.matchC22.FormattingEnabled = true;
-            this.matchC22.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC22.Location = new System.Drawing.Point(353, 573);
             this.matchC22.Name = "matchC22";
             this.matchC22.Size = new System.Drawing.Size(71, 21);
             this.matchC22.TabIndex = 516;
+            this.matchC22.Click += new System.EventHandler(this.matchC22_Click);
             // 
             // assignC22
             // 
@@ -4799,37 +2926,11 @@
             // matchC21
             // 
             this.matchC21.FormattingEnabled = true;
-            this.matchC21.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC21.Location = new System.Drawing.Point(353, 547);
             this.matchC21.Name = "matchC21";
             this.matchC21.Size = new System.Drawing.Size(71, 21);
             this.matchC21.TabIndex = 514;
+            this.matchC21.Click += new System.EventHandler(this.matchC21_Click);
             // 
             // assignC21
             // 
@@ -4842,37 +2943,11 @@
             // matchC20
             // 
             this.matchC20.FormattingEnabled = true;
-            this.matchC20.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC20.Location = new System.Drawing.Point(353, 520);
             this.matchC20.Name = "matchC20";
             this.matchC20.Size = new System.Drawing.Size(71, 21);
             this.matchC20.TabIndex = 512;
+            this.matchC20.Click += new System.EventHandler(this.matchC20_Click);
             // 
             // assignC20
             // 
@@ -4885,37 +2960,11 @@
             // matchC19
             // 
             this.matchC19.FormattingEnabled = true;
-            this.matchC19.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC19.Location = new System.Drawing.Point(353, 494);
             this.matchC19.Name = "matchC19";
             this.matchC19.Size = new System.Drawing.Size(71, 21);
             this.matchC19.TabIndex = 510;
+            this.matchC19.Click += new System.EventHandler(this.matchC19_Click);
             // 
             // assignC19
             // 
@@ -4928,37 +2977,11 @@
             // matchC18
             // 
             this.matchC18.FormattingEnabled = true;
-            this.matchC18.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC18.Location = new System.Drawing.Point(353, 468);
             this.matchC18.Name = "matchC18";
             this.matchC18.Size = new System.Drawing.Size(71, 21);
             this.matchC18.TabIndex = 508;
+            this.matchC18.Click += new System.EventHandler(this.matchC18_Click);
             // 
             // assignC18
             // 
@@ -4971,37 +2994,11 @@
             // matchC17
             // 
             this.matchC17.FormattingEnabled = true;
-            this.matchC17.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC17.Location = new System.Drawing.Point(353, 442);
             this.matchC17.Name = "matchC17";
             this.matchC17.Size = new System.Drawing.Size(71, 21);
             this.matchC17.TabIndex = 506;
+            this.matchC17.Click += new System.EventHandler(this.matchC17_Click);
             // 
             // assignC17
             // 
@@ -5014,37 +3011,11 @@
             // matchC16
             // 
             this.matchC16.FormattingEnabled = true;
-            this.matchC16.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC16.Location = new System.Drawing.Point(353, 416);
             this.matchC16.Name = "matchC16";
             this.matchC16.Size = new System.Drawing.Size(71, 21);
             this.matchC16.TabIndex = 504;
+            this.matchC16.Click += new System.EventHandler(this.matchC16_Click);
             // 
             // assignC16
             // 
@@ -5057,37 +3028,11 @@
             // matchC15
             // 
             this.matchC15.FormattingEnabled = true;
-            this.matchC15.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC15.Location = new System.Drawing.Point(353, 390);
             this.matchC15.Name = "matchC15";
             this.matchC15.Size = new System.Drawing.Size(71, 21);
             this.matchC15.TabIndex = 502;
+            this.matchC15.Click += new System.EventHandler(this.matchC15_Click);
             // 
             // assignC15
             // 
@@ -5100,37 +3045,11 @@
             // matchC14
             // 
             this.matchC14.FormattingEnabled = true;
-            this.matchC14.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC14.Location = new System.Drawing.Point(353, 364);
             this.matchC14.Name = "matchC14";
             this.matchC14.Size = new System.Drawing.Size(71, 21);
             this.matchC14.TabIndex = 500;
+            this.matchC14.Click += new System.EventHandler(this.matchC14_Click);
             // 
             // assignC14
             // 
@@ -5143,37 +3062,11 @@
             // matchC13
             // 
             this.matchC13.FormattingEnabled = true;
-            this.matchC13.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC13.Location = new System.Drawing.Point(353, 338);
             this.matchC13.Name = "matchC13";
             this.matchC13.Size = new System.Drawing.Size(71, 21);
             this.matchC13.TabIndex = 498;
+            this.matchC13.Click += new System.EventHandler(this.matchC13_Click);
             // 
             // assignC13
             // 
@@ -5186,37 +3079,11 @@
             // matchC12
             // 
             this.matchC12.FormattingEnabled = true;
-            this.matchC12.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC12.Location = new System.Drawing.Point(353, 312);
             this.matchC12.Name = "matchC12";
             this.matchC12.Size = new System.Drawing.Size(71, 21);
             this.matchC12.TabIndex = 496;
+            this.matchC12.Click += new System.EventHandler(this.matchC12_Click);
             // 
             // assignC12
             // 
@@ -5229,37 +3096,11 @@
             // matchC11
             // 
             this.matchC11.FormattingEnabled = true;
-            this.matchC11.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC11.Location = new System.Drawing.Point(353, 286);
             this.matchC11.Name = "matchC11";
             this.matchC11.Size = new System.Drawing.Size(71, 21);
             this.matchC11.TabIndex = 494;
+            this.matchC11.Click += new System.EventHandler(this.matchC11_Click);
             // 
             // assignC11
             // 
@@ -5272,37 +3113,11 @@
             // matchC10
             // 
             this.matchC10.FormattingEnabled = true;
-            this.matchC10.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC10.Location = new System.Drawing.Point(353, 260);
             this.matchC10.Name = "matchC10";
             this.matchC10.Size = new System.Drawing.Size(71, 21);
             this.matchC10.TabIndex = 492;
+            this.matchC10.Click += new System.EventHandler(this.matchC10_Click);
             // 
             // assignC10
             // 
@@ -5315,37 +3130,11 @@
             // matchC9
             // 
             this.matchC9.FormattingEnabled = true;
-            this.matchC9.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC9.Location = new System.Drawing.Point(353, 234);
             this.matchC9.Name = "matchC9";
             this.matchC9.Size = new System.Drawing.Size(71, 21);
             this.matchC9.TabIndex = 490;
+            this.matchC9.Click += new System.EventHandler(this.matchC9_Click);
             // 
             // assignC9
             // 
@@ -5358,37 +3147,11 @@
             // matchC8
             // 
             this.matchC8.FormattingEnabled = true;
-            this.matchC8.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC8.Location = new System.Drawing.Point(353, 208);
             this.matchC8.Name = "matchC8";
             this.matchC8.Size = new System.Drawing.Size(71, 21);
             this.matchC8.TabIndex = 488;
+            this.matchC8.Click += new System.EventHandler(this.matchC8_Click);
             // 
             // assignC8
             // 
@@ -5401,37 +3164,11 @@
             // matchC7
             // 
             this.matchC7.FormattingEnabled = true;
-            this.matchC7.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC7.Location = new System.Drawing.Point(353, 182);
             this.matchC7.Name = "matchC7";
             this.matchC7.Size = new System.Drawing.Size(71, 21);
             this.matchC7.TabIndex = 486;
+            this.matchC7.Click += new System.EventHandler(this.matchC7_Click);
             // 
             // assignC7
             // 
@@ -5440,41 +3177,16 @@
             this.assignC7.Size = new System.Drawing.Size(44, 21);
             this.assignC7.TabIndex = 485;
             this.assignC7.Text = "Assign";
+            this.assignC7.Click += new System.EventHandler(this.assignC7_Click);
             // 
             // matchC6
             // 
             this.matchC6.FormattingEnabled = true;
-            this.matchC6.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC6.Location = new System.Drawing.Point(353, 156);
             this.matchC6.Name = "matchC6";
             this.matchC6.Size = new System.Drawing.Size(71, 21);
             this.matchC6.TabIndex = 484;
+            this.matchC6.Click += new System.EventHandler(this.matchC6_Click);
             // 
             // assignC6
             // 
@@ -5483,41 +3195,16 @@
             this.assignC6.Size = new System.Drawing.Size(44, 21);
             this.assignC6.TabIndex = 483;
             this.assignC6.Text = "Assign";
+            this.assignC6.Click += new System.EventHandler(this.assignC6_Click);
             // 
             // matchC5
             // 
             this.matchC5.FormattingEnabled = true;
-            this.matchC5.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC5.Location = new System.Drawing.Point(353, 130);
             this.matchC5.Name = "matchC5";
             this.matchC5.Size = new System.Drawing.Size(71, 21);
             this.matchC5.TabIndex = 482;
+            this.matchC5.Click += new System.EventHandler(this.matchC5_Click);
             // 
             // assignC5
             // 
@@ -5526,41 +3213,16 @@
             this.assignC5.Size = new System.Drawing.Size(44, 21);
             this.assignC5.TabIndex = 481;
             this.assignC5.Text = "Assign";
+            this.assignC5.Click += new System.EventHandler(this.assignC5_Click);
             // 
             // matchC4
             // 
             this.matchC4.FormattingEnabled = true;
-            this.matchC4.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC4.Location = new System.Drawing.Point(353, 104);
             this.matchC4.Name = "matchC4";
             this.matchC4.Size = new System.Drawing.Size(71, 21);
             this.matchC4.TabIndex = 480;
+            this.matchC4.Click += new System.EventHandler(this.matchC4_Click);
             // 
             // assignC4
             // 
@@ -5569,41 +3231,16 @@
             this.assignC4.Size = new System.Drawing.Size(44, 21);
             this.assignC4.TabIndex = 479;
             this.assignC4.Text = "Assign";
+            this.assignC4.Click += new System.EventHandler(this.assignC4_Click);
             // 
             // matchC3
             // 
             this.matchC3.FormattingEnabled = true;
-            this.matchC3.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC3.Location = new System.Drawing.Point(353, 78);
             this.matchC3.Name = "matchC3";
             this.matchC3.Size = new System.Drawing.Size(71, 21);
             this.matchC3.TabIndex = 478;
+            this.matchC3.Click += new System.EventHandler(this.matchC3_Click);
             // 
             // assignC3
             // 
@@ -5612,41 +3249,16 @@
             this.assignC3.Size = new System.Drawing.Size(44, 21);
             this.assignC3.TabIndex = 477;
             this.assignC3.Text = "Assign";
+            this.assignC3.Click += new System.EventHandler(this.assignC3_Click);
             // 
             // matchB23
             // 
             this.matchB23.FormattingEnabled = true;
-            this.matchB23.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB23.Location = new System.Drawing.Point(232, 599);
             this.matchB23.Name = "matchB23";
             this.matchB23.Size = new System.Drawing.Size(71, 21);
             this.matchB23.TabIndex = 476;
+            this.matchB23.Click += new System.EventHandler(this.matchB23_Click);
             // 
             // assignB23
             // 
@@ -5659,37 +3271,11 @@
             // matchB22
             // 
             this.matchB22.FormattingEnabled = true;
-            this.matchB22.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB22.Location = new System.Drawing.Point(232, 573);
             this.matchB22.Name = "matchB22";
             this.matchB22.Size = new System.Drawing.Size(71, 21);
             this.matchB22.TabIndex = 474;
+            this.matchB22.Click += new System.EventHandler(this.matchB22_Click);
             // 
             // assignB22
             // 
@@ -5702,37 +3288,11 @@
             // matchB21
             // 
             this.matchB21.FormattingEnabled = true;
-            this.matchB21.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB21.Location = new System.Drawing.Point(232, 547);
             this.matchB21.Name = "matchB21";
             this.matchB21.Size = new System.Drawing.Size(71, 21);
             this.matchB21.TabIndex = 472;
+            this.matchB21.Click += new System.EventHandler(this.matchB21_Click);
             // 
             // assignB21
             // 
@@ -5745,37 +3305,11 @@
             // matchB20
             // 
             this.matchB20.FormattingEnabled = true;
-            this.matchB20.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB20.Location = new System.Drawing.Point(232, 520);
             this.matchB20.Name = "matchB20";
             this.matchB20.Size = new System.Drawing.Size(71, 21);
             this.matchB20.TabIndex = 470;
+            this.matchB20.Click += new System.EventHandler(this.matchB20_Click);
             // 
             // assignB20
             // 
@@ -5788,37 +3322,11 @@
             // matchB19
             // 
             this.matchB19.FormattingEnabled = true;
-            this.matchB19.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB19.Location = new System.Drawing.Point(232, 494);
             this.matchB19.Name = "matchB19";
             this.matchB19.Size = new System.Drawing.Size(71, 21);
             this.matchB19.TabIndex = 468;
+            this.matchB19.Click += new System.EventHandler(this.matchB19_Click);
             // 
             // assignB19
             // 
@@ -5831,37 +3339,11 @@
             // matchB18
             // 
             this.matchB18.FormattingEnabled = true;
-            this.matchB18.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB18.Location = new System.Drawing.Point(232, 468);
             this.matchB18.Name = "matchB18";
             this.matchB18.Size = new System.Drawing.Size(71, 21);
             this.matchB18.TabIndex = 466;
+            this.matchB18.Click += new System.EventHandler(this.matchB18_Click);
             // 
             // assignB18
             // 
@@ -5874,37 +3356,11 @@
             // matchB17
             // 
             this.matchB17.FormattingEnabled = true;
-            this.matchB17.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB17.Location = new System.Drawing.Point(232, 442);
             this.matchB17.Name = "matchB17";
             this.matchB17.Size = new System.Drawing.Size(71, 21);
             this.matchB17.TabIndex = 464;
+            this.matchB17.Click += new System.EventHandler(this.matchB17_Click);
             // 
             // assignB17
             // 
@@ -5917,37 +3373,11 @@
             // matchB16
             // 
             this.matchB16.FormattingEnabled = true;
-            this.matchB16.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB16.Location = new System.Drawing.Point(232, 416);
             this.matchB16.Name = "matchB16";
             this.matchB16.Size = new System.Drawing.Size(71, 21);
             this.matchB16.TabIndex = 462;
+            this.matchB16.Click += new System.EventHandler(this.matchB16_Click);
             // 
             // assignB16
             // 
@@ -5960,37 +3390,11 @@
             // matchB15
             // 
             this.matchB15.FormattingEnabled = true;
-            this.matchB15.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB15.Location = new System.Drawing.Point(232, 390);
             this.matchB15.Name = "matchB15";
             this.matchB15.Size = new System.Drawing.Size(71, 21);
             this.matchB15.TabIndex = 460;
+            this.matchB15.Click += new System.EventHandler(this.matchB15_Click);
             // 
             // assignB15
             // 
@@ -6003,37 +3407,11 @@
             // matchB14
             // 
             this.matchB14.FormattingEnabled = true;
-            this.matchB14.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB14.Location = new System.Drawing.Point(232, 364);
             this.matchB14.Name = "matchB14";
             this.matchB14.Size = new System.Drawing.Size(71, 21);
             this.matchB14.TabIndex = 458;
+            this.matchB14.Click += new System.EventHandler(this.matchB14_Click);
             // 
             // assignB14
             // 
@@ -6046,37 +3424,11 @@
             // matchB13
             // 
             this.matchB13.FormattingEnabled = true;
-            this.matchB13.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB13.Location = new System.Drawing.Point(232, 338);
             this.matchB13.Name = "matchB13";
             this.matchB13.Size = new System.Drawing.Size(71, 21);
             this.matchB13.TabIndex = 456;
+            this.matchB13.Click += new System.EventHandler(this.matchB13_Click);
             // 
             // assignB13
             // 
@@ -6089,37 +3441,11 @@
             // matchB12
             // 
             this.matchB12.FormattingEnabled = true;
-            this.matchB12.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB12.Location = new System.Drawing.Point(232, 312);
             this.matchB12.Name = "matchB12";
             this.matchB12.Size = new System.Drawing.Size(71, 21);
             this.matchB12.TabIndex = 454;
+            this.matchB12.Click += new System.EventHandler(this.matchB12_Click);
             // 
             // assignB12
             // 
@@ -6132,37 +3458,11 @@
             // matchB11
             // 
             this.matchB11.FormattingEnabled = true;
-            this.matchB11.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB11.Location = new System.Drawing.Point(232, 286);
             this.matchB11.Name = "matchB11";
             this.matchB11.Size = new System.Drawing.Size(71, 21);
             this.matchB11.TabIndex = 452;
+            this.matchB11.Click += new System.EventHandler(this.matchB11_Click);
             // 
             // assignB11
             // 
@@ -6175,37 +3475,11 @@
             // matchB10
             // 
             this.matchB10.FormattingEnabled = true;
-            this.matchB10.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB10.Location = new System.Drawing.Point(232, 260);
             this.matchB10.Name = "matchB10";
             this.matchB10.Size = new System.Drawing.Size(71, 21);
             this.matchB10.TabIndex = 450;
+            this.matchB10.Click += new System.EventHandler(this.matchB10_Click);
             // 
             // assignB10
             // 
@@ -6218,37 +3492,11 @@
             // matchB9
             // 
             this.matchB9.FormattingEnabled = true;
-            this.matchB9.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB9.Location = new System.Drawing.Point(232, 234);
             this.matchB9.Name = "matchB9";
             this.matchB9.Size = new System.Drawing.Size(71, 21);
             this.matchB9.TabIndex = 448;
+            this.matchB9.Click += new System.EventHandler(this.matchB9_Click);
             // 
             // assignB9
             // 
@@ -6261,37 +3509,11 @@
             // matchB8
             // 
             this.matchB8.FormattingEnabled = true;
-            this.matchB8.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB8.Location = new System.Drawing.Point(232, 208);
             this.matchB8.Name = "matchB8";
             this.matchB8.Size = new System.Drawing.Size(71, 21);
             this.matchB8.TabIndex = 446;
+            this.matchB8.Click += new System.EventHandler(this.matchB8_Click);
             // 
             // assignB8
             // 
@@ -6304,37 +3526,11 @@
             // matchB7
             // 
             this.matchB7.FormattingEnabled = true;
-            this.matchB7.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB7.Location = new System.Drawing.Point(232, 182);
             this.matchB7.Name = "matchB7";
             this.matchB7.Size = new System.Drawing.Size(71, 21);
             this.matchB7.TabIndex = 444;
+            this.matchB7.Click += new System.EventHandler(this.matchB7_Click);
             // 
             // assignB7
             // 
@@ -6343,41 +3539,16 @@
             this.assignB7.Size = new System.Drawing.Size(44, 21);
             this.assignB7.TabIndex = 443;
             this.assignB7.Text = "Assign";
+            this.assignB7.Click += new System.EventHandler(this.assignB7_Click);
             // 
             // matchB6
             // 
             this.matchB6.FormattingEnabled = true;
-            this.matchB6.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB6.Location = new System.Drawing.Point(232, 156);
             this.matchB6.Name = "matchB6";
             this.matchB6.Size = new System.Drawing.Size(71, 21);
             this.matchB6.TabIndex = 442;
+            this.matchB6.Click += new System.EventHandler(this.matchB6_Click);
             // 
             // assignB6
             // 
@@ -6386,41 +3557,16 @@
             this.assignB6.Size = new System.Drawing.Size(44, 21);
             this.assignB6.TabIndex = 441;
             this.assignB6.Text = "Assign";
+            this.assignB6.Click += new System.EventHandler(this.assignB6_Click);
             // 
             // matchB5
             // 
             this.matchB5.FormattingEnabled = true;
-            this.matchB5.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB5.Location = new System.Drawing.Point(232, 130);
             this.matchB5.Name = "matchB5";
             this.matchB5.Size = new System.Drawing.Size(71, 21);
             this.matchB5.TabIndex = 440;
+            this.matchB5.Click += new System.EventHandler(this.matchB5_Click);
             // 
             // assignB5
             // 
@@ -6429,41 +3575,16 @@
             this.assignB5.Size = new System.Drawing.Size(44, 21);
             this.assignB5.TabIndex = 439;
             this.assignB5.Text = "Assign";
+            this.assignB5.Click += new System.EventHandler(this.assignB5_Click);
             // 
             // matchB4
             // 
             this.matchB4.FormattingEnabled = true;
-            this.matchB4.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB4.Location = new System.Drawing.Point(232, 104);
             this.matchB4.Name = "matchB4";
             this.matchB4.Size = new System.Drawing.Size(71, 21);
             this.matchB4.TabIndex = 438;
+            this.matchB4.Click += new System.EventHandler(this.matchB4_Click);
             // 
             // assignB4
             // 
@@ -6472,41 +3593,16 @@
             this.assignB4.Size = new System.Drawing.Size(44, 21);
             this.assignB4.TabIndex = 437;
             this.assignB4.Text = "Assign";
+            this.assignB4.Click += new System.EventHandler(this.assignB4_Click);
             // 
             // matchB3
             // 
             this.matchB3.FormattingEnabled = true;
-            this.matchB3.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB3.Location = new System.Drawing.Point(232, 78);
             this.matchB3.Name = "matchB3";
             this.matchB3.Size = new System.Drawing.Size(71, 21);
             this.matchB3.TabIndex = 436;
+            this.matchB3.Click += new System.EventHandler(this.matchB3_Click);
             // 
             // assignB3
             // 
@@ -6515,41 +3611,16 @@
             this.assignB3.Size = new System.Drawing.Size(44, 21);
             this.assignB3.TabIndex = 435;
             this.assignB3.Text = "Assign";
+            this.assignB3.Click += new System.EventHandler(this.assignB3_Click);
             // 
             // matchG2
             // 
             this.matchG2.FormattingEnabled = true;
-            this.matchG2.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG2.Location = new System.Drawing.Point(837, 52);
             this.matchG2.Name = "matchG2";
             this.matchG2.Size = new System.Drawing.Size(71, 21);
             this.matchG2.TabIndex = 434;
+            this.matchG2.Click += new System.EventHandler(this.matchG2_Click);
             // 
             // assignG2
             // 
@@ -6558,41 +3629,16 @@
             this.assignG2.Size = new System.Drawing.Size(44, 21);
             this.assignG2.TabIndex = 433;
             this.assignG2.Text = "Assign";
+            this.assignG2.Click += new System.EventHandler(this.assignG2_Click);
             // 
             // matchF2
             // 
             this.matchF2.FormattingEnabled = true;
-            this.matchF2.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF2.Location = new System.Drawing.Point(716, 52);
             this.matchF2.Name = "matchF2";
             this.matchF2.Size = new System.Drawing.Size(71, 21);
             this.matchF2.TabIndex = 432;
+            this.matchF2.Click += new System.EventHandler(this.matchF2_Click);
             // 
             // assignF2
             // 
@@ -6601,41 +3647,16 @@
             this.assignF2.Size = new System.Drawing.Size(44, 21);
             this.assignF2.TabIndex = 431;
             this.assignF2.Text = "Assign";
+            this.assignF2.Click += new System.EventHandler(this.assignF2_Click);
             // 
             // matchE2
             // 
             this.matchE2.FormattingEnabled = true;
-            this.matchE2.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE2.Location = new System.Drawing.Point(595, 52);
             this.matchE2.Name = "matchE2";
             this.matchE2.Size = new System.Drawing.Size(71, 21);
             this.matchE2.TabIndex = 430;
+            this.matchE2.Click += new System.EventHandler(this.matchE2_Click);
             // 
             // assignE2
             // 
@@ -6644,41 +3665,16 @@
             this.assignE2.Size = new System.Drawing.Size(44, 21);
             this.assignE2.TabIndex = 429;
             this.assignE2.Text = "Assign";
+            this.assignE2.Click += new System.EventHandler(this.assignE2_Click);
             // 
             // matchD2
             // 
             this.matchD2.FormattingEnabled = true;
-            this.matchD2.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD2.Location = new System.Drawing.Point(474, 52);
             this.matchD2.Name = "matchD2";
             this.matchD2.Size = new System.Drawing.Size(71, 21);
             this.matchD2.TabIndex = 428;
+            this.matchD2.Click += new System.EventHandler(this.matchD2_Click);
             // 
             // assignD2
             // 
@@ -6687,41 +3683,16 @@
             this.assignD2.Size = new System.Drawing.Size(44, 21);
             this.assignD2.TabIndex = 427;
             this.assignD2.Text = "Assign";
+            this.assignD2.Click += new System.EventHandler(this.assignD2_Click);
             // 
             // matchC2
             // 
             this.matchC2.FormattingEnabled = true;
-            this.matchC2.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC2.Location = new System.Drawing.Point(353, 52);
             this.matchC2.Name = "matchC2";
             this.matchC2.Size = new System.Drawing.Size(71, 21);
             this.matchC2.TabIndex = 426;
+            this.matchC2.Click += new System.EventHandler(this.matchC2_Click);
             // 
             // assignC2
             // 
@@ -6730,41 +3701,16 @@
             this.assignC2.Size = new System.Drawing.Size(44, 21);
             this.assignC2.TabIndex = 425;
             this.assignC2.Text = "Assign";
+            this.assignC2.Click += new System.EventHandler(this.assignC2_Click);
             // 
             // matchB2
             // 
             this.matchB2.FormattingEnabled = true;
-            this.matchB2.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB2.Location = new System.Drawing.Point(232, 52);
             this.matchB2.Name = "matchB2";
             this.matchB2.Size = new System.Drawing.Size(71, 21);
             this.matchB2.TabIndex = 424;
+            this.matchB2.Click += new System.EventHandler(this.matchB2_Click);
             // 
             // assignB2
             // 
@@ -6773,41 +3719,16 @@
             this.assignB2.Size = new System.Drawing.Size(44, 21);
             this.assignB2.TabIndex = 423;
             this.assignB2.Text = "Assign";
+            this.assignB2.Click += new System.EventHandler(this.assignB2_Click);
             // 
             // matchA23
             // 
             this.matchA23.FormattingEnabled = true;
-            this.matchA23.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA23.Location = new System.Drawing.Point(111, 599);
             this.matchA23.Name = "matchA23";
             this.matchA23.Size = new System.Drawing.Size(71, 21);
             this.matchA23.TabIndex = 422;
+            this.matchA23.Click += new System.EventHandler(this.matchA23_Click);
             // 
             // assignA23
             // 
@@ -6820,37 +3741,11 @@
             // matchA22
             // 
             this.matchA22.FormattingEnabled = true;
-            this.matchA22.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA22.Location = new System.Drawing.Point(111, 573);
             this.matchA22.Name = "matchA22";
             this.matchA22.Size = new System.Drawing.Size(71, 21);
             this.matchA22.TabIndex = 420;
+            this.matchA22.Click += new System.EventHandler(this.matchA22_Click);
             // 
             // assignA22
             // 
@@ -6863,37 +3758,11 @@
             // matchA21
             // 
             this.matchA21.FormattingEnabled = true;
-            this.matchA21.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA21.Location = new System.Drawing.Point(111, 547);
             this.matchA21.Name = "matchA21";
             this.matchA21.Size = new System.Drawing.Size(71, 21);
             this.matchA21.TabIndex = 418;
+            this.matchA21.Click += new System.EventHandler(this.matchA21_Click);
             // 
             // assignA21
             // 
@@ -6906,37 +3775,11 @@
             // matchA20
             // 
             this.matchA20.FormattingEnabled = true;
-            this.matchA20.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA20.Location = new System.Drawing.Point(111, 520);
             this.matchA20.Name = "matchA20";
             this.matchA20.Size = new System.Drawing.Size(71, 21);
             this.matchA20.TabIndex = 416;
+            this.matchA20.Click += new System.EventHandler(this.matchA20_Click);
             // 
             // assignA20
             // 
@@ -6949,37 +3792,11 @@
             // matchA19
             // 
             this.matchA19.FormattingEnabled = true;
-            this.matchA19.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA19.Location = new System.Drawing.Point(111, 494);
             this.matchA19.Name = "matchA19";
             this.matchA19.Size = new System.Drawing.Size(71, 21);
             this.matchA19.TabIndex = 414;
+            this.matchA19.Click += new System.EventHandler(this.matchA19_Click);
             // 
             // assignA19
             // 
@@ -6992,37 +3809,11 @@
             // matchA18
             // 
             this.matchA18.FormattingEnabled = true;
-            this.matchA18.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA18.Location = new System.Drawing.Point(111, 468);
             this.matchA18.Name = "matchA18";
             this.matchA18.Size = new System.Drawing.Size(71, 21);
             this.matchA18.TabIndex = 412;
+            this.matchA18.Click += new System.EventHandler(this.matchA18_Click);
             // 
             // assignA18
             // 
@@ -7035,37 +3826,11 @@
             // matchA16
             // 
             this.matchA16.FormattingEnabled = true;
-            this.matchA16.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA16.Location = new System.Drawing.Point(111, 416);
             this.matchA16.Name = "matchA16";
             this.matchA16.Size = new System.Drawing.Size(71, 21);
             this.matchA16.TabIndex = 410;
+            this.matchA16.Click += new System.EventHandler(this.matchA16_Click);
             // 
             // assignA16
             // 
@@ -7078,37 +3843,11 @@
             // matchA15
             // 
             this.matchA15.FormattingEnabled = true;
-            this.matchA15.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA15.Location = new System.Drawing.Point(111, 390);
             this.matchA15.Name = "matchA15";
             this.matchA15.Size = new System.Drawing.Size(71, 21);
             this.matchA15.TabIndex = 408;
+            this.matchA15.Click += new System.EventHandler(this.matchA15_Click);
             // 
             // assignA15
             // 
@@ -7121,37 +3860,11 @@
             // matchA14
             // 
             this.matchA14.FormattingEnabled = true;
-            this.matchA14.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA14.Location = new System.Drawing.Point(111, 364);
             this.matchA14.Name = "matchA14";
             this.matchA14.Size = new System.Drawing.Size(71, 21);
             this.matchA14.TabIndex = 406;
+            this.matchA14.Click += new System.EventHandler(this.matchA14_Click);
             // 
             // assignA14
             // 
@@ -7164,37 +3877,11 @@
             // matchA17
             // 
             this.matchA17.FormattingEnabled = true;
-            this.matchA17.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA17.Location = new System.Drawing.Point(111, 442);
             this.matchA17.Name = "matchA17";
             this.matchA17.Size = new System.Drawing.Size(71, 21);
             this.matchA17.TabIndex = 406;
+            this.matchA17.Click += new System.EventHandler(this.matchA17_Click);
             // 
             // assignA17
             // 
@@ -7207,37 +3894,11 @@
             // matchA13
             // 
             this.matchA13.FormattingEnabled = true;
-            this.matchA13.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA13.Location = new System.Drawing.Point(111, 338);
             this.matchA13.Name = "matchA13";
             this.matchA13.Size = new System.Drawing.Size(71, 21);
             this.matchA13.TabIndex = 404;
+            this.matchA13.Click += new System.EventHandler(this.matchA13_Click);
             // 
             // assignA13
             // 
@@ -7250,37 +3911,11 @@
             // matchA12
             // 
             this.matchA12.FormattingEnabled = true;
-            this.matchA12.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA12.Location = new System.Drawing.Point(111, 312);
             this.matchA12.Name = "matchA12";
             this.matchA12.Size = new System.Drawing.Size(71, 21);
             this.matchA12.TabIndex = 402;
+            this.matchA12.Click += new System.EventHandler(this.matchA12_Click);
             // 
             // assignA12
             // 
@@ -7293,37 +3928,11 @@
             // matchA11
             // 
             this.matchA11.FormattingEnabled = true;
-            this.matchA11.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA11.Location = new System.Drawing.Point(111, 286);
             this.matchA11.Name = "matchA11";
             this.matchA11.Size = new System.Drawing.Size(71, 21);
             this.matchA11.TabIndex = 400;
+            this.matchA11.Click += new System.EventHandler(this.matchA11_Click);
             // 
             // assignA11
             // 
@@ -7336,37 +3945,11 @@
             // matchA10
             // 
             this.matchA10.FormattingEnabled = true;
-            this.matchA10.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA10.Location = new System.Drawing.Point(111, 260);
             this.matchA10.Name = "matchA10";
             this.matchA10.Size = new System.Drawing.Size(71, 21);
             this.matchA10.TabIndex = 398;
+            this.matchA10.Click += new System.EventHandler(this.matchA10_Click);
             // 
             // assignA10
             // 
@@ -7379,37 +3962,11 @@
             // matchA9
             // 
             this.matchA9.FormattingEnabled = true;
-            this.matchA9.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA9.Location = new System.Drawing.Point(111, 234);
             this.matchA9.Name = "matchA9";
             this.matchA9.Size = new System.Drawing.Size(71, 21);
             this.matchA9.TabIndex = 396;
+            this.matchA9.Click += new System.EventHandler(this.matchA9_Click);
             // 
             // assignA9
             // 
@@ -7422,37 +3979,11 @@
             // matchA8
             // 
             this.matchA8.FormattingEnabled = true;
-            this.matchA8.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA8.Location = new System.Drawing.Point(111, 208);
             this.matchA8.Name = "matchA8";
             this.matchA8.Size = new System.Drawing.Size(71, 21);
             this.matchA8.TabIndex = 394;
+            this.matchA8.Click += new System.EventHandler(this.matchA8_Click);
             // 
             // assignA8
             // 
@@ -7465,37 +3996,11 @@
             // matchA7
             // 
             this.matchA7.FormattingEnabled = true;
-            this.matchA7.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA7.Location = new System.Drawing.Point(111, 182);
             this.matchA7.Name = "matchA7";
             this.matchA7.Size = new System.Drawing.Size(71, 21);
             this.matchA7.TabIndex = 392;
+            this.matchA7.Click += new System.EventHandler(this.matchA7_Click);
             // 
             // assignA7
             // 
@@ -7504,41 +4009,16 @@
             this.assignA7.Size = new System.Drawing.Size(44, 21);
             this.assignA7.TabIndex = 391;
             this.assignA7.Text = "Assign";
+            this.assignA7.Click += new System.EventHandler(this.assignA7_Click);
             // 
             // matchA6
             // 
             this.matchA6.FormattingEnabled = true;
-            this.matchA6.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA6.Location = new System.Drawing.Point(111, 156);
             this.matchA6.Name = "matchA6";
             this.matchA6.Size = new System.Drawing.Size(71, 21);
             this.matchA6.TabIndex = 390;
+            this.matchA6.Click += new System.EventHandler(this.matchA6_Click);
             // 
             // assignA6
             // 
@@ -7547,41 +4027,16 @@
             this.assignA6.Size = new System.Drawing.Size(44, 21);
             this.assignA6.TabIndex = 389;
             this.assignA6.Text = "Assign";
+            this.assignA6.Click += new System.EventHandler(this.assignA6_Click);
             // 
             // matchA5
             // 
             this.matchA5.FormattingEnabled = true;
-            this.matchA5.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA5.Location = new System.Drawing.Point(111, 130);
             this.matchA5.Name = "matchA5";
             this.matchA5.Size = new System.Drawing.Size(71, 21);
             this.matchA5.TabIndex = 388;
+            this.matchA5.Click += new System.EventHandler(this.matchA5_Click);
             // 
             // assignA5
             // 
@@ -7590,41 +4045,16 @@
             this.assignA5.Size = new System.Drawing.Size(44, 21);
             this.assignA5.TabIndex = 387;
             this.assignA5.Text = "Assign";
+            this.assignA5.Click += new System.EventHandler(this.assignA5_Click);
             // 
             // matchA4
             // 
             this.matchA4.FormattingEnabled = true;
-            this.matchA4.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA4.Location = new System.Drawing.Point(111, 104);
             this.matchA4.Name = "matchA4";
             this.matchA4.Size = new System.Drawing.Size(71, 21);
             this.matchA4.TabIndex = 386;
+            this.matchA4.Click += new System.EventHandler(this.matchA4_Click);
             // 
             // assignA4
             // 
@@ -7633,41 +4063,18 @@
             this.assignA4.Size = new System.Drawing.Size(44, 21);
             this.assignA4.TabIndex = 385;
             this.assignA4.Text = "Assign";
+            this.assignA4.Click += new System.EventHandler(this.assignA4_Click);
             // 
             // matchA3
             // 
             this.matchA3.FormattingEnabled = true;
             this.matchA3.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
+            ""});
             this.matchA3.Location = new System.Drawing.Point(111, 78);
             this.matchA3.Name = "matchA3";
             this.matchA3.Size = new System.Drawing.Size(71, 21);
             this.matchA3.TabIndex = 384;
+            this.matchA3.Click += new System.EventHandler(this.matchA3_Click);
             // 
             // assignA3
             // 
@@ -7676,41 +4083,16 @@
             this.assignA3.Size = new System.Drawing.Size(44, 21);
             this.assignA3.TabIndex = 383;
             this.assignA3.Text = "Assign";
+            this.assignA3.Click += new System.EventHandler(this.assignA3_Click);
             // 
             // matchA2
             // 
             this.matchA2.FormattingEnabled = true;
-            this.matchA2.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA2.Location = new System.Drawing.Point(111, 52);
             this.matchA2.Name = "matchA2";
             this.matchA2.Size = new System.Drawing.Size(71, 21);
             this.matchA2.TabIndex = 186;
+            this.matchA2.Click += new System.EventHandler(this.matchA2_Click);
             // 
             // assignA2
             // 
@@ -7719,41 +4101,16 @@
             this.assignA2.Size = new System.Drawing.Size(44, 21);
             this.assignA2.TabIndex = 185;
             this.assignA2.Text = "Assign";
+            this.assignA2.Click += new System.EventHandler(this.assignA2_Click);
             // 
             // matchG1
             // 
             this.matchG1.FormattingEnabled = true;
-            this.matchG1.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchG1.Location = new System.Drawing.Point(837, 26);
             this.matchG1.Name = "matchG1";
             this.matchG1.Size = new System.Drawing.Size(71, 21);
             this.matchG1.TabIndex = 382;
+            this.matchG1.Click += new System.EventHandler(this.matchG1_Click);
             // 
             // assignG1
             // 
@@ -7762,41 +4119,16 @@
             this.assignG1.Size = new System.Drawing.Size(44, 21);
             this.assignG1.TabIndex = 381;
             this.assignG1.Text = "Assign";
+            this.assignG1.Click += new System.EventHandler(this.assignG1_Click);
             // 
             // matchF1
             // 
             this.matchF1.FormattingEnabled = true;
-            this.matchF1.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchF1.Location = new System.Drawing.Point(716, 26);
             this.matchF1.Name = "matchF1";
             this.matchF1.Size = new System.Drawing.Size(71, 21);
             this.matchF1.TabIndex = 380;
+            this.matchF1.Click += new System.EventHandler(this.matchF1_Click);
             // 
             // assignF1
             // 
@@ -7805,41 +4137,16 @@
             this.assignF1.Size = new System.Drawing.Size(44, 21);
             this.assignF1.TabIndex = 379;
             this.assignF1.Text = "Assign";
+            this.assignF1.Click += new System.EventHandler(this.assignF1_Click);
             // 
             // matchE1
             // 
             this.matchE1.FormattingEnabled = true;
-            this.matchE1.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchE1.Location = new System.Drawing.Point(595, 26);
             this.matchE1.Name = "matchE1";
             this.matchE1.Size = new System.Drawing.Size(71, 21);
             this.matchE1.TabIndex = 378;
+            this.matchE1.Click += new System.EventHandler(this.matchE1_Click);
             // 
             // assignE1
             // 
@@ -7848,41 +4155,16 @@
             this.assignE1.Size = new System.Drawing.Size(44, 21);
             this.assignE1.TabIndex = 377;
             this.assignE1.Text = "Assign";
+            this.assignE1.Click += new System.EventHandler(this.assignE1_Click);
             // 
             // matchD1
             // 
             this.matchD1.FormattingEnabled = true;
-            this.matchD1.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchD1.Location = new System.Drawing.Point(474, 26);
             this.matchD1.Name = "matchD1";
             this.matchD1.Size = new System.Drawing.Size(71, 21);
             this.matchD1.TabIndex = 376;
+            this.matchD1.Click += new System.EventHandler(this.matchD1_Click);
             // 
             // assignD1
             // 
@@ -7891,41 +4173,16 @@
             this.assignD1.Size = new System.Drawing.Size(44, 21);
             this.assignD1.TabIndex = 375;
             this.assignD1.Text = "Assign";
+            this.assignD1.Click += new System.EventHandler(this.assignD1_Click);
             // 
             // matchC1
             // 
             this.matchC1.FormattingEnabled = true;
-            this.matchC1.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchC1.Location = new System.Drawing.Point(353, 26);
             this.matchC1.Name = "matchC1";
             this.matchC1.Size = new System.Drawing.Size(71, 21);
             this.matchC1.TabIndex = 374;
+            this.matchC1.Click += new System.EventHandler(this.matchC1_Click);
             // 
             // assignC1
             // 
@@ -7934,41 +4191,16 @@
             this.assignC1.Size = new System.Drawing.Size(44, 21);
             this.assignC1.TabIndex = 373;
             this.assignC1.Text = "Assign";
+            this.assignC1.Click += new System.EventHandler(this.assignC1_Click);
             // 
             // matchB1
             // 
             this.matchB1.FormattingEnabled = true;
-            this.matchB1.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchB1.Location = new System.Drawing.Point(232, 26);
             this.matchB1.Name = "matchB1";
             this.matchB1.Size = new System.Drawing.Size(71, 21);
             this.matchB1.TabIndex = 372;
+            this.matchB1.Click += new System.EventHandler(this.matchB1_Click);
             // 
             // assignB1
             // 
@@ -7977,6 +4209,7 @@
             this.assignB1.Size = new System.Drawing.Size(44, 21);
             this.assignB1.TabIndex = 371;
             this.assignB1.Text = "Assign";
+            this.assignB1.Click += new System.EventHandler(this.assignB1_Click);
             // 
             // metroLabel13
             // 
@@ -8456,37 +4689,11 @@
             // matchA1
             // 
             this.matchA1.FormattingEnabled = true;
-            this.matchA1.Items.AddRange(new object[] {
-            "17th April",
-            "24th April",
-            "1st May",
-            "8th May",
-            "15th May",
-            "22nd May",
-            "29th May",
-            "5th June",
-            "12th June",
-            "19th June",
-            "26th June",
-            "3rd July",
-            "10th July",
-            "17th July",
-            "24th July",
-            "31st July",
-            "7th August",
-            "14th August",
-            "21st August",
-            "28th August",
-            "4th September",
-            "11th September",
-            "18th September",
-            "2nd May (Holiday)",
-            "30th May (Holiday)",
-            "29th August (Holiday)"});
             this.matchA1.Location = new System.Drawing.Point(111, 26);
             this.matchA1.Name = "matchA1";
             this.matchA1.Size = new System.Drawing.Size(71, 21);
             this.matchA1.TabIndex = 184;
+            this.matchA1.Click += new System.EventHandler(this.matchA1_Click);
             // 
             // assignA1
             // 
@@ -8495,6 +4702,7 @@
             this.assignA1.Size = new System.Drawing.Size(44, 21);
             this.assignA1.TabIndex = 182;
             this.assignA1.Text = "Assign";
+            this.assignA1.Click += new System.EventHandler(this.assignA1_Click);
             // 
             // lblBack
             // 
@@ -8644,304 +4852,6 @@
             this.metroTabPage15.TabIndex = 14;
             this.metroTabPage15.Text = "Division 15";
             this.metroTabPage15.VerticalScrollbarBarColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(971, 24);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox1.TabIndex = 702;
-            this.richTextBox1.Text = "";
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Location = new System.Drawing.Point(971, 50);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox2.TabIndex = 703;
-            this.richTextBox2.Text = "";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox3.Location = new System.Drawing.Point(971, 76);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox3.TabIndex = 704;
-            this.richTextBox3.Text = "";
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox4.Location = new System.Drawing.Point(971, 102);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox4.TabIndex = 705;
-            this.richTextBox4.Text = "";
-            // 
-            // richTextBox5
-            // 
-            this.richTextBox5.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox5.Location = new System.Drawing.Point(971, 128);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox5.TabIndex = 706;
-            this.richTextBox5.Text = "";
-            // 
-            // richTextBox6
-            // 
-            this.richTextBox6.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox6.Location = new System.Drawing.Point(971, 154);
-            this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox6.TabIndex = 707;
-            this.richTextBox6.Text = "";
-            // 
-            // richTextBox7
-            // 
-            this.richTextBox7.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox7.Location = new System.Drawing.Point(971, 180);
-            this.richTextBox7.Name = "richTextBox7";
-            this.richTextBox7.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox7.TabIndex = 708;
-            this.richTextBox7.Text = "";
-            // 
-            // richTextBox8
-            // 
-            this.richTextBox8.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox8.Location = new System.Drawing.Point(971, 206);
-            this.richTextBox8.Name = "richTextBox8";
-            this.richTextBox8.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox8.TabIndex = 709;
-            this.richTextBox8.Text = "";
-            // 
-            // richTextBox9
-            // 
-            this.richTextBox9.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox9.Location = new System.Drawing.Point(971, 232);
-            this.richTextBox9.Name = "richTextBox9";
-            this.richTextBox9.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox9.TabIndex = 710;
-            this.richTextBox9.Text = "";
-            // 
-            // richTextBox10
-            // 
-            this.richTextBox10.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox10.Location = new System.Drawing.Point(971, 258);
-            this.richTextBox10.Name = "richTextBox10";
-            this.richTextBox10.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox10.TabIndex = 711;
-            this.richTextBox10.Text = "";
-            // 
-            // richTextBox11
-            // 
-            this.richTextBox11.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox11.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox11.Location = new System.Drawing.Point(971, 284);
-            this.richTextBox11.Name = "richTextBox11";
-            this.richTextBox11.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox11.TabIndex = 712;
-            this.richTextBox11.Text = "";
-            // 
-            // richTextBox12
-            // 
-            this.richTextBox12.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox12.Location = new System.Drawing.Point(971, 310);
-            this.richTextBox12.Name = "richTextBox12";
-            this.richTextBox12.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox12.TabIndex = 713;
-            this.richTextBox12.Text = "";
-            // 
-            // richTextBox13
-            // 
-            this.richTextBox13.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox13.Location = new System.Drawing.Point(971, 336);
-            this.richTextBox13.Name = "richTextBox13";
-            this.richTextBox13.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox13.TabIndex = 714;
-            this.richTextBox13.Text = "";
-            // 
-            // richTextBox14
-            // 
-            this.richTextBox14.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox14.Location = new System.Drawing.Point(971, 362);
-            this.richTextBox14.Name = "richTextBox14";
-            this.richTextBox14.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox14.TabIndex = 715;
-            this.richTextBox14.Text = "";
-            // 
-            // richTextBox15
-            // 
-            this.richTextBox15.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.richTextBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox15.Location = new System.Drawing.Point(971, 388);
-            this.richTextBox15.Name = "richTextBox15";
-            this.richTextBox15.Size = new System.Drawing.Size(341, 25);
-            this.richTextBox15.TabIndex = 716;
-            this.richTextBox15.Text = "";
-            // 
-            // metroLabel24
-            // 
-            this.metroLabel24.AutoSize = true;
-            this.metroLabel24.BackColor = System.Drawing.Color.White;
-            this.metroLabel24.CustomBackground = true;
-            this.metroLabel24.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel24.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.metroLabel24.Location = new System.Drawing.Point(994, 418);
-            this.metroLabel24.Name = "metroLabel24";
-            this.metroLabel24.Size = new System.Drawing.Size(106, 19);
-            this.metroLabel24.TabIndex = 718;
-            this.metroLabel24.Text = "Shared grounds";
-            // 
-            // metroLabel25
-            // 
-            this.metroLabel25.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel25.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel25.Location = new System.Drawing.Point(970, 49);
-            this.metroLabel25.Name = "metroLabel25";
-            this.metroLabel25.Size = new System.Drawing.Size(343, 1);
-            this.metroLabel25.TabIndex = 719;
-            // 
-            // line2
-            // 
-            this.line2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line2.Location = new System.Drawing.Point(970, 75);
-            this.line2.Name = "line2";
-            this.line2.Size = new System.Drawing.Size(343, 1);
-            this.line2.TabIndex = 720;
-            // 
-            // line3
-            // 
-            this.line3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line3.Location = new System.Drawing.Point(970, 101);
-            this.line3.Name = "line3";
-            this.line3.Size = new System.Drawing.Size(343, 1);
-            this.line3.TabIndex = 721;
-            // 
-            // line4
-            // 
-            this.line4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line4.Location = new System.Drawing.Point(970, 127);
-            this.line4.Name = "line4";
-            this.line4.Size = new System.Drawing.Size(343, 1);
-            this.line4.TabIndex = 722;
-            // 
-            // line5
-            // 
-            this.line5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line5.Location = new System.Drawing.Point(970, 153);
-            this.line5.Name = "line5";
-            this.line5.Size = new System.Drawing.Size(343, 1);
-            this.line5.TabIndex = 723;
-            // 
-            // line6
-            // 
-            this.line6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line6.Location = new System.Drawing.Point(970, 179);
-            this.line6.Name = "line6";
-            this.line6.Size = new System.Drawing.Size(343, 1);
-            this.line6.TabIndex = 724;
-            // 
-            // line7
-            // 
-            this.line7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line7.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line7.Location = new System.Drawing.Point(970, 205);
-            this.line7.Name = "line7";
-            this.line7.Size = new System.Drawing.Size(343, 1);
-            this.line7.TabIndex = 725;
-            // 
-            // line8
-            // 
-            this.line8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line8.Location = new System.Drawing.Point(970, 231);
-            this.line8.Name = "line8";
-            this.line8.Size = new System.Drawing.Size(343, 1);
-            this.line8.TabIndex = 726;
-            // 
-            // line9
-            // 
-            this.line9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line9.Location = new System.Drawing.Point(970, 257);
-            this.line9.Name = "line9";
-            this.line9.Size = new System.Drawing.Size(343, 1);
-            this.line9.TabIndex = 727;
-            // 
-            // line10
-            // 
-            this.line10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line10.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line10.Location = new System.Drawing.Point(970, 283);
-            this.line10.Name = "line10";
-            this.line10.Size = new System.Drawing.Size(343, 1);
-            this.line10.TabIndex = 728;
-            // 
-            // line11
-            // 
-            this.line11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line11.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line11.Location = new System.Drawing.Point(970, 309);
-            this.line11.Name = "line11";
-            this.line11.Size = new System.Drawing.Size(343, 1);
-            this.line11.TabIndex = 729;
-            // 
-            // line12
-            // 
-            this.line12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line12.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line12.Location = new System.Drawing.Point(970, 335);
-            this.line12.Name = "line12";
-            this.line12.Size = new System.Drawing.Size(343, 1);
-            this.line12.TabIndex = 730;
-            // 
-            // line13
-            // 
-            this.line13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line13.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line13.Location = new System.Drawing.Point(970, 361);
-            this.line13.Name = "line13";
-            this.line13.Size = new System.Drawing.Size(343, 1);
-            this.line13.TabIndex = 731;
-            // 
-            // line14
-            // 
-            this.line14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.line14.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.line14.Location = new System.Drawing.Point(970, 387);
-            this.line14.Name = "line14";
-            this.line14.Size = new System.Drawing.Size(343, 1);
-            this.line14.TabIndex = 732;
-            // 
-            // sharedLine
-            // 
-            this.sharedLine.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.sharedLine.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.sharedLine.Location = new System.Drawing.Point(970, 439);
-            this.sharedLine.Name = "sharedLine";
-            this.sharedLine.Size = new System.Drawing.Size(343, 1);
-            this.sharedLine.TabIndex = 733;
             // 
             // Form2
             // 

@@ -1036,7 +1036,7 @@ namespace Fixtures
                     //for each division
                     //Query prolog
                     string matches = "";
-                    string reqTeams = Convert.ToString(teamCount[d] + 1);
+                    string reqTeams = Convert.ToString(teamCount[d]);
                     using (var q = new PlQuery("round_robin(" + reqTeams + ", 2, M)"))
                     {
                         foreach (PlQueryVariables v in q.SolutionVariables)
@@ -1074,7 +1074,7 @@ namespace Fixtures
                                     {
                                         //second team beginning
                                         home = false;
-                                        game[d, gameCount] = game[d, gameCount] + Convert.ToString("vs" + c);
+                                        game[d, gameCount] = game[d, gameCount] + Convert.ToString(" vs " + c);
                                         tempA = Convert.ToString(c);
                                     }
                                     else
@@ -1100,7 +1100,7 @@ namespace Fixtures
                                     gameCount++;
 
                                     //add mirror match
-                                    game[d, gameCount] = Convert.ToString(tempA + "vs" + tempH);
+                                    game[d, gameCount] = Convert.ToString(tempA + " vs " + tempH);
                                     gameCount++;
                                     matchCount[d]++;
                                     tempA = "";
@@ -1123,9 +1123,16 @@ namespace Fixtures
 
                 //goto form2 (output form)
                 this.Hide();
-                Form2 frm = new Form2(divCount, matchCount, game, name, shared, datesHome, datesNoPlay, teamCount, sharedCount);
-                frm.FormClosed += (s, args) => this.Close();
-                frm.Show();
+                Form3 frmLoad = new Form3();
+                frmLoad.Show();
+                bool loading = frmLoad.getLoad();
+                if (loading == true)
+                {
+                    Form2 frm = new Form2(divCount, matchCount, game, name, shared, datesHome, datesNoPlay, teamCount, sharedCount, noPlayCount, homeCount);
+                    frm.FormClosed += (s, args) => this.Close();
+                    frm.Show();
+                    frmLoad.Close();
+                }
             }
         }
 
