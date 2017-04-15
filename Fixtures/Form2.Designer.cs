@@ -4973,7 +4973,8 @@
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(106, 28);
             this.btnDone.TabIndex = 3;
-            this.btnDone.Text = "Convert to Excel";
+            this.btnDone.Text = "Export to Excel";
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // Form2
             // 
