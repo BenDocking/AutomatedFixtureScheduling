@@ -5867,25 +5867,26 @@ namespace Fixtures
 
                 for (int i = 0; i < divCount; i++) //loop through each division
                 {
-                    var line = String.Format("Division {0}\n\n", i+1);
+                    var line = String.Format("Division {0}\n", i+1);
                     output.Append(line);
-
-                    for (int x = 0; x < 23; x++) //for each week
-                    {
-                        line = String.Format("Week {0},", x+1);
-                        output.Append(line);
-
-                        for (int y = 0; y < teamCount[i]/2; y++) //for each match in week
+                    //print weeks
+                    line = String.Format("Week 1,Week 2,Week 3,Week 4,Week 5,Week 6,Week 7,Week 8,Week 9,Week 10,Week 11,Week 12,Week 13,Week 14,Week 15,Week 16,Week 17,Week 18,Week 19,Week 20,Week 21,Week 22,Week 23\n");
+                    output.Append(line);
+                    //Print each assigned match
+                    for (int x = 0; x < teamCount[i]/2; x++) //for each week
+                    {                  
+                        for (int y = 0; y < 23; y++) //for each match in week
                         {
-                            if (matchesAssigned[i, x, y] != null)
+                            if (matchesAssigned[i, y, x] != null)
                             {
-                                teams = getHomeAway(matchesAssigned[i, x, y]);
+                                teams = getHomeAway(matchesAssigned[i, y, x]);
+                                teamHome = name[i, teams.Item1];
+                                teamAway = name[i, teams.Item2];
+
+                                line = String.Format("{0} vs {1}", teamHome, teamAway);
+                                output.Append(line);
                             }
-
-                            teamHome = name[i, teams.Item1];
-                            teamAway = name[i, teams.Item2];
-
-                            line = String.Format("{0} vs {1},", teamHome, teamAway);
+                            line = String.Format(",");
                             output.Append(line);
                         }
 
