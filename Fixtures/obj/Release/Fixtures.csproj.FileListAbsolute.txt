@@ -1,0 +1,14 @@
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Release\Fixtures.csprojResolveAssemblyReference.cache
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Release\Fixtures.Form1.resources
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Release\Fixtures.Form2.resources
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Release\Fixtures.Form3.resources
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Release\Fixtures.Properties.Resources.resources
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Release\Fixtures.csproj.GenerateResource.Cache
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Release\Fixtures.exe.config
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Release\Fixtures.exe
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Release\Fixtures.pdb
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Release\MetroFramework.dll
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Release\MetroFramework.Fonts.dll
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\bin\Release\SwiPlCs.xml
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Release\Fixtures.exe
+C:\Users\Ben\Documents\GitHub\AutomatedFixtureScheduling\Fixtures\obj\Release\Fixtures.pdb

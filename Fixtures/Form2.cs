@@ -5860,7 +5860,7 @@ namespace Fixtures
             if (done == DialogResult.Yes)
             {
                 Tuple<int, int> teams = getHomeAway("3 vs 4"); //init tuple
-                string path = @".\test.csv";
+                string path = @".\cricketSchedule.csv";
                 string teamHome = "";
                 string teamAway = "";
                 var output = new StringBuilder();
